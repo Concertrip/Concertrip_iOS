@@ -70,6 +70,9 @@
 			isa = PBXGroup;
 			children = (
 				7C0238E121CE107E0042E8DC /* AppDelegate.swift */,
+				7C0238F521CE16450042E8DC /* Models */,
+				7C0238F321CE16230042E8DC /* Extensions */,
+				7C0238F621CE16510042E8DC /* APIServices */,
 				7C0238F921CE16970042E8DC /* EJ */,
 				7C0238FA21CE16A10042E8DC /* JW */,
 				7C0238E821CE107F0042E8DC /* Assets.xcassets */,
@@ -126,9 +129,6 @@
 		7C0238F921CE16970042E8DC /* EJ */ = {
 			isa = PBXGroup;
 			children = (
-				7C0238F321CE16230042E8DC /* Extensions */,
-				7C0238F521CE16450042E8DC /* Models */,
-				7C0238F621CE16510042E8DC /* APIServices */,
 				7C0238F421CE16290042E8DC /* Storyboards */,
 				7C0238F721CE16750042E8DC /* ViewControllers */,
 				7C0238F821CE167C0042E8DC /* Views */,
@@ -139,8 +139,32 @@
 		7C0238FA21CE16A10042E8DC /* JW */ = {
 			isa = PBXGroup;
 			children = (
+				7C02394421CF3CF60042E8DC /* ViewControllers */,
+				7C02394521CF3D0B0042E8DC /* Views */,
+				7C02394321CF3CF00042E8DC /* Storyboards */,
 			);
 			path = JW;
+			sourceTree = "<group>";
+		};
+		7C02394321CF3CF00042E8DC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7C02394421CF3CF60042E8DC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7C02394521CF3D0B0042E8DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C3ED348F7575666839079CB7 /* Pods */ = {

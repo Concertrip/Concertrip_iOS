@@ -6,6 +6,7 @@ PODS:
   - CVCalendar (1.6.1)
   - Kingfisher (4.10.1)
   - ObjectMapper (3.4.1)
+  - YouTubePlayer-Swift (1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - CVCalendar
   - Kingfisher
   - ObjectMapper
+  - YouTubePlayer-Swift (~> 1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -21,6 +23,7 @@ SPEC REPOS:
     - CVCalendar
     - Kingfisher
     - ObjectMapper
+    - YouTubePlayer-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -28,7 +31,8 @@ SPEC CHECKSUMS:
   CVCalendar: 505c11b11a088b43f159806e791eba1c2540853b
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
+  YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: 2351ad5298c746e4f26bad96e4cf14db455f3f1f
+PODFILE CHECKSUM: 0ceeb998a7404869e1b4ced9ecd690f2123c7b11
 
 COCOAPODS: 1.5.3

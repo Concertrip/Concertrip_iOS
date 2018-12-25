@@ -14,6 +14,7 @@
 		7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */; };
 		7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
+		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
 		AE2A6D7B7214AA4BA8EDD3EA /* Pods_Concertrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9891D97367D4A40762BF55 /* Pods_Concertrip.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarTVCell.swift; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
+		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
 		D125FDF54BCE47167F476328 /* Pods-Concertrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concertrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +121,7 @@
 		7C0238F721CE16750042E8DC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */,
+				7CA27CCB21D1FCDD0041A146 /* Main */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,7 +129,6 @@
 		7C0238F821CE167C0042E8DC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +172,32 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7CA27CCB21D1FCDD0041A146 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */,
+				7CA27CCD21D1FCF20041A146 /* TableViews */,
+				7CA27CCC21D1FCE40041A146 /* CollectionViews */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7CA27CCC21D1FCE40041A146 /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */,
+			);
+			path = CollectionViews;
+			sourceTree = "<group>";
+		};
+		7CA27CCD21D1FCF20041A146 /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
+				7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */,
+			);
+			path = TableViews;
 			sourceTree = "<group>";
 		};
 		C3ED348F7575666839079CB7 /* Pods */ = {
@@ -314,6 +341,7 @@
 			files = (
 				7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */,
 				7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */,
+				7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */,
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,
 			);

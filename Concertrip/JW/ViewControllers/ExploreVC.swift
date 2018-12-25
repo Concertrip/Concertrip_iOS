@@ -29,7 +29,6 @@ class ExploreVC: UIViewController {
         collectionView.dataSource = self 
         
         //TextField 속성 설정
-        searchTxt.layer.cornerRadius = 15
         searchTxt.attributedPlaceholder = NSAttributedString(string: "아티스트 / 콘서트명",
                                                                attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
@@ -82,5 +81,12 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
         cell.menuLabel.text = menu
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCVCell", for: indexPath) as! ExploreCVCell
+        
+        
+        cell.menuLabel.textColor = UIColor(red: 89, green: 62, blue: 255, alpha: 1.0)
     }
 }

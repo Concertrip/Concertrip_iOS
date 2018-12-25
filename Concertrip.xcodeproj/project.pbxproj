@@ -15,6 +15,9 @@
 		7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		AE2A6D7B7214AA4BA8EDD3EA /* Pods_Concertrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9891D97367D4A40762BF55 /* Pods_Concertrip.framework */; };
+		E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */; };
+		E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */; };
+		E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarTVCell.swift; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		D125FDF54BCE47167F476328 /* Pods-Concertrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concertrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip.debug.xcconfig"; sourceTree = "<group>"; };
+		E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationSB.storyboard; sourceTree = "<group>"; };
+		E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVCCell.swift; sourceTree = "<group>"; };
+		E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,7 @@
 		7C02394321CF3CF00042E8DC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 		7C02394421CF3CF60042E8DC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 		7C02394521CF3D0B0042E8DC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */,
 				7C0238EC21CE107F0042E8DC /* LaunchScreen.storyboard in Resources */,
 				7C0238E921CE107F0042E8DC /* Assets.xcassets in Resources */,
 				7C0238E721CE107E0042E8DC /* Main.storyboard in Resources */,
@@ -259,7 +269,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -280,7 +290,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -313,6 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */,
+				E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */,
+				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,
 				7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */,
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,

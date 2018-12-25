@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WfI-X3-A4a">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ExploreVC-->
+        <!--Explore-->
         <scene sceneID="7eP-9L-3y6">
             <objects>
                 <viewController storyboardIdentifier="ExploreVC" id="WfI-X3-A4a" customClass="ExploreVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,6 +117,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XCv-tr-kQv"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Explore" id="dpF-8Q-Yx5"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="LBX-lD-LTs" id="ehW-Rd-kFr"/>
                         <outlet property="searchTxt" destination="qvV-qG-qo1" id="vIB-vp-Lc9"/>
@@ -125,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kml-HE-JA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39.200000000000003" y="112.89355322338831"/>
+            <point key="canvasLocation" x="900" y="112.89355322338831"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="v3o-8j-CYh">
@@ -159,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5a-J0-31y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="113.79310344827587"/>
+            <point key="canvasLocation" x="1847.2" y="113.79310344827587"/>
         </scene>
     </scenes>
     <resources>

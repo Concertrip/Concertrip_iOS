@@ -15,6 +15,8 @@
 		7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
+		7CF1246721D2522E008F731B /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246621D2522E008F731B /* LikeSB.storyboard */; };
+		7CF1246921D252BA008F731B /* InformationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246821D252BA008F731B /* InformationSB.storyboard */; };
 		AE2A6D7B7214AA4BA8EDD3EA /* Pods_Concertrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9891D97367D4A40762BF55 /* Pods_Concertrip.framework */; };
 		E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */; };
 		E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */; };
@@ -38,6 +40,8 @@
 		7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarTVCell.swift; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
+		7CF1246621D2522E008F731B /* LikeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeSB.storyboard; sourceTree = "<group>"; };
+		7CF1246821D252BA008F731B /* InformationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationSB.storyboard; sourceTree = "<group>"; };
 		D125FDF54BCE47167F476328 /* Pods-Concertrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concertrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip.debug.xcconfig"; sourceTree = "<group>"; };
 		E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationSB.storyboard; sourceTree = "<group>"; };
 		E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVCCell.swift; sourceTree = "<group>"; };
@@ -91,9 +95,6 @@
 			children = (
 				7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */,
 				7C0238E121CE107E0042E8DC /* AppDelegate.swift */,
-				7C0238F521CE16450042E8DC /* Models */,
-				7C0238F321CE16230042E8DC /* Extensions */,
-				7C0238F621CE16510042E8DC /* APIServices */,
 				7C0238F921CE16970042E8DC /* EJ */,
 				7C0238FA21CE16A10042E8DC /* JW */,
 				7C0238E821CE107F0042E8DC /* Assets.xcassets */,
@@ -104,34 +105,6 @@
 			path = Concertrip;
 			sourceTree = "<group>";
 		};
-		7C0238F321CE16230042E8DC /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		7C0238F421CE16290042E8DC /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		7C0238F521CE16450042E8DC /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		7C0238F621CE16510042E8DC /* APIServices */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIServices;
-			sourceTree = "<group>";
-		};
 		7C0238F721CE16750042E8DC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,19 +113,11 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		7C0238F821CE167C0042E8DC /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		7C0238F921CE16970042E8DC /* EJ */ = {
 			isa = PBXGroup;
 			children = (
-				7C0238F421CE16290042E8DC /* Storyboards */,
+				7CF1246521D25213008F731B /* Storyboards */,
 				7C0238F721CE16750042E8DC /* ViewControllers */,
-				7C0238F821CE167C0042E8DC /* Views */,
 			);
 			path = EJ;
 			sourceTree = "<group>";
@@ -219,6 +184,15 @@
 				7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */,
 			);
 			path = TableViews;
+			sourceTree = "<group>";
+		};
+		7CF1246521D25213008F731B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7CF1246621D2522E008F731B /* LikeSB.storyboard */,
+				7CF1246821D252BA008F731B /* InformationSB.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		C3ED348F7575666839079CB7 /* Pods */ = {
@@ -292,8 +266,10 @@
 			files = (
 				E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */,
 				E08FD1A621D217D2002AF9E7 /* ExploreSB.storyboard in Resources */,
+				7CF1246721D2522E008F731B /* LikeSB.storyboard in Resources */,
 				7C0238EC21CE107F0042E8DC /* LaunchScreen.storyboard in Resources */,
 				7C0238E921CE107F0042E8DC /* Assets.xcassets in Resources */,
+				7CF1246921D252BA008F731B /* InformationSB.storyboard in Resources */,
 				7C0238E721CE107E0042E8DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

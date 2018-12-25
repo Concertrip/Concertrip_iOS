@@ -15,6 +15,8 @@ class MainCalendarVC: UIViewController {
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var monthLabel: UILabel!
     
     var selectedDay:DayView!
     var currentCalendar: Calendar?
@@ -25,13 +27,24 @@ class MainCalendarVC: UIViewController {
     var selectCheck:Bool = false
     var tableCheck:Bool = false
     
+    var menuBarLabels = ["모두", "최애", "지코", "크러쉬", "페노메코", "힙합", "알레시카 카라"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //tableView
         tableView.isHidden = true
-        
         tableView.dataSource = self
         tableView.delegate = self
+        
+        //collectionView
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        //bold font
+        monthLabel.font = UIFont.boldSystemFont(ofSize: 27.0)
+        
         // Appearance delegate [Unnecessary]
         //        self.calendarView.calendarAppearanceDelegate = self
         
@@ -51,6 +64,8 @@ class MainCalendarVC: UIViewController {
         menuView.commitMenuViewUpdate()
         calendarView.commitCalendarViewUpdate()
     }
+    
+
 
 }
 
@@ -134,3 +149,28 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
     
     
 }
+
+//MARK: collectionView Extension
+
+extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return menuBarLabels.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarCVCell", for: indexPath) as! MainCalendarCVCell
+        
+        cell.menuLabel.text = menuBarLabels[indexPath.row]
+        
+        
+        
+        return cell
+    }
+    
+    
+    
+    
+}
+

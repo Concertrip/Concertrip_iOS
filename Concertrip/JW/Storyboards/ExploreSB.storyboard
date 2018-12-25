@@ -13,7 +13,7 @@
         <!--ExploreVC-->
         <scene sceneID="7eP-9L-3y6">
             <objects>
-                <viewController id="WfI-X3-A4a" customClass="ExploreVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExploreVC" id="WfI-X3-A4a" customClass="ExploreVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Qo-8C-Dkt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

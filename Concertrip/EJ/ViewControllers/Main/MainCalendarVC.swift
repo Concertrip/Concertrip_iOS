@@ -26,8 +26,9 @@ class MainCalendarVC: UIViewController {
     var animationFinished = true
     var shouldShowDaysOut = true
 
-    var menuBarLabels = ["모두", "최애", "지코", "크러쉬", "페노메코", "힙합", "알레시카 카라"]
+    var menuBarLabels = ["모두", "내 공연", "지코", "크러쉬", "페노메코", "힙합", "알레시카 카라"]
     var dayArrays = ["1","5","30"]
+    let hashtagList = ["#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!"]
     
     
     //tableview 상태 값 변수입니다.
@@ -180,6 +181,7 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
 //        } else {
 //            cell.testLabel.text = "00일"
 //        }
+
         
         
         
@@ -206,6 +208,12 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         cell.menuLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
         
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
     }
     
     

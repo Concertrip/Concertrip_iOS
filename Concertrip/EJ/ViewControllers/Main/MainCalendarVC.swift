@@ -11,7 +11,9 @@ import CVCalendar
 
 class MainCalendarVC: UIViewController {
 
-    @IBOutlet weak var tableViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableTopC: NSLayoutConstraint!
+    @IBOutlet weak var tableBottomC: NSLayoutConstraint!
+    
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var tableView: UITableView!
@@ -23,18 +25,28 @@ class MainCalendarVC: UIViewController {
     
     var animationFinished = true
     var shouldShowDaysOut = true
-    
-    var selectCheck:Bool = false
-    var tableCheck:Bool = false
-    
+
     var menuBarLabels = ["모두", "최애", "지코", "크러쉬", "페노메코", "힙합", "알레시카 카라"]
+    var dayArrays = ["1","5","30"]
     
+    
+    //tableview 상태 값 변수입니다.
+    var tableIsVisible = false {
+        didSet { //menuStatus의 값이 변경된 후에 호출됩니다.
+            if !tableIsVisible {
+                tableView.isUserInteractionEnabled = false
+                print(tableView.isUserInteractionEnabled)
+            } else {
+                tableView.isUserInteractionEnabled = true
+                print(tableView.isUserInteractionEnabled)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //tableView
-        tableView.isHidden = true
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -81,30 +93,55 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
         return .monday
     }
     
+    
+    func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool{
+        // Look up date in dictionary
+        if( dayArrays != nil){
+            return true // date is in the array so draw a dot
+        }
+        return false
+    }
+    
+    
+    func dotMarker(colorOnDayView dayView: DayView) -> [UIColor]{
+        return [UIColor.blue]
+    }
+
+    
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         selectedDay = dayView
         print(selectedDay.date.day)
 
         print("self.tableView.frame.origin.y 는 ? : \(self.tableView.frame.origin.y)")
         
-        if(selectCheck == false){
-            selectCheck = true
+        if !tableIsVisible { //열리자!
             tableView.isHidden = false
-            UIView.animate(withDuration: 1, animations: {
-                self.tableView.frame.origin.y += self.tableView.bounds.height
-            }, completion: nil)
-            self.view.layoutIfNeeded()
+            tableTopC.constant = tableView.bounds.height + 280
+            tableBottomC.constant = +0
             
+            tableIsVisible = true
             
-        } else {
+            //애니메이션
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+                self.view.layoutIfNeeded()
+            }) { (animationComplete) in
+                print("(1) The animation is complete!")
+            }
+        } else { //닫히자!
             
-            UIView.animate(withDuration: 1, animations: {
-                self.tableView.frame.origin.y -= self.tableView.bounds.height
-            }, completion: nil)
-            self.view.layoutIfNeeded()
+            tableTopC.constant = 280
+            tableBottomC.constant = 0
             
-            selectCheck = false
+            tableIsVisible = false
+            
+            //애니메이션
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+                self.view.layoutIfNeeded()
+            }) { (animationComplete) in
+                print("(2) The animation is complete!")
+            }
         }
+        
     }
     
     func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
@@ -134,10 +171,12 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
     
         print("selectDay는 ? \(selectedDay.date.day)")
         
-        
-        //스트링이 잘 안넘어감!
-//        if selectedDay.date.day != nil{
-//            cell.testLabel.text = "\(selectedDay.date.day)일"
+//        let sellectedDay = selectedDay.date.day
+//        let strDay = String(sellectedDay)
+//        
+//        //스트링이 잘 안넘어감!
+//        if sellectedDay != nil {
+//            cell.testLabel.text = "\(strDay)일"
 //        } else {
 //            cell.testLabel.text = "00일"
 //        }
@@ -162,12 +201,14 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarCVCell", for: indexPath) as! MainCalendarCVCell
         
+//        cell.menuLabel.preferredMaxLayoutWidth = cell.menuLabel.bounds.width
         cell.menuLabel.text = menuBarLabels[indexPath.row]
-        
-        
+        cell.menuLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
         
         return cell
     }
+    
+    
     
     
     

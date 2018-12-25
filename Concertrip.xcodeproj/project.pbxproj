@@ -19,6 +19,10 @@
 		E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */; };
 		E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */; };
 		E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */; };
+		E08FD1A621D217D2002AF9E7 /* ExploreSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08FD1A521D217D2002AF9E7 /* ExploreSB.storyboard */; };
+		E08FD1A821D21B3A002AF9E7 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1A721D21B3A002AF9E7 /* ExploreVC.swift */; };
+		E08FD1AA21D2209F002AF9E7 /* ExploreCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1A921D2209F002AF9E7 /* ExploreCVCell.swift */; };
+		E08FD1AC21D220B3002AF9E7 /* ExploreTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1AB21D220B3002AF9E7 /* ExploreTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationSB.storyboard; sourceTree = "<group>"; };
 		E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVCCell.swift; sourceTree = "<group>"; };
 		E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		E08FD1A521D217D2002AF9E7 /* ExploreSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExploreSB.storyboard; sourceTree = "<group>"; };
+		E08FD1A721D21B3A002AF9E7 /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
+		E08FD1A921D2209F002AF9E7 /* ExploreCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCVCell.swift; sourceTree = "<group>"; };
+		E08FD1AB21D220B3002AF9E7 /* ExploreTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */,
+				E08FD1A521D217D2002AF9E7 /* ExploreSB.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -171,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */,
+				E08FD1A721D21B3A002AF9E7 /* ExploreVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -179,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */,
+				E08FD1A921D2209F002AF9E7 /* ExploreCVCell.swift */,
+				E08FD1AB21D220B3002AF9E7 /* ExploreTVCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */,
+				E08FD1A621D217D2002AF9E7 /* ExploreSB.storyboard in Resources */,
 				7C0238EC21CE107F0042E8DC /* LaunchScreen.storyboard in Resources */,
 				7C0238E921CE107F0042E8DC /* Assets.xcassets in Resources */,
 				7C0238E721CE107E0042E8DC /* Main.storyboard in Resources */,
@@ -351,11 +364,14 @@
 			files = (
 				7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */,
 				E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */,
+				E08FD1A821D21B3A002AF9E7 /* ExploreVC.swift in Sources */,
 				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,
 				7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */,
 				7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */,
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,
+				E08FD1AC21D220B3002AF9E7 /* ExploreTVCell.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,
+				E08FD1AA21D2209F002AF9E7 /* ExploreCVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

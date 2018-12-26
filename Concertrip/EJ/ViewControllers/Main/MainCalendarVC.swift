@@ -19,10 +19,12 @@ class MainCalendarVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var shadowView: UIImageView!
     
     var selectedDay:DayView!
     var currentCalendar: Calendar?
     
+
     var animationFinished = true
     var shouldShowDaysOut = true
 
@@ -69,6 +71,10 @@ class MainCalendarVC: UIViewController {
         
         // Calendar delegate [Required]
         self.calendarView.calendarDelegate = self
+        
+        if let currentCalendar = currentCalendar {
+            monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).koreanDescription
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -94,11 +100,75 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
         return .monday
     }
     
+    func presentedDateUpdated(_ date: CVDate) {
+        if monthLabel.text != date.koreanDescription && self.animationFinished {
+            let updatedMonthLabel = UILabel()
+            updatedMonthLabel.textColor = monthLabel.textColor
+            updatedMonthLabel.font = monthLabel.font
+            updatedMonthLabel.textAlignment = .center
+            updatedMonthLabel.text = date.koreanDescription
+            updatedMonthLabel.sizeToFit()
+            updatedMonthLabel.alpha = 0
+            updatedMonthLabel.center = self.monthLabel.center
+            
+            let offset = CGFloat(48)
+            updatedMonthLabel.transform = CGAffineTransform(translationX: 0, y: offset)
+            updatedMonthLabel.transform = CGAffineTransform(scaleX: 1, y: 0.1)
+            
+            UIView.animate(withDuration: 0.35, delay: 0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                self.animationFinished = false
+                self.monthLabel.transform = CGAffineTransform(translationX: 0, y: -offset)
+                self.monthLabel.transform = CGAffineTransform(scaleX: 1, y: 0.1)
+                self.monthLabel.alpha = 0
+                
+                updatedMonthLabel.alpha = 1
+                updatedMonthLabel.transform = CGAffineTransform.identity
+                
+            }) { _ in
+                
+                self.animationFinished = true
+                self.monthLabel.frame = updatedMonthLabel.frame
+                self.monthLabel.text = updatedMonthLabel.text
+                self.monthLabel.transform = CGAffineTransform.identity
+                self.monthLabel.alpha = 1
+                updatedMonthLabel.removeFromSuperview()
+            }
+            
+            self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
+        }
+    }
     
-    func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool{
-        // Look up date in dictionary
-        if( dayArrays != nil){
-            return true // date is in the array so draw a dot
+//    func weekdaySymbolType() -> WeekdaySymbolType {
+//        return .hangeul
+//    }
+    
+    
+//    func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool{
+//        // Look up date in dictionary
+//        if( dayArrays != nil){
+//            return true // date is in the array so draw a dot
+//        }
+//        return false
+//    }
+    
+    func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
+        
+        let day = dayView.date.day //To get the Day from the Calender
+        let month = dayView.date.month
+        
+        //day 인트값!을 넣어주면 ,, 점이 true~~
+//        if day == CVDate(date: NSDate() as Date).day{
+//            return true
+//        }
+//        return false
+//        var dotArray = [NSDate]() {
+//            didSet{
+//                self.calendarView?.contentController.refreshPresentedMonth()
+//            }
+//        }
+        
+        if day == 1 && month == 12{
+            return true
         }
         return false
     }
@@ -106,6 +176,9 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
     
     func dotMarker(colorOnDayView dayView: DayView) -> [UIColor]{
         return [UIColor.blue]
+    }
+    
+    func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont { return UIFont.systemFont(ofSize: 14)
     }
 
     
@@ -115,7 +188,8 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
 
         print("self.tableView.frame.origin.y 는 ? : \(self.tableView.frame.origin.y)")
         
-        if !tableIsVisible { //열리자!
+        if !tableIsVisible { //dissmiss애니매이션
+            
             tableView.isHidden = false
             tableTopC.constant = tableView.bounds.height + 280
             tableBottomC.constant = +0
@@ -124,22 +198,25 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
             
             //애니메이션
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+                self.shadowView.alpha = 0.0
                 self.view.layoutIfNeeded()
             }) { (animationComplete) in
-                print("(1) The animation is complete!")
+                print("The animation is complete!")
             }
-        } else { //닫히자!
+        } else { //show애니매이션!
             
             tableTopC.constant = 280
             tableBottomC.constant = 0
             
             tableIsVisible = false
-            
+            self.shadowView.isHidden = false
             //애니메이션
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+                self.shadowView.alpha = 1.0
                 self.view.layoutIfNeeded()
             }) { (animationComplete) in
-                print("(2) The animation is complete!")
+                print("The animation is complete!")
+                
             }
         }
         
@@ -181,9 +258,6 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
 //        } else {
 //            cell.testLabel.text = "00일"
 //        }
-
-        
-        
         
         return cell
     }
@@ -205,6 +279,11 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         
 //        cell.menuLabel.preferredMaxLayoutWidth = cell.menuLabel.bounds.width
         cell.menuLabel.text = menuBarLabels[indexPath.row]
+//
+//        if isSelectedNum == 0 {
+//            cell.menuLabel.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
+//        }
+        
         cell.menuLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
         
         return cell
@@ -213,6 +292,8 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let cell = collectionView.cellForItem(at: indexPath) as! MainCalendarCVCell
+        cell.menuLabel!.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
         
     }
     

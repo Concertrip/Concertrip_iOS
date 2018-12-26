@@ -67,16 +67,50 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="concertProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="JS0-Ql-EWE">
-                                                    <rect key="frame" x="15" y="8" width="46" height="46"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="concertProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="JS0-Ql-EWE">
+                                                    <rect key="frame" x="15" y="9" width="45.5" height="45.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="JS0-Ql-EWE" secondAttribute="height" multiplier="1:1" id="5hu-PG-TYC"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="concertProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="UVs-zB-uqT">
-                                                    <rect key="frame" x="314" y="8" width="46" height="46"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="concertProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="UVs-zB-uqT">
+                                                    <rect key="frame" x="314.5" y="9" width="45.5" height="45.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="UVs-zB-uqT" secondAttribute="height" multiplier="1:1" id="zaY-Tt-drm"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIe-cU-iaM">
+                                                    <rect key="frame" x="76" y="12" width="225" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#힙합 #ㄹㄹㄹ(미정)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7G-32-Gd8">
+                                                    <rect key="frame" x="76" y="32" width="225" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="UVs-zB-uqT" secondAttribute="trailing" constant="15" id="2cR-TW-f3f"/>
+                                                <constraint firstItem="UVs-zB-uqT" firstAttribute="leading" secondItem="g7G-32-Gd8" secondAttribute="trailing" constant="13.5" id="7Ju-6X-z0S"/>
+                                                <constraint firstItem="g7G-32-Gd8" firstAttribute="top" secondItem="NIe-cU-iaM" secondAttribute="bottom" constant="2" id="DAO-cd-3vJ"/>
+                                                <constraint firstItem="UVs-zB-uqT" firstAttribute="width" secondItem="JS0-Ql-EWE" secondAttribute="width" id="EsL-B3-xWv"/>
+                                                <constraint firstItem="UVs-zB-uqT" firstAttribute="centerY" secondItem="JS0-Ql-EWE" secondAttribute="centerY" id="Pn6-tr-lfJ"/>
+                                                <constraint firstItem="g7G-32-Gd8" firstAttribute="leading" secondItem="NIe-cU-iaM" secondAttribute="leading" id="SC1-sw-lYi"/>
+                                                <constraint firstItem="NIe-cU-iaM" firstAttribute="top" secondItem="JS0-Ql-EWE" secondAttribute="top" constant="3" id="STV-Gq-WrC"/>
+                                                <constraint firstItem="JS0-Ql-EWE" firstAttribute="top" secondItem="gSr-Fc-wNn" secondAttribute="top" constant="9" id="SdI-K9-9gA"/>
+                                                <constraint firstAttribute="bottom" secondItem="g7G-32-Gd8" secondAttribute="bottom" constant="17" id="gKm-rX-NJX"/>
+                                                <constraint firstItem="UVs-zB-uqT" firstAttribute="leading" secondItem="NIe-cU-iaM" secondAttribute="trailing" constant="13.5" id="gp7-zb-xQT"/>
+                                                <constraint firstItem="NIe-cU-iaM" firstAttribute="leading" secondItem="JS0-Ql-EWE" secondAttribute="trailing" constant="15.5" id="haL-sa-9Dp"/>
+                                                <constraint firstItem="JS0-Ql-EWE" firstAttribute="leading" secondItem="gSr-Fc-wNn" secondAttribute="leading" constant="15" id="jHk-An-uSx"/>
+                                                <constraint firstItem="JS0-Ql-EWE" firstAttribute="centerY" secondItem="gSr-Fc-wNn" secondAttribute="centerY" id="xdO-P9-4vW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="JS0-Ql-EWE" secondAttribute="bottom" constant="9.5" id="dpe-mF-ruK"/>
+                                        </constraints>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

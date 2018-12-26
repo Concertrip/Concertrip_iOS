@@ -14,6 +14,8 @@
 		7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */; };
 		7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */; };
 		7C76C31821D3609400D4A1CD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C31721D3609400D4A1CD /* Extension.swift */; };
+		7C76C31C21D3A74C00D4A1CD /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C31B21D3A74C00D4A1CD /* File.swift */; };
+		7C76C31E21D3A75700D4A1CD /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C31D21D3A75700D4A1CD /* File.swift */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
 		7CF1246721D2522E008F731B /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246621D2522E008F731B /* LikeSB.storyboard */; };
@@ -42,6 +44,8 @@
 		7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarTVCell.swift; sourceTree = "<group>"; };
 		7C76C31721D3609400D4A1CD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7C76C31B21D3A74C00D4A1CD /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		7C76C31D21D3A75700D4A1CD /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
 		7CF1246621D2522E008F731B /* LikeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeSB.storyboard; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		7C0238E021CE107E0042E8DC /* Concertrip */ = {
 			isa = PBXGroup;
 			children = (
+				7C76C31F21D3A76400D4A1CD /* Networks */,
+				7C76C31921D3A73300D4A1CD /* Models */,
 				7C76C31621D3608800D4A1CD /* Extensions */,
 				7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */,
 				7C0238E121CE107E0042E8DC /* AppDelegate.swift */,
@@ -175,6 +181,22 @@
 				7C76C31721D3609400D4A1CD /* Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7C76C31921D3A73300D4A1CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7C76C31D21D3A75700D4A1CD /* File.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7C76C31F21D3A76400D4A1CD /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				7C76C31B21D3A74C00D4A1CD /* File.swift */,
+			);
+			path = Networks;
 			sourceTree = "<group>";
 		};
 		7CA27CCB21D1FCDD0041A146 /* Main */ = {
@@ -364,6 +386,8 @@
 				7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */,
 				7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */,
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,
+				7C76C31C21D3A74C00D4A1CD /* File.swift in Sources */,
+				7C76C31E21D3A75700D4A1CD /* File.swift in Sources */,
 				E08FD1D821D3464E002AF9E7 /* ExploreClickedVCCell.swift in Sources */,
 				E08FD1AC21D220B3002AF9E7 /* ExploreTVCell.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,

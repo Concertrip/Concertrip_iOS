@@ -13,6 +13,7 @@
 		7C0238EC21CE107F0042E8DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0238EA21CE107F0042E8DC /* LaunchScreen.storyboard */; };
 		7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */; };
 		7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */; };
+		7C76C31821D3609400D4A1CD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C31721D3609400D4A1CD /* Extension.swift */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
 		7CF1246721D2522E008F731B /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246621D2522E008F731B /* LikeSB.storyboard */; };
@@ -40,6 +41,7 @@
 		7C0238ED21CE107F0042E8DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarTVCell.swift; sourceTree = "<group>"; };
+		7C76C31721D3609400D4A1CD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
 		7CF1246621D2522E008F731B /* LikeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeSB.storyboard; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		7C0238E021CE107E0042E8DC /* Concertrip */ = {
 			isa = PBXGroup;
 			children = (
+				7C76C31621D3608800D4A1CD /* Extensions */,
 				7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */,
 				7C0238E121CE107E0042E8DC /* AppDelegate.swift */,
 				7C0238F921CE16970042E8DC /* EJ */,
@@ -164,6 +167,14 @@
 				E08FD1D721D3464E002AF9E7 /* ExploreClickedVCCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7C76C31621D3608800D4A1CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C76C31721D3609400D4A1CD /* Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7CA27CCB21D1FCDD0041A146 /* Main */ = {
@@ -291,7 +302,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -312,7 +323,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -349,6 +360,7 @@
 				E08FD1A821D21B3A002AF9E7 /* ExploreVC.swift in Sources */,
 				E08FD1D421D345DC002AF9E7 /* ExploreClickedVC.swift in Sources */,
 				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,
+				7C76C31821D3609400D4A1CD /* Extension.swift in Sources */,
 				7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */,
 				7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */,
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,

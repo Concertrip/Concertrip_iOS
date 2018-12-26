@@ -13,6 +13,12 @@ class ExploreVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTxt: UITextField!
+    @IBAction func okBtn(_ sender: Any) {
+        performSegue(withIdentifier: "resultPush", sender: self)
+    }
+    
+    var selectedIdx = Int ()
+    
     
     let menuList = ["모두", "테마", "POP", "JAZZ", "CLASSIC", "R&B", "ELECTRONIC"]
     let nameList = ["자라섬 재즈페스티벌", "SAMM HANSHAW", "PHUM VIPHURIT", "ALESSICA CARA"]
@@ -31,6 +37,14 @@ class ExploreVC: UIViewController {
         //TextField 속성 설정
         searchTxt.attributedPlaceholder = NSAttributedString(string: "아티스트 / 콘서트명",
                                                                attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "resultPush" {
+            let txt = searchTxt.text
+            let dvc = segue.destination as! ExploreClickedVC
+            dvc.resStr = txt
+        }
     }
 }
 
@@ -80,13 +94,20 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
         
         cell.menuLabel.text = menu
         
+        if selectedIdx == indexPath.row{
+            cell.menuLabel.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
+        }
+        else {
+            cell.menuLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        }
+        
         return cell
     }
     
+    //선택 시
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCVCell", for: indexPath) as! ExploreCVCell
+        selectedIdx = indexPath.row
         
-        
-        cell.menuLabel.textColor = UIColor(red: 89, green: 62, blue: 255, alpha: 1.0)
+        self.collectionView.reloadData()
     }
 }

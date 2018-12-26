@@ -25,6 +25,8 @@
 		E08FD1A821D21B3A002AF9E7 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1A721D21B3A002AF9E7 /* ExploreVC.swift */; };
 		E08FD1AA21D2209F002AF9E7 /* ExploreCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1A921D2209F002AF9E7 /* ExploreCVCell.swift */; };
 		E08FD1AC21D220B3002AF9E7 /* ExploreTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1AB21D220B3002AF9E7 /* ExploreTVCell.swift */; };
+		E08FD1D421D345DC002AF9E7 /* ExploreClickedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1D321D345DC002AF9E7 /* ExploreClickedVC.swift */; };
+		E08FD1D821D3464E002AF9E7 /* ExploreClickedVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1D721D3464E002AF9E7 /* ExploreClickedVCCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		E08FD1A721D21B3A002AF9E7 /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
 		E08FD1A921D2209F002AF9E7 /* ExploreCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCVCell.swift; sourceTree = "<group>"; };
 		E08FD1AB21D220B3002AF9E7 /* ExploreTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTVCell.swift; sourceTree = "<group>"; };
+		E08FD1D321D345DC002AF9E7 /* ExploreClickedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExploreClickedVC.swift; path = Concertrip/JW/ViewControllers/ExploreClickedVC.swift; sourceTree = SOURCE_ROOT; };
+		E08FD1D721D3464E002AF9E7 /* ExploreClickedVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreClickedVCCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +129,8 @@
 		7C0238FA21CE16A10042E8DC /* JW */ = {
 			isa = PBXGroup;
 			children = (
-				7C02394421CF3CF60042E8DC /* ViewControllers */,
 				7C02394521CF3D0B0042E8DC /* Views */,
+				7C02394421CF3CF60042E8DC /* ViewControllers */,
 				7C02394321CF3CF00042E8DC /* Storyboards */,
 			);
 			path = JW;
@@ -146,6 +150,7 @@
 			children = (
 				E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */,
 				E08FD1A721D21B3A002AF9E7 /* ExploreVC.swift */,
+				E08FD1D321D345DC002AF9E7 /* ExploreClickedVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */,
 				E08FD1A921D2209F002AF9E7 /* ExploreCVCell.swift */,
 				E08FD1AB21D220B3002AF9E7 /* ExploreTVCell.swift */,
+				E08FD1D721D3464E002AF9E7 /* ExploreClickedVCCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,10 +347,12 @@
 				7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */,
 				E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */,
 				E08FD1A821D21B3A002AF9E7 /* ExploreVC.swift in Sources */,
+				E08FD1D421D345DC002AF9E7 /* ExploreClickedVC.swift in Sources */,
 				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,
 				7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */,
 				7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */,
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,
+				E08FD1D821D3464E002AF9E7 /* ExploreClickedVCCell.swift in Sources */,
 				E08FD1AC21D220B3002AF9E7 /* ExploreTVCell.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,
 				E08FD1AA21D2209F002AF9E7 /* ExploreCVCell.swift in Sources */,

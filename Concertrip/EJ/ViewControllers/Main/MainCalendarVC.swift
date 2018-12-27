@@ -23,7 +23,7 @@ class MainCalendarVC: UIViewController {
     
     var selectedDay:DayView!
     var currentCalendar: Calendar?
-    
+    var selectedIdx = Int ()
 
     var animationFinished = true
     var shouldShowDaysOut = true
@@ -276,15 +276,17 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarCVCell", for: indexPath) as! MainCalendarCVCell
-        
+        let menu = menuBarLabels[indexPath.row]
 //        cell.menuLabel.preferredMaxLayoutWidth = cell.menuLabel.bounds.width
-        cell.menuLabel.text = menuBarLabels[indexPath.row]
-//
-//        if isSelectedNum == 0 {
-//            cell.menuLabel.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
-//        }
         
-        cell.menuLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
+        cell.menuLabel.text = menu
+        
+        if selectedIdx == indexPath.row{
+            cell.menuLabel.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
+        }
+        else {
+            cell.menuLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        }
         
         return cell
     }
@@ -292,9 +294,8 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let cell = collectionView.cellForItem(at: indexPath) as! MainCalendarCVCell
-        cell.menuLabel!.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
-        
+        selectedIdx = indexPath.row
+        self.collectionView.reloadData()
     }
     
     

@@ -20,6 +20,7 @@
 		7C76C32821D4782200D4A1CD /* MypageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C76C32721D4782200D4A1CD /* MypageSB.storyboard */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
+		7CB3670321D4B38F00D92581 /* ColorsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3670221D4B38F00D92581 /* ColorsConfig.swift */; };
 		7CF1246721D2522E008F731B /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246621D2522E008F731B /* LikeSB.storyboard */; };
 		7CF1246921D252BA008F731B /* InformationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246821D252BA008F731B /* InformationSB.storyboard */; };
 		AE2A6D7B7214AA4BA8EDD3EA /* Pods_Concertrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9891D97367D4A40762BF55 /* Pods_Concertrip.framework */; };
@@ -52,6 +53,7 @@
 		7C76C32721D4782200D4A1CD /* MypageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MypageSB.storyboard; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
+		7CB3670221D4B38F00D92581 /* ColorsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConfig.swift; sourceTree = "<group>"; };
 		7CF1246621D2522E008F731B /* LikeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeSB.storyboard; sourceTree = "<group>"; };
 		7CF1246821D252BA008F731B /* InformationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationSB.storyboard; sourceTree = "<group>"; };
 		D125FDF54BCE47167F476328 /* Pods-Concertrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concertrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				7C0238F721CE16750042E8DC /* ViewControllers */,
 				7CF1246521D25213008F731B /* Storyboards */,
+				7CB3670221D4B38F00D92581 /* ColorsConfig.swift */,
 			);
 			path = EJ;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				E08FD1A821D21B3A002AF9E7 /* ExploreVC.swift in Sources */,
 				7C76C32421D4777F00D4A1CD /* InformationConcertVC.swift in Sources */,
 				E08FD1D421D345DC002AF9E7 /* ExploreClickedVC.swift in Sources */,
+				7CB3670321D4B38F00D92581 /* ColorsConfig.swift in Sources */,
 				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,
 				7C76C32221D4776B00D4A1CD /* InformationVC.swift in Sources */,
 				7C76C31821D3609400D4A1CD /* Extension.swift in Sources */,

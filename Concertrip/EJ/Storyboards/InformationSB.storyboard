@@ -42,6 +42,9 @@
                                                     <constraint firstAttribute="width" secondItem="7Bm-cB-bJh" secondAttribute="height" multiplier="1:1" id="qQs-Z4-LCJ"/>
                                                 </constraints>
                                                 <state key="normal" image="leftArrowIcon"/>
+                                                <connections>
+                                                    <action selector="backBtnAction:" destination="zH5-1f-nSb" eventType="touchUpInside" id="38R-SJ-lnQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qR-II-8Ar">
                                                 <rect key="frame" x="313" y="119" width="46" height="46"/>
@@ -49,6 +52,9 @@
                                                     <constraint firstAttribute="width" secondItem="9qR-II-8Ar" secondAttribute="height" multiplier="1:1" id="LDC-xr-hfH"/>
                                                 </constraints>
                                                 <state key="normal" image="artistLikeButton"/>
+                                                <connections>
+                                                    <action selector="likeBtnAction:" destination="zH5-1f-nSb" eventType="touchUpInside" id="DsG-rg-n28"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="th5-Xg-ike">
                                                 <rect key="frame" x="145" y="188" width="52" height="24"/>
@@ -103,41 +109,51 @@
                                                                         <constraint firstAttribute="width" secondItem="7sy-5t-YuE" secondAttribute="height" multiplier="1:1" id="DXB-gh-Nom"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Wj-XR-KAX">
-                                                                    <rect key="frame" x="310.5" y="8" width="47.5" height="47.5"/>
-                                                                </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EF-RC-Z7M">
-                                                                    <rect key="frame" x="72.5" y="31" width="230.5" height="14.5"/>
+                                                                    <rect key="frame" x="72.5" y="31" width="232.5" height="14.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRi-Uf-YtT">
-                                                                    <rect key="frame" x="72.5" y="8" width="230.5" height="18"/>
+                                                                    <rect key="frame" x="73" y="8" width="232" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yT4-WR-BSN">
+                                                                    <rect key="frame" x="312.5" y="8" width="47.5" height="47.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="yT4-WR-BSN" secondAttribute="height" multiplier="1:1" id="xHv-ce-EqN"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="concertLikeButton"/>
+                                                                    <connections>
+                                                                        <action selector="concertLikeBtnAction:" destination="urJ-Mx-d7R" eventType="touchUpInside" id="0aB-Lm-x9d"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="3EF-RC-Z7M" firstAttribute="width" secondItem="xRi-Uf-YtT" secondAttribute="width" id="0Fd-1M-GZM"/>
-                                                                <constraint firstItem="9Wj-XR-KAX" firstAttribute="leading" secondItem="xRi-Uf-YtT" secondAttribute="trailing" constant="7.5" id="6f0-sM-Pno"/>
                                                                 <constraint firstItem="xRi-Uf-YtT" firstAttribute="leading" secondItem="7sy-5t-YuE" secondAttribute="trailing" constant="10" id="HJB-4f-mhl"/>
                                                                 <constraint firstAttribute="bottom" secondItem="3EF-RC-Z7M" secondAttribute="bottom" constant="18" id="Hll-Ef-lu9"/>
-                                                                <constraint firstAttribute="trailing" secondItem="9Wj-XR-KAX" secondAttribute="trailing" constant="17" id="Qad-6T-J6B"/>
+                                                                <constraint firstItem="yT4-WR-BSN" firstAttribute="leading" secondItem="xRi-Uf-YtT" secondAttribute="trailing" constant="7.5" id="PDI-UW-d21"/>
+                                                                <constraint firstItem="yT4-WR-BSN" firstAttribute="width" secondItem="7sy-5t-YuE" secondAttribute="width" id="Q2l-WX-ryh"/>
                                                                 <constraint firstItem="3EF-RC-Z7M" firstAttribute="top" secondItem="xRi-Uf-YtT" secondAttribute="bottom" constant="5" id="WgR-sg-bqc"/>
                                                                 <constraint firstItem="7sy-5t-YuE" firstAttribute="top" secondItem="tKa-5M-lE0" secondAttribute="top" constant="8" id="Wj9-MU-Tux"/>
                                                                 <constraint firstItem="3EF-RC-Z7M" firstAttribute="leading" secondItem="xRi-Uf-YtT" secondAttribute="leading" id="ZFM-BQ-YVy"/>
                                                                 <constraint firstItem="7sy-5t-YuE" firstAttribute="leading" secondItem="tKa-5M-lE0" secondAttribute="leading" constant="15" id="dus-ft-XrV"/>
-                                                                <constraint firstItem="9Wj-XR-KAX" firstAttribute="width" secondItem="9Wj-XR-KAX" secondAttribute="height" multiplier="1:1" id="fR1-YH-dhK"/>
                                                                 <constraint firstAttribute="bottom" secondItem="7sy-5t-YuE" secondAttribute="bottom" constant="8" id="gbm-AK-0gC"/>
                                                                 <constraint firstItem="xRi-Uf-YtT" firstAttribute="top" secondItem="7sy-5t-YuE" secondAttribute="top" id="jv6-tt-lhy"/>
-                                                                <constraint firstItem="9Wj-XR-KAX" firstAttribute="centerY" secondItem="7sy-5t-YuE" secondAttribute="centerY" id="l30-nV-aT6"/>
                                                                 <constraint firstItem="7sy-5t-YuE" firstAttribute="centerY" secondItem="tKa-5M-lE0" secondAttribute="centerY" id="m0Z-IG-r3V"/>
-                                                                <constraint firstItem="9Wj-XR-KAX" firstAttribute="width" secondItem="7sy-5t-YuE" secondAttribute="width" id="mvn-we-RNq"/>
-                                                                <constraint firstItem="9Wj-XR-KAX" firstAttribute="height" secondItem="7sy-5t-YuE" secondAttribute="height" id="rAB-mp-jRw"/>
+                                                                <constraint firstAttribute="trailing" secondItem="yT4-WR-BSN" secondAttribute="trailing" constant="15" id="nGK-wo-y1M"/>
+                                                                <constraint firstItem="yT4-WR-BSN" firstAttribute="centerY" secondItem="7sy-5t-YuE" secondAttribute="centerY" id="pOz-B0-hXn"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="concertHashtagLabel" destination="3EF-RC-Z7M" id="bWf-MW-9wB"/>
+                                                            <outlet property="concertNameLabel" destination="xRi-Uf-YtT" id="ZYb-qC-Dwq"/>
+                                                            <outlet property="concertProfileImg" destination="7sy-5t-YuE" id="AA5-x1-nZt"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -198,6 +214,14 @@
                     <tabBarItem key="tabBarItem" title="Information" id="l5n-BL-C5Q"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="bigProfileImg" destination="vcc-e0-RbP" id="0sy-B8-KkC"/>
+                        <outlet property="likeBtn" destination="9qR-II-8Ar" id="vjs-Px-Kjr"/>
+                        <outlet property="likeCountLabel" destination="nOI-gU-7xG" id="d2a-MG-kTz"/>
+                        <outlet property="nameLabel" destination="th5-Xg-ike" id="Ldy-UD-oz6"/>
+                        <outlet property="tableView" destination="x1W-5n-s1d" id="Vh9-wr-S37"/>
+                        <outlet property="youtubeView" destination="zJ2-RM-TOb" id="KhC-Bp-Wo4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwa-B6-Bfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,6 +232,7 @@
         <image name="artistLikeButton" width="46" height="46"/>
         <image name="artistProfileImageBig" width="110" height="110"/>
         <image name="concertBackgroundImage" width="375" height="180"/>
+        <image name="concertLikeButton" width="46" height="46"/>
         <image name="leftArrowIcon" width="30" height="30"/>
         <image name="likeIcon" width="13" height="13"/>
     </resources>

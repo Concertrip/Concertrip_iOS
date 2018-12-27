@@ -10,6 +10,17 @@ import UIKit
 
 class InformationTVCell: UITableViewCell {
 
+    @IBOutlet weak var concertProfileImg: UIImageView!
+    @IBOutlet weak var concertNameLabel: UILabel!
+    @IBOutlet weak var concertHashtagLabel: UILabel!
+    
+    @IBAction func concertLikeBtnAction(_ sender: Any) {
+        
+        
+    }
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

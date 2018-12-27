@@ -69,6 +69,15 @@ extension UIViewController {
         present(alert, animated: true)
     }
     
+    func simpleOnlyOKAlertwithHandler(title: String, message: String, okHandler : ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인",style: .default, handler: okHandler)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
     //확인, 취소 팝업
     func simpleAlertwithHandler(title: String, message: String, okHandler : ((UIAlertAction) -> Void)?){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

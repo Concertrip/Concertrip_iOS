@@ -288,20 +288,30 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
             cell.menuLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         }
         
+        
+        
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         selectedIdx = indexPath.row
         self.collectionView.reloadData()
     }
-    
-    
-    
-    
-    
-    
 }
 
+
+extension MainCalendarVC: UICollectionViewDelegateFlowLayout
+{
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize  {
+//        let menu = menuBarLabels[indexPath.row]
+////        let width = collectionView.bounds.width
+//
+//
+//        let size = CGSize(width: width, height: 26) // NOTE: Height is fixed
+//
+//
+//        collectionView.layoutIfNeeded()
+//        return size
+//    }
+}

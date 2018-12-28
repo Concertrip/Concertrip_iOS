@@ -8,6 +8,7 @@
 
 import UIKit
 import YouTubePlayer_Swift
+import Toast_Swift
 
 class InformationVC: UIViewController {
     @IBOutlet weak var youtubeView: YouTubePlayerView!
@@ -31,6 +32,7 @@ class InformationVC: UIViewController {
         if isLikeBtnActivated == false {
             simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
                 self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButtonActivated")
+                self.view.makeToast("토스트 메세지입니다.")
                 self.isLikeBtnActivated = true
             }
         } else {

@@ -11,8 +11,6 @@ import CVCalendar
 
 class MainCalendarVC: UIViewController {
 
-    @IBOutlet weak var tableTopC: NSLayoutConstraint!
-    @IBOutlet weak var tableBottomC: NSLayoutConstraint!
     
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
@@ -188,37 +186,33 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
 
         print("self.tableView.frame.origin.y 는 ? : \(self.tableView.frame.origin.y)")
         
-        if !tableIsVisible { //dissmiss애니매이션
-            
-            tableView.isHidden = false
-            tableTopC.constant = tableView.bounds.height + 280
-            tableBottomC.constant = +0
-            
-            tableIsVisible = true
-            
-            //애니메이션
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
-                self.shadowView.alpha = 0.0
-                self.view.layoutIfNeeded()
-            }) { (animationComplete) in
-                print("The animation is complete!")
-            }
-        } else { //show애니매이션!
-            
-            tableTopC.constant = 280
-            tableBottomC.constant = 0
-            
-            tableIsVisible = false
-            self.shadowView.isHidden = false
-            //애니메이션
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
-                self.shadowView.alpha = 1.0
-                self.view.layoutIfNeeded()
-            }) { (animationComplete) in
-                print("The animation is complete!")
-                
-            }
-        }
+//        if !tableIsVisible { //dissmiss애니매이션
+//
+//            tableView.isHidden = false
+//
+//
+//            tableIsVisible = true
+//
+//            //애니메이션
+//            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+//
+//                self.view.layoutIfNeeded()
+//            }) { (animationComplete) in
+//                print("The animation is complete!")
+//            }
+//        } else { //show애니매이션!
+//
+//            tableIsVisible = false
+//
+//            //애니메이션
+//            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+//
+//                self.view.layoutIfNeeded()
+//            }) { (animationComplete) in
+//                print("The animation is complete!")
+//
+//            }
+//        }
         
     }
     
@@ -280,7 +274,7 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
 //        cell.menuLabel.preferredMaxLayoutWidth = cell.menuLabel.bounds.width
         
         cell.menuLabel.text = menu
-        
+        cell.menuLabel.sizeToFit()
         if selectedIdx == indexPath.row{
             cell.menuLabel.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
         }
@@ -303,15 +297,16 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
 
 extension MainCalendarVC: UICollectionViewDelegateFlowLayout
 {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize  {
-//        let menu = menuBarLabels[indexPath.row]
-////        let width = collectionView.bounds.width
-//
-//
-//        let size = CGSize(width: width, height: 26) // NOTE: Height is fixed
-//
-//
-//        collectionView.layoutIfNeeded()
-//        return size
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize  {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarCVCell", for: indexPath) as! MainCalendarCVCell
+        let menu = menuBarLabels[indexPath.row]
+        let width = cell.menuLabel.bounds.width
+
+
+        let size = CGSize(width: width, height: 26) // NOTE: Height is fixed
+
+
+        collectionView.layoutIfNeeded()
+        return size
+    }
 }

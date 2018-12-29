@@ -9,7 +9,11 @@
 import UIKit
 
 class InfSoloThemeTVCell: UITableViewCell {
-
+    @IBOutlet weak var concertProfileImg: UIImageView!
+    @IBOutlet weak var concertHashLabel: UILabel!
+    @IBOutlet weak var concertNameLabel: UILabel!
+    @IBOutlet weak var addBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

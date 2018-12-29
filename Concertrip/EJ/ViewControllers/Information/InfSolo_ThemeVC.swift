@@ -25,6 +25,9 @@ class InfSolo_ThemeVC: UIViewController {
         
         youtubeView.loadVideoID("nM0xDI5R50E")
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
     }
     
     @IBAction func likeBtnAction(_ sender: Any) {
@@ -48,4 +51,23 @@ class InfSolo_ThemeVC: UIViewController {
 //        dismiss(animated: true, completion: nil)
     }
     
+}
+
+
+extension InfSolo_ThemeVC: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InfSoloThemeTVCell") as! InfSoloThemeTVCell
+
+
+        cell.concertHashLabel.text = "아료앟세용"
+
+        return cell
+    }
+
+
 }

@@ -13,7 +13,7 @@
         <!--liked-->
         <scene sceneID="1CL-1l-AHh">
             <objects>
-                <viewController id="9pl-kp-jST" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LikeVC" id="9pl-kp-jST" customClass="LikeVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WQu-9J-hC4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,6 +40,9 @@
                                         <state key="normal" title="아티스트">
                                             <color key="titleColor" red="0.34901960784313724" green="0.24313725490196078" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="artistTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="m9g-ds-Rr4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5v-9L-nuh">
                                         <rect key="frame" x="85" y="0.0" width="35" height="36"/>
@@ -47,6 +50,9 @@
                                         <state key="normal" title="테마">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="themeTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="sJN-K2-V78"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hug-uH-PUw">
                                         <rect key="frame" x="135" y="0.0" width="35" height="36"/>
@@ -54,6 +60,9 @@
                                         <state key="normal" title="공연">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="concertTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="qlH-ls-WmH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -61,7 +70,7 @@
                                 <rect key="frame" x="0.0" y="132" width="375" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="64" id="rJl-Ab-RC9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LikeTVCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LikeTVCell" rowHeight="64" id="rJl-Ab-RC9" customClass="LikeTVCell" customModule="Concertrip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rJl-Ab-RC9" id="gSr-Fc-wNn">
@@ -69,49 +78,47 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="concertProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="JS0-Ql-EWE">
-                                                    <rect key="frame" x="15" y="9" width="45.5" height="45.5"/>
+                                                    <rect key="frame" x="15" y="9.5" width="45" height="45"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="JS0-Ql-EWE" secondAttribute="height" multiplier="1:1" id="5hu-PG-TYC"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="concertProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="UVs-zB-uqT">
-                                                    <rect key="frame" x="314.5" y="9" width="45.5" height="45.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="UVs-zB-uqT" secondAttribute="height" multiplier="1:1" id="zaY-Tt-drm"/>
+                                                        <constraint firstAttribute="width" secondItem="JS0-Ql-EWE" secondAttribute="height" multiplier="1:1" id="73Q-If-OpX"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIe-cU-iaM">
-                                                    <rect key="frame" x="76" y="12" width="225" height="18"/>
+                                                    <rect key="frame" x="71" y="9.5" width="236" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrO-W0-2GZ">
+                                                    <rect key="frame" x="315" y="9.5" width="45" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="UrO-W0-2GZ" secondAttribute="height" multiplier="1:1" id="lcO-NB-Thw"/>
+                                                    </constraints>
+                                                    <state key="normal" image="artistLikeButton"/>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#힙합 #ㄹㄹㄹ(미정)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7G-32-Gd8">
-                                                    <rect key="frame" x="76" y="32" width="225" height="14.5"/>
+                                                    <rect key="frame" x="71" y="30" width="236" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="UVs-zB-uqT" secondAttribute="trailing" constant="15" id="2cR-TW-f3f"/>
-                                                <constraint firstItem="UVs-zB-uqT" firstAttribute="leading" secondItem="g7G-32-Gd8" secondAttribute="trailing" constant="13.5" id="7Ju-6X-z0S"/>
-                                                <constraint firstItem="g7G-32-Gd8" firstAttribute="top" secondItem="NIe-cU-iaM" secondAttribute="bottom" constant="2" id="DAO-cd-3vJ"/>
-                                                <constraint firstItem="UVs-zB-uqT" firstAttribute="width" secondItem="JS0-Ql-EWE" secondAttribute="width" id="EsL-B3-xWv"/>
-                                                <constraint firstItem="UVs-zB-uqT" firstAttribute="centerY" secondItem="JS0-Ql-EWE" secondAttribute="centerY" id="Pn6-tr-lfJ"/>
-                                                <constraint firstItem="g7G-32-Gd8" firstAttribute="leading" secondItem="NIe-cU-iaM" secondAttribute="leading" id="SC1-sw-lYi"/>
-                                                <constraint firstItem="NIe-cU-iaM" firstAttribute="top" secondItem="JS0-Ql-EWE" secondAttribute="top" constant="3" id="STV-Gq-WrC"/>
-                                                <constraint firstItem="JS0-Ql-EWE" firstAttribute="top" secondItem="gSr-Fc-wNn" secondAttribute="top" constant="9" id="SdI-K9-9gA"/>
-                                                <constraint firstAttribute="bottom" secondItem="g7G-32-Gd8" secondAttribute="bottom" constant="17" id="gKm-rX-NJX"/>
-                                                <constraint firstItem="UVs-zB-uqT" firstAttribute="leading" secondItem="NIe-cU-iaM" secondAttribute="trailing" constant="13.5" id="gp7-zb-xQT"/>
-                                                <constraint firstItem="NIe-cU-iaM" firstAttribute="leading" secondItem="JS0-Ql-EWE" secondAttribute="trailing" constant="15.5" id="haL-sa-9Dp"/>
-                                                <constraint firstItem="JS0-Ql-EWE" firstAttribute="leading" secondItem="gSr-Fc-wNn" secondAttribute="leading" constant="15" id="jHk-An-uSx"/>
-                                                <constraint firstItem="JS0-Ql-EWE" firstAttribute="centerY" secondItem="gSr-Fc-wNn" secondAttribute="centerY" id="xdO-P9-4vW"/>
+                                                <constraint firstAttribute="trailing" secondItem="UrO-W0-2GZ" secondAttribute="trailing" constant="15" id="3rB-Yn-jzC"/>
+                                                <constraint firstAttribute="bottom" secondItem="JS0-Ql-EWE" secondAttribute="bottom" constant="9" id="8fw-97-0A8"/>
+                                                <constraint firstItem="UrO-W0-2GZ" firstAttribute="centerY" secondItem="JS0-Ql-EWE" secondAttribute="centerY" id="Dbb-Ha-qrR"/>
+                                                <constraint firstItem="JS0-Ql-EWE" firstAttribute="width" secondItem="gSr-Fc-wNn" secondAttribute="width" multiplier="45:375" id="EAv-MI-Cqn"/>
+                                                <constraint firstItem="UrO-W0-2GZ" firstAttribute="width" secondItem="JS0-Ql-EWE" secondAttribute="width" id="Svz-1B-esl"/>
+                                                <constraint firstItem="JS0-Ql-EWE" firstAttribute="leading" secondItem="gSr-Fc-wNn" secondAttribute="leading" constant="15" id="UpD-Po-8Dq"/>
+                                                <constraint firstItem="JS0-Ql-EWE" firstAttribute="top" secondItem="gSr-Fc-wNn" secondAttribute="top" constant="9.5" id="UyR-Tr-UOE"/>
+                                                <constraint firstItem="g7G-32-Gd8" firstAttribute="leading" secondItem="NIe-cU-iaM" secondAttribute="leading" id="jgT-ca-oVI"/>
+                                                <constraint firstItem="UrO-W0-2GZ" firstAttribute="leading" secondItem="NIe-cU-iaM" secondAttribute="trailing" constant="8" id="scw-M0-PhM"/>
+                                                <constraint firstItem="NIe-cU-iaM" firstAttribute="top" secondItem="JS0-Ql-EWE" secondAttribute="top" id="su8-3b-Pte"/>
+                                                <constraint firstItem="g7G-32-Gd8" firstAttribute="top" secondItem="NIe-cU-iaM" secondAttribute="bottom" constant="2.5" id="tu9-Z8-7H0"/>
+                                                <constraint firstItem="NIe-cU-iaM" firstAttribute="leading" secondItem="JS0-Ql-EWE" secondAttribute="trailing" constant="11" id="uB3-bA-Uex"/>
+                                                <constraint firstItem="UrO-W0-2GZ" firstAttribute="leading" secondItem="g7G-32-Gd8" secondAttribute="trailing" constant="8" id="wn9-u0-wyI"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="JS0-Ql-EWE" secondAttribute="bottom" constant="9.5" id="dpe-mF-ruK"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -131,6 +138,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="liked" id="8ea-wZ-QXh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="K7N-bV-QbL" id="0Z3-Es-EAq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYn-6p-liu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,6 +148,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="artistLikeButton" width="46" height="46"/>
         <image name="concertProfileImage" width="46" height="46"/>
     </resources>
 </document>

@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import YouTubePlayer_Swift
+import Toast_Swift
 
 class InfConcertVC: UIViewController {
+    
+    @IBOutlet weak var youtubeView: YouTubePlayerView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var bigProfileImg: UIImageView!
+    @IBOutlet weak var likeBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

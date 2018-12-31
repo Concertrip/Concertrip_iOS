@@ -213,18 +213,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지사항" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-2T-xV6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="공지사항" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-2T-xV6">
                                                     <rect key="frame" x="16" y="24" width="59" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s5U-Eb-DYJ">
+                                                    <rect key="frame" x="265" y="17" width="95" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Plb-2T-xV6" firstAttribute="top" secondItem="FNs-mL-gax" secondAttribute="topMargin" constant="13" id="cN7-gh-T49"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Plb-2T-xV6" secondAttribute="bottom" constant="14" id="h5J-se-gIO"/>
-                                                <constraint firstItem="Plb-2T-xV6" firstAttribute="leading" secondItem="FNs-mL-gax" secondAttribute="leading" constant="16" id="rmC-8W-5zi"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="settingLabel" destination="Plb-2T-xV6" id="AvK-17-wMa"/>

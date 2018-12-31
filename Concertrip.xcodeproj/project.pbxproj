@@ -26,7 +26,6 @@
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
 		7CB3670321D4B38F00D92581 /* ColorsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3670221D4B38F00D92581 /* ColorsConfig.swift */; };
-		7CB3670521D6883500D92581 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3670421D6883500D92581 /* Toast.swift */; };
 		7CE92C7721D68CBB00F560F8 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE92C7021D68CBA00F560F8 /* ResponseObject.swift */; };
 		7CE92C7821D68CBB00F560F8 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE92C7121D68CBA00F560F8 /* Token.swift */; };
 		7CE92C7921D68CBB00F560F8 /* detailEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE92C7221D68CBB00F560F8 /* detailEvents.swift */; };
@@ -81,7 +80,6 @@
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
 		7CB3670221D4B38F00D92581 /* ColorsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConfig.swift; sourceTree = "<group>"; };
-		7CB3670421D6883500D92581 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		7CE92C7021D68CBA00F560F8 /* ResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
 		7CE92C7121D68CBA00F560F8 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		7CE92C7221D68CBB00F560F8 /* detailEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailEvents.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				7C76C31721D3609400D4A1CD /* Extension.swift */,
-				7CB3670421D6883500D92581 /* Toast.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -432,7 +429,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -455,7 +452,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -504,7 +501,6 @@
 				7CE92C7921D68CBB00F560F8 /* detailEvents.swift in Sources */,
 				7CE92CAA21D7812200F560F8 /* InfGroupVC.swift in Sources */,
 				7CB3670321D4B38F00D92581 /* ColorsConfig.swift in Sources */,
-				7CB3670521D6883500D92581 /* Toast.swift in Sources */,
 				7C3F6F4E21D9ECCA0092102E /* MypageCVCell.swift in Sources */,
 				7C3F6F4C21D9ECBA0092102E /* MypageVC.swift in Sources */,
 				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,

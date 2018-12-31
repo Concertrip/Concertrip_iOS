@@ -19,7 +19,4 @@ class YoutubeTestVC: UIViewController {
         videoPlayer.loadVideoID("nM0xDI5R50E")
         
     }
-    
-
-
 }

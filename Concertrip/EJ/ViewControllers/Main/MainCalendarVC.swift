@@ -317,6 +317,8 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
 //        cell.menuLabel.preferredMaxLayoutWidth = cell.menuLabel.bounds.width
         
         cell.menuLabel.text = menu
+        
+        //이상하게 커지는 코드
         cell.menuLabel.sizeToFit()
         if selectedIdx == indexPath.row{
             cell.menuLabel.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)

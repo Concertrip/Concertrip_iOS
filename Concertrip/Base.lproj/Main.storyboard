@@ -58,7 +58,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="48" height="26"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모두" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaQ-WN-Xh5">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모두" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaQ-WN-Xh5">
                                                             <rect key="frame" x="0.0" y="4" width="28" height="18"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <nil key="textColor"/>
@@ -95,7 +95,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12월" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAP-K2-9lx">
-                                        <rect key="frame" x="30" y="48" width="53.5" height="33"/>
+                                        <rect key="frame" x="16" y="48" width="53.5" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -167,12 +167,12 @@
                                     <constraint firstAttribute="trailing" secondItem="KPN-v3-peB" secondAttribute="trailing" id="AsS-hC-SqB"/>
                                     <constraint firstAttribute="trailing" secondItem="Xct-KG-mMr" secondAttribute="trailing" id="Bzl-Dp-PCN"/>
                                     <constraint firstItem="soC-2K-FQZ" firstAttribute="leading" secondItem="8FT-V4-HcY" secondAttribute="leading" id="G99-xP-EER"/>
+                                    <constraint firstItem="NAP-K2-9lx" firstAttribute="centerX" secondItem="8FT-V4-HcY" secondAttribute="centerX" constant="-145" id="HEP-jT-Skq"/>
                                     <constraint firstItem="Xct-KG-mMr" firstAttribute="leading" secondItem="8FT-V4-HcY" secondAttribute="leading" id="JCW-LR-HZf"/>
                                     <constraint firstItem="HjS-ki-FCj" firstAttribute="trailing" secondItem="78U-EW-FQ0" secondAttribute="trailing" id="Kx4-b8-MnF"/>
                                     <constraint firstAttribute="trailing" secondItem="78U-EW-FQ0" secondAttribute="trailing" id="RSd-ZG-4WX"/>
                                     <constraint firstItem="HjS-ki-FCj" firstAttribute="top" secondItem="78U-EW-FQ0" secondAttribute="top" id="SdY-kU-Q45"/>
                                     <constraint firstItem="HjS-ki-FCj" firstAttribute="height" secondItem="78U-EW-FQ0" secondAttribute="height" id="U83-Yp-p4s"/>
-                                    <constraint firstItem="NAP-K2-9lx" firstAttribute="leading" secondItem="8FT-V4-HcY" secondAttribute="leading" constant="30" id="UEs-hM-dsZ"/>
                                     <constraint firstItem="2GD-3l-Uwj" firstAttribute="width" secondItem="8FT-V4-HcY" secondAttribute="width" multiplier="40:375" id="Uqd-f8-D6l"/>
                                     <constraint firstAttribute="trailing" secondItem="Rng-6c-1eu" secondAttribute="trailing" id="WXp-5Q-BSn"/>
                                     <constraint firstItem="KPN-v3-peB" firstAttribute="leading" secondItem="8FT-V4-HcY" secondAttribute="leading" id="XqK-av-q6u"/>
@@ -309,13 +309,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meu-ip-BFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="290.10494752623691"/>
-        </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="Bxd-ci-fy7">
-            <objects>
-                <viewControllerPlaceholder id="GcR-M5-Ngl" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ydl-r5-BIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

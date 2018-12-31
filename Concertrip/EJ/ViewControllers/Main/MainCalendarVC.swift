@@ -90,7 +90,7 @@ class MainCalendarVC: UIViewController {
 
 extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
     
-    
+    func shouldShowWeekdaysOut() -> Bool { return shouldShowDaysOut }
     //토요일 일요일 빨간색처리.
     func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {
 //        return weekday == .sunday || weekday == .saturday ?

@@ -12,9 +12,17 @@ class ExploreVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchTxt: UITextField!
-    @IBAction func okBtn(_ sender: Any) {
-        performSegue(withIdentifier: "resultPush", sender: self)
+    @IBAction func searchBtn(_ sender: Any) {
+        //performSegue(withIdentifier: "searchPush", sender: self)
+        /*
+         //present
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ExploreClickedVC") as! ExploreClickedVC
+        self.(nextVC, animated: true)
+        */
+        //push
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ExploreClickedVC") as! ExploreClickedVC
+        navigationController?.pushViewController(vc,
+                                                 animated: true)
     }
     
     var selectedIdx = Int ()
@@ -33,12 +41,13 @@ class ExploreVC: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self 
-        
+        /*
         //TextField 속성 설정
         searchTxt.attributedPlaceholder = NSAttributedString(string: "아티스트 / 콘서트명",
                                                                attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+ */
     }
-    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultPush" {
             let txt = searchTxt.text
@@ -46,6 +55,7 @@ class ExploreVC: UIViewController {
             dvc.resStr = txt
         }
     }
+ */
 }
 
 extension ExploreVC : UITableViewDataSource, UITableViewDelegate {

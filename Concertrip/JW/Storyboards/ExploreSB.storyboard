@@ -18,17 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="searchBar" translatesAutoresizingMaskIntoConstraints="NO" id="Mi8-8o-Gu6">
-                                <rect key="frame" x="16" y="36" width="343" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아티스트 / 콘서트명" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qvV-qG-qo1">
-                                <rect key="frame" x="36" y="36" width="286" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Awy-oN-Wap">
                                 <rect key="frame" x="0.0" y="124" width="375" height="543"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -92,14 +81,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR7-Ay-SZO">
-                                <rect key="frame" x="330" y="41" width="19" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="searchIcon"/>
-                                <connections>
-                                    <action selector="okBtn:" destination="WfI-X3-A4a" eventType="touchUpInside" id="f9S-Cy-jDf"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LBX-lD-LTs">
                                 <rect key="frame" x="16" y="79" width="359" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -138,17 +119,26 @@
                                 <rect key="frame" x="302" y="79" width="75" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhr-r7-jy5">
+                                <rect key="frame" x="17" y="36" width="343" height="35"/>
+                                <state key="normal" image="searchbarAll"/>
+                                <connections>
+                                    <action selector="searchBtn:" destination="WfI-X3-A4a" eventType="touchUpInside" id="Oob-xw-ot3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xhr-r7-jy5" firstAttribute="leading" secondItem="XCv-tr-kQv" secondAttribute="leading" constant="17" id="Kw4-2K-9Dk"/>
+                            <constraint firstItem="Xhr-r7-jy5" firstAttribute="top" secondItem="XCv-tr-kQv" secondAttribute="top" constant="16" id="W4K-PO-TeT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XCv-tr-kQv"/>
                     </view>
                     <navigationItem key="navigationItem" id="ipC-Hl-sYr"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="LBX-lD-LTs" id="ehW-Rd-kFr"/>
-                        <outlet property="searchTxt" destination="qvV-qG-qo1" id="vIB-vp-Lc9"/>
                         <outlet property="tableView" destination="Awy-oN-Wap" id="Nnp-oO-jKW"/>
-                        <segue destination="bUP-dW-hll" kind="push" identifier="resultPush" id="YNk-WP-a7z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kml-HE-JA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,7 +153,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEj-ju-Hzt">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEj-ju-Hzt">
                                 <rect key="frame" x="0.0" y="93" width="375" height="574"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -259,9 +249,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PU3-Hh-7Jm">
-                                <rect key="frame" x="330" y="41" width="19" height="22"/>
+                                <rect key="frame" x="333" y="41" width="14" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="searchIcon"/>
+                                <state key="normal" image="search"/>
                                 <connections>
                                     <action selector="okBtn:" destination="bUP-dW-hll" eventType="touchUpInside" id="RQ9-Ng-4US"/>
                                 </connections>
@@ -272,6 +262,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Tn0-u2-A4F"/>
                     <connections>
+                        <outlet property="noResultBtn" destination="1o2-Mf-hr8" id="2A3-tl-SsZ"/>
+                        <outlet property="noResultLabel" destination="GmM-Mp-nU7" id="Mko-jX-sGD"/>
+                        <outlet property="noResultView" destination="hEj-ju-Hzt" id="QO2-SZ-fd5"/>
+                        <outlet property="searchResultTableView" destination="ACq-MN-beX" id="vAz-0L-NqV"/>
                         <outlet property="searchTableView" destination="ACq-MN-beX" id="pDg-uz-UjT"/>
                         <outlet property="searchTxt" destination="Y2c-97-zKa" id="4zm-rc-RA2"/>
                     </connections>
@@ -301,7 +295,6 @@
         <!--View Controller-->
         <scene sceneID="9Rf-0K-jnU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XeM-BL-HGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="fw7-yx-J2X" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gUx-52-SoE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -344,6 +337,7 @@
                         <viewLayoutGuide key="safeArea" id="tkj-Vn-TSf"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XeM-BL-HGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3628" y="113.79310344827587"/>
         </scene>
@@ -352,7 +346,9 @@
         <image name="artistLikeButton" width="46" height="46"/>
         <image name="artistProfileImage" width="46" height="46"/>
         <image name="gradationWhite" width="75" height="26"/>
+        <image name="search" width="14" height="14"/>
         <image name="searchBar" width="343" height="35"/>
         <image name="searchIcon" width="19" height="21"/>
+        <image name="searchbarAll" width="343" height="35"/>
     </resources>
 </document>

@@ -12,8 +12,16 @@ class ExploreClickedVC: UIViewController {
 
     @IBOutlet weak var searchTxt: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
+    
+    @IBOutlet weak var noResultView: UIView!
+    @IBOutlet weak var noResultBtn: UIButton!
+    @IBOutlet weak var noResultLabel: UILabel!
+    
+    @IBOutlet weak var searchResultTableView: UITableView!
+    
     @IBAction func okBtn(_ sender: Any) {
-        
+        noResultView.isHidden = false
+        noResultLabel.text = "\(searchTxt.text!)에 대한 결과가 없습니다"
     }
     
     var resStr: String?
@@ -31,8 +39,15 @@ class ExploreClickedVC: UIViewController {
 
         searchTableView.delegate = self
         searchTableView.dataSource = self
+        //자동으로 키보드 올라오기
+        showKeyboard()
         
-        searchTxt.text = resStr
+        //placeholder 색
+        searchTxt.attributedPlaceholder = NSAttributedString(string: "아티스트 / 콘서트 명",
+                                                               attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+    func showKeyboard() {
+        searchTxt.becomeFirstResponder()
     }
 }
 

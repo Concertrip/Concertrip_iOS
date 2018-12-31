@@ -13,6 +13,12 @@
 		7C0238EC21CE107F0042E8DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0238EA21CE107F0042E8DC /* LaunchScreen.storyboard */; };
 		7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */; };
 		7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */; };
+		7C3F6F4C21D9ECBA0092102E /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F4B21D9ECBA0092102E /* MypageVC.swift */; };
+		7C3F6F4E21D9ECCA0092102E /* MypageCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F4D21D9ECCA0092102E /* MypageCVCell.swift */; };
+		7C3F6F5021D9F3080092102E /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F4F21D9F3080092102E /* SettingVC.swift */; };
+		7C3F6F5221D9F3760092102E /* SettingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5121D9F3760092102E /* SettingTVCell.swift */; };
+		7C3F6F5421D9F8440092102E /* TicketTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5321D9F8440092102E /* TicketTVCell.swift */; };
+		7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5521D9F85E0092102E /* TicketVC.swift */; };
 		7C76C31821D3609400D4A1CD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C31721D3609400D4A1CD /* Extension.swift */; };
 		7C76C32221D4776B00D4A1CD /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C32121D4776B00D4A1CD /* InformationVC.swift */; };
 		7C76C32421D4777F00D4A1CD /* InformationConcertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C32321D4777F00D4A1CD /* InformationConcertVC.swift */; };
@@ -62,6 +68,12 @@
 		7C0238ED21CE107F0042E8DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarTVCell.swift; sourceTree = "<group>"; };
+		7C3F6F4B21D9ECBA0092102E /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
+		7C3F6F4D21D9ECCA0092102E /* MypageCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageCVCell.swift; sourceTree = "<group>"; };
+		7C3F6F4F21D9F3080092102E /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		7C3F6F5121D9F3760092102E /* SettingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTVCell.swift; sourceTree = "<group>"; };
+		7C3F6F5321D9F8440092102E /* TicketTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTVCell.swift; sourceTree = "<group>"; };
+		7C3F6F5521D9F85E0092102E /* TicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVC.swift; sourceTree = "<group>"; };
 		7C76C31721D3609400D4A1CD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7C76C32121D4776B00D4A1CD /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
 		7C76C32321D4777F00D4A1CD /* InformationConcertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationConcertVC.swift; sourceTree = "<group>"; };
@@ -159,6 +171,7 @@
 		7C0238F721CE16750042E8DC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7C3F6F4921D9EC9E0092102E /* Mypage */,
 				7CE92CB321D797C000F560F8 /* Like */,
 				7C76C32021D4772200D4A1CD /* Information */,
 				7CA27CCB21D1FCDD0041A146 /* Main */,
@@ -214,6 +227,27 @@
 				E08FD1D721D3464E002AF9E7 /* ExploreClickedVCCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7C3F6F4921D9EC9E0092102E /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				7C3F6F4A21D9ECA40092102E /* Cell */,
+				7C3F6F4B21D9ECBA0092102E /* MypageVC.swift */,
+				7C3F6F4F21D9F3080092102E /* SettingVC.swift */,
+				7C3F6F5521D9F85E0092102E /* TicketVC.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		7C3F6F4A21D9ECA40092102E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7C3F6F4D21D9ECCA0092102E /* MypageCVCell.swift */,
+				7C3F6F5121D9F3760092102E /* SettingTVCell.swift */,
+				7C3F6F5321D9F8440092102E /* TicketTVCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		7C76C31621D3608800D4A1CD /* Extensions */ = {
@@ -454,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */,
+				7C3F6F5021D9F3080092102E /* SettingVC.swift in Sources */,
 				7CE92C8321D68CD600F560F8 /* Requestable.swift in Sources */,
 				7CE92C7721D68CBB00F560F8 /* ResponseObject.swift in Sources */,
 				7CE92C7C21D68CBB00F560F8 /* Artists.swift in Sources */,
@@ -470,12 +505,16 @@
 				7CE92CAA21D7812200F560F8 /* InfGroupVC.swift in Sources */,
 				7CB3670321D4B38F00D92581 /* ColorsConfig.swift in Sources */,
 				7CB3670521D6883500D92581 /* Toast.swift in Sources */,
+				7C3F6F4E21D9ECCA0092102E /* MypageCVCell.swift in Sources */,
+				7C3F6F4C21D9ECBA0092102E /* MypageVC.swift in Sources */,
 				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,
 				7C76C32221D4776B00D4A1CD /* InformationVC.swift in Sources */,
 				7CE92C7821D68CBB00F560F8 /* Token.swift in Sources */,
+				7C3F6F5421D9F8440092102E /* TicketTVCell.swift in Sources */,
 				7CE92CAE21D7814700F560F8 /* InfConcertVC.swift in Sources */,
 				7CE92C7B21D68CBB00F560F8 /* ResponseArray.swift in Sources */,
 				7CE92CB221D78F2D00F560F8 /* InfSoloThemeTVCell.swift in Sources */,
+				7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */,
 				7C76C31821D3609400D4A1CD /* Extension.swift in Sources */,
 				7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */,
 				7CE92C8121D68CD600F560F8 /* NetworkResult.swift in Sources */,
@@ -484,6 +523,7 @@
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,
 				E08FD1D821D3464E002AF9E7 /* ExploreClickedVCCell.swift in Sources */,
 				E08FD1AC21D220B3002AF9E7 /* ExploreTVCell.swift in Sources */,
+				7C3F6F5221D9F3760092102E /* SettingTVCell.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,
 				E08FD1AA21D2209F002AF9E7 /* ExploreCVCell.swift in Sources */,
 			);

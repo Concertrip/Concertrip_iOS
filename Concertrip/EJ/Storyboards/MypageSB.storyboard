@@ -213,18 +213,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="공지사항" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-2T-xV6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지사항" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-2T-xV6">
                                                     <rect key="frame" x="16" y="24" width="59" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s5U-Eb-DYJ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosureIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="s5U-Eb-DYJ">
                                                     <rect key="frame" x="265" y="17" width="95" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="s5U-Eb-DYJ" secondAttribute="height" multiplier="19:7" id="evY-aX-Vpi"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s5U-Eb-DYJ" firstAttribute="top" secondItem="FNs-mL-gax" secondAttribute="top" constant="17" id="1pa-MN-Ho0"/>
+                                                <constraint firstAttribute="bottom" secondItem="s5U-Eb-DYJ" secondAttribute="bottom" constant="17.5" id="ODq-Wb-yZi"/>
+                                                <constraint firstAttribute="trailing" secondItem="s5U-Eb-DYJ" secondAttribute="trailing" constant="15" id="W8m-gZ-Tvj"/>
+                                                <constraint firstItem="Plb-2T-xV6" firstAttribute="top" secondItem="FNs-mL-gax" secondAttribute="top" constant="24" id="hay-lb-zH4"/>
+                                                <constraint firstItem="Plb-2T-xV6" firstAttribute="leading" secondItem="FNs-mL-gax" secondAttribute="leading" constant="16" id="lXQ-NZ-GxB"/>
+                                                <constraint firstAttribute="bottom" secondItem="Plb-2T-xV6" secondAttribute="bottom" constant="24.5" id="rMv-dU-ooV"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="settingLabel" destination="Plb-2T-xV6" id="AvK-17-wMa"/>
@@ -371,6 +380,7 @@
     </scenes>
     <resources>
         <image name="artistLikeButton" width="46" height="46"/>
+        <image name="disclosureIndicator" width="124" height="44"/>
         <image name="leftArrowIcon" width="30" height="30"/>
         <image name="settingIcon" width="38" height="38"/>
         <image name="ticket" width="343" height="150"/>

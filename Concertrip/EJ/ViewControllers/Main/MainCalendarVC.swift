@@ -306,6 +306,8 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
 
 extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menuBarLabels.count
     }
@@ -318,8 +320,10 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         
         cell.menuLabel.text = menu
         
-        //이상하게 커지는 코드
-        cell.menuLabel.sizeToFit()
+        //셀 width가 이상하게 커지는 코드
+//        cell.menuLabel.sizeToFit()
+    
+        
         if selectedIdx == indexPath.row{
             cell.menuLabel.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
         }
@@ -340,18 +344,11 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
 }
 
 
-//extension MainCalendarVC: UICollectionViewDelegateFlowLayout
-//{
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize  {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarCVCell", for: indexPath) as! MainCalendarCVCell
-//        let menu = menuBarLabels[indexPath.row]
-//        let width = cell.menuLabel.bounds.width
-//
-//
-//        let size = CGSize(width: width, height: 26) // NOTE: Height is fixed
-//
-//
-//        collectionView.layoutIfNeeded()
-//        return size
-//    }
-//}
+extension MainCalendarVC: UICollectionViewDelegateFlowLayout{
+    func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                         sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let menu = menuBarLabels[indexPath.row]
+        let width  = Int(menu.widthWithConstrainedHeight(height: 26, font: UIFont.systemFont(ofSize: 15)))
+        return CGSize(width: width+25, height: 26)
+    }
+}

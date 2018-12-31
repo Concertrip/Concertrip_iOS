@@ -120,4 +120,15 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
         
         self.collectionView.reloadData()
     }
+    
+    
+}
+
+extension ExploreVC : UICollectionViewDelegateFlowLayout {
+    func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                         sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let menu = menuList[indexPath.row]
+        let width  = Int(menu.widthWithConstrainedHeight(height: 26, font: UIFont.systemFont(ofSize: 15)))
+        return CGSize(width: width+25, height: 26)
+    }
 }

@@ -21,7 +21,7 @@ class ExploreClickedVC: UIViewController {
     
     @IBAction func okBtn(_ sender: Any) {
         noResultView.isHidden = false
-        noResultLabel.text = "\(searchTxt.text!)에 대한 결과가 없습니다"
+        noResultLabel.text = "'\(searchTxt.text!)'에 대한 결과가 없습니다"
     }
     
     var resStr: String?
@@ -45,9 +45,19 @@ class ExploreClickedVC: UIViewController {
         //placeholder 색
         searchTxt.attributedPlaceholder = NSAttributedString(string: "아티스트 / 콘서트 명",
                                                                attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        //table 스크롤 시 키보드 Dismiss
+        searchTableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag;
+        //table 클릭 시 키보드 Dismiss
+        searchTableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.interactive;
     }
     func showKeyboard() {
         searchTxt.becomeFirstResponder()
+    }
+    func hideKeyboard() {
+        searchTxt.resignFirstResponder()
+    }
+    func dismissKeyboard() {
+
     }
 }
 

@@ -17,7 +17,6 @@ class MainCalendarVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet weak var shadowView: UIImageView!
     
     var selectedDay:DayView!
     var currentCalendar: Calendar?
@@ -90,6 +89,19 @@ class MainCalendarVC: UIViewController {
 //MARK: Calendar Extension
 
 extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
+    
+    
+    //토요일 일요일 빨간색처리.
+    func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {
+//        return weekday == .sunday || weekday == .saturday ?
+        return weekday == .sunday ?
+            UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0) : UIColor.black
+    }
+    
+    func weekdaySymbolType() -> WeekdaySymbolType {
+        return .short
+    }
+    
     func presentationMode() -> CalendarMode {
         return .monthView
     }
@@ -149,31 +161,62 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
 //        return false
 //    }
     
-    func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
-        
-        let day = dayView.date.day //To get the Day from the Calender
-        let month = dayView.date.month
-        
-        //day 인트값!을 넣어주면 ,, 점이 true~~
-//        if day == CVDate(date: NSDate() as Date).day{
+//    func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
+//
+//        let day = dayView.date.day //To get the Day from the Calender
+//        let month = dayView.date.month
+//
+//        //day 인트값!을 넣어주면 ,, 점이 true~~
+////        if day == CVDate(date: NSDate() as Date).day{
+////            return true
+////        }
+////        return false
+////        var dotArray = [NSDate]() {
+////            didSet{
+////                self.calendarView?.contentController.refreshPresentedMonth()
+////            }
+////        }
+//
+//        if day == 1 && month == 12{
 //            return true
 //        }
 //        return false
-//        var dotArray = [NSDate]() {
-//            didSet{
-//                self.calendarView?.contentController.refreshPresentedMonth()
-//            }
-//        }
+//    }
+    
+    func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool {
         
-        if day == 1 && month == 12{
-            return true
+        if !dayView.isHidden && dayView.date != nil {
+            
+            let year = dayView.date.year
+            let month = dayView.date.month
+            let day = dayView.date.day
+            
+            if year == 2018 && month == 12 && day >= 1 && day <= 3 {
+                return true
+            }
         }
+        
         return false
     }
     
     
     func dotMarker(colorOnDayView dayView: DayView) -> [UIColor]{
-        return [UIColor.blue]
+        switch dayView.date.day {
+        case 1:
+            return [UIColor.orange]
+        case 2:
+            return [UIColor.orange, UIColor.green]
+        default:
+            return [UIColor.orange, UIColor.green, UIColor.blue]
+        }
+    }
+    
+    func dotMarker(moveOffsetOnDayView dayView: DayView) -> CGFloat {
+        return 17
+    }
+    
+    func dotMarker(sizeOnDayView dayView: DayView) -> CGFloat {
+        return 5
     }
     
     func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont { return UIFont.systemFont(ofSize: 14)
@@ -295,18 +338,18 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
 }
 
 
-extension MainCalendarVC: UICollectionViewDelegateFlowLayout
-{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize  {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarCVCell", for: indexPath) as! MainCalendarCVCell
-        let menu = menuBarLabels[indexPath.row]
-        let width = cell.menuLabel.bounds.width
-
-
-        let size = CGSize(width: width, height: 26) // NOTE: Height is fixed
-
-
-        collectionView.layoutIfNeeded()
-        return size
-    }
-}
+//extension MainCalendarVC: UICollectionViewDelegateFlowLayout
+//{
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize  {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarCVCell", for: indexPath) as! MainCalendarCVCell
+//        let menu = menuBarLabels[indexPath.row]
+//        let width = cell.menuLabel.bounds.width
+//
+//
+//        let size = CGSize(width: width, height: 26) // NOTE: Height is fixed
+//
+//
+//        collectionView.layoutIfNeeded()
+//        return size
+//    }
+//}

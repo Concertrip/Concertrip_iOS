@@ -23,7 +23,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rng-6c-1eu" customClass="CVCalendarView" customModule="CVCalendar">
                                         <rect key="frame" x="0.0" y="192" width="375" height="250"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="OGb-bT-auv"/>
                                         </constraints>
@@ -95,7 +95,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12월" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAP-K2-9lx">
-                                        <rect key="frame" x="16" y="48" width="53.5" height="33"/>
+                                        <rect key="frame" x="30" y="48" width="53.5" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -172,7 +172,7 @@
                                     <constraint firstAttribute="trailing" secondItem="78U-EW-FQ0" secondAttribute="trailing" id="RSd-ZG-4WX"/>
                                     <constraint firstItem="HjS-ki-FCj" firstAttribute="top" secondItem="78U-EW-FQ0" secondAttribute="top" id="SdY-kU-Q45"/>
                                     <constraint firstItem="HjS-ki-FCj" firstAttribute="height" secondItem="78U-EW-FQ0" secondAttribute="height" id="U83-Yp-p4s"/>
-                                    <constraint firstItem="NAP-K2-9lx" firstAttribute="leading" secondItem="8FT-V4-HcY" secondAttribute="leading" constant="16" id="UEs-hM-dsZ"/>
+                                    <constraint firstItem="NAP-K2-9lx" firstAttribute="leading" secondItem="8FT-V4-HcY" secondAttribute="leading" constant="30" id="UEs-hM-dsZ"/>
                                     <constraint firstItem="2GD-3l-Uwj" firstAttribute="width" secondItem="8FT-V4-HcY" secondAttribute="width" multiplier="40:375" id="Uqd-f8-D6l"/>
                                     <constraint firstAttribute="trailing" secondItem="Rng-6c-1eu" secondAttribute="trailing" id="WXp-5Q-BSn"/>
                                     <constraint firstItem="KPN-v3-peB" firstAttribute="leading" secondItem="8FT-V4-HcY" secondAttribute="leading" id="XqK-av-q6u"/>
@@ -249,16 +249,6 @@
             </objects>
             <point key="canvasLocation" x="1690" y="533"/>
         </scene>
-        <!--InformationSB-->
-        <scene sceneID="rAl-e8-0Sb">
-            <objects>
-                <viewControllerPlaceholder storyboardName="InformationSB" id="9oA-P2-zhb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xSx-Os-abs"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CAz-IA-gUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1868" y="748"/>
-        </scene>
         <!--NotificationSB-->
         <scene sceneID="Al3-99-Vrn">
             <objects>
@@ -314,7 +304,6 @@
                         <segue destination="06r-Bn-1Mn" kind="relationship" relationship="viewControllers" id="a98-Ae-Cvj"/>
                         <segue destination="gRa-a2-Bhs" kind="relationship" relationship="viewControllers" id="JQs-my-wkR"/>
                         <segue destination="rxg-oV-MLb" kind="relationship" relationship="viewControllers" id="q5c-hd-HKv"/>
-                        <segue destination="9oA-P2-zhb" kind="relationship" relationship="viewControllers" id="f2X-C2-e7z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meu-ip-BFI" userLabel="First Responder" sceneMemberID="firstResponder"/>

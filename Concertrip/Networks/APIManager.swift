@@ -10,6 +10,6 @@ protocol APIManager {}
 
 extension APIManager {
     static func url(_ path: String) -> String {
-        return "baseURL" + path
+        return "http://54.180.174.156:8080" + path
     }
 }

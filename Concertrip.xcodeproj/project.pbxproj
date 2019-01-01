@@ -20,8 +20,6 @@
 		7C3F6F5421D9F8440092102E /* TicketTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5321D9F8440092102E /* TicketTVCell.swift */; };
 		7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5521D9F85E0092102E /* TicketVC.swift */; };
 		7C76C31821D3609400D4A1CD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C31721D3609400D4A1CD /* Extension.swift */; };
-		7C76C32221D4776B00D4A1CD /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C32121D4776B00D4A1CD /* InformationVC.swift */; };
-		7C76C32421D4777F00D4A1CD /* InformationConcertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C32321D4777F00D4A1CD /* InformationConcertVC.swift */; };
 		7C76C32821D4782200D4A1CD /* MypageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C76C32721D4782200D4A1CD /* MypageSB.storyboard */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
@@ -44,6 +42,11 @@
 		7CE92CBA21D7981E00F560F8 /* LikeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE92CB921D7981E00F560F8 /* LikeVC.swift */; };
 		7CF1246721D2522E008F731B /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246621D2522E008F731B /* LikeSB.storyboard */; };
 		7CF1246921D252BA008F731B /* InformationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246821D252BA008F731B /* InformationSB.storyboard */; };
+		7CFB858521DB47F9001473B7 /* InfGroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858421DB47F9001473B7 /* InfGroupCVCell.swift */; };
+		7CFB858721DB4823001473B7 /* InfGroupTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858621DB4823001473B7 /* InfGroupTVCell.swift */; };
+		7CFB858921DB49B8001473B7 /* InfTicketPriceTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858821DB49B8001473B7 /* InfTicketPriceTVCell.swift */; };
+		7CFB858B21DB49DD001473B7 /* InfPerformerCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858A21DB49DD001473B7 /* InfPerformerCVCell.swift */; };
+		7CFB858D21DB49F9001473B7 /* InfCautionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858C21DB49F9001473B7 /* InfCautionCVCell.swift */; };
 		AE2A6D7B7214AA4BA8EDD3EA /* Pods_Concertrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9891D97367D4A40762BF55 /* Pods_Concertrip.framework */; };
 		E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */; };
 		E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */; };
@@ -74,8 +77,6 @@
 		7C3F6F5321D9F8440092102E /* TicketTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTVCell.swift; sourceTree = "<group>"; };
 		7C3F6F5521D9F85E0092102E /* TicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVC.swift; sourceTree = "<group>"; };
 		7C76C31721D3609400D4A1CD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		7C76C32121D4776B00D4A1CD /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
-		7C76C32321D4777F00D4A1CD /* InformationConcertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationConcertVC.swift; sourceTree = "<group>"; };
 		7C76C32721D4782200D4A1CD /* MypageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MypageSB.storyboard; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
@@ -98,6 +99,11 @@
 		7CE92CB921D7981E00F560F8 /* LikeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeVC.swift; sourceTree = "<group>"; };
 		7CF1246621D2522E008F731B /* LikeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeSB.storyboard; sourceTree = "<group>"; };
 		7CF1246821D252BA008F731B /* InformationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationSB.storyboard; sourceTree = "<group>"; };
+		7CFB858421DB47F9001473B7 /* InfGroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfGroupCVCell.swift; sourceTree = "<group>"; };
+		7CFB858621DB4823001473B7 /* InfGroupTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfGroupTVCell.swift; sourceTree = "<group>"; };
+		7CFB858821DB49B8001473B7 /* InfTicketPriceTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfTicketPriceTVCell.swift; sourceTree = "<group>"; };
+		7CFB858A21DB49DD001473B7 /* InfPerformerCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfPerformerCVCell.swift; sourceTree = "<group>"; };
+		7CFB858C21DB49F9001473B7 /* InfCautionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfCautionCVCell.swift; sourceTree = "<group>"; };
 		D125FDF54BCE47167F476328 /* Pods-Concertrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concertrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip.debug.xcconfig"; sourceTree = "<group>"; };
 		E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationSB.storyboard; sourceTree = "<group>"; };
 		E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVCCell.swift; sourceTree = "<group>"; };
@@ -284,8 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				7CE92CAF21D78EF500F560F8 /* Cell */,
-				7C76C32121D4776B00D4A1CD /* InformationVC.swift */,
-				7C76C32321D4777F00D4A1CD /* InformationConcertVC.swift */,
 				7CE92CA721D7810900F560F8 /* InfSolo_ThemeVC.swift */,
 				7CE92CA921D7812200F560F8 /* InfGroupVC.swift */,
 				7CE92CAD21D7814700F560F8 /* InfConcertVC.swift */,
@@ -307,6 +311,11 @@
 			isa = PBXGroup;
 			children = (
 				7CE92CB121D78F2D00F560F8 /* InfSoloThemeTVCell.swift */,
+				7CFB858421DB47F9001473B7 /* InfGroupCVCell.swift */,
+				7CFB858621DB4823001473B7 /* InfGroupTVCell.swift */,
+				7CFB858821DB49B8001473B7 /* InfTicketPriceTVCell.swift */,
+				7CFB858A21DB49DD001473B7 /* InfPerformerCVCell.swift */,
+				7CFB858C21DB49F9001473B7 /* InfCautionCVCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -495,7 +504,6 @@
 				E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */,
 				7CE92C7D21D68CBB00F560F8 /* Events.swift in Sources */,
 				E08FD1A821D21B3A002AF9E7 /* ExploreVC.swift in Sources */,
-				7C76C32421D4777F00D4A1CD /* InformationConcertVC.swift in Sources */,
 				E08FD1D421D345DC002AF9E7 /* ExploreClickedVC.swift in Sources */,
 				7CE92C7A21D68CBB00F560F8 /* detailArtists.swift in Sources */,
 				7CE92C7921D68CBB00F560F8 /* detailEvents.swift in Sources */,
@@ -504,7 +512,6 @@
 				7C3F6F4E21D9ECCA0092102E /* MypageCVCell.swift in Sources */,
 				7C3F6F4C21D9ECBA0092102E /* MypageVC.swift in Sources */,
 				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,
-				7C76C32221D4776B00D4A1CD /* InformationVC.swift in Sources */,
 				7CE92C7821D68CBB00F560F8 /* Token.swift in Sources */,
 				7C3F6F5421D9F8440092102E /* TicketTVCell.swift in Sources */,
 				7CE92CAE21D7814700F560F8 /* InfConcertVC.swift in Sources */,
@@ -512,16 +519,21 @@
 				7CE92CB221D78F2D00F560F8 /* InfSoloThemeTVCell.swift in Sources */,
 				7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */,
 				7C76C31821D3609400D4A1CD /* Extension.swift in Sources */,
+				7CFB858921DB49B8001473B7 /* InfTicketPriceTVCell.swift in Sources */,
 				7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */,
 				7CE92C8121D68CD600F560F8 /* NetworkResult.swift in Sources */,
+				7CFB858D21DB49F9001473B7 /* InfCautionCVCell.swift in Sources */,
 				7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */,
 				7CE92CB821D797F300F560F8 /* LikeTVCell.swift in Sources */,
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,
 				E08FD1D821D3464E002AF9E7 /* ExploreClickedVCCell.swift in Sources */,
 				E08FD1AC21D220B3002AF9E7 /* ExploreTVCell.swift in Sources */,
+				7CFB858721DB4823001473B7 /* InfGroupTVCell.swift in Sources */,
+				7CFB858521DB47F9001473B7 /* InfGroupCVCell.swift in Sources */,
 				7C3F6F5221D9F3760092102E /* SettingTVCell.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,
 				E08FD1AA21D2209F002AF9E7 /* ExploreCVCell.swift in Sources */,
+				7CFB858B21DB49DD001473B7 /* InfPerformerCVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

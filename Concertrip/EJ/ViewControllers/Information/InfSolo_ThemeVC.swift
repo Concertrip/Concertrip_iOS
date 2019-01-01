@@ -12,6 +12,7 @@ import Toast_Swift
 
 class InfSolo_ThemeVC: UIViewController {
     
+    @IBOutlet weak var backgroundImg: UIImageView!
     @IBOutlet weak var youtubeView: YouTubePlayerView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!

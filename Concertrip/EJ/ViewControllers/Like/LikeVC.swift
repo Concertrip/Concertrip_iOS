@@ -11,10 +11,11 @@ import UIKit
 class LikeVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    var currentSub = 0
     var artistSub = 0
     var themeSub = 1
     var concertSub = 2
-    var currentSub = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +27,21 @@ class LikeVC: UIViewController {
     }
     
     @IBAction func artistTabBtn(_ sender: Any) {
-        currentSub = artistSub
+        if currentSub != artistSub{
+
+        }
     }
     
     @IBAction func themeTabBtn(_ sender: Any) {
-        currentSub = themeSub
+        if currentSub != themeSub{
+            
+        }
     }
     
     @IBAction func concertTabBtn(_ sender: Any) {
-        currentSub = artistSub
+        if currentSub != artistSub{
+            
+        }
     }
     
 }

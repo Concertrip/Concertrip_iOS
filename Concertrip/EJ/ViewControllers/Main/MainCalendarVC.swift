@@ -73,6 +73,7 @@ class MainCalendarVC: UIViewController {
         if let currentCalendar = currentCalendar {
             monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).koreanDescription
         }
+        monthLabel.setTextColorToGradient(image: UIImage(named: "gradation")!)
     }
     
     override func viewDidLayoutSubviews() {
@@ -112,6 +113,8 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
     }
     
     func presentedDateUpdated(_ date: CVDate) {
+        
+        
         if monthLabel.text != date.koreanDescription && self.animationFinished {
             let updatedMonthLabel = UILabel()
             updatedMonthLabel.textColor = monthLabel.textColor
@@ -342,5 +345,17 @@ extension MainCalendarVC: UICollectionViewDelegateFlowLayout{
         let menu = menuBarLabels[indexPath.row]
         let width  = Int(menu.widthWithConstrainedHeight(height: 26, font: UIFont.systemFont(ofSize: 15)))
         return CGSize(width: width+25, height: 26)
+    }
+}
+
+
+extension UILabel {
+    func setTextColorToGradient(image: UIImage) {
+        UIGraphicsBeginImageContext(frame.size)
+        image.draw(in: bounds)
+        let myGradient = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.textColor = UIColor(patternImage: myGradient!)
     }
 }

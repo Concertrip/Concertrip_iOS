@@ -191,7 +191,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
             let month = dayView.date.month
             let day = dayView.date.day
             
-            if year == 2018 && month == 12 && day >= 1 && day <= 3 {
+            if year == 2019 && month == 1 && day >= 1 && day <= 3 {
                 return true
             }
         }
@@ -212,7 +212,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
     }
     
     func dotMarker(moveOffsetOnDayView dayView: DayView) -> CGFloat {
-        return 17
+        return 20
     }
     
     func dotMarker(sizeOnDayView dayView: DayView) -> CGFloat {
@@ -316,23 +316,14 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarCVCell", for: indexPath) as! MainCalendarCVCell
         let menu = menuBarLabels[indexPath.row]
-//        cell.menuLabel.preferredMaxLayoutWidth = cell.menuLabel.bounds.width
         
         cell.menuLabel.text = menu
-        
-        //셀 width가 이상하게 커지는 코드
-//        cell.menuLabel.sizeToFit()
-    
-        
         if selectedIdx == indexPath.row{
             cell.menuLabel.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
         }
         else {
-            cell.menuLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+            cell.menuLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         }
-        
-        
-        
         return cell
     }
     

@@ -18,8 +18,20 @@ class ExploreClickedVC: UIViewController {
     @IBOutlet weak var noResultLabel: UILabel!
     
     @IBOutlet weak var searchResultTableView: UITableView!
+    var searchList = [SearchObject]()
+    var artistList = [Artists]()
+    var eventList = [Events]()
     
     @IBAction func okBtn(_ sender: Any) {
+        SearchService.shared.getSearchResult(tag: searchTxt.text!) { [weak self] (value) in
+            guard let `self` = self else { return }
+            
+            self.searchList = value
+            self.artistList = self.searchList[0].artists!
+            self.eventList = self.searchList[0].events!
+            
+            print("artistList: \(self.artistList)")
+        }
         noResultView.isHidden = false
         noResultLabel.text = "'\(searchTxt.text!)'에 대한 결과가 없습니다"
     }

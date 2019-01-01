@@ -94,6 +94,11 @@
                                             <segue destination="dzY-oJ-fgE" kind="show" id="eUr-bL-qZn"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DMM-A1-ZOt">
+                                        <rect key="frame" x="8" y="38" width="70" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12월" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAP-K2-9lx">
                                         <rect key="frame" x="16" y="48" width="53.5" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
@@ -210,6 +215,7 @@
                     <connections>
                         <outlet property="calendarView" destination="Rng-6c-1eu" id="foR-K8-bSu"/>
                         <outlet property="collectionView" destination="78U-EW-FQ0" id="x1j-cL-UAm"/>
+                        <outlet property="maskView" destination="DMM-A1-ZOt" id="RiS-i1-Reo"/>
                         <outlet property="menuView" destination="Xct-KG-mMr" id="SCD-eR-ov4"/>
                         <outlet property="monthLabel" destination="NAP-K2-9lx" id="Gdi-FO-Ni7"/>
                         <outlet property="tableView" destination="KPN-v3-peB" id="lhB-B7-NgZ"/>

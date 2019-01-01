@@ -197,13 +197,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGu-fU-YEl">
-                                <rect key="frame" x="16" y="90" width="42" height="29"/>
+                                <rect key="frame" x="16" y="92" width="42" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bM4-3E-59F">
-                                <rect key="frame" x="0.0" y="137" width="375" height="530"/>
+                                <rect key="frame" x="0.0" y="139" width="375" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SettingTVCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTVCell" rowHeight="70" id="wcM-l6-r84" customClass="SettingTVCell" customModule="Concertrip" customModuleProvider="target">
@@ -242,7 +242,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjd-9O-DEY">
-                                <rect key="frame" x="16" y="40" width="30" height="30"/>
+                                <rect key="frame" x="16" y="40" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wjd-9O-DEY" secondAttribute="height" multiplier="1:1" id="2Fq-8H-Pdk"/>
                                 </constraints>
@@ -282,13 +282,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="티켓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQW-Au-9b3">
-                                <rect key="frame" x="16" y="90" width="42" height="29"/>
+                                <rect key="frame" x="16" y="92" width="42" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="umb-gA-YFZ">
-                                <rect key="frame" x="0.0" y="137" width="375" height="530"/>
+                                <rect key="frame" x="0.0" y="139" width="375" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TicketTVCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TicketTVCell" rowHeight="160" id="Zzh-GM-SCI" customClass="TicketTVCell" customModule="Concertrip" customModuleProvider="target">
@@ -307,14 +307,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 : 2018.12.23 (월)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjb-gw-5DE">
-                                                    <rect key="frame" x="51" y="91" width="133" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 : 2018.12.23 (월)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjb-gw-5DE">
+                                                    <rect key="frame" x="51" y="91" width="179" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소 : 성남아트센터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6S-2i-jqy">
-                                                    <rect key="frame" x="51" y="69" width="109" height="17"/>
+                                                    <rect key="frame" x="51" y="69" width="179" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -328,9 +328,11 @@
                                                 <constraint firstItem="vjb-gw-5DE" firstAttribute="top" secondItem="F6S-2i-jqy" secondAttribute="bottom" constant="5" id="3C1-YX-49Q"/>
                                                 <constraint firstItem="F6S-2i-jqy" firstAttribute="top" secondItem="B7J-RO-sot" secondAttribute="bottom" constant="20" id="5f5-k3-8tT"/>
                                                 <constraint firstItem="vjb-gw-5DE" firstAttribute="leading" secondItem="F6S-2i-jqy" secondAttribute="leading" id="EUA-tW-n4L"/>
+                                                <constraint firstItem="vjb-gw-5DE" firstAttribute="width" secondItem="B7J-RO-sot" secondAttribute="width" id="M2w-Qa-noC"/>
                                                 <constraint firstItem="Kgt-wk-ryT" firstAttribute="leading" secondItem="s9U-0C-QkW" secondAttribute="leading" constant="16" id="TC0-RL-p5z"/>
                                                 <constraint firstAttribute="trailing" secondItem="Kgt-wk-ryT" secondAttribute="trailing" constant="16" id="W8r-cO-oVi"/>
                                                 <constraint firstItem="Kgt-wk-ryT" firstAttribute="top" secondItem="s9U-0C-QkW" secondAttribute="top" constant="4" id="Ywj-FB-n7e"/>
+                                                <constraint firstItem="F6S-2i-jqy" firstAttribute="width" secondItem="B7J-RO-sot" secondAttribute="width" id="c4u-da-eY6"/>
                                                 <constraint firstAttribute="bottom" secondItem="Kgt-wk-ryT" secondAttribute="bottom" constant="5.5" id="fz8-6Y-XWG"/>
                                                 <constraint firstItem="B7J-RO-sot" firstAttribute="leading" secondItem="Kgt-wk-ryT" secondAttribute="leading" constant="35" id="jA6-PM-EIU"/>
                                                 <constraint firstItem="B7J-RO-sot" firstAttribute="top" secondItem="Kgt-wk-ryT" secondAttribute="top" constant="23" id="kHt-Ho-NI1"/>
@@ -346,7 +348,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvc-Gf-9MT">
-                                <rect key="frame" x="16" y="40" width="30" height="30"/>
+                                <rect key="frame" x="16" y="40" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Jvc-Gf-9MT" secondAttribute="height" multiplier="1:1" id="OkY-5r-NXB"/>
                                 </constraints>
@@ -381,7 +383,7 @@
     <resources>
         <image name="artistLikeButton" width="46" height="46"/>
         <image name="disclosureIndicator" width="124" height="44"/>
-        <image name="leftArrowIcon" width="30" height="30"/>
+        <image name="leftArrowIcon" width="32" height="32"/>
         <image name="settingIcon" width="38" height="38"/>
         <image name="ticket" width="343" height="150"/>
     </resources>

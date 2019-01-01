@@ -21,6 +21,8 @@
 		7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5521D9F85E0092102E /* TicketVC.swift */; };
 		7C76C31821D3609400D4A1CD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C31721D3609400D4A1CD /* Extension.swift */; };
 		7C76C32821D4782200D4A1CD /* MypageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C76C32721D4782200D4A1CD /* MypageSB.storyboard */; };
+		7C79BC0321DB611B00096BB3 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79BC0221DB611B00096BB3 /* Ticket.swift */; };
+		7C79BC0521DB61BF00096BB3 /* TicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79BC0421DB61BF00096BB3 /* TicketService.swift */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
 		7CB3670321D4B38F00D92581 /* ColorsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3670221D4B38F00D92581 /* ColorsConfig.swift */; };
@@ -74,6 +76,8 @@
 		7C3F6F5521D9F85E0092102E /* TicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVC.swift; sourceTree = "<group>"; };
 		7C76C31721D3609400D4A1CD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7C76C32721D4782200D4A1CD /* MypageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MypageSB.storyboard; sourceTree = "<group>"; };
+		7C79BC0221DB611B00096BB3 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		7C79BC0421DB61BF00096BB3 /* TicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketService.swift; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
 		7CB3670221D4B38F00D92581 /* ColorsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConfig.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 				7CE92C7421D68CBB00F560F8 /* ResponseArray.swift */,
 				7CE92C7021D68CBA00F560F8 /* ResponseObject.swift */,
 				7CE92C7121D68CBA00F560F8 /* Token.swift */,
+				7C79BC0221DB611B00096BB3 /* Ticket.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				7CE92C7F21D68CD500F560F8 /* APIManager.swift */,
 				7CE92C7E21D68CD500F560F8 /* NetworkResult.swift */,
 				7CE92C8021D68CD600F560F8 /* Requestable.swift */,
+				7C79BC0421DB61BF00096BB3 /* TicketService.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -488,6 +494,7 @@
 				7CE92C8221D68CD600F560F8 /* APIManager.swift in Sources */,
 				7CE92CBA21D7981E00F560F8 /* LikeVC.swift in Sources */,
 				7CE92CA821D7810900F560F8 /* InfSolo_ThemeVC.swift in Sources */,
+				7C79BC0321DB611B00096BB3 /* Ticket.swift in Sources */,
 				E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */,
 				E08FD1A821D21B3A002AF9E7 /* ExploreVC.swift in Sources */,
 				E08FD1D421D345DC002AF9E7 /* ExploreClickedVC.swift in Sources */,
@@ -507,6 +514,7 @@
 				7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */,
 				7CE92C8121D68CD600F560F8 /* NetworkResult.swift in Sources */,
 				7CFB858D21DB49F9001473B7 /* InfCautionCVCell.swift in Sources */,
+				7C79BC0521DB61BF00096BB3 /* TicketService.swift in Sources */,
 				7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */,
 				7CE92CB821D797F300F560F8 /* LikeTVCell.swift in Sources */,
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,

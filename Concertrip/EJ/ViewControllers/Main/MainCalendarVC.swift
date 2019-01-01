@@ -11,6 +11,7 @@ import CVCalendar
 
 class MainCalendarVC: UIViewController {
 
+    @IBOutlet weak var maskView: UIView!
     
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!

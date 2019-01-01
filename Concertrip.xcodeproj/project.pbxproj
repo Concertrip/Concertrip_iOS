@@ -206,8 +206,8 @@
 		7C02394321CF3CF00042E8DC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */,
 				E08FD1A521D217D2002AF9E7 /* ExploreSB.storyboard */,
+				E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -438,7 +438,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -461,7 +461,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {

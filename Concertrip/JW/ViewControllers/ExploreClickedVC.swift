@@ -23,6 +23,11 @@ class ExploreClickedVC: UIViewController {
         noResultView.isHidden = false
         noResultLabel.text = "'\(searchTxt.text!)'에 대한 결과가 없습니다"
     }
+    @IBAction func backBtn(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ExploreVC") as! ExploreVC
+        navigationController?.popViewController(animated: true)
+        
+    }
     
     var resStr: String?
     

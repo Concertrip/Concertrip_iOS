@@ -25,6 +25,21 @@ class ExploreVC: UIViewController {
                                                  animated: true)
     }
     
+    var isLikeBtnActivated = false
+    
+    @IBAction func likeBtnAction(_ sender: UIButton) {
+        if isLikeBtnActivated == false {
+            sender.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+            self.view.makeToast("내 공연에 추가되었습니다!")
+            self.isLikeBtnActivated = true
+            
+        } else {
+            sender.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+            self.isLikeBtnActivated = false
+        }
+    }
+    
+    
     var selectedIdx = Int ()
     
     

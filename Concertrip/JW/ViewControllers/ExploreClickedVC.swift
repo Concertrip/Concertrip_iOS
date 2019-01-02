@@ -23,6 +23,7 @@ class ExploreClickedVC: UIViewController {
     var eventList = [Events]()
     var genresList = [Genres]()
     
+    var subscriptId : Int = 0
     
     @IBAction func okBtn(_ sender: Any) {
         SearchService.shared.getSearchResult(tag: searchTxt.text!) { [weak self] (value) in
@@ -47,6 +48,9 @@ class ExploreClickedVC: UIViewController {
     }
     @IBAction func backBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+        
+    }
+    @IBAction func likeBtn(_ sender: Any) {
         
     }
     
@@ -136,8 +140,10 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
             let artistData = artistList[indexPath.row]
             cell.nameLabel.text = artistData.artistName
             cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
-            
-            print(artistData)
+            if artistData.artistSubscribe == true {
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                cell.likeBtn.addTarget(self, action: #selector(likeBtn(_:)), for: .touchUpInside)
+            }
         }
         else if indexPath.section == 1 {
             let genreData = genresList[indexPath.row]
@@ -153,9 +159,13 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
         }
         
         
-
+        
+        
         return cell
     }
     
-    
+    @objc func tappedLikeBtn(_ sender : UIButton ){
+        self.view.makeToast("tappedLikeBtn~~~!")
+    }
+
 }

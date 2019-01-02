@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="아티스트">
-                                            <color key="titleColor" red="0.34901960784313724" green="0.24313725490196078" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="artistTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="m9g-ds-Rr4"/>
@@ -48,7 +48,7 @@
                                         <rect key="frame" x="85" y="0.0" width="35" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="테마">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="themeTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="sJN-K2-V78"/>
@@ -58,7 +58,7 @@
                                         <rect key="frame" x="135" y="0.0" width="35" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="공연">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="concertTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="qlH-ls-WmH"/>
@@ -97,7 +97,7 @@
                                                     <state key="normal" image="artistLikeButton"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#힙합 #ㄹㄹㄹ(미정)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7G-32-Gd8">
-                                                    <rect key="frame" x="71" y="30" width="236" height="15"/>
+                                                    <rect key="frame" x="71" y="30" width="236" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -119,19 +119,42 @@
                                                 <constraint firstItem="UrO-W0-2GZ" firstAttribute="leading" secondItem="g7G-32-Gd8" secondAttribute="trailing" constant="8" id="wn9-u0-wyI"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="hashLabel" destination="g7G-32-Gd8" id="4za-mr-mPB"/>
+                                            <outlet property="likeBtn" destination="UrO-W0-2GZ" id="mqs-Bn-mzX"/>
+                                            <outlet property="nameLabel" destination="NIe-cU-iaM" id="8Ym-MS-spy"/>
+                                            <outlet property="profileImg" destination="JS0-Ql-EWE" id="uQ3-hp-WIR"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snj-rt-Uc9">
+                                <rect key="frame" x="0.0" y="132" width="375" height="486"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="관심 목록이 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgK-6X-ymL">
+                                        <rect key="frame" x="114" y="206" width="146" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xHa-AU-FVz" firstAttribute="leading" secondItem="n99-p4-xfL" secondAttribute="leading" constant="16" id="8dj-1N-AlG"/>
+                            <constraint firstItem="Snj-rt-Uc9" firstAttribute="leading" secondItem="n99-p4-xfL" secondAttribute="leading" id="8hx-Pk-wAu"/>
                             <constraint firstItem="K7N-bV-QbL" firstAttribute="bottom" secondItem="n99-p4-xfL" secondAttribute="bottom" id="9dd-e3-aa0"/>
                             <constraint firstItem="K7N-bV-QbL" firstAttribute="trailing" secondItem="n99-p4-xfL" secondAttribute="trailing" id="LMw-eC-6Og"/>
+                            <constraint firstItem="Snj-rt-Uc9" firstAttribute="top" secondItem="yBl-1b-jyZ" secondAttribute="bottom" constant="8" id="QtL-Ja-sWV"/>
                             <constraint firstItem="K7N-bV-QbL" firstAttribute="leading" secondItem="n99-p4-xfL" secondAttribute="leading" id="UUo-zQ-QrJ"/>
                             <constraint firstItem="yBl-1b-jyZ" firstAttribute="leading" secondItem="n99-p4-xfL" secondAttribute="leading" constant="16" id="bpr-Xi-WF4"/>
+                            <constraint firstItem="Snj-rt-Uc9" firstAttribute="bottom" secondItem="n99-p4-xfL" secondAttribute="bottom" id="cU6-Py-CG1"/>
                             <constraint firstItem="yBl-1b-jyZ" firstAttribute="top" secondItem="xHa-AU-FVz" secondAttribute="bottom" constant="8" id="erd-ip-pbv"/>
                             <constraint firstItem="xHa-AU-FVz" firstAttribute="top" secondItem="n99-p4-xfL" secondAttribute="top" constant="31" id="iNg-pF-xZx"/>
+                            <constraint firstItem="Snj-rt-Uc9" firstAttribute="trailing" secondItem="n99-p4-xfL" secondAttribute="trailing" id="spw-rE-NEU"/>
                             <constraint firstItem="K7N-bV-QbL" firstAttribute="top" secondItem="yBl-1b-jyZ" secondAttribute="bottom" constant="8" id="x8K-IC-cHm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n99-p4-xfL"/>
@@ -139,7 +162,11 @@
                     <tabBarItem key="tabBarItem" title="liked" id="8ea-wZ-QXh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="artistBtn" destination="NXZ-lo-etX" id="3PA-hv-ULL"/>
+                        <outlet property="concertBtn" destination="Hug-uH-PUw" id="XbL-OY-pf7"/>
+                        <outlet property="nilView" destination="Snj-rt-Uc9" id="wea-oI-dPJ"/>
                         <outlet property="tableView" destination="K7N-bV-QbL" id="0Z3-Es-EAq"/>
+                        <outlet property="themeBtn" destination="r5v-9L-nuh" id="763-yC-O6O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYn-6p-liu" userLabel="First Responder" sceneMemberID="firstResponder"/>

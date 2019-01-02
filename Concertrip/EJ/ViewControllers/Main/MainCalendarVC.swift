@@ -55,20 +55,11 @@ class MainCalendarVC: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        //bold font
-        monthLabel.font = UIFont.boldSystemFont(ofSize: 27.0)
-        
-        // Appearance delegate [Unnecessary]
-        //        self.calendarView.calendarAppearanceDelegate = self
-        
-        // Animator delegate [Unnecessary]
-        //        self.calendarView.animatorDelegate = self
-        
-        // Menu delegate [Required]
-        self.menuView.menuViewDelegate = self
-        
-        // Calendar delegate [Required]
-        self.calendarView.calendarDelegate = self
+        //calendarView
+//        self.calendarView.calendarAppearanceDelegate = self //Appearance delegate
+//        self.calendarView.animatorDelegate = self // Animator delegate
+        self.menuView.menuViewDelegate = self // Menu delegate
+        self.calendarView.calendarDelegate = self // Calendar delegate
         
         if let currentCalendar = currentCalendar {
             monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).koreanDescription
@@ -113,8 +104,6 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
     }
     
     func presentedDateUpdated(_ date: CVDate) {
-        
-        
         if monthLabel.text != date.koreanDescription && self.animationFinished {
             let updatedMonthLabel = UILabel()
             updatedMonthLabel.textColor = monthLabel.textColor
@@ -151,11 +140,6 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
             self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
         }
     }
-    
-//    func weekdaySymbolType() -> WeekdaySymbolType {
-//        return .hangeul
-//    }
-    
     
 //    func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool{
 //        // Look up date in dictionary
@@ -195,7 +179,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
             let month = dayView.date.month
             let day = dayView.date.day
             
-            if year == 2019 && month == 1 && day >= 1 && day <= 3 {
+            if year == 2019 && month == 1 && day >= 11 && day <= 13 {
                 return true
             }
         }
@@ -206,9 +190,9 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
     
     func dotMarker(colorOnDayView dayView: DayView) -> [UIColor]{
         switch dayView.date.day {
-        case 1:
+        case 11:
             return [UIColor.orange]
-        case 2:
+        case 12:
             return [UIColor.orange, UIColor.green]
         default:
             return [UIColor.orange, UIColor.green, UIColor.blue]
@@ -301,6 +285,19 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
 //        }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        print("didSelectRowAt rowNum :  \(indexPath.row)")
+        
+        //present오류 왜왜왜왜왜나!?
+//        let dvc = storyboard?.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
+//        navigationController?.present(dvc, animated: true, completion: nil)
+        
+//        push - 오류 왜..?왜나!?
+//        let detailVC = UIStoryboard(name: "Main", bundle : nil).instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
+//        self.navigationController?.pushViewController(detailVC, animated: true)
+        
     }
     
     

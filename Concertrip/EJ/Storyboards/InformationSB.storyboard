@@ -13,7 +13,7 @@
         <!--Inf Solo ThemeVC-->
         <scene sceneID="ddw-PU-94z">
             <objects>
-                <viewController storyboardIdentifier="InfSolo_ThemeVC" id="WbN-Yw-h9N" customClass="InfSolo_ThemeVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfSolo_ThemeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WbN-Yw-h9N" customClass="InfSolo_ThemeVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2qO-80-54I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,7 +212,7 @@
         <!--Inf GroupVC-->
         <scene sceneID="ivu-Ro-Va3">
             <objects>
-                <viewController storyboardIdentifier="InfGroupVC" id="M2F-UX-K9h" customClass="InfGroupVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfGroupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M2F-UX-K9h" customClass="InfGroupVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0oh-0v-R3y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,7 +468,7 @@
         <!--Inf ConcertVC-->
         <scene sceneID="1bf-1k-zvP">
             <objects>
-                <viewController storyboardIdentifier="InfConcertVC" id="1dY-ai-h8e" customClass="InfConcertVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfConcertVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1dY-ai-h8e" customClass="InfConcertVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nRk-q8-WaP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -61,6 +61,9 @@
 		E0F727F821DB9DDD00D89BF6 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F727F421DB9DDD00D89BF6 /* Artists.swift */; };
 		E0F727F921DB9DDD00D89BF6 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F727F521DB9DDD00D89BF6 /* Events.swift */; };
 		E0F727FB21DB9DEC00D89BF6 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F727FA21DB9DEC00D89BF6 /* SearchService.swift */; };
+		E0F7280121DCDDED00D89BF6 /* SubscribeEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F7280021DCDDED00D89BF6 /* SubscribeEventService.swift */; };
+		E0F7280321DCDE0C00D89BF6 /* SubscribeArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F7280221DCDE0C00D89BF6 /* SubscribeArtistService.swift */; };
+		E0F7280521DCDE2F00D89BF6 /* SubscribeGenreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F7280421DCDE2F00D89BF6 /* SubscribeGenreService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +125,9 @@
 		E0F727F421DB9DDD00D89BF6 /* Artists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
 		E0F727F521DB9DDD00D89BF6 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		E0F727FA21DB9DEC00D89BF6 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		E0F7280021DCDDED00D89BF6 /* SubscribeEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeEventService.swift; sourceTree = "<group>"; };
+		E0F7280221DCDE0C00D89BF6 /* SubscribeArtistService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeArtistService.swift; sourceTree = "<group>"; };
+		E0F7280421DCDE2F00D89BF6 /* SubscribeGenreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeGenreService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +300,9 @@
 				7C79BC0421DB61BF00096BB3 /* TicketService.swift */,
 				E0F727FA21DB9DEC00D89BF6 /* SearchService.swift */,
 				7C79BC1421DC7D5900096BB3 /* SubscribeService.swift */,
+				E0F7280221DCDE0C00D89BF6 /* SubscribeArtistService.swift */,
+				E0F7280021DCDDED00D89BF6 /* SubscribeEventService.swift */,
+				E0F7280421DCDE2F00D89BF6 /* SubscribeGenreService.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -507,6 +516,7 @@
 			files = (
 				7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */,
 				7C3F6F5021D9F3080092102E /* SettingVC.swift in Sources */,
+				E0F7280321DCDE0C00D89BF6 /* SubscribeArtistService.swift in Sources */,
 				E0F727F821DB9DDD00D89BF6 /* Artists.swift in Sources */,
 				7CE92C8321D68CD600F560F8 /* Requestable.swift in Sources */,
 				E0F727F921DB9DDD00D89BF6 /* Events.swift in Sources */,
@@ -530,6 +540,7 @@
 				7CE92C7B21D68CBB00F560F8 /* ResponseArray.swift in Sources */,
 				7CE92CB221D78F2D00F560F8 /* InfSoloThemeTVCell.swift in Sources */,
 				7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */,
+				E0F7280121DCDDED00D89BF6 /* SubscribeEventService.swift in Sources */,
 				E0F727FB21DB9DEC00D89BF6 /* SearchService.swift in Sources */,
 				7C76C31821D3609400D4A1CD /* Extension.swift in Sources */,
 				7CFB858921DB49B8001473B7 /* InfTicketPriceTVCell.swift in Sources */,
@@ -545,6 +556,7 @@
 				7CFB858721DB4823001473B7 /* InfGroupTVCell.swift in Sources */,
 				7CFB858521DB47F9001473B7 /* InfGroupCVCell.swift in Sources */,
 				7C79BC1521DC7D5900096BB3 /* SubscribeService.swift in Sources */,
+				E0F7280521DCDE2F00D89BF6 /* SubscribeGenreService.swift in Sources */,
 				7C3F6F5221D9F3760092102E /* SettingTVCell.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,
 				E0F727F721DB9DDD00D89BF6 /* Genres.swift in Sources */,

@@ -269,8 +269,8 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCalendarTVCell") as! MainCalendarTVCell
+        cell.selectionStyle = .none
     
         print("selectDay는 ? \(selectedDay.date.day)")
         
@@ -288,16 +288,10 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        print("didSelectRowAt rowNum :  \(indexPath.row)")
         
-        //present오류 왜왜왜왜왜나!?
-//        let dvc = storyboard?.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
-//        navigationController?.present(dvc, animated: true, completion: nil)
-        
-//        push - 오류 왜..?왜나!?
-//        let detailVC = UIStoryboard(name: "Main", bundle : nil).instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
-//        self.navigationController?.pushViewController(detailVC, animated: true)
-        
+        let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
+        let dvc = storyboard.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
+        self.present(dvc, animated: true, completion: nil)
     }
     
     
@@ -306,8 +300,6 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
 //MARK: collectionView Extension
 
 extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menuBarLabels.count

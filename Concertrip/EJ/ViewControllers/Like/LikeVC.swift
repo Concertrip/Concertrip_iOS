@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class LikeVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -99,17 +100,29 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
         
         print("list.name : \(list.name!)")
         
+        cell.selectionStyle = .none
         cell.nameLabel.text = list.name
         cell.profileImg.imageFromUrl(gsno(list.profileImg), defaultImgPath: "likeicon")
         
         if list.isSubscribe == true {
             cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+            cell.likeBtn.addTarget(self, action: #selector(tappedLikeBtn(_:)), for: .touchUpInside)
         }
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("like DidSelectRowAt : \(indexPath.row)")
+        
+        let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
+        let dvc = storyboard.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
+        self.present(dvc, animated: true, completion: nil)
+    }
     
     
-    
+    //구독취소버튼 post 서비스 작성!
+    @objc func tappedLikeBtn(_ sender : UIButton ){
+        self.view.makeToast("tappedLikeBtn~~~!")
+    }
 }

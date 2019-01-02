@@ -136,7 +136,7 @@
                                                             </constraints>
                                                             <state key="normal" image="concertLikeButton"/>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#12월23일 #대전" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoV-Vt-kat">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#12월23일 #대전" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoV-Vt-kat">
                                                             <rect key="frame" x="72" y="33.5" width="233" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
@@ -255,16 +255,6 @@
             </objects>
             <point key="canvasLocation" x="1690" y="533"/>
         </scene>
-        <!--InformationSB-->
-        <scene sceneID="U52-dc-B2j">
-            <objects>
-                <viewControllerPlaceholder storyboardName="InformationSB" id="6gF-9Z-i1s" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="3PG-6b-6Rl"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0ir-SN-Tan" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1748" y="644"/>
-        </scene>
         <!--NotificationSB-->
         <scene sceneID="Al3-99-Vrn">
             <objects>
@@ -320,7 +310,6 @@
                         <segue destination="06r-Bn-1Mn" kind="relationship" relationship="viewControllers" id="a98-Ae-Cvj"/>
                         <segue destination="gRa-a2-Bhs" kind="relationship" relationship="viewControllers" id="JQs-my-wkR"/>
                         <segue destination="rxg-oV-MLb" kind="relationship" relationship="viewControllers" id="q5c-hd-HKv"/>
-                        <segue destination="6gF-9Z-i1s" kind="relationship" relationship="viewControllers" id="uzO-D9-g12"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meu-ip-BFI" userLabel="First Responder" sceneMemberID="firstResponder"/>

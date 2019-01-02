@@ -36,9 +36,10 @@ extension SettingVC: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTVCell") as! SettingTVCell
-        
         let setting = settingArr[indexPath.row]
+        cell.selectionStyle = .none
         cell.settingLabel.text = setting
+        
         
         return cell
     }

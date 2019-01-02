@@ -49,7 +49,7 @@ class InfSolo_ThemeVC: UIViewController {
     }
     
     @IBAction func backBtnAction(_ sender: Any) {
-//        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 }

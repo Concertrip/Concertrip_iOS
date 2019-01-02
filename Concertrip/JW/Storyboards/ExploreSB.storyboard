@@ -279,6 +279,9 @@
                                     <constraint firstAttribute="width" secondItem="HVD-bv-yYL" secondAttribute="height" multiplier="1:1" id="0KT-Ns-OHQ"/>
                                 </constraints>
                                 <state key="normal" image="leftArrowIcon"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="bUP-dW-hll" eventType="touchUpInside" id="QPY-4w-Whf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

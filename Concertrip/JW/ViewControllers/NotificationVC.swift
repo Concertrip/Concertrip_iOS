@@ -54,18 +54,16 @@ extension NotificationVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //cell 객체를 선언합니다. reusable identifier를 제대로 설정해주는거 잊지마세요!
+        
         let cell = noticeTable.dequeueReusableCell(withIdentifier: "NoticeCell") as! NotificationVCCell
         
-        //각 row에 해당하는 cell의 데이터를 넣어주기위해 모델에서 music 데이터 하나를 선언합니다.
         let title = titleList[indexPath.row]
         let hashtag = hashtagList[indexPath.row]
         
-        //위에서 가져온 데이터를 각 cell에 넣어줍니다.
         cell.titleTxt.text = title
         cell.hashtagTxt.text = hashtag
+        cell.selectionStyle = .none
         
-        //위의 과정을 마친 cell 객체를 반환합니다.
         return cell
     }
 }

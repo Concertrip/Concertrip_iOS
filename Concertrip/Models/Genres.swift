@@ -13,7 +13,7 @@ struct Genres : Mappable {
     var genreId : String?
     var genreName : String?
     var genreProfileImg : String?
-    var genreFilter : [String]?
+//    var genreFilter : [String]?
     var genreSubscribe : Bool?
     
     init?(map: Map) {
@@ -25,7 +25,7 @@ struct Genres : Mappable {
         genreId <- map["_id"]
         genreName <- map["name"]
         genreProfileImg <- map["profileImg"]
-        genreFilter <- map["filter"]
+//        genreFilter <- map["filter"]
         genreSubscribe <- map["subscribe"]
     }
     

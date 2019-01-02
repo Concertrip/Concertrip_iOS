@@ -13,7 +13,7 @@ struct Artists : Mappable {
     var artistId : String?
     var artistName : String?
     var artistProfileImg : String?
-    var artistFilter : [String]?
+//    var artistFilter : [String]?
     var artistSubscribe : Bool?
     
     init?(map: Map) {
@@ -25,7 +25,7 @@ struct Artists : Mappable {
         artistId <- map["_id"]
         artistName <- map["name"]
         artistProfileImg <- map["profileImg"]
-        artistFilter <- map["filter"]
+//        artistFilter <- map["filter"]
         artistSubscribe <- map["subscribe"]
     }
     

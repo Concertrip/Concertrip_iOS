@@ -21,19 +21,29 @@ class ExploreClickedVC: UIViewController {
     var searchList = [SearchObject]()
     var artistList = [Artists]()
     var eventList = [Events]()
+    var genresList = [Genres]()
+    
     
     @IBAction func okBtn(_ sender: Any) {
         SearchService.shared.getSearchResult(tag: searchTxt.text!) { [weak self] (value) in
-            guard let `self` = self else { return }
-            
-            self.searchList = value
-            self.artistList = self.searchList[0].artists!
-            self.eventList = self.searchList[0].events!
-            
-            print("artistList: \(self.artistList)")
+            if value[0].artists?.count == 0 && value[0].events?.count == 0 && value[0].genres?.count == 0 {
+                self?.noResultView.isHidden = false
+                self?.noResultLabel.text = "'\(self?.searchTxt.text! ?? "")'에 대한 결과가 없습니다"
+            }
+            else {
+                self?.searchTableView.isHidden = false
+                
+                
+                guard let `self` = self else { return }
+                
+                self.searchList = value
+                self.artistList = self.searchList[0].artists!
+                self.eventList = self.searchList[0].events!
+                self.genresList = self.searchList[0].genres!
+                
+                self.searchTableView.reloadData()
+            }
         }
-        noResultView.isHidden = false
-        noResultLabel.text = "'\(searchTxt.text!)'에 대한 결과가 없습니다"
     }
     @IBAction func backBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -85,17 +95,21 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if firstData.count == 0 && secondData.count == 0 && thirdData.count == 0 {
+//        if firstData.count == 0 && secondData.count == 0 && thirdData.count == 0 {
+//            searchTableView.isHidden = true
+//        }
+        
+        if artistList.count == 0 && eventList.count == 0 && genresList.count == 0 {
             searchTableView.isHidden = true
         }
         if section == 0 {
-            return firstData.count
+            return artistList.count
         }
         else if section == 1 {
-            return secondData.count
+            return genresList.count
         }
         else {
-            return thirdData.count
+            return eventList.count
         }
         
         
@@ -115,10 +129,31 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreClickedVCCell") as! ExploreClickedVCCell
-
-        cell.nameLabel.text = "이름"
-        cell.hashtagLabel.text = "#hashtag"
+        print("indexPath.row : ", indexPath.section)
         
+        
+        if indexPath.section == 0 {
+            let artistData = artistList[indexPath.row]
+            cell.nameLabel.text = artistData.artistName
+            cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
+            
+            print(artistData)
+        }
+        else if indexPath.section == 1 {
+            let genreData = genresList[indexPath.row]
+            cell.nameLabel.text = genreData.genreName
+            cell.profileImg.imageFromUrl(gsno(genreData.genreProfileImg), defaultImgPath: "")
+            print(genreData)
+        }
+        else {
+            let eventData = eventList[indexPath.row]
+            cell.nameLabel.text = eventData.eventName
+            cell.profileImg.imageFromUrl(gsno(eventData.eventProfileImg), defaultImgPath: "")
+            print(eventData)
+        }
+        
+        
+
         return cell
     }
     

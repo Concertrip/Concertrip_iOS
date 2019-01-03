@@ -134,15 +134,15 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreClickedVCCell") as! ExploreClickedVCCell
         print("indexPath.row : ", indexPath.section)
-        
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         if indexPath.section == 0 {
             let artistData = artistList[indexPath.row]
+            cell.configure(data : artistData)
             cell.nameLabel.text = artistData.artistName
             cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
-            if artistData.artistSubscribe == true {
-                cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
-                cell.likeBtn.addTarget(self, action: #selector(likeBtn(_:)), for: .touchUpInside)
+            cell.subscribeHandler = {(albumId) in
+                print(albumId)
             }
         }
         else if indexPath.section == 1 {
@@ -158,14 +158,6 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
             print(eventData)
         }
         
-        
-        
-        
         return cell
     }
-    
-    @objc func tappedLikeBtn(_ sender : UIButton ){
-        self.view.makeToast("tappedLikeBtn~~~!")
-    }
-
 }

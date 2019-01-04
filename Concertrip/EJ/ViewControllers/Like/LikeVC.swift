@@ -22,7 +22,10 @@ class LikeVC: UIViewController {
     var concertSub = 2
     
     var subList = [Subscribe]()
-//    var idArr = [String]()
+    
+//    var dArtistList = [DetailArtist]()
+//    var artistEventList = [DetailEventList]()
+//    var artistId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,13 +107,16 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
         cell.selectionStyle = .none
         cell.nameLabel.text = list.name
         cell.profileImg.imageFromUrl(gsno(list.profileImg), defaultImgPath: "likeicon")
-//        idArr.append(gsno(list.id!))
-        print("selectId : \(gsno(list.id))")
-        
+
         if list.isSubscribe == true {
             cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
-//            cell.likeBtn.tag = indexPath.row
-            cell.likeBtn.addTarget(self, action: #selector(tappedLikeBtn(_:)), for: .touchUpInside)
+            cell.configure(data: list)
+            cell.subscribeHandler = {(contentId) in
+                print(contentId)
+//                self.artistId = contentId
+                
+                
+            }
 
         }
         return cell
@@ -121,6 +127,13 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
         
         let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
         let dvc = storyboard.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
+
+//        DetailArtistService.shared.getDetailArtist(id: artistId) {[weak self] (data) in
+//            guard let `self` = self else {return}
+//            self.
+//
+//        }
+
     
         
         self.present(dvc, animated: true, completion: nil)
@@ -128,8 +141,7 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
     
     
     //구독취소버튼 post 서비스 작성!
-    @objc func tappedLikeBtn(_ sender : UIButton){
-//        self.view.makeToast("tappedLikeBtn~~~! id : \(idArr[sender.tag])")
+    func tappedLikeBtn(){
         
         
     }

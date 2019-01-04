@@ -9,10 +9,19 @@
 import UIKit
 
 class LikeTVCell: UITableViewCell {
+    
+    var subscribeHandler : ((_ contentId : String) -> Void)?
+    
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var hashLabel: UILabel!
     @IBOutlet weak var likeBtn: UIButton!
+    
+    var contentId : String = ""
+    
+    func configure(data : Subscribe) {
+        contentId = data.id!
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +29,12 @@ class LikeTVCell: UITableViewCell {
         profileImg.layer.borderColor = UIColor.black.cgColor
         profileImg.layer.cornerRadius = profileImg.frame.height/2
         profileImg.clipsToBounds = true
+        
+        likeBtn.addTarget(self, action: #selector(subscribeFunc), for: .touchUpInside)
+    }
+    
+    @objc func subscribeFunc(_ sender: UIButton){
+        subscribeHandler!(contentId)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

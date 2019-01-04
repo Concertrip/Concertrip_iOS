@@ -25,10 +25,6 @@
 		7C79BC0521DB61BF00096BB3 /* TicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79BC0421DB61BF00096BB3 /* TicketService.swift */; };
 		7C79BC0D21DC741600096BB3 /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79BC0C21DC741600096BB3 /* Subscribe.swift */; };
 		7C79BC1521DC7D5900096BB3 /* SubscribeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79BC1421DC7D5900096BB3 /* SubscribeService.swift */; };
-		7C9BE33221DCE43300EB93A0 /* DetailEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BE33121DCE43300EB93A0 /* DetailEvent.swift */; };
-		7C9BE33421DCE44200EB93A0 /* DetailArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BE33321DCE44200EB93A0 /* DetailArtist.swift */; };
-		7C9BE33621DCE45400EB93A0 /* DetailGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BE33521DCE45400EB93A0 /* DetailGenre.swift */; };
-		7C9BE33A21DCEC3000EB93A0 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BE33921DCEC3000EB93A0 /* Detail.swift */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
 		7CE92C7721D68CBB00F560F8 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE92C7021D68CBA00F560F8 /* ResponseObject.swift */; };
@@ -93,10 +89,6 @@
 		7C79BC0421DB61BF00096BB3 /* TicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketService.swift; sourceTree = "<group>"; };
 		7C79BC0C21DC741600096BB3 /* Subscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
 		7C79BC1421DC7D5900096BB3 /* SubscribeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeService.swift; sourceTree = "<group>"; };
-		7C9BE33121DCE43300EB93A0 /* DetailEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEvent.swift; sourceTree = "<group>"; };
-		7C9BE33321DCE44200EB93A0 /* DetailArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArtist.swift; sourceTree = "<group>"; };
-		7C9BE33521DCE45400EB93A0 /* DetailGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGenre.swift; sourceTree = "<group>"; };
-		7C9BE33921DCEC3000EB93A0 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
 		7CE92C7021D68CBA00F560F8 /* ResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
@@ -295,10 +287,6 @@
 				E0F727F321DB9DDD00D89BF6 /* Genres.swift */,
 				E0F727F221DB9DDC00D89BF6 /* SearchObject.swift */,
 				7C79BC0C21DC741600096BB3 /* Subscribe.swift */,
-				7C9BE33121DCE43300EB93A0 /* DetailEvent.swift */,
-				7C9BE33321DCE44200EB93A0 /* DetailArtist.swift */,
-				7C9BE33521DCE45400EB93A0 /* DetailGenre.swift */,
-				7C9BE33921DCEC3000EB93A0 /* Detail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -471,7 +459,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -494,7 +482,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -526,7 +514,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C9BE33221DCE43300EB93A0 /* DetailEvent.swift in Sources */,
 				7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */,
 				7C3F6F5021D9F3080092102E /* SettingVC.swift in Sources */,
 				E0F7280321DCDE0C00D89BF6 /* SubscribeArtistService.swift in Sources */,
@@ -537,7 +524,6 @@
 				7CE92C8221D68CD600F560F8 /* APIManager.swift in Sources */,
 				7CE92CBA21D7981E00F560F8 /* LikeVC.swift in Sources */,
 				7CE92CA821D7810900F560F8 /* InfSolo_ThemeVC.swift in Sources */,
-				7C9BE33421DCE44200EB93A0 /* DetailArtist.swift in Sources */,
 				7C79BC0321DB611B00096BB3 /* Ticket.swift in Sources */,
 				E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */,
 				E08FD1A821D21B3A002AF9E7 /* ExploreVC.swift in Sources */,
@@ -545,11 +531,9 @@
 				E08FD1D421D345DC002AF9E7 /* ExploreClickedVC.swift in Sources */,
 				7CE92CAA21D7812200F560F8 /* InfGroupVC.swift in Sources */,
 				7C3F6F4E21D9ECCA0092102E /* MypageCVCell.swift in Sources */,
-				7C9BE33621DCE45400EB93A0 /* DetailGenre.swift in Sources */,
 				7C3F6F4C21D9ECBA0092102E /* MypageVC.swift in Sources */,
 				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,
 				7CE92C7821D68CBB00F560F8 /* Token.swift in Sources */,
-				7C9BE33A21DCEC3000EB93A0 /* Detail.swift in Sources */,
 				7C3F6F5421D9F8440092102E /* TicketTVCell.swift in Sources */,
 				7C79BC0D21DC741600096BB3 /* Subscribe.swift in Sources */,
 				7CE92CAE21D7814700F560F8 /* InfConcertVC.swift in Sources */,

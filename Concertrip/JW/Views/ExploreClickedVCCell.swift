@@ -17,17 +17,28 @@ class ExploreClickedVCCell: UITableViewCell {
     @IBOutlet weak var hashtagLabel: UILabel!
     @IBOutlet weak var profileImg: UIImageView!
     var albumId : String = ""
+    var genreId : String = ""
+    var eventId : String = ""
     
-    func configure(data : Artists) {
+    func configureZero(data : Artists) {
         albumId = data.artistId!
     }
+    func configureOne(data : Genres){
+        genreId = data.genreId!
+    }
+    func configureTwo(data : Events){
+        eventId = data.eventId!
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         likeBtn.addTarget(self, action: #selector(subscribe), for: .touchUpInside)
     }
 
     @objc func subscribe(_ sender : UIButton){
-       subscribeHandler!(albumId)
+        subscribeHandler!(albumId)
+        subscribeHandler!(genreId)
+        subscribeHandler!(eventId)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

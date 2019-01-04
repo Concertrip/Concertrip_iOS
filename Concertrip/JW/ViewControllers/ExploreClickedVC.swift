@@ -17,6 +17,8 @@ class ExploreClickedVC: UIViewController {
     @IBOutlet weak var noResultBtn: UIButton!
     @IBOutlet weak var noResultLabel: UILabel!
     
+    var isLikeBtnActivated = false
+    
     @IBOutlet weak var searchResultTableView: UITableView!
     var searchList = [SearchObject]()
     var artistList = [Artists]()
@@ -52,6 +54,15 @@ class ExploreClickedVC: UIViewController {
     }
     @IBAction func likeBtn(_ sender: Any) {
         
+//        if isLikeBtnActivated == false {
+//            sender.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+//            self.view.makeToast("내 공연에 추가되었습니다!")
+//            self.isLikeBtnActivated = true
+//
+//        } else {
+//            sender.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+//            self.isLikeBtnActivated = false
+//        }
     }
     
     var resStr: String?
@@ -134,11 +145,11 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreClickedVCCell") as! ExploreClickedVCCell
         print("indexPath.row : ", indexPath.section)
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        //cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         if indexPath.section == 0 {
             let artistData = artistList[indexPath.row]
-            cell.configure(data : artistData)
+            cell.configureZero(data : artistData)
             cell.nameLabel.text = artistData.artistName
             cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
             cell.subscribeHandler = {(albumId) in
@@ -147,14 +158,23 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
         }
         else if indexPath.section == 1 {
             let genreData = genresList[indexPath.row]
+            cell.configureOne(data : genreData)
+
             cell.nameLabel.text = genreData.genreName
             cell.profileImg.imageFromUrl(gsno(genreData.genreProfileImg), defaultImgPath: "")
-            print(genreData)
+            cell.subscribeHandler = {(genreId) in
+                print(genreId)
+            }
         }
         else {
             let eventData = eventList[indexPath.row]
+            cell.configureTwo(data: eventData)
             cell.nameLabel.text = eventData.eventName
             cell.profileImg.imageFromUrl(gsno(eventData.eventProfileImg), defaultImgPath: "")
+            cell.subscribeHandler = {(eventId) in
+                print(eventId)
+            }
+            
             print(eventData)
         }
         

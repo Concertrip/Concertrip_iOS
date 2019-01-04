@@ -214,6 +214,9 @@
                                                         <constraint firstAttribute="width" secondItem="4f2-7W-nny" secondAttribute="height" multiplier="1:1" id="n3r-um-jcc"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="likeBtn:" destination="bUP-dW-hll" eventType="touchUpInside" id="XV5-jj-eaj"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGP-D3-oA5">
                                                     <rect key="frame" x="72" y="14.5" width="234" height="21"/>

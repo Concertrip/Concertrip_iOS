@@ -28,6 +28,7 @@ class ExploreVC: UIViewController {
     var isLikeBtnActivated = false
     
     @IBAction func likeBtnAction(_ sender: UIButton) {
+        
         if isLikeBtnActivated == false {
             sender.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
             self.view.makeToast("내 공연에 추가되었습니다!")

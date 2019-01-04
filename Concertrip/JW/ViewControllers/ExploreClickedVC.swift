@@ -52,7 +52,11 @@ class ExploreClickedVC: UIViewController {
         navigationController?.popViewController(animated: true)
         
     }
+    
+    var idx : String = ""
+    
     @IBAction func likeBtn(_ sender: Any) {
+        
         
 //        if isLikeBtnActivated == false {
 //            sender.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
@@ -148,34 +152,86 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
         //cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         if indexPath.section == 0 {
-            let artistData = artistList[indexPath.row]
+            var artistData = artistList[indexPath.row]
             cell.configureZero(data : artistData)
             cell.nameLabel.text = artistData.artistName
             cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
+            if artistData.artistSubscribe == false {
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+            }
+            else {
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+            }
+            
             cell.subscribeHandler = {(albumId) in
-                print(albumId)
+
+                SubscribeArtistService.shared.subscriptArtist(id: albumId) {
+                    if artistData.artistSubscribe == false {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        artistData.artistSubscribe = true
+                    }
+                    else {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        artistData.artistSubscribe = false
+                    }
+                }
             }
         }
         else if indexPath.section == 1 {
-            let genreData = genresList[indexPath.row]
+            var genreData = genresList[indexPath.row]
             cell.configureOne(data : genreData)
 
             cell.nameLabel.text = genreData.genreName
             cell.profileImg.imageFromUrl(gsno(genreData.genreProfileImg), defaultImgPath: "")
+            
+            if genreData.genreSubscribe == false {
+                cell.likeBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
+                genreData.genreSubscribe = true
+            }
+            else {
+                cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
+                genreData.genreSubscribe = false
+            }
+            
             cell.subscribeHandler = {(genreId) in
-                print(genreId)
+                SubscribeGenreService.shared.subscriptGenre(id: genreId) {
+                    if genreData.genreSubscribe == false {
+                        cell.likeBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
+                        genreData.genreSubscribe = true
+                    }
+                    else {
+                        cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
+                        genreData.genreSubscribe = false
+                    }
+                }
             }
         }
         else {
-            let eventData = eventList[indexPath.row]
+            var eventData = eventList[indexPath.row]
             cell.configureTwo(data: eventData)
             cell.nameLabel.text = eventData.eventName
             cell.profileImg.imageFromUrl(gsno(eventData.eventProfileImg), defaultImgPath: "")
-            cell.subscribeHandler = {(eventId) in
-                print(eventId)
+            if eventData.eventSubscribe == false {
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                eventData.eventSubscribe = true
+            }
+            else {
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                eventData.eventSubscribe = false
             }
             
-            print(eventData)
+            cell.subscribeHandler = {(genreId) in
+                SubscribeEventService.shared.subscriptEvent(id: genreId) {
+                    if eventData.eventSubscribe == false {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        eventData.eventSubscribe = true
+                    }
+                    else {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        eventData.eventSubscribe = false
+                    }
+                }
+            }
         }
         
         return cell

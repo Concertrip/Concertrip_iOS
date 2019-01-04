@@ -7,3 +7,30 @@
 //
 
 import Foundation
+import Alamofire
+
+struct SubscribeEventService: APIManager, Requestable{
+    typealias NetworkData = ResponseObject<Token>
+    static let shared = SubscribeEventService()
+    var subscribeURL = url("/api/subscribe/event")
+    let header: HTTPHeaders = [
+        "Content-Type" : "application/json",
+        "Authorization" : "1"
+    ]
+    
+    func subscriptEvent(id: String, completion: @escaping () -> Void) {
+        let body = [
+            "id" : id
+        ]
+        postable(subscribeURL, body: body, header: header) { res in
+            switch res {
+            case .success( _):
+                completion()
+            case .error(let error):
+                print(error)
+            }
+        }
+        
+    }
+    
+}

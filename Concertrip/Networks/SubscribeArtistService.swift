@@ -18,15 +18,14 @@ struct SubscribeArtistService: APIManager, Requestable{
         "Authorization" : "1"
     ]
 
-    func subscriptArtist(id: String, completion: @escaping (Token) -> Void) {
+    func subscriptArtist(id: String, completion: @escaping () -> Void) {
         let body = [
             "id" : id
         ]
         postable(subscribeURL, body: body, header: header) { res in
             switch res {
-            case .success(let value):
-                guard let result = value.data else {return}
-                completion(result)
+            case .success( _):
+                completion()
             case .error(let error):
                 print(error)
             }

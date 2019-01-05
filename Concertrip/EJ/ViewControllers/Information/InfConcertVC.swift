@@ -28,18 +28,13 @@ class InfConcertVC: UIViewController {
     var isLikeBtnActivated = false
     var detailId : String?
     var memberList = [MemberList]()
+    var seatNameList:[String] = []
+    var seatPriceList:[String] = []
+    
     var dateTxt  = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        performerCollectionView.delegate = self
-        performerCollectionView.dataSource = self
-//        cautionCollectionView.delegate = self
-//        cautionCollectionView.dataSource = self
-//        tableView.delegate = self
-//        tableView.dataSource = self
-
         print("detailId : \(gsno(detailId))")
        
         DetailEventService.shared.getConcertDetailList(id: detailId!) { [weak self] (data) in
@@ -48,7 +43,7 @@ class InfConcertVC: UIViewController {
             guard let members = detailData.dConcertMemberList else { return }
             self.memberList = members
             
-            print("hihi")
+            print("memberList : \(self.memberList)")
             
             for data in detailData.dConcertDate! {
                 self.dateTxt += data + "\n"
@@ -64,7 +59,27 @@ class InfConcertVC: UIViewController {
             self.youtubeView.loadVideoID(youtubeURL!)
             self.nameLabel.text = detailData.dConcertName
             
+            for data in detailData.dConcertSeatName! {
+                print("seatname : \(data)")
+                self.seatNameList.append(data)
+            }
+            for data in detailData.dConcertSeatPrice! {
+                print("price : \(data)")
+                self.seatPriceList.append(data)
+            }
+            
+            self.performImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
+            
+            self.performerCollectionView.reloadData()
+            self.tableView.reloadData()
         }
+        
+        performerCollectionView.delegate = self
+        performerCollectionView.dataSource = self
+        //        cautionCollectionView.delegate = self
+        //        cautionCollectionView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     @IBAction func likeBtnAction(_ sender: Any) {
@@ -105,16 +120,23 @@ extension InfConcertVC : UICollectionViewDelegate, UICollectionViewDataSource{
     }
 }
 
-//
-//extension InfConcertVC : UITableViewDelegate, UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//
-//
-//}
+
+extension InfConcertVC : UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("seatPriceList.count : \(seatPriceList.count)")
+        return seatPriceList.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InfTicketPriceTVCell") as! InfTicketPriceTVCell
+        let price = seatPriceList[indexPath.row]
+        let name = seatNameList[indexPath.row]
+        
+        cell.ticketNamePriceLabel.text = name + " " + price
+        
+        return cell
+    }
+
+
+}
 

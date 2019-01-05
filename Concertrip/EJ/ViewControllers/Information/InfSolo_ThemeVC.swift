@@ -44,8 +44,8 @@ class InfSolo_ThemeVC: UIViewController {
             let profileImg = detailData.dArtistProfileImg
             let likeCount = String(detailData.dArtistSubscribeNum!)
             let youtubeURL = detailData.dYoutubeUrl
-            self.backgroundImg.imageFromUrl(backImg, defaultImgPath: "likeicon")
-            self.bigProfileImg.imageFromUrl(profileImg, defaultImgPath: "likeicon")
+            self.backgroundImg.imageFromUrl(backImg, defaultImgPath: "")
+            self.bigProfileImg.imageFromUrl(profileImg, defaultImgPath: "")
             self.nameLabel.text = detailData.dArtistName
             self.likeCountLabel.text = likeCount
             self.youtubeView.loadVideoID(youtubeURL!)

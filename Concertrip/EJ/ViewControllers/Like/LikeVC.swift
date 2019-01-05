@@ -22,6 +22,7 @@ class LikeVC: UIViewController {
     var concertSub = 2
     
     var subList = [Subscribe]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +88,6 @@ class LikeVC: UIViewController {
 }
 extension LikeVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("subArtistList : \(subList.count)")
         
         if subList.count == 0 {
             nilView.isHidden = false
@@ -101,8 +101,6 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "LikeTVCell") as! LikeTVCell
         var list = subList[indexPath.row]
         
-        print("list.name : \(list.name!)")
-        
         cell.selectionStyle = .none
         cell.nameLabel.text = list.name
         cell.profileImg.imageFromUrl(gsno(list.profileImg), defaultImgPath: "likeicon")
@@ -112,8 +110,17 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
             cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
         }
         
+        if self.currentSub == self.artistSub {
+            cell.hashLabel.isHidden = true
+        } else if self.currentSub == self.themeSub{
+            cell.hashLabel.isHidden = true
+        } else if self.currentSub == self.concertSub{
+            cell.hashLabel.isHidden = false
+        }
+        
         cell.subscribeHandler = {(contentId) in
             if self.currentSub == self.artistSub {
+            
                 SubscribeArtistService.shared.subscriptArtist(id: contentId) {
                     if list.isSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
@@ -123,10 +130,13 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
                         list.isSubscribe = true
                     }
+                    
+                    
+                    
                     self.artistSubService()
                 }
             } else if self.currentSub == self.concertSub {
-                
+            
                 SubscribeEventService.shared.subscriptEvent(id: contentId) {
                     if list.isSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
@@ -136,12 +146,14 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
                         list.isSubscribe = true
                     }
+                    
                     self.concertSubService()
                 }
                 
             } else if self.currentSub == self.themeSub{
                 
                 SubscribeEventService.shared.subscriptEvent(id: contentId) {
+                    
                     if list.isSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
                         list.isSubscribe = true
@@ -150,6 +162,7 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
                         list.isSubscribe = true
                     }
+                    
                     self.themeSubService()
                 }
             }
@@ -158,8 +171,6 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("like DidSelectRowAt : \(indexPath.row)")
-        
         let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
         let list = subList[indexPath.row]
         

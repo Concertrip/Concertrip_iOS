@@ -37,8 +37,6 @@ class InfThemeVC: UIViewController {
             guard let events = detailData.dThemeEventList else { return }
             self.eventList = events
 
-            print("DetailTheme eventList : \(self.eventList)")
-            
             let backImg = detailData.dThemeBackImg
             let profileImg = detailData.dThemeProfileImg
             let likeCount = String(detailData.dThemeSubscribeNum!)
@@ -48,6 +46,8 @@ class InfThemeVC: UIViewController {
             self.nameLabel.text = detailData.dThemeName
             self.likeCountLabel.text = likeCount
             self.youtubeView.loadVideoID(youtubeURL!)
+            
+            self.tableView.reloadData()
         }
         
     }
@@ -80,7 +80,8 @@ extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfThemeTVCell") as! InfThemeTVCell
         let event = eventList[indexPath.row]
         
-        print("event.eventName : \(event.eventName)")
+    
+        cell.themeProfileImg.imageFromUrl(event.eventProfileImg, defaultImgPath: "")
         cell.themeNameLabel.text = event.eventName
         
         return cell

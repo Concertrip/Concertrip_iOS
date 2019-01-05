@@ -26,7 +26,8 @@ class MainCalendarVC: UIViewController {
     var animationFinished = true
     var shouldShowDaysOut = true
 
-    var menuBarLabels = ["모두", "내 공연", "지코", "크러쉬", "페노메코", "힙합", "알레시카 카라"]
+    var tapList = [CalendarTap]()
+//    var menuBarLabels = ["모두", "내 공연", "지코", "크러쉬", "페노메코", "힙합", "알레시카 카라"]
     var dayArrays = ["1","5","30"]
     let hashtagList = ["#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!"]
     
@@ -54,6 +55,7 @@ class MainCalendarVC: UIViewController {
         //collectionView
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.reloadData()
         
         //calendarView
 //        self.calendarView.calendarAppearanceDelegate = self //Appearance delegate
@@ -65,6 +67,12 @@ class MainCalendarVC: UIViewController {
             monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).koreanDescription
         }
         monthLabel.setTextColorToGradient(image: UIImage(named: "gradation")!)
+        
+        CalendarService.shared.getCalendarTap { [weak self](data) in
+            guard let `self` = self else { return }
+            self.tapList = data
+            self.collectionView.reloadData()
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -302,15 +310,16 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
 extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menuBarLabels.count
+        print("taplist.count : \(tapList.count)")
+        return tapList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarCVCell", for: indexPath) as! MainCalendarCVCell
-        let menu = menuBarLabels[indexPath.row]
+        let menu = tapList[indexPath.row]
         
-        cell.menuLabel.text = menu
+        cell.menuLabel.text = menu.calTapName
         if selectedIdx == indexPath.row{
             cell.menuLabel.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
         }
@@ -331,8 +340,8 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
 extension MainCalendarVC: UICollectionViewDelegateFlowLayout{
     func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                          sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let menu = menuBarLabels[indexPath.row]
-        let width  = Int(menu.widthWithConstrainedHeight(height: 26, font: UIFont.systemFont(ofSize: 15)))
+        let menu = tapList[indexPath.row]
+        let width  = Int(menu.calTapName!.widthWithConstrainedHeight(height: 26, font: UIFont.systemFont(ofSize: 15)))
         return CGSize(width: width+25, height: 26)
     }
 }

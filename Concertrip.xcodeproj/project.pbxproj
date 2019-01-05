@@ -27,6 +27,8 @@
 		7C79BC1521DC7D5900096BB3 /* SubscribeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79BC1421DC7D5900096BB3 /* SubscribeService.swift */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
+		7CCF4E3C21E0566000251580 /* CalendarTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCF4E3B21E0566000251580 /* CalendarTap.swift */; };
+		7CCF4E3E21E056B100251580 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCF4E3D21E056B100251580 /* CalendarService.swift */; };
 		7CE92C7721D68CBB00F560F8 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE92C7021D68CBA00F560F8 /* ResponseObject.swift */; };
 		7CE92C7821D68CBB00F560F8 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE92C7121D68CBA00F560F8 /* Token.swift */; };
 		7CE92C7B21D68CBB00F560F8 /* ResponseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE92C7421D68CBB00F560F8 /* ResponseArray.swift */; };
@@ -91,6 +93,8 @@
 		7C79BC1421DC7D5900096BB3 /* SubscribeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeService.swift; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
+		7CCF4E3B21E0566000251580 /* CalendarTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTap.swift; sourceTree = "<group>"; };
+		7CCF4E3D21E056B100251580 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		7CE92C7021D68CBA00F560F8 /* ResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
 		7CE92C7121D68CBA00F560F8 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		7CE92C7421D68CBB00F560F8 /* ResponseArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseArray.swift; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 				E0F727F321DB9DDD00D89BF6 /* Genres.swift */,
 				E0F727F221DB9DDC00D89BF6 /* SearchObject.swift */,
 				7C79BC0C21DC741600096BB3 /* Subscribe.swift */,
+				7CCF4E3B21E0566000251580 /* CalendarTap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				E0F7280221DCDE0C00D89BF6 /* SubscribeArtistService.swift */,
 				E0F7280021DCDDED00D89BF6 /* SubscribeEventService.swift */,
 				E0F7280421DCDE2F00D89BF6 /* SubscribeGenreService.swift */,
+				7CCF4E3D21E056B100251580 /* CalendarService.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -517,6 +523,7 @@
 				7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */,
 				7C3F6F5021D9F3080092102E /* SettingVC.swift in Sources */,
 				E0F7280321DCDE0C00D89BF6 /* SubscribeArtistService.swift in Sources */,
+				7CCF4E3E21E056B100251580 /* CalendarService.swift in Sources */,
 				E0F727F821DB9DDD00D89BF6 /* Artists.swift in Sources */,
 				7CE92C8321D68CD600F560F8 /* Requestable.swift in Sources */,
 				E0F727F921DB9DDD00D89BF6 /* Events.swift in Sources */,
@@ -548,6 +555,7 @@
 				7CE92C8121D68CD600F560F8 /* NetworkResult.swift in Sources */,
 				7CFB858D21DB49F9001473B7 /* InfCautionCVCell.swift in Sources */,
 				7C79BC0521DB61BF00096BB3 /* TicketService.swift in Sources */,
+				7CCF4E3C21E0566000251580 /* CalendarTap.swift in Sources */,
 				7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */,
 				7CE92CB821D797F300F560F8 /* LikeTVCell.swift in Sources */,
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,

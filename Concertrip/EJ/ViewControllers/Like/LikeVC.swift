@@ -23,10 +23,6 @@ class LikeVC: UIViewController {
     
     var subList = [Subscribe]()
     
-//    var dArtistList = [DetailArtist]()
-//    var artistEventList = [DetailEventList]()
-//    var artistId = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -100,25 +96,68 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LikeTVCell") as! LikeTVCell
-        let list = subList[indexPath.row]
+        var list = subList[indexPath.row]
         
         print("list.name : \(list.name!)")
         
         cell.selectionStyle = .none
         cell.nameLabel.text = list.name
         cell.profileImg.imageFromUrl(gsno(list.profileImg), defaultImgPath: "likeicon")
-
+        cell.configure(data: list)
+        
         if list.isSubscribe == true {
             cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
-            cell.configure(data: list)
-            cell.subscribeHandler = {(contentId) in
-                print(contentId)
-//                self.artistId = contentId
+        }
+        
+        cell.subscribeHandler = {(contentId) in
+            if self.currentSub == self.artistSub {
+                SubscribeArtistService.shared.subscriptArtist(id: contentId) {
+                    if list.isSubscribe == false {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        list.isSubscribe = true
+                    }
+                    else {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        list.isSubscribe = true
+                    }
+                    tableView.reloadData()
+                }
+            } else if self.currentSub == self.concertSub {
                 
+                SubscribeEventService.shared.subscriptEvent(id: contentId) {
+                    if list.isSubscribe == false {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        list.isSubscribe = true
+                    }
+                    else {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        list.isSubscribe = true
+                    }
+                    tableView.reloadData()
+                }
+                
+            } else if self.currentSub == self.themeSub{
+                
+                SubscribeEventService.shared.subscriptEvent(id: contentId) {
+                    if list.isSubscribe == false {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        list.isSubscribe = true
+                    }
+                    else {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        list.isSubscribe = true
+                    }
+                    tableView.reloadData()
+                }
                 
             }
-
         }
+        
+        
+        
+        
+        
+
         return cell
     }
     
@@ -127,14 +166,7 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
         
         let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
         let dvc = storyboard.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
-
-//        DetailArtistService.shared.getDetailArtist(id: artistId) {[weak self] (data) in
-//            guard let `self` = self else {return}
-//            self.
-//
-//        }
-
-    
+        
         
         self.present(dvc, animated: true, completion: nil)
     }

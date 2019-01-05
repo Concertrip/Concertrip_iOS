@@ -31,15 +31,15 @@ class ExploreVC: UIViewController {
     
     @IBAction func likeBtnAction(_ sender: UIButton) {
         
-        if isLikeBtnActivated == false {
-            sender.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
-            self.view.makeToast("내 공연에 추가되었습니다!")
-            self.isLikeBtnActivated = true
-            
-        } else {
-            sender.setImage(UIImage(named: "artistLikeButton"), for: .normal)
-            self.isLikeBtnActivated = false
-        }
+//        if isLikeBtnActivated == false {
+//            sender.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+//            self.view.makeToast("내 공연에 추가되었습니다!")
+//            self.isLikeBtnActivated = true
+//
+//        } else {
+//            sender.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+//            self.isLikeBtnActivated = false
+//        }
     }
     
     
@@ -60,11 +60,6 @@ class ExploreVC: UIViewController {
         
         let menu = menuList[0]
         print(menu)
-        
-        print("check!!")
-        
-        
-        
         
         /*
         //TextField 속성 설정
@@ -142,7 +137,6 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exploreTVCell") as! ExploreTVCell
-        print("cell : ", cell)
         
 //        var artistData = artistList[indexPath.row]
         
@@ -157,8 +151,6 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
 //        cell.selectionStyle = .none
         
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "exploreTVCell", for: indexPath) as! ExploreTVCell
-        print("tableViewCell : ", indexPath.row)
-        print("아티스트 리스트 : ", artistList)
         var artistData = artistList[indexPath.row]
         cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
         cell.nameLabel.text = artistData.artistName
@@ -171,8 +163,14 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
 
         cell.subscribeHandler = {(albumId) in
             SubscribeArtistService.shared.subscriptArtist(id: albumId) {
+                print("network working!")
+                print(artistData.artistId)
+                print(artistData.artistName)
+                print(artistData.artistSubscribe)
                 if artistData.artistSubscribe == false {
+                    
                     cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                    self.view.makeToast("내 공연에 추가되었습니다!")
                     artistData.artistSubscribe = true
                 }
                 else {

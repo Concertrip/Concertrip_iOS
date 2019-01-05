@@ -12,9 +12,13 @@ class ExploreClickedVC: UIViewController {
 
     @IBOutlet weak var searchTxt: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
-    
+
+    var additionalRequest = false
     @IBOutlet weak var noResultView: UIView!
     @IBOutlet weak var noResultBtn: UIButton!
+    @IBAction func noResultActionBtn(_ sender: Any) {
+        self.view.makeToast("추가 요청이 완료되었습니다!")
+    }
     @IBOutlet weak var noResultLabel: UILabel!
     
     var isLikeBtnActivated = false
@@ -25,7 +29,7 @@ class ExploreClickedVC: UIViewController {
     var genresList = [Genres]()
     
     var subscriptId : Int = 0
-    
+
     @IBAction func okBtn(_ sender: Any) {
         SearchService.shared.getSearchResult(tag: searchTxt.text!) { [weak self] (value) in
             let searchData = value as SearchObject
@@ -33,6 +37,14 @@ class ExploreClickedVC: UIViewController {
             if value.artists?.count == 0 && value.events?.count == 0 && value.genres?.count == 0 {
                 self?.noResultView.isHidden = false
                 self?.noResultLabel.text = "'\(self?.searchTxt.text! ?? "")'에 대한 결과가 없습니다"
+                self?.noResultBtn.layer.cornerRadius = 15
+                self?.noResultBtn.setTitle("'\(self?.searchTxt.text! ?? "")' 아티스트/콘서트 추가 요청하기'", for: .normal)
+                
+                self?.noResultBtn.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                self?.noResultBtn.setTitleColor(#colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1), for: .normal)
+                
+//                self?.noResultBtn.isEnabled = true
+
             }
             else {
                 self?.searchTableView.isHidden = false
@@ -107,8 +119,6 @@ class ExploreClickedVC: UIViewController {
     func dismissKeyboard() {
 
     }
-    
-    
 }
 
 
@@ -167,12 +177,14 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
             else {
                 cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
             }
+            cell.hashtagLabel.isHidden = true
             
             cell.subscribeHandler = {(albumId) in
 
                 SubscribeArtistService.shared.subscriptArtist(id: albumId) {
                     if artistData.artistSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        self.view.makeToast("캘린더에 추가되었습니다!")
                         artistData.artistSubscribe = true
                     }
                     else {
@@ -196,10 +208,13 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
                 cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
             }
             
+            cell.hashtagLabel.isHidden = true
+            
             cell.subscribeHandler = {(genreId) in
                 SubscribeGenreService.shared.subscriptGenre(id: genreId) {
                     if genreData.genreSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        self.view.makeToast("캘린더에 추가되었습니다!")
                         genreData.genreSubscribe = true
                     }
                     else {
@@ -225,6 +240,7 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
                 SubscribeEventService.shared.subscriptEvent(id: genreId) {
                     if eventData.eventSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        self.view.makeToast("캘린더에 추가되었습니다!")
                         eventData.eventSubscribe = true
                     }
                     else {
@@ -237,5 +253,12 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = UIColor.white
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
     }
 }

@@ -9,11 +9,22 @@
 import UIKit
 
 class ExploreTVCell: UITableViewCell {
+    var subscribeHandler : ((_ albumId : String) -> Void)?
 
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var hashtagLabel: UILabel!
     @IBOutlet weak var likeBtn: UIButton!
+    
+    var artistId : String = ""
+    
+    func configureArtist(data : Artists){
+        artistId = data.artistId!
+    }
+    
+    @objc func subscribe(_ sender : UIButton){
+        subscribeHandler!(artistId)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

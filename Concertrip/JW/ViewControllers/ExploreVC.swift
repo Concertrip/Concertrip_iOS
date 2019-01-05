@@ -25,6 +25,9 @@ class ExploreVC: UIViewController {
                                                  animated: true)
     }
     
+    var searchList = [SearchObject]()
+    var artistList = [Artists]()
+    
     var isLikeBtnActivated = false
     
     @IBAction func likeBtnAction(_ sender: UIButton) {
@@ -42,9 +45,9 @@ class ExploreVC: UIViewController {
     
     
     var selectedIdx = Int ()
+    //[모두] [테마] [보이그룹] [걸그룹] [힙합] [발라드/R&B] [댄스] [POP] [EDM] [인디] [재즈] [록]
     
-    
-    let menuList = ["모두", "테마", "POP", "JAZZ", "CLASSIC", "R&B", "ELECTRONIC"]
+    let menuList = ["모두", "테마", "보이그룹", "걸그룹", "힙합", "발라드/R&B", "댄스", "POP", "EDM", "인디", "재즈", "록"]
     let nameList = ["자라섬 재즈페스티벌", "SAMM HANSHAW", "PHUM VIPHURIT", "ALESSICA CARA"]
     let hashtagList = ["#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ"]
     
@@ -130,6 +133,37 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
     //선택 시
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIdx = indexPath.row
+        let menu = menuList[selectedIdx]
+        SearchService.shared.getSearchResult(tag: menu) { [weak self] (value) in
+            guard let `self` = self else { return }
+            
+            self.searchList = value
+            self.artistList = self.searchList[0].artists!
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploreTVCell", for: indexPath) as! ExploreTVCell
+        var artistData = artistList[indexPath.row]
+        cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
+        cell.nameLabel.text = artistData.artistName
+        if artistData.artistSubscribe == false {
+            cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+        }
+        else {
+            cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+        }
+        
+        cell.subscribeHandler = {(albumId) in
+            SubscribeArtistService.shared.subscriptArtist(id: albumId) {
+                if artistData.artistSubscribe == false {
+                    cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                    artistData.artistSubscribe = true
+                }
+                else {
+                    cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                    artistData.artistSubscribe = false
+                }
+            }
+        }
         
         self.collectionView.reloadData()
     }

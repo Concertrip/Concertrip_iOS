@@ -185,22 +185,20 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
             cell.profileImg.imageFromUrl(gsno(genreData.genreProfileImg), defaultImgPath: "")
             
             if genreData.genreSubscribe == false {
-                cell.likeBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
-                genreData.genreSubscribe = true
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
             }
             else {
-                cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
-                genreData.genreSubscribe = false
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
             }
             
             cell.subscribeHandler = {(genreId) in
                 SubscribeGenreService.shared.subscriptGenre(id: genreId) {
                     if genreData.genreSubscribe == false {
-                        cell.likeBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
                         genreData.genreSubscribe = true
                     }
                     else {
-                        cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
                         genreData.genreSubscribe = false
                     }
                 }
@@ -212,12 +210,10 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
             cell.nameLabel.text = eventData.eventName
             cell.profileImg.imageFromUrl(gsno(eventData.eventProfileImg), defaultImgPath: "")
             if eventData.eventSubscribe == false {
-                cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
-                eventData.eventSubscribe = true
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
             }
             else {
-                cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
-                eventData.eventSubscribe = false
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
             }
             
             cell.subscribeHandler = {(genreId) in
@@ -230,6 +226,7 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
                         eventData.eventSubscribe = false
                     }
+                    print(eventData.eventName, ": ", eventData.eventSubscribe)
                 }
             }
         }

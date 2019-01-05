@@ -26,10 +26,12 @@ class InfConcertVC: UIViewController {
     @IBOutlet weak var concertLocationLabel: UILabel!
     
     var isLikeBtnActivated = false
+    var detailId : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("detailId : \(gsno(detailId))")
         // Do any additional setup after loading the view.
     }
     

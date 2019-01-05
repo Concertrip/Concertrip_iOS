@@ -68,6 +68,9 @@ class MainCalendarVC: UIViewController {
         }
         monthLabel.setTextColorToGradient(image: UIImage(named: "gradation")!)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         CalendarService.shared.getCalendarTap { [weak self](data) in
             guard let `self` = self else { return }
             self.tapList = data

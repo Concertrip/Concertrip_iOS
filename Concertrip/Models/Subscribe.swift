@@ -14,6 +14,7 @@ struct Subscribe : Mappable {
     var name : String?
     var profileImg : String?
     var isSubscribe : Bool?
+    var isGroup : Bool?
     
     init?(map: Map) {
         
@@ -25,6 +26,7 @@ struct Subscribe : Mappable {
         name <- map["name"]
         profileImg <- map["profileImg"]
         isSubscribe <- map["subscribe"]
+        isGroup <- map["group"]
     }
     
 }

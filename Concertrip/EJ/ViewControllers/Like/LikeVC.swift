@@ -32,6 +32,7 @@ class LikeVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         artistSubService()
+        tableView.reloadData()
     }
     
     func artistSubService (){
@@ -120,7 +121,7 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
                         list.isSubscribe = true
                     }
-                    tableView.reloadData()
+                    self.artistSubService()
                 }
             } else if self.currentSub == self.concertSub {
                 
@@ -133,7 +134,7 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
                         list.isSubscribe = true
                     }
-                    tableView.reloadData()
+                    self.concertSubService()
                 }
                 
             } else if self.currentSub == self.themeSub{
@@ -147,17 +148,10 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
                         list.isSubscribe = true
                     }
-                    tableView.reloadData()
+                    self.themeSubService()
                 }
-                
             }
         }
-        
-        
-        
-        
-        
-
         return cell
     }
     
@@ -165,16 +159,41 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
         print("like DidSelectRowAt : \(indexPath.row)")
         
         let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
-        let dvc = storyboard.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
+        let list = subList[indexPath.row]
         
-        
-        self.present(dvc, animated: true, completion: nil)
+        if self.currentSub == self.artistSub {
+            if list.isGroup == true {
+                let dvc = storyboard.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
+                
+                dvc.detailId = list.id
+                
+                
+                self.present(dvc, animated: true, completion: nil)
+            }
+            else if list.isGroup == false {
+                let dvc = storyboard.instantiateViewController(withIdentifier: "InfSolo_ThemeVC") as! InfSolo_ThemeVC
+                
+                dvc.detailId = list.id
+                
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
+        else if self.currentSub == self.concertSub {
+            let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcertVC") as! InfConcertVC
+            
+            dvc.detailId = list.id
+            
+            
+            self.present(dvc, animated: true, completion: nil)
+        }
+        else if self.currentSub == self.themeSub{
+            let dvc = storyboard.instantiateViewController(withIdentifier: "InfSolo_ThemeVC") as! InfSolo_ThemeVC
+            
+            dvc.detailId = list.id
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
-    
-    
-    //구독취소버튼 post 서비스 작성!
-    func tappedLikeBtn(){
-        
-        
-    }
+//    //구독취소버튼 post 서비스 작성!
+//    func tappedLikeBtn(){
+//    }
 }

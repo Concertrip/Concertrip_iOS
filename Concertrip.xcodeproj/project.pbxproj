@@ -43,6 +43,9 @@
 		7CE92CBA21D7981E00F560F8 /* LikeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE92CB921D7981E00F560F8 /* LikeVC.swift */; };
 		7CF1246721D2522E008F731B /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246621D2522E008F731B /* LikeSB.storyboard */; };
 		7CF1246921D252BA008F731B /* InformationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246821D252BA008F731B /* InformationSB.storyboard */; };
+		7CF1692121E0978A0091D624 /* ArtistEventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1692021E0978A0091D624 /* ArtistEventList.swift */; };
+		7CF1692321E097EB0091D624 /* DetailArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1692221E097EB0091D624 /* DetailArtist.swift */; };
+		7CF1692521E098600091D624 /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1692421E098600091D624 /* DetailService.swift */; };
 		7CFB858521DB47F9001473B7 /* InfGroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858421DB47F9001473B7 /* InfGroupCVCell.swift */; };
 		7CFB858721DB4823001473B7 /* InfGroupTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858621DB4823001473B7 /* InfGroupTVCell.swift */; };
 		7CFB858921DB49B8001473B7 /* InfTicketPriceTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858821DB49B8001473B7 /* InfTicketPriceTVCell.swift */; };
@@ -109,6 +112,9 @@
 		7CE92CB921D7981E00F560F8 /* LikeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeVC.swift; sourceTree = "<group>"; };
 		7CF1246621D2522E008F731B /* LikeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeSB.storyboard; sourceTree = "<group>"; };
 		7CF1246821D252BA008F731B /* InformationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationSB.storyboard; sourceTree = "<group>"; };
+		7CF1692021E0978A0091D624 /* ArtistEventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistEventList.swift; sourceTree = "<group>"; };
+		7CF1692221E097EB0091D624 /* DetailArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArtist.swift; sourceTree = "<group>"; };
+		7CF1692421E098600091D624 /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
 		7CFB858421DB47F9001473B7 /* InfGroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfGroupCVCell.swift; sourceTree = "<group>"; };
 		7CFB858621DB4823001473B7 /* InfGroupTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfGroupTVCell.swift; sourceTree = "<group>"; };
 		7CFB858821DB49B8001473B7 /* InfTicketPriceTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfTicketPriceTVCell.swift; sourceTree = "<group>"; };
@@ -292,6 +298,8 @@
 				E0F727F221DB9DDC00D89BF6 /* SearchObject.swift */,
 				7C79BC0C21DC741600096BB3 /* Subscribe.swift */,
 				7CCF4E3B21E0566000251580 /* CalendarTap.swift */,
+				7CF1692021E0978A0091D624 /* ArtistEventList.swift */,
+				7CF1692221E097EB0091D624 /* DetailArtist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -309,6 +317,7 @@
 				E0F7280021DCDDED00D89BF6 /* SubscribeEventService.swift */,
 				E0F7280421DCDE2F00D89BF6 /* SubscribeGenreService.swift */,
 				7CCF4E3D21E056B100251580 /* CalendarService.swift */,
+				7CF1692421E098600091D624 /* DetailService.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -465,7 +474,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -488,7 +497,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -539,6 +548,7 @@
 				7CE92CAA21D7812200F560F8 /* InfGroupVC.swift in Sources */,
 				7C3F6F4E21D9ECCA0092102E /* MypageCVCell.swift in Sources */,
 				7C3F6F4C21D9ECBA0092102E /* MypageVC.swift in Sources */,
+				7CF1692321E097EB0091D624 /* DetailArtist.swift in Sources */,
 				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,
 				7CE92C7821D68CBB00F560F8 /* Token.swift in Sources */,
 				7C3F6F5421D9F8440092102E /* TicketTVCell.swift in Sources */,
@@ -561,12 +571,14 @@
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,
 				E08FD1D821D3464E002AF9E7 /* ExploreClickedVCCell.swift in Sources */,
 				E08FD1AC21D220B3002AF9E7 /* ExploreTVCell.swift in Sources */,
+				7CF1692121E0978A0091D624 /* ArtistEventList.swift in Sources */,
 				7CFB858721DB4823001473B7 /* InfGroupTVCell.swift in Sources */,
 				7CFB858521DB47F9001473B7 /* InfGroupCVCell.swift in Sources */,
 				7C79BC1521DC7D5900096BB3 /* SubscribeService.swift in Sources */,
 				E0F7280521DCDE2F00D89BF6 /* SubscribeGenreService.swift in Sources */,
 				7C3F6F5221D9F3760092102E /* SettingTVCell.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,
+				7CF1692521E098600091D624 /* DetailService.swift in Sources */,
 				E0F727F721DB9DDD00D89BF6 /* Genres.swift in Sources */,
 				E08FD1AA21D2209F002AF9E7 /* ExploreCVCell.swift in Sources */,
 				7CFB858B21DB49DD001473B7 /* InfPerformerCVCell.swift in Sources */,

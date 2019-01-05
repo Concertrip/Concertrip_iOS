@@ -20,14 +20,44 @@ class InfSolo_ThemeVC: UIViewController {
     @IBOutlet weak var bigProfileImg: UIImageView!
     @IBOutlet weak var likeBtn: UIButton!
     var isLikeBtnActivated = false
+    var detailId : String?
+
+    var eventList = [ArtistEventList]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        youtubeView.loadVideoID("nM0xDI5R50E")
-        
+        bigProfileImg.circleImageView()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        print("detailId : \(gsno(detailId))")
+        
+        
+        DetailService.shared.getArtistDetailList(id: detailId!) { [weak self](data) in
+            guard let `self` = self else { return }
+            
+            let detailData = data as DetailArtist
+            guard let events = detailData.dEventsList else { return }
+            self.eventList = events
+            
+            
+            
+            let backImg = detailData.dArtistBackImg
+            let profileImg = detailData.dArtistProfileImg
+            let likeCount = String(detailData.dArtistSubscribeNum!)
+            let youtubeURL = detailData.dYoutubeUrl
+            self.backgroundImg.imageFromUrl(backImg, defaultImgPath: "likeicon")
+            self.bigProfileImg.imageFromUrl(profileImg, defaultImgPath: "likeicon")
+            self.nameLabel.text = detailData.dArtistName
+            self.likeCountLabel.text = likeCount
+            self.youtubeView.loadVideoID(youtubeURL!)
+            
+            
+            self.tableView.reloadData()
+            
+
+        }
+        
         
     }
     
@@ -35,7 +65,6 @@ class InfSolo_ThemeVC: UIViewController {
         if isLikeBtnActivated == false {
             simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
                 self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButtonActivated")
-//                self.view.makeToast("토스트 메세지입니다.")
                 self.isLikeBtnActivated = true
             }
         } else {
@@ -57,16 +86,18 @@ class InfSolo_ThemeVC: UIViewController {
 
 extension InfSolo_ThemeVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        print("eventList.count : \(eventList.count)")
+        return eventList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfSoloThemeTVCell") as! InfSoloThemeTVCell
-
-
-        cell.concertHashLabel.text = "아료앟세용"
-
+        
+        let event = eventList[indexPath.row]
+        
+        cell.concertNameLabel.text = event.eventName
+        cell.concertProfileImg.imageFromUrl(gsno(event.eventProfileImg), defaultImgPath: "likeicon")
         return cell
     }
 

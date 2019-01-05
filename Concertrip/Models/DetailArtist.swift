@@ -2,7 +2,7 @@
 //  DetailArtist.swift
 //  Concertrip
 //
-//  Created by 양어진 on 04/01/2019.
+//  Created by 양어진 on 05/01/2019.
 //  Copyright © 2019 양어진. All rights reserved.
 //
 
@@ -11,13 +11,14 @@ import ObjectMapper
 
 struct DetailArtist : Mappable {
     var dArtistId : String?
-    var dProfileImg : String?
-    var dBackImg : String?
-    var dName : String?
-    var dIsSubscribe : Bool?
-    var dSubscribeNum : Int?
+    var dArtistProfileImg : String?
+    var dArtistBackImg : String?
+    var dArtistName : String?
+    var dArtistSubscribeNum : Int?
     var dYoutubeUrl : String?
-    var dEventList : [DetailEventList]?
+    var dMemberList : String?
+    var dEventsList : [ArtistEventList]?
+    var dSubscribe : Bool?
     
     init?(map: Map) {
         
@@ -26,13 +27,14 @@ struct DetailArtist : Mappable {
     mutating func mapping(map: Map) {
         
         dArtistId <- map["_id"]
-        dProfileImg <- map["profileImg"]
-        dBackImg <- map["backImg"]
-        dName <- map["name"]
-        dIsSubscribe <- map["isSubscribe"]
-        dSubscribeNum <- map["subscribeNum"]
+        dArtistProfileImg <- map["profileImg"]
+        dArtistBackImg <- map["backImg"]
+        dArtistName <- map["name"]
+        dArtistSubscribeNum <- map["subscribeNum"]
         dYoutubeUrl <- map["youtubeUrl"]
-        dEventList <- map["eventList"]
+        dMemberList <- map["memberList"]
+        dEventsList <- map["eventsList"]
+        dSubscribe <- map["subscribe"]
     }
     
 }

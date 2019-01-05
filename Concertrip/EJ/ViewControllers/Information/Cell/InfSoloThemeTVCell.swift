@@ -17,6 +17,7 @@ class InfSoloThemeTVCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        concertProfileImg.circleImageView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -22,10 +22,11 @@ class InfGroupVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var isLikeBtnActivated = false
+    var detailId : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("detailId : \(gsno(detailId))")
         // Do any additional setup after loading the view.
     }
     

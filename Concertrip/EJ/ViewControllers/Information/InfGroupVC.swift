@@ -27,7 +27,10 @@ class InfGroupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("detailId : \(gsno(detailId))")
-        // Do any additional setup after loading the view.
+        
+//        tableView.delegate = self
+//        tableView.dataSource = self
+        
     }
     
     @IBAction func likeBtnAction(_ sender: Any) {
@@ -35,7 +38,6 @@ class InfGroupVC: UIViewController {
         if isLikeBtnActivated == false {
             simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
                 self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButtonActivated")
-                self.view.makeToast("토스트 메세지입니다.")
                 self.isLikeBtnActivated = true
             }
         } else {
@@ -51,3 +53,15 @@ class InfGroupVC: UIViewController {
     }
     
 }
+
+//extension InfGroupVC: UITableViewDelegate, UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//
+//
+//}

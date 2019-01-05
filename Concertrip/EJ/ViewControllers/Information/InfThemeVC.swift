@@ -1,66 +1,57 @@
 //
-//  InfSolo+ThemeVC.swift
+//  InfThemeVC.swift
 //  Concertrip
 //
-//  Created by 양어진 on 29/12/2018.
-//  Copyright © 2018 양어진. All rights reserved.
+//  Created by 양어진 on 05/01/2019.
+//  Copyright © 2019 양어진. All rights reserved.
 //
 
 import UIKit
 import YouTubePlayer_Swift
-import Toast_Swift
 
-class InfSolo_ThemeVC: UIViewController {
-    
+class InfThemeVC: UIViewController {
+
     @IBOutlet weak var backgroundImg: UIImageView!
-    @IBOutlet weak var youtubeView: YouTubePlayerView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var youtubeView: YouTubePlayerView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var bigProfileImg: UIImageView!
     @IBOutlet weak var likeBtn: UIButton!
+    
     var isLikeBtnActivated = false
     var detailId : String?
-    var eventList = [ArtistEventList]()
-
+    var eventList = [ThemeEventList]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bigProfileImg.circleImageView()
-        tableView.dataSource = self
         tableView.delegate = self
+        tableView.dataSource = self
         
-        print("detailId : \(gsno(detailId))")
+        print("theme detailId : \(gsno(detailId))")
         
-        
-        DetailArtistService.shared.getArtistDetailList(id: detailId!) { [weak self](data) in
+        DetailThemeService.shared.getThemeDetailList(id: detailId!) { [weak self](data) in
             guard let `self` = self else { return }
-            
-            let detailData = data as DetailArtist
-            guard let events = detailData.dEventsList else { return }
+            let detailData = data as DetailTheme
+            guard let events = detailData.dThemeEventList else { return }
             self.eventList = events
+
+            print("DetailTheme eventList : \(self.eventList)")
             
-            
-            
-            let backImg = detailData.dArtistBackImg
-            let profileImg = detailData.dArtistProfileImg
-            let likeCount = String(detailData.dArtistSubscribeNum!)
-            let youtubeURL = detailData.dYoutubeUrl
+            let backImg = detailData.dThemeBackImg
+            let profileImg = detailData.dThemeProfileImg
+            let likeCount = String(detailData.dThemeSubscribeNum!)
+            let youtubeURL = detailData.dThemeYoutubeUrl
             self.backgroundImg.imageFromUrl(backImg, defaultImgPath: "likeicon")
             self.bigProfileImg.imageFromUrl(profileImg, defaultImgPath: "likeicon")
-            self.nameLabel.text = detailData.dArtistName
+            self.nameLabel.text = detailData.dThemeName
             self.likeCountLabel.text = likeCount
             self.youtubeView.loadVideoID(youtubeURL!)
-            
-            
-            self.tableView.reloadData()
-            
-
         }
         
-        
     }
-    
-    @IBAction func likeBtnAction(_ sender: Any) {
+    @IBAction func likeBtn(_ sender: Any) {
         if isLikeBtnActivated == false {
             simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
                 self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButtonActivated")
@@ -72,33 +63,28 @@ class InfSolo_ThemeVC: UIViewController {
                 self.isLikeBtnActivated = false
             }
         }
-        
-        
     }
     
-    @IBAction func backBtnAction(_ sender: Any) {
+    @IBAction func backBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
 }
-
-
-extension InfSolo_ThemeVC: UITableViewDelegate, UITableViewDataSource{
+extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("eventList.count : \(eventList.count)")
+        print("Theme eventList.count : \(eventList.count)")
         return eventList.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InfSoloThemeTVCell") as! InfSoloThemeTVCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InfThemeTVCell") as! InfThemeTVCell
         let event = eventList[indexPath.row]
         
-        cell.concertNameLabel.text = event.eventName
-        cell.concertProfileImg.imageFromUrl(gsno(event.eventProfileImg), defaultImgPath: "likeicon")
+        print("event.eventName : \(event.eventName)")
+        cell.themeNameLabel.text = event.eventName
+        
         return cell
     }
-
-
+    
+    
 }

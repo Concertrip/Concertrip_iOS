@@ -31,6 +31,8 @@ class LikeVC: UIViewController {
         tableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
+        //다른뷰갔다 돌아올 때 무조건 아티스트서브!
+        currentSub = artistSub
         artistSubService()
         tableView.reloadData()
     }
@@ -187,13 +189,10 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
             self.present(dvc, animated: true, completion: nil)
         }
         else if self.currentSub == self.themeSub{
-            let dvc = storyboard.instantiateViewController(withIdentifier: "InfSolo_ThemeVC") as! InfSolo_ThemeVC
+            let dvc = storyboard.instantiateViewController(withIdentifier: "InfThemeVC") as! InfThemeVC
             
             dvc.detailId = list.id
             self.present(dvc, animated: true, completion: nil)
         }
     }
-//    //구독취소버튼 post 서비스 작성!
-//    func tappedLikeBtn(){
-//    }
 }

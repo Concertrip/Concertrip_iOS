@@ -1,5 +1,5 @@
 //
-//  DetailService.swift
+//  DetailArtistService.swift
 //  Concertrip
 //
 //  Created by 양어진 on 05/01/2019.
@@ -9,9 +9,9 @@
 import Foundation
 import Alamofire
 
-struct DetailService: APIManager, Requestable{
+struct DetailArtistService: APIManager, Requestable{
     typealias NetworkData = ResponseObject<DetailArtist>
-    static let shared = DetailService()
+    static let shared = DetailArtistService()
     var detailURL = url("/api/artist/detail")
     let header: HTTPHeaders = [
         "Content-Type" : "application/json",
@@ -33,5 +33,5 @@ struct DetailService: APIManager, Requestable{
         }
     }
     
-   
+    
 }

@@ -21,7 +21,7 @@ class InfSolo_ThemeVC: UIViewController {
     @IBOutlet weak var likeBtn: UIButton!
     var isLikeBtnActivated = false
     var detailId : String?
-    var eventList = [ArtistEventList]()
+    var eventList = [EventList]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +32,12 @@ class InfSolo_ThemeVC: UIViewController {
         print("detailId : \(gsno(detailId))")
         
         
-        DetailArtistService.shared.getArtistDetailList(id: detailId!) { [weak self](data) in
+        DetailArtistService.shared.getArtistDetailList(id: detailId!) { [weak self] (data) in
             guard let `self` = self else { return }
             
             let detailData = data as DetailArtist
             guard let events = detailData.dEventsList else { return }
             self.eventList = events
-            
             
             
             let backImg = detailData.dArtistBackImg
@@ -96,7 +95,7 @@ extension InfSolo_ThemeVC: UITableViewDelegate, UITableViewDataSource{
         let event = eventList[indexPath.row]
         
         cell.concertNameLabel.text = event.eventName
-        cell.concertProfileImg.imageFromUrl(gsno(event.eventProfileImg), defaultImgPath: "likeicon")
+        cell.concertProfileImg.imageFromUrl(gsno(event.eventProfileImg), defaultImgPath: "")
         return cell
     }
 

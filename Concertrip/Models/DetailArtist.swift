@@ -17,7 +17,7 @@ struct DetailArtist : Mappable {
     var dArtistSubscribeNum : Int?
     var dYoutubeUrl : String?
     var dMemberList : String?
-    var dEventsList : [ArtistEventList]?
+    var dEventsList : [EventList]?
     var dSubscribe : Bool?
     
     init?(map: Map) {

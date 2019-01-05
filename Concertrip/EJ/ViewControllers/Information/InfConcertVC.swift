@@ -27,19 +27,50 @@ class InfConcertVC: UIViewController {
     
     var isLikeBtnActivated = false
     var detailId : String?
+    var memberList = [MemberList]()
+    var dateTxt  = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        performerCollectionView.delegate = self
+        performerCollectionView.dataSource = self
+//        cautionCollectionView.delegate = self
+//        cautionCollectionView.dataSource = self
+//        tableView.delegate = self
+//        tableView.dataSource = self
 
         print("detailId : \(gsno(detailId))")
-        // Do any additional setup after loading the view.
+       
+        DetailEventService.shared.getConcertDetailList(id: detailId!) { [weak self] (data) in
+            guard let `self` = self else { return }
+            let detailData = data as DetailConcert
+            guard let members = detailData.dConcertMemberList else { return }
+            self.memberList = members
+            
+            print("hihi")
+            
+            for data in detailData.dConcertDate! {
+                self.dateTxt += data + "\n"
+            }
+            
+            print("dateTxt : \(self.dateTxt)")
+            self.concertDateLabel.text = self.dateTxt
+            self.concertLocationLabel.text = detailData.dConcertLocation
+            self.bigProfileImg.imageFromUrl(detailData.dConcertProfileImg, defaultImgPath: "")
+            self.backgroundImg.imageFromUrl(detailData.dConcertBackImg, defaultImgPath: "")
+            self.likeCountLabel.text = String(detailData.dConcertSubscribeNum!)
+            let youtubeURL = detailData.dConcertYoutubeUrl
+            self.youtubeView.loadVideoID(youtubeURL!)
+            self.nameLabel.text = detailData.dConcertName
+            
+        }
     }
     
     @IBAction func likeBtnAction(_ sender: Any) {
         if isLikeBtnActivated == false {
             simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
                 self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButtonActivated")
-//                self.view.makeToast("토스트 메세지입니다.")
                 self.isLikeBtnActivated = true
             }
         } else {
@@ -55,3 +86,35 @@ class InfConcertVC: UIViewController {
     }
     
 }
+
+extension InfConcertVC : UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("memberList.count : \(memberList.count)")
+        return memberList.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InfPerformerCVCell", for: indexPath) as! InfPerformerCVCell
+        let member = memberList[indexPath.row]
+        
+        cell.performerImg.imageFromUrl(gsno(member.memProfileImg), defaultImgPath: "likebtn")
+        cell.performerNameLabel.text = member.memName
+        
+        
+        return cell
+    }
+}
+
+//
+//extension InfConcertVC : UITableViewDelegate, UITableViewDataSource{
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//
+//
+//}
+

@@ -20,8 +20,8 @@ struct DetailThemeService: APIManager, Requestable{
     
     
     func getThemeDetailList(id: String, completion: @escaping (DetailTheme) -> Void) {
-        let artistDetail = detailURL + "?id=\(id)"
-        gettable(artistDetail, body: nil, header: header) { (res) in
+        let themeDetail = detailURL + "?id=\(id)"
+        gettable(themeDetail, body: nil, header: header) { (res) in
             switch res {
             case .success(let value):
                 guard let detailList = value.data else

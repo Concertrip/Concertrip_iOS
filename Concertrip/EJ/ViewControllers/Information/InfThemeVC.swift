@@ -21,7 +21,7 @@ class InfThemeVC: UIViewController {
     
     var isLikeBtnActivated = false
     var detailId : String?
-    var eventList = [ThemeEventList]()
+    var eventList = [EventList]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -479,8 +479,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bR6-Ul-YKQ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1935.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="콘서트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njh-Xp-8aU">
-                                                <rect key="frame" x="145" y="188" width="52" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="콘서트" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njh-Xp-8aU">
+                                                <rect key="frame" x="145" y="188" width="215" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -564,7 +564,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z5g-2o-Dlj">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artistProfileImageMedium1" translatesAutoresizingMaskIntoConstraints="NO" id="Z5g-2o-Dlj">
                                                                     <rect key="frame" x="12" y="0.0" width="50" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="Z5g-2o-Dlj" secondAttribute="height" multiplier="1:1" id="DLj-ee-fYW"/>
@@ -608,7 +608,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018년 12월 23일 17:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivs-Xq-hWF">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018년 12월 23일 17:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivs-Xq-hWF">
                                                 <rect key="frame" x="16" y="680" width="147" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -771,6 +771,7 @@
                                             <constraint firstItem="drP-0D-Oif" firstAttribute="leading" secondItem="bR6-Ul-YKQ" secondAttribute="leading" constant="16" id="EzR-xs-gvr"/>
                                             <constraint firstItem="txW-q3-r98" firstAttribute="top" secondItem="9y3-zy-X0g" secondAttribute="bottom" constant="18" id="I3f-pL-ljl"/>
                                             <constraint firstItem="v3w-4e-tOZ" firstAttribute="top" secondItem="Y3F-Fn-xdV" secondAttribute="bottom" constant="19" id="IuA-Um-6Xs"/>
+                                            <constraint firstItem="drP-0D-Oif" firstAttribute="top" secondItem="ntS-nW-qwB" secondAttribute="bottom" constant="22" id="J7F-eL-dac"/>
                                             <constraint firstItem="ivs-Xq-hWF" firstAttribute="leading" secondItem="eNP-oQ-4nB" secondAttribute="leading" id="Kqe-Uq-Koy"/>
                                             <constraint firstItem="drP-0D-Oif" firstAttribute="width" secondItem="drP-0D-Oif" secondAttribute="height" multiplier="16:9" id="Kzc-Vh-hIY"/>
                                             <constraint firstItem="eNP-oQ-4nB" firstAttribute="top" secondItem="r9a-XE-gf3" secondAttribute="bottom" constant="20" id="L7w-jj-bRu"/>
@@ -790,6 +791,7 @@
                                             <constraint firstItem="guu-NC-dgB" firstAttribute="top" secondItem="txW-q3-r98" secondAttribute="bottom" constant="8" id="Y1q-0R-trH"/>
                                             <constraint firstItem="R5N-S5-uIG" firstAttribute="width" secondItem="R5N-S5-uIG" secondAttribute="height" multiplier="1:1" id="YHW-u0-Fkg"/>
                                             <constraint firstItem="jPW-uz-gNj" firstAttribute="leading" secondItem="bR6-Ul-YKQ" secondAttribute="leading" constant="10" id="YQI-Nx-zPF"/>
+                                            <constraint firstAttribute="trailing" secondItem="njh-Xp-8aU" secondAttribute="trailing" constant="15" id="ZRn-dR-Z76"/>
                                             <constraint firstItem="eNP-oQ-4nB" firstAttribute="leading" secondItem="r9a-XE-gf3" secondAttribute="leading" id="ZdT-XJ-D3q"/>
                                             <constraint firstItem="0EH-Fo-SEg" firstAttribute="width" secondItem="0EH-Fo-SEg" secondAttribute="height" multiplier="1:1" id="ZyP-X8-biP"/>
                                             <constraint firstItem="9y3-zy-X0g" firstAttribute="top" secondItem="7Bp-Ez-YJr" secondAttribute="bottom" constant="8" id="aXP-ah-XIM"/>
@@ -799,7 +801,6 @@
                                             <constraint firstItem="0mS-z7-gxP" firstAttribute="width" secondItem="0mS-z7-gxP" secondAttribute="height" multiplier="25:12" id="dR4-Og-yZY"/>
                                             <constraint firstItem="WyX-7B-C0D" firstAttribute="leading" secondItem="drP-0D-Oif" secondAttribute="leading" id="enh-9C-4ic"/>
                                             <constraint firstItem="0EH-Fo-SEg" firstAttribute="width" secondItem="0mS-z7-gxP" secondAttribute="width" multiplier="46:375" id="gsa-Ah-tOk"/>
-                                            <constraint firstItem="drP-0D-Oif" firstAttribute="top" secondItem="R5N-S5-uIG" secondAttribute="bottom" constant="17" id="hLq-PI-xWC"/>
                                             <constraint firstItem="bQZ-vf-0i8" firstAttribute="top" secondItem="v3w-4e-tOZ" secondAttribute="bottom" constant="46.5" id="hzZ-Dp-jm7"/>
                                             <constraint firstItem="jPW-uz-gNj" firstAttribute="width" secondItem="jPW-uz-gNj" secondAttribute="height" multiplier="1:1" id="lGB-7p-fj3"/>
                                             <constraint firstItem="0mS-z7-gxP" firstAttribute="width" secondItem="0mS-z7-gxP" secondAttribute="height" multiplier="25:12" id="lPN-F1-caa"/>
@@ -863,7 +864,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51d-u3-0gP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3310" y="-22"/>
+            <point key="canvasLocation" x="3309.5999999999999" y="-22.488755622188908"/>
         </scene>
         <!--Inf ThemeVC-->
         <scene sceneID="SHf-eg-q9a">
@@ -1049,6 +1050,7 @@
     <resources>
         <image name="artistLikeButton" width="46" height="46"/>
         <image name="artistProfileImageBig" width="110" height="110"/>
+        <image name="artistProfileImageMedium1" width="50" height="50"/>
         <image name="concertBackgroundImage" width="375" height="180"/>
         <image name="concertLikeButton" width="46" height="46"/>
         <image name="concertProfileImage" width="46" height="46"/>

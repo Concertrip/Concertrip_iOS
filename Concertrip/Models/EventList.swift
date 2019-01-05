@@ -1,15 +1,15 @@
 //
-//  ArtistEventList.swift
+//  EventList.swift
 //  Concertrip
 //
-//  Created by 양어진 on 05/01/2019.
+//  Created by 양어진 on 06/01/2019.
 //  Copyright © 2019 양어진. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-struct ArtistEventList : Mappable {
+struct EventList : Mappable {
     var eventId : String?
     var eventName : String?
     var eventProfileImg : String?

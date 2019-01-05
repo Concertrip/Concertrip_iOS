@@ -17,7 +17,7 @@ struct DetailTheme : Mappable {
     var dThemeIsSubscribe : Bool?
     var dThemeSubscribeNum : Int?
     var dThemeYoutubeUrl : String?
-    var dThemeEventList : [ThemeEventList]?
+    var dThemeEventList : [EventList]?
     
     init?(map: Map) {
         

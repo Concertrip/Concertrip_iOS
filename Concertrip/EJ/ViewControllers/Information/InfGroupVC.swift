@@ -23,13 +23,17 @@ class InfGroupVC: UIViewController {
     
     var isLikeBtnActivated = false
     var detailId : String?
+    var eventList = [EventList]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("detailId : \(gsno(detailId))")
-        
 //        tableView.delegate = self
 //        tableView.dataSource = self
+        
+        
+        
         
     }
     
@@ -56,7 +60,7 @@ class InfGroupVC: UIViewController {
 
 //extension InfGroupVC: UITableViewDelegate, UITableViewDataSource {
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
+//
 //    }
 //
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

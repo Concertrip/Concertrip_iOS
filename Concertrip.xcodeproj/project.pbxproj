@@ -25,6 +25,10 @@
 		7C79BC0521DB61BF00096BB3 /* TicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79BC0421DB61BF00096BB3 /* TicketService.swift */; };
 		7C79BC0D21DC741600096BB3 /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79BC0C21DC741600096BB3 /* Subscribe.swift */; };
 		7C79BC1521DC7D5900096BB3 /* SubscribeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79BC1421DC7D5900096BB3 /* SubscribeService.swift */; };
+		7CA17A0B21E108FB00C0D80E /* DetailEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA17A0A21E108FB00C0D80E /* DetailEventService.swift */; };
+		7CA17A0D21E1092200C0D80E /* DetailConcert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA17A0C21E1092200C0D80E /* DetailConcert.swift */; };
+		7CA17A0F21E1098C00C0D80E /* MemberList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA17A0E21E1098C00C0D80E /* MemberList.swift */; };
+		7CA17A1121E118CA00C0D80E /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA17A1021E118CA00C0D80E /* EventList.swift */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
 		7CCF4E3C21E0566000251580 /* CalendarTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCF4E3B21E0566000251580 /* CalendarTap.swift */; };
@@ -43,9 +47,7 @@
 		7CE92CBA21D7981E00F560F8 /* LikeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE92CB921D7981E00F560F8 /* LikeVC.swift */; };
 		7CF1246721D2522E008F731B /* LikeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246621D2522E008F731B /* LikeSB.storyboard */; };
 		7CF1246921D252BA008F731B /* InformationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1246821D252BA008F731B /* InformationSB.storyboard */; };
-		7CF1692121E0978A0091D624 /* ArtistEventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1692021E0978A0091D624 /* ArtistEventList.swift */; };
 		7CF1692321E097EB0091D624 /* DetailArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1692221E097EB0091D624 /* DetailArtist.swift */; };
-		7CF1692921E0D00C0091D624 /* ThemeEventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1692821E0D00C0091D624 /* ThemeEventList.swift */; };
 		7CF1692B21E0D0700091D624 /* DetailTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1692A21E0D0700091D624 /* DetailTheme.swift */; };
 		7CF1692D21E0D11F0091D624 /* DetailArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1692C21E0D11F0091D624 /* DetailArtistService.swift */; };
 		7CF1692F21E0D1400091D624 /* DetailThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1692E21E0D1400091D624 /* DetailThemeService.swift */; };
@@ -99,6 +101,10 @@
 		7C79BC0421DB61BF00096BB3 /* TicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketService.swift; sourceTree = "<group>"; };
 		7C79BC0C21DC741600096BB3 /* Subscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
 		7C79BC1421DC7D5900096BB3 /* SubscribeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeService.swift; sourceTree = "<group>"; };
+		7CA17A0A21E108FB00C0D80E /* DetailEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventService.swift; sourceTree = "<group>"; };
+		7CA17A0C21E1092200C0D80E /* DetailConcert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConcert.swift; sourceTree = "<group>"; };
+		7CA17A0E21E1098C00C0D80E /* MemberList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberList.swift; sourceTree = "<group>"; };
+		7CA17A1021E118CA00C0D80E /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
 		7CCF4E3B21E0566000251580 /* CalendarTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTap.swift; sourceTree = "<group>"; };
@@ -117,9 +123,7 @@
 		7CE92CB921D7981E00F560F8 /* LikeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeVC.swift; sourceTree = "<group>"; };
 		7CF1246621D2522E008F731B /* LikeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeSB.storyboard; sourceTree = "<group>"; };
 		7CF1246821D252BA008F731B /* InformationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationSB.storyboard; sourceTree = "<group>"; };
-		7CF1692021E0978A0091D624 /* ArtistEventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistEventList.swift; sourceTree = "<group>"; };
 		7CF1692221E097EB0091D624 /* DetailArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArtist.swift; sourceTree = "<group>"; };
-		7CF1692821E0D00C0091D624 /* ThemeEventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEventList.swift; sourceTree = "<group>"; };
 		7CF1692A21E0D0700091D624 /* DetailTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTheme.swift; sourceTree = "<group>"; };
 		7CF1692C21E0D11F0091D624 /* DetailArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArtistService.swift; sourceTree = "<group>"; };
 		7CF1692E21E0D1400091D624 /* DetailThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailThemeService.swift; sourceTree = "<group>"; };
@@ -308,10 +312,11 @@
 				E0F727F221DB9DDC00D89BF6 /* SearchObject.swift */,
 				7C79BC0C21DC741600096BB3 /* Subscribe.swift */,
 				7CCF4E3B21E0566000251580 /* CalendarTap.swift */,
-				7CF1692021E0978A0091D624 /* ArtistEventList.swift */,
 				7CF1692221E097EB0091D624 /* DetailArtist.swift */,
-				7CF1692821E0D00C0091D624 /* ThemeEventList.swift */,
 				7CF1692A21E0D0700091D624 /* DetailTheme.swift */,
+				7CA17A0E21E1098C00C0D80E /* MemberList.swift */,
+				7CA17A0C21E1092200C0D80E /* DetailConcert.swift */,
+				7CA17A1021E118CA00C0D80E /* EventList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				7CCF4E3D21E056B100251580 /* CalendarService.swift */,
 				7CF1692C21E0D11F0091D624 /* DetailArtistService.swift */,
 				7CF1692E21E0D1400091D624 /* DetailThemeService.swift */,
+				7CA17A0A21E108FB00C0D80E /* DetailEventService.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -547,6 +553,7 @@
 				7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */,
 				7CF1693721E0F9120091D624 /* InfThemeTVCell.swift in Sources */,
 				7C3F6F5021D9F3080092102E /* SettingVC.swift in Sources */,
+				7CA17A0D21E1092200C0D80E /* DetailConcert.swift in Sources */,
 				E0F7280321DCDE0C00D89BF6 /* SubscribeArtistService.swift in Sources */,
 				7CCF4E3E21E056B100251580 /* CalendarService.swift in Sources */,
 				E0F727F821DB9DDD00D89BF6 /* Artists.swift in Sources */,
@@ -557,6 +564,7 @@
 				7CE92CBA21D7981E00F560F8 /* LikeVC.swift in Sources */,
 				7CE92CA821D7810900F560F8 /* InfSolo_ThemeVC.swift in Sources */,
 				7C79BC0321DB611B00096BB3 /* Ticket.swift in Sources */,
+				7CA17A0B21E108FB00C0D80E /* DetailEventService.swift in Sources */,
 				E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */,
 				E08FD1A821D21B3A002AF9E7 /* ExploreVC.swift in Sources */,
 				E0F727F621DB9DDD00D89BF6 /* SearchObject.swift in Sources */,
@@ -567,12 +575,12 @@
 				7CF1693521E0F3AF0091D624 /* InfThemeVC.swift in Sources */,
 				7CF1692321E097EB0091D624 /* DetailArtist.swift in Sources */,
 				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,
+				7CA17A0F21E1098C00C0D80E /* MemberList.swift in Sources */,
 				7CE92C7821D68CBB00F560F8 /* Token.swift in Sources */,
 				7C3F6F5421D9F8440092102E /* TicketTVCell.swift in Sources */,
 				7C79BC0D21DC741600096BB3 /* Subscribe.swift in Sources */,
 				7CE92CAE21D7814700F560F8 /* InfConcertVC.swift in Sources */,
 				7CE92C7B21D68CBB00F560F8 /* ResponseArray.swift in Sources */,
-				7CF1692921E0D00C0091D624 /* ThemeEventList.swift in Sources */,
 				7CE92CB221D78F2D00F560F8 /* InfSoloThemeTVCell.swift in Sources */,
 				7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */,
 				E0F7280121DCDDED00D89BF6 /* SubscribeEventService.swift in Sources */,
@@ -589,8 +597,8 @@
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,
 				E08FD1D821D3464E002AF9E7 /* ExploreClickedVCCell.swift in Sources */,
 				E08FD1AC21D220B3002AF9E7 /* ExploreTVCell.swift in Sources */,
-				7CF1692121E0978A0091D624 /* ArtistEventList.swift in Sources */,
 				7CF1692B21E0D0700091D624 /* DetailTheme.swift in Sources */,
+				7CA17A1121E118CA00C0D80E /* EventList.swift in Sources */,
 				7CFB858721DB4823001473B7 /* InfGroupTVCell.swift in Sources */,
 				7CFB858521DB47F9001473B7 /* InfGroupCVCell.swift in Sources */,
 				7CF1692D21E0D11F0091D624 /* DetailArtistService.swift in Sources */,

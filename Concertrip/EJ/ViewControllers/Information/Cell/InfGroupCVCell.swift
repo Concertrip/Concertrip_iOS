@@ -12,4 +12,9 @@ class InfGroupCVCell: UICollectionViewCell {
     @IBOutlet weak var memberImg: UIImageView!
     @IBOutlet weak var memberNameLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        
+    }
 }

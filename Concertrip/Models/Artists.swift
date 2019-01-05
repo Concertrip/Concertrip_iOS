@@ -15,6 +15,7 @@ struct Artists : Mappable {
     var artistProfileImg : String?
 //    var artistFilter : [String]?
     var artistSubscribe : Bool?
+    var artistIsGroup : Bool?
     
     init?(map: Map) {
         
@@ -27,6 +28,7 @@ struct Artists : Mappable {
         artistProfileImg <- map["profileImg"]
 //        artistFilter <- map["filter"]
         artistSubscribe <- map["subscribe"]
+        artistIsGroup <- map["group"]
     }
     
 }

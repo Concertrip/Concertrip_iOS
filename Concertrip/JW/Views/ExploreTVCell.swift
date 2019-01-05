@@ -9,7 +9,7 @@
 import UIKit
 
 class ExploreTVCell: UITableViewCell {
-    var subscribeHandler : ((_ albumId : String) -> Void)?
+    var subscribeHandler : ((_ artistId : String) -> Void)?
 
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

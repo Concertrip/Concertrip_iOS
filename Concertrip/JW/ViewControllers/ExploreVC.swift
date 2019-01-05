@@ -160,13 +160,12 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
         else {
             cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
         }
+        cell.configureArtist(data : artistData)
 
-        cell.subscribeHandler = {(albumId) in
-            SubscribeArtistService.shared.subscriptArtist(id: albumId) {
+        cell.subscribeHandler = {(artistId) in
+            print("앨범아듸 : ", artistId)
+            SubscribeArtistService.shared.subscriptArtist(id: artistId) {
                 print("network working!")
-                print(artistData.artistId)
-                print(artistData.artistName)
-                print(artistData.artistSubscribe)
                 if artistData.artistSubscribe == false {
                     
                     cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
@@ -184,15 +183,20 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //화면 전환시
-        /*
-         let nextVC = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
-         let music = musicList[indexPath.row]
-         nextVC.albumImg = music.albumImg
-         nextVC.musicTitle = music.musicTitle
-         nextVC.singer = music.singer
-         print(nextVC)
-         navigationController?.pushViewController(nextVC, animated: true)
-         */
+        print(indexPath.row)
+        let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
+        let list = artistList[indexPath.row]
+        
+        if list.artistIsGroup == true {
+            let dvc = storyboard.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
+            dvc.detailId = list.artistId
+            self.present(dvc, animated: true, completion: nil)
+        }
+        else {
+            //InfSolo_ThemeVC
+            let dvc = storyboard.instantiateViewController(withIdentifier: "InfSolo_ThemeVC") as! InfSolo_ThemeVC
+            dvc.detailId = list.artistId
+            self.present(dvc, animated: true, completion: nil)
+        }
     }
 }

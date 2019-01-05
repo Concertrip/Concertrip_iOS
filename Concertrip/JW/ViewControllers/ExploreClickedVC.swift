@@ -22,6 +22,7 @@ class ExploreClickedVC: UIViewController {
     @IBOutlet weak var noResultLabel: UILabel!
     
     var isLikeBtnActivated = false
+    var selectedSection = Int()
     
     @IBOutlet weak var searchResultTableView: UITableView!
     var artistList = [Artists]()
@@ -260,5 +261,49 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         header.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
+
+        if indexPath.section == 0 {
+            let artist = artistList[indexPath.row]
+            if artist.artistIsGroup == true {
+                let dvc = storyboard.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
+                dvc.detailId = artist.artistId
+                self.present(dvc, animated: true, completion: nil)
+            }
+            else {
+                let dvc = storyboard.instantiateViewController(withIdentifier: "InfSolo_ThemeVC") as! InfSolo_ThemeVC
+                dvc.detailId = artist.artistId
+                self.present(dvc, animated: true, completion: nil)
+            }
+        }
+        else if indexPath.section == 1 {
+            let genre = genresList[indexPath.row]
+            let dvc = storyboard.instantiateViewController(withIdentifier: "InfThemeVC") as! InfThemeVC
+            dvc.detailId = genre.genreId
+            self.present(dvc, animated: true, completion: nil)
+        }
+        else {
+            let event = eventList[indexPath.row]
+            let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcertVC") as! InfConcertVC
+            dvc.detailId = event.eventId
+            self.present(dvc, animated: true, completion: nil)
+        }
+//        let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
+//        let list = artistList[indexPath.row]
+//
+//        if list.artistIsGroup == true {
+//            let dvc = storyboard.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
+//            dvc.detailId = list.artistId
+//            self.present(dvc, animated: true, completion: nil)
+//        }
+//        else {
+//            //InfSolo_ThemeVC
+//            let dvc = storyboard.instantiateViewController(withIdentifier: "InfSolo_ThemeVC") as! InfSolo_ThemeVC
+//            dvc.detailId = list.artistId
+//            self.present(dvc, animated: true, completion: nil)
+//        }
     }
 }

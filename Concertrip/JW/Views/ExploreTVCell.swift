@@ -22,14 +22,15 @@ class ExploreTVCell: UITableViewCell {
         artistId = data.artistId!
     }
     
-    @objc func subscribe(_ sender : UIButton){
-        subscribeHandler!(artistId)
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         profileImg.layer.cornerRadius = 15
-        profileImg.layer.masksToBounds = true 
+        profileImg.layer.masksToBounds = true
+        likeBtn.addTarget(self, action: #selector(subscribe), for: .touchUpInside)
+
+    }
+    @objc func subscribe(_ sender : UIButton){
+        subscribeHandler!(artistId)
     }
 
 }

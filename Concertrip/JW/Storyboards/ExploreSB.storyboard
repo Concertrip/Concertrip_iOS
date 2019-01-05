@@ -35,18 +35,23 @@
                                                         <constraint firstAttribute="width" secondItem="asW-xc-Evi" secondAttribute="height" multiplier="1:1" id="Ndn-OB-llL"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Un-we-3dw">
-                                                    <rect key="frame" x="72" y="14.5" width="228" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4k-3i-2B7">
-                                                    <rect key="frame" x="72" y="36.5" width="227" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rBO-h8-Bm7">
+                                                    <rect key="frame" x="72" y="14.5" width="47.5" height="36.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Un-we-3dw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="47.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4k-3i-2B7">
+                                                            <rect key="frame" x="0.0" y="22" width="47.5" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36A-Yw-PE0">
                                                     <rect key="frame" x="313" y="14.5" width="46" height="46"/>
                                                     <constraints>
@@ -59,23 +64,19 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="36A-Yw-PE0" firstAttribute="leading" secondItem="3Un-we-3dw" secondAttribute="trailing" constant="13" id="0KP-2O-QOe"/>
                                                 <constraint firstItem="asW-xc-Evi" firstAttribute="leading" secondItem="mLB-83-UFP" secondAttribute="leading" constant="15" id="55M-9a-o9s"/>
-                                                <constraint firstItem="3Un-we-3dw" firstAttribute="top" secondItem="asW-xc-Evi" secondAttribute="top" id="Gqh-EI-eq2"/>
                                                 <constraint firstAttribute="trailing" secondItem="36A-Yw-PE0" secondAttribute="trailing" constant="16" id="KCT-zU-mrA"/>
                                                 <constraint firstItem="asW-xc-Evi" firstAttribute="width" secondItem="mLB-83-UFP" secondAttribute="width" multiplier="46:375" id="MC5-gD-fYG"/>
                                                 <constraint firstItem="36A-Yw-PE0" firstAttribute="width" secondItem="asW-xc-Evi" secondAttribute="width" id="OBV-JM-t1F"/>
                                                 <constraint firstItem="asW-xc-Evi" firstAttribute="centerY" secondItem="mLB-83-UFP" secondAttribute="centerY" id="PU7-dO-aQw"/>
-                                                <constraint firstItem="q4k-3i-2B7" firstAttribute="top" secondItem="mLB-83-UFP" secondAttribute="top" constant="36.5" id="XrE-ZN-YXI"/>
-                                                <constraint firstItem="q4k-3i-2B7" firstAttribute="trailing" secondItem="36A-Yw-PE0" secondAttribute="trailing" constant="-60" id="fa6-hs-06o"/>
-                                                <constraint firstItem="3Un-we-3dw" firstAttribute="leading" secondItem="asW-xc-Evi" secondAttribute="trailing" constant="11" id="ff2-1t-rmV"/>
-                                                <constraint firstItem="q4k-3i-2B7" firstAttribute="top" secondItem="3Un-we-3dw" secondAttribute="bottom" constant="4" id="hFE-4w-IGC"/>
+                                                <constraint firstItem="rBO-h8-Bm7" firstAttribute="leading" secondItem="asW-xc-Evi" secondAttribute="trailing" constant="11" id="hiR-XH-hpO"/>
+                                                <constraint firstItem="rBO-h8-Bm7" firstAttribute="top" secondItem="asW-xc-Evi" secondAttribute="top" id="jRo-FH-j0y"/>
                                                 <constraint firstItem="36A-Yw-PE0" firstAttribute="centerY" secondItem="asW-xc-Evi" secondAttribute="centerY" id="q7m-Im-LKm"/>
-                                                <constraint firstItem="q4k-3i-2B7" firstAttribute="leading" secondItem="3Un-we-3dw" secondAttribute="leading" id="wRN-n9-Kif"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="hashtagLabel" destination="q4k-3i-2B7" id="SQi-m8-Ofr"/>
+                                            <outlet property="likeBtn" destination="36A-Yw-PE0" id="kai-4n-imZ"/>
                                             <outlet property="nameLabel" destination="3Un-we-3dw" id="T72-fI-DES"/>
                                             <outlet property="profileImg" destination="asW-xc-Evi" id="xBc-Dl-9GK"/>
                                         </connections>

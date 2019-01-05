@@ -24,8 +24,7 @@ class ExploreVC: UIViewController {
         navigationController?.pushViewController(vc,
                                                  animated: true)
     }
-    
-    var searchList = [SearchObject]()
+
     var artistList = [Artists]()
     
     var isLikeBtnActivated = false
@@ -47,24 +46,43 @@ class ExploreVC: UIViewController {
     var selectedIdx = Int ()
     //[모두] [테마] [보이그룹] [걸그룹] [힙합] [발라드/R&B] [댄스] [POP] [EDM] [인디] [재즈] [록]
     
-    let menuList = ["모두", "테마", "보이그룹", "걸그룹", "힙합", "발라드/R&B", "댄스", "POP", "EDM", "인디", "재즈", "록"]
+    let menuList = ["테마", "보이그룹", "걸그룹", "힙합", "발라드/R&B", "댄스", "POP", "EDM", "인디", "재즈", "록"]
     let nameList = ["자라섬 재즈페스티벌", "SAMM HANSHAW", "PHUM VIPHURIT", "ALESSICA CARA"]
     let hashtagList = ["#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        collectionView.delegate = self
+        collectionView.dataSource = self
         tableView.delegate = self
         tableView.dataSource = self
         
-        collectionView.delegate = self
-        collectionView.dataSource = self 
+        let menu = menuList[0]
+        print(menu)
+        
+        print("check!!")
+        
+        
+        
+        
         /*
         //TextField 속성 설정
         searchTxt.attributedPlaceholder = NSAttributedString(string: "아티스트 / 콘서트명",
                                                                attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
- */
+         */
+    }
+    
+    func getSearchResult() {
+        SearchService.shared.getSearchResult(tag: menuList[selectedIdx]) { [weak self] (value) in
+            print("network success")
+            guard let `self` = self else { return }
+            let searchData = value as SearchObject
+            guard let artists = searchData.artists else { return }
+            self.artistList = artists
+            self.tableView.reloadData()
+            self.collectionView.reloadData()
+        }
     }
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,38 +93,6 @@ class ExploreVC: UIViewController {
         }
     }
  */
-}
-
-extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "exploreTVCell") as! ExploreTVCell
-        
-        let name = nameList[indexPath.row]
-        let hashtag = hashtagList[indexPath.row]
-        
-        cell.nameLabel.text = name
-        cell.hashtagLabel.text = hashtag
-        cell.selectionStyle = .none
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //화면 전환시
-        /*
-         let nextVC = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
-         let music = musicList[indexPath.row]
-         nextVC.albumImg = music.albumImg
-         nextVC.musicTitle = music.musicTitle
-         nextVC.singer = music.singer
-         print(nextVC)
-         navigationController?.pushViewController(nextVC, animated: true)
-         */
-    }
 }
 
 extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
@@ -133,15 +119,46 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
     //선택 시
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIdx = indexPath.row
-        let menu = menuList[selectedIdx]
-        SearchService.shared.getSearchResult(tag: menu) { [weak self] (value) in
-            guard let `self` = self else { return }
-            
-            self.searchList = value
-            self.artistList = self.searchList[0].artists!
-        }
+        getSearchResult()
+    }
+    
+    
+}
+
+extension ExploreVC : UICollectionViewDelegateFlowLayout {
+    func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                         sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let menu = menuList[indexPath.row]
+        let width  = Int(menu.widthWithConstrainedHeight(height: 26, font: UIFont.systemFont(ofSize: 15)))
+        return CGSize(width: width+25, height: 26)
+    }
+}
+
+
+extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return artistList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exploreTVCell") as! ExploreTVCell
+        print("cell : ", cell)
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploreTVCell", for: indexPath) as! ExploreTVCell
+//        var artistData = artistList[indexPath.row]
+        
+//        cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
+//        cell.nameLabel.text = artistData.artistName
+        
+//        let name = nameList[indexPath.row]
+//        let hashtag = hashtagList[indexPath.row]
+//
+//        cell.nameLabel.text = name
+//        cell.hashtagLabel.text = hashtag
+//        cell.selectionStyle = .none
+        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "exploreTVCell", for: indexPath) as! ExploreTVCell
+        print("tableViewCell : ", indexPath.row)
+        print("아티스트 리스트 : ", artistList)
         var artistData = artistList[indexPath.row]
         cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
         cell.nameLabel.text = artistData.artistName
@@ -151,7 +168,7 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
         else {
             cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
         }
-        
+
         cell.subscribeHandler = {(albumId) in
             SubscribeArtistService.shared.subscriptArtist(id: albumId) {
                 if artistData.artistSubscribe == false {
@@ -165,17 +182,19 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
             }
         }
         
-        self.collectionView.reloadData()
+        return cell
     }
     
-    
-}
-
-extension ExploreVC : UICollectionViewDelegateFlowLayout {
-    func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let menu = menuList[indexPath.row]
-        let width  = Int(menu.widthWithConstrainedHeight(height: 26, font: UIFont.systemFont(ofSize: 15)))
-        return CGSize(width: width+25, height: 26)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //화면 전환시
+        /*
+         let nextVC = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
+         let music = musicList[indexPath.row]
+         nextVC.albumImg = music.albumImg
+         nextVC.musicTitle = music.musicTitle
+         nextVC.singer = music.singer
+         print(nextVC)
+         navigationController?.pushViewController(nextVC, animated: true)
+         */
     }
 }

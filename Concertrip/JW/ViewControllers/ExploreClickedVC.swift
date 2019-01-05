@@ -20,7 +20,6 @@ class ExploreClickedVC: UIViewController {
     var isLikeBtnActivated = false
     
     @IBOutlet weak var searchResultTableView: UITableView!
-    var searchList = [SearchObject]()
     var artistList = [Artists]()
     var eventList = [Events]()
     var genresList = [Genres]()
@@ -29,7 +28,9 @@ class ExploreClickedVC: UIViewController {
     
     @IBAction func okBtn(_ sender: Any) {
         SearchService.shared.getSearchResult(tag: searchTxt.text!) { [weak self] (value) in
-            if value[0].artists?.count == 0 && value[0].events?.count == 0 && value[0].genres?.count == 0 {
+            let searchData = value as SearchObject
+
+            if value.artists?.count == 0 && value.events?.count == 0 && value.genres?.count == 0 {
                 self?.noResultView.isHidden = false
                 self?.noResultLabel.text = "'\(self?.searchTxt.text! ?? "")'에 대한 결과가 없습니다"
             }
@@ -39,10 +40,12 @@ class ExploreClickedVC: UIViewController {
                 
                 guard let `self` = self else { return }
                 
-                self.searchList = value
-                self.artistList = self.searchList[0].artists!
-                self.eventList = self.searchList[0].events!
-                self.genresList = self.searchList[0].genres!
+                guard let artist = searchData.artists else {return}
+                self.artistList = artist
+                guard let event = searchData.events else {return}
+                self.eventList = event
+                guard let genre = searchData.genres else {return}
+                self.genresList = genre
                 
                 self.searchTableView.reloadData()
             }
@@ -104,6 +107,8 @@ class ExploreClickedVC: UIViewController {
     func dismissKeyboard() {
 
     }
+    
+    
 }
 
 

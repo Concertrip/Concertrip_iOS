@@ -60,11 +60,7 @@ class MainCalendarVC: UIViewController {
         let cid = ""
         let cyear = 2019
         let cmonth = 1
-        dispathGroup.notify(queue: .main){
-            self.calendarView.commitCalendarViewUpdate()
-        }
         print("들어갔나요? ")
-        dispathGroup.enter()
         
         CalendarListService.shared.getCalendarMonthly(type: ctype, id: cid, year: cyear, month: cmonth) { [weak self](data) in
             print("들어갔네요")
@@ -106,6 +102,9 @@ class MainCalendarVC: UIViewController {
                 }
             }
             print("어레이입니다 : ", self.dayArr)
+            self.index = self.dayArr.count
+            
+            print("self.index 입니당ㅋㅋ : \(self.index)")
             //            let dateFormatter = DateFormatter()
             //            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             //            dateFormatter.dateFormat = "yyyy-MM-d'T'HH:mm:ss.SSSZ"
@@ -128,8 +127,9 @@ class MainCalendarVC: UIViewController {
             ////            for allDay in self.monthlyList{
             ////                print("무ㅓ가 나오나요? : ",a.calendarDate)
             ////            }
+            self.calendarView.contentController.refreshPresentedMonth()
+
         }
-        self.dispathGroup.leave()
         
         
         
@@ -170,84 +170,6 @@ class MainCalendarVC: UIViewController {
         menuView.commitMenuViewUpdate()
         calendarView.commitCalendarViewUpdate()
     }
-    
-    func dotNetwork(){
-        //        type?type=all&id=&year=2019&month=1
-        let ctype = "all"
-        let cid = ""
-        let cyear = 2019
-        let cmonth = 1
-        
-        print("들어갔나요? ")
-        
-        CalendarListService.shared.getCalendarMonthly(type: ctype, id: cid, year: cyear, month: cmonth) { [weak self](data) in
-            self!.dispathGroup.enter()
-            print("들어갔네요")
-            guard let `self` = self else { return }
-            self.monthlyList = data
-            //            guard let `self` = self else { return }
-            //            let detailData = data as DetailConcert
-            //            guard let members = detailData.dConcertMemberList else { return }
-            //            self.memberList = members
-            //print("monthlyList[0].calendarDate는 : \(self.monthlyList[0].calendarDate)")
-            
-            //            for date in self.monthlyList[0].calendarDate! {
-            //                self.monthlyDateList.append(date)
-            //            }
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-d'T'HH:mm:ss.SSSZ"
-            for date in data{
-                for date2 in date.calendarDate! {
-                    let dayFormat = DateFormatter()
-                    let monFormat = DateFormatter()
-                    let yearFormat = DateFormatter()
-                    
-                    dayFormat.dateFormat = "d"
-                    monFormat.dateFormat = "M"
-                    yearFormat.dateFormat = "yyyy"
-                    
-                    guard let date = dateFormatter.date(from: date2) else {
-                        fatalError()
-                    }
-                    
-                    let day : Int? = Int(dayFormat.string(from: date))
-                    let mon : Int? = Int(monFormat.string(from: date))
-                    let year : Int? = Int(yearFormat.string(from: date))
-                    
-                    self.dayArr.append(day!)
-                    self.monthArr.append(mon!)
-                    self.yearArr.append(year!)
-                    
-                }
-            }
-            print("어레이입니다 : ", self.dayArr)
-            //            let dateFormatter = DateFormatter()
-            //            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            //            dateFormatter.dateFormat = "yyyy-MM-d'T'HH:mm:ss.SSSZ"
-            //
-            //            let date = dateFormatter.date(from: self.monthlyDateList[0])
-            //            print("date: \(String(describing: date!))")
-            //
-            //            let dayFormat = DateFormatter()
-            //            dayFormat.dateFormat = "d"
-            //            let monthFormat = DateFormatter()
-            //            monthFormat.dateFormat = "MM"
-            //            let yearFormat = DateFormatter()
-            //            yearFormat.dateFormat = "yyyy"
-            //
-            //            let day = dayFormat.string(from: date!)
-            //            let mon = monthFormat.string(from: date!)
-            //            let year = yearFormat.string(from: date!)
-            //            print(year,"년 ", mon,"월 ", day,"일 통신 했다!")
-            //
-            ////            for allDay in self.monthlyList{
-            ////                print("무ㅓ가 나오나요? : ",a.calendarDate)
-            ////            }
-        }
-        self.dispathGroup.leave()
-    }
-
-
 }
 
 
@@ -346,7 +268,8 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
     func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool {
         
         if !dayView.isHidden && dayView.date != nil {
-            
+            print("안녕하세요")
+            print("index : ", index)
             let year = dayView.date.year
             let month = dayView.date.month
             let day = dayView.date.day

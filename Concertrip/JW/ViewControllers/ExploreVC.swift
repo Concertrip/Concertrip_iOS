@@ -61,6 +61,7 @@ class ExploreVC: UIViewController {
         let menu = menuList[0]
         print(menu)
         
+        
         /*
         //TextField 속성 설정
         searchTxt.attributedPlaceholder = NSAttributedString(string: "아티스트 / 콘서트명",
@@ -102,10 +103,10 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
         cell.menuLabel.text = menu
         
         if selectedIdx == indexPath.row{
-            cell.menuLabel.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
+            cell.menuLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         }
         else {
-            cell.menuLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+            cell.menuLabel.textColor = UIColor(red: 111, green: 111, blue: 111, alpha: 1)
         }
         
         return cell
@@ -135,8 +136,14 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
         return artistList.count
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exploreTVCell") as! ExploreTVCell
+        
         
 //        var artistData = artistList[indexPath.row]
         

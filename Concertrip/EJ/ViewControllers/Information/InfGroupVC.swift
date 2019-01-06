@@ -69,12 +69,12 @@ class InfGroupVC: UIViewController {
         
         if isLikeBtnActivated == false {
             simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
-                self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButtonActivated")
+                self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
                 self.isLikeBtnActivated = true
             }
         } else {
             simpleOnlyOKAlertwithHandler(title: "캘린더에서 삭제되었습니다!", message: "") { (okAction) in
-                self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButton")
+                self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
                 self.isLikeBtnActivated = false
             }
         }

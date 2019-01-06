@@ -12,4 +12,7 @@ class InfPerformerCVCell: UICollectionViewCell {
     @IBOutlet weak var performerImg: UIImageView!
     @IBOutlet weak var performerNameLabel: UILabel!
     
+    override func awakeFromNib() {
+        performerImg.circleImageView()
+    }
 }

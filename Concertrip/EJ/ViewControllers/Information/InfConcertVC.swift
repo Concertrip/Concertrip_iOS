@@ -36,7 +36,7 @@ class InfConcertVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("detailId : \(gsno(detailId))")
-       
+        bigProfileImg.circleImageView()
         DetailEventService.shared.getConcertDetailList(id: detailId!) { [weak self] (data) in
             guard let `self` = self else { return }
             let detailData = data as DetailConcert

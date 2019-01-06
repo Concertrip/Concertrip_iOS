@@ -617,7 +617,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세종대학교 컨벤션센터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9y3-zy-X0g">
-                                                <rect key="frame" x="16" y="740" width="343" height="17"/>
+                                                <rect key="frame" x="16" y="740" width="125" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -740,7 +740,7 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow" translatesAutoresizingMaskIntoConstraints="NO" id="v3w-4e-tOZ">
+                                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow" translatesAutoresizingMaskIntoConstraints="NO" id="v3w-4e-tOZ">
                                                 <rect key="frame" x="16" y="1276" width="344" height="667"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -791,7 +791,6 @@
                                             <constraint firstItem="0EH-Fo-SEg" firstAttribute="width" secondItem="0EH-Fo-SEg" secondAttribute="height" multiplier="1:1" id="V0W-h1-Y9m"/>
                                             <constraint firstItem="g8l-yQ-PUI" firstAttribute="width" secondItem="g8l-yQ-PUI" secondAttribute="height" multiplier="5:1" id="Vqv-eC-6bO"/>
                                             <constraint firstItem="njh-Xp-8aU" firstAttribute="leading" secondItem="R5N-S5-uIG" secondAttribute="trailing" constant="10" id="X40-Uy-NXx"/>
-                                            <constraint firstAttribute="trailing" secondItem="9y3-zy-X0g" secondAttribute="trailing" constant="16" id="XfT-55-1DG"/>
                                             <constraint firstItem="guu-NC-dgB" firstAttribute="top" secondItem="txW-q3-r98" secondAttribute="bottom" constant="8" id="Y1q-0R-trH"/>
                                             <constraint firstItem="R5N-S5-uIG" firstAttribute="width" secondItem="R5N-S5-uIG" secondAttribute="height" multiplier="1:1" id="YHW-u0-Fkg"/>
                                             <constraint firstItem="jPW-uz-gNj" firstAttribute="leading" secondItem="bR6-Ul-YKQ" secondAttribute="leading" constant="10" id="YQI-Nx-zPF"/>

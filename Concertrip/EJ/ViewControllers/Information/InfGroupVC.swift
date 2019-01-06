@@ -120,6 +120,4 @@ extension InfGroupVC : UICollectionViewDelegate, UICollectionViewDataSource {
         
         return cell
     }
-
-
 }

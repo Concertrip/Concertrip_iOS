@@ -22,6 +22,7 @@ class InfThemeVC: UIViewController {
     var isLikeBtnActivated = false
     var detailId : String?
     var eventList = [EventList]()
+    var eventComing = [Events]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,17 +53,8 @@ class InfThemeVC: UIViewController {
         
     }
     @IBAction func likeBtn(_ sender: Any) {
-        if isLikeBtnActivated == false {
-            simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
-                self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButtonActivated")
-                self.isLikeBtnActivated = true
-            }
-        } else {
-            simpleOnlyOKAlertwithHandler(title: "캘린더에서 삭제되었습니다!", message: "") { (okAction) in
-                self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButton")
-                self.isLikeBtnActivated = false
-            }
-        }
+
+        
     }
     
     @IBAction func backBtn(_ sender: Any) {
@@ -72,15 +64,31 @@ class InfThemeVC: UIViewController {
 }
 extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Theme eventList.count : \(eventList.count)")
-        return eventList.count
+        print("Theme eventComing.count : \(eventComing.count)")
+        return eventComing.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfThemeTVCell") as! InfThemeTVCell
-        let event = eventList[indexPath.row]
+        var event = eventList[indexPath.row]
+        cell.configure(data: event)
         
-    
+        cell.subscribeHandler = {(albumId) in
+            SubscribeEventService.shared.subscriptEvent(id: albumId){
+                print("구독이 됐나요? : ", albumId)
+                if self.isLikeBtnActivated == false {
+                    self.simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
+                        self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButtonActivated")
+                        self.isLikeBtnActivated = true
+                    }
+                } else {
+                    self.simpleOnlyOKAlertwithHandler(title: "캘린더에서 삭제되었습니다!", message: "") { (okAction) in
+                        self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButton")
+                        self.isLikeBtnActivated = false
+                    }
+                }
+            }
+        }
         cell.themeProfileImg.imageFromUrl(event.eventProfileImg, defaultImgPath: "")
         cell.themeNameLabel.text = event.eventName
         

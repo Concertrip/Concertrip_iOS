@@ -143,7 +143,7 @@ class MainCalendarVC: UIViewController {
         collectionView.reloadData()
         
         //calendarView
-//        self.calendarView.calendarAppearanceDelegate = self //Appearance delegate
+        self.calendarView.calendarAppearanceDelegate = self //Appearance delegate
 //        self.calendarView.animatorDelegate = self // Animator delegate
         self.menuView.menuViewDelegate = self // Menu delegate
         self.calendarView.calendarDelegate = self // Calendar delegate
@@ -174,17 +174,23 @@ class MainCalendarVC: UIViewController {
 
 
 //MARK: Calendar Extension
+extension MainCalendarVC: CVCalendarViewAppearanceDelegate {
+    func dayLabelWeekdayOutTextColor() -> UIColor {
+        return UIColor.gray
+    }
+    
+    func dayLabelWeekdayInTextColor() -> UIColor {
+        return UIColor.white
+    }
+}
 
 extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
     
     func shouldShowWeekdaysOut() -> Bool { return shouldShowDaysOut }
-    //토요일 일요일 빨간색처리.
     func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {
-//        return weekday == .sunday || weekday == .saturday ?
-        return weekday == .sunday ?
-            UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0) : UIColor.black
+        return UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+//        weekday == .sunday || weekday == .saturday  || weekday == .monday || weekday == .tuesday || weekday == .wednesday || weekday == .thursday || weekday == .friday ?
     }
-    
     func weekdaySymbolType() -> WeekdaySymbolType {
         return .short
     }
@@ -222,7 +228,6 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
                 updatedMonthLabel.transform = CGAffineTransform.identity
                 
             }) { _ in
-                
                 self.animationFinished = true
                 self.monthLabel.frame = updatedMonthLabel.frame
                 self.monthLabel.text = updatedMonthLabel.text
@@ -230,7 +235,6 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
                 self.monthLabel.alpha = 1
                 updatedMonthLabel.removeFromSuperview()
             }
-            
             self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
         }
     }
@@ -309,36 +313,16 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
     }
 
     
+    
+
+
+    
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         selectedDay = dayView
-//        if !tableIsVisible { //dissmiss애니매이션
-//
-//            tableView.isHidden = false
-//
-//
-//            tableIsVisible = true
-//
-//            //애니메이션
-//            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
-//
-//                self.view.layoutIfNeeded()
-//            }) { (animationComplete) in
-//                print("The animation is complete!")
-//            }
-//        } else { //show애니매이션!
-//
-//            tableIsVisible = false
-//
-//            //애니메이션
-//            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
-//
-//                self.view.layoutIfNeeded()
-//            }) { (animationComplete) in
-//                print("The animation is complete!")
-//
-//            }
-//        }
+        print("selectedDay \(selectedDay.date.day)")
         
+        
+ 
     }
     
     func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
@@ -395,6 +379,19 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
 
 extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
     
+//    func dayLabelPresentWeekdayHighlightedBackgroundColor() -> UIColor {
+//        return UIColor.white
+//    }
+    
+    //오늘날짜에 하이라이트 되는것!
+    func dayLabelPresentWeekdaySelectedBackgroundColor() -> UIColor {
+        return UIColor.black
+    }
+    
+    func dayLabelWeekdaySelectedBackgroundColor() -> UIColor {
+        return UIColor(cgColor: #colorLiteral(red: 0.5843137255, green: 0.2431372549, blue: 1, alpha: 1))
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("taplist.count : \(tapList.count)")
         return tapList.count
@@ -407,10 +404,10 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         
         cell.menuLabel.text = menu.calTapName
         if selectedIdx == indexPath.row{
-            cell.menuLabel.textColor = #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1)
+            cell.menuLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         }
         else {
-            cell.menuLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            cell.menuLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         }
         return cell
     }

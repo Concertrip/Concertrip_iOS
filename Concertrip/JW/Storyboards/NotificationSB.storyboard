@@ -26,9 +26,6 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notificationLight" translatesAutoresizingMaskIntoConstraints="NO" id="Sry-lu-Lb4">
                                 <rect key="frame" x="0.0" y="137" width="375" height="530"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Sry-lu-Lb4" secondAttribute="height" multiplier="75:106" id="Y4g-AV-3AB"/>
-                                </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9QI-Cb-G9C">
                                 <rect key="frame" x="0.0" y="137" width="375" height="530"/>
@@ -74,6 +71,7 @@
                                 <rect key="frame" x="16" y="41" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gdM-2n-t4N" secondAttribute="height" multiplier="1:1" id="VAB-tv-1ak"/>
+                                    <constraint firstAttribute="height" constant="32" id="oAx-2u-q8D"/>
                                 </constraints>
                                 <state key="normal" image="leftArrowIcon"/>
                                 <connections>
@@ -87,14 +85,13 @@
                             <constraint firstItem="VmR-bc-HII" firstAttribute="trailing" secondItem="gdM-2n-t4N" secondAttribute="trailing" constant="327" id="46K-RG-bXV"/>
                             <constraint firstItem="9QI-Cb-G9C" firstAttribute="top" secondItem="Sry-lu-Lb4" secondAttribute="top" id="5W2-ey-jlB"/>
                             <constraint firstItem="9QI-Cb-G9C" firstAttribute="leading" secondItem="VmR-bc-HII" secondAttribute="leading" id="CWJ-8c-df4"/>
-                            <constraint firstItem="Sry-lu-Lb4" firstAttribute="bottom" secondItem="VmR-bc-HII" secondAttribute="bottom" id="Dlt-n7-CZH"/>
+                            <constraint firstItem="Sry-lu-Lb4" firstAttribute="bottom" secondItem="VmR-bc-HII" secondAttribute="bottom" priority="250" id="Dlt-n7-CZH"/>
                             <constraint firstItem="CcB-Vt-AFk" firstAttribute="top" secondItem="gdM-2n-t4N" secondAttribute="bottom" constant="19" id="Ewl-RG-ha4"/>
-                            <constraint firstItem="9QI-Cb-G9C" firstAttribute="top" secondItem="CcB-Vt-AFk" secondAttribute="bottom" constant="21" id="Fh2-j4-Wtw"/>
                             <constraint firstItem="CcB-Vt-AFk" firstAttribute="leading" secondItem="gdM-2n-t4N" secondAttribute="leading" id="PzY-fu-lG9"/>
                             <constraint firstItem="9QI-Cb-G9C" firstAttribute="trailing" secondItem="VmR-bc-HII" secondAttribute="trailing" id="S2A-IP-u4K"/>
                             <constraint firstItem="Sry-lu-Lb4" firstAttribute="top" secondItem="CcB-Vt-AFk" secondAttribute="bottom" constant="21" id="Tub-qe-BDu"/>
-                            <constraint firstItem="Sry-lu-Lb4" firstAttribute="width" secondItem="dV7-dj-nXL" secondAttribute="width" id="bB9-Gk-D5D"/>
                             <constraint firstItem="Sry-lu-Lb4" firstAttribute="trailing" secondItem="VmR-bc-HII" secondAttribute="trailing" id="lVs-Cf-am4"/>
+                            <constraint firstItem="Sry-lu-Lb4" firstAttribute="height" secondItem="dV7-dj-nXL" secondAttribute="height" multiplier="530:667" id="msj-ln-v3H"/>
                             <constraint firstItem="Sry-lu-Lb4" firstAttribute="leading" secondItem="VmR-bc-HII" secondAttribute="leading" id="pfi-KF-bFg"/>
                             <constraint firstItem="gdM-2n-t4N" firstAttribute="top" secondItem="VmR-bc-HII" secondAttribute="top" constant="21" id="rOF-tR-isq"/>
                             <constraint firstItem="9QI-Cb-G9C" firstAttribute="bottom" secondItem="VmR-bc-HII" secondAttribute="bottom" id="rb8-sB-cRR"/>

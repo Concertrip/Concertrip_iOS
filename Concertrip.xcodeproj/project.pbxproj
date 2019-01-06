@@ -53,6 +53,7 @@
 		7CF1692F21E0D1400091D624 /* DetailThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1692E21E0D1400091D624 /* DetailThemeService.swift */; };
 		7CF1693521E0F3AF0091D624 /* InfThemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1693421E0F3AF0091D624 /* InfThemeVC.swift */; };
 		7CF1693721E0F9120091D624 /* InfThemeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1693621E0F9120091D624 /* InfThemeTVCell.swift */; };
+		7CF5E8CC21E1D417003751C2 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF5E8CB21E1D417003751C2 /* Calendar.swift */; };
 		7CFB858521DB47F9001473B7 /* InfGroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858421DB47F9001473B7 /* InfGroupCVCell.swift */; };
 		7CFB858721DB4823001473B7 /* InfGroupTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858621DB4823001473B7 /* InfGroupTVCell.swift */; };
 		7CFB858921DB49B8001473B7 /* InfTicketPriceTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858821DB49B8001473B7 /* InfTicketPriceTVCell.swift */; };
@@ -129,6 +130,7 @@
 		7CF1692E21E0D1400091D624 /* DetailThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailThemeService.swift; sourceTree = "<group>"; };
 		7CF1693421E0F3AF0091D624 /* InfThemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfThemeVC.swift; sourceTree = "<group>"; };
 		7CF1693621E0F9120091D624 /* InfThemeTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfThemeTVCell.swift; sourceTree = "<group>"; };
+		7CF5E8CB21E1D417003751C2 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		7CFB858421DB47F9001473B7 /* InfGroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfGroupCVCell.swift; sourceTree = "<group>"; };
 		7CFB858621DB4823001473B7 /* InfGroupTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfGroupTVCell.swift; sourceTree = "<group>"; };
 		7CFB858821DB49B8001473B7 /* InfTicketPriceTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfTicketPriceTVCell.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				7CA17A0E21E1098C00C0D80E /* MemberList.swift */,
 				7CA17A0C21E1092200C0D80E /* DetailConcert.swift */,
 				7CA17A1021E118CA00C0D80E /* EventList.swift */,
+				7CF5E8CB21E1D417003751C2 /* Calendar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -495,7 +498,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -518,7 +521,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -607,6 +610,7 @@
 				7CF1692F21E0D1400091D624 /* DetailThemeService.swift in Sources */,
 				7C3F6F5221D9F3760092102E /* SettingTVCell.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,
+				7CF5E8CC21E1D417003751C2 /* Calendar.swift in Sources */,
 				E0F727F721DB9DDD00D89BF6 /* Genres.swift in Sources */,
 				E08FD1AA21D2209F002AF9E7 /* ExploreCVCell.swift in Sources */,
 				7CFB858B21DB49DD001473B7 /* InfPerformerCVCell.swift in Sources */,

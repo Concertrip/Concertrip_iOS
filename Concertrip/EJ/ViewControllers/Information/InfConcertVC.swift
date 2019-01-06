@@ -32,6 +32,9 @@ class InfConcertVC: UIViewController {
     var seatPriceList:[String] = []
     
     var dateTxt  = ""
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

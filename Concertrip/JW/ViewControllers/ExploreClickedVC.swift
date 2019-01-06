@@ -94,6 +94,9 @@ class ExploreClickedVC: UIViewController {
     
     let thirdData : NSArray = []
     //let thirdData = ["2"]
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

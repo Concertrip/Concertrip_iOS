@@ -24,6 +24,9 @@ class TicketVC: UIViewController {
     @IBAction func backBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         TicketService.shared.getTicketList { [weak self] (data) in

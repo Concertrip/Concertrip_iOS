@@ -14,7 +14,9 @@ class SettingVC: UIViewController {
     
     var settingArr = ["공지사항", "푸시알림 설정", "문의하기","캘린더 추가 요청하기", "서비스 이용약관", "공연 기획사 제휴 문의" ]
     
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

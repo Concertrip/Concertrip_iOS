@@ -23,7 +23,9 @@ class NotificationVC: UIViewController {
     
     let titleList = ["다니엘 시저 첫 내한공연", "SAMM HANSHAW 내한공연 - DOUBT", "2018 스카 슈퍼스웩 페스티벌 <ADAM LAMBERT 특별출연>", "ALESSICA CARA의 GROWING PAIN 공연"]
     let hashtagList = ["#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!"]
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

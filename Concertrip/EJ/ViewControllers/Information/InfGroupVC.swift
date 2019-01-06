@@ -26,7 +26,9 @@ class InfGroupVC: UIViewController {
     var eventList = [EventList]()
     var memberList = [MemberList]()
     
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         bigProfileImg.circleImageView()

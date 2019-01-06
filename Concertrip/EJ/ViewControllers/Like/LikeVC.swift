@@ -23,7 +23,9 @@ class LikeVC: UIViewController {
     
     var subList = [Subscribe]()
 
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

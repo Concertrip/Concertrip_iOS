@@ -50,6 +50,9 @@ class ExploreVC: UIViewController {
     let nameList = ["자라섬 재즈페스티벌", "SAMM HANSHAW", "PHUM VIPHURIT", "ALESSICA CARA"]
     let hashtagList = ["#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ"]
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

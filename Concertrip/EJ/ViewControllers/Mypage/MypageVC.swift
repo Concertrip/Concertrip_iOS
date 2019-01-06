@@ -16,6 +16,9 @@ class MypageVC: UIViewController {
     
     var managerArr = ["적립금", "쿠폰", "예매확인/취소", "리뷰", "배송지관리", "주문/배송조회", "결제수단", "고객센터"]
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

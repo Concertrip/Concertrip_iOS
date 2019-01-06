@@ -51,9 +51,14 @@ class MainCalendarVC: UIViewController {
             }
         }
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        
         print("잉..")
 //        dotNetwork()
         let ctype = "all"

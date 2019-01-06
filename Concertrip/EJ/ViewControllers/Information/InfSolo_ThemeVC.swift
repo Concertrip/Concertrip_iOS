@@ -23,6 +23,9 @@ class InfSolo_ThemeVC: UIViewController {
     var detailId : String?
     var eventList = [EventList]()
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         bigProfileImg.circleImageView()

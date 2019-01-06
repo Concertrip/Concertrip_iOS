@@ -22,12 +22,14 @@ class MainCalendarVC: UIViewController {
     var selectedDay:DayView!
     var currentCalendar: Calendar?
     var selectedIdx = Int ()
+    var hihiday = Int ()
 
     var animationFinished = true
     var shouldShowDaysOut = true
 
     var tapList = [CalendarTap]()
     var monthlyList = [CalendarList]()
+    var monthlyDateList:[String] = []
     
     
     //tableview 상태 값 변수입니다.
@@ -75,19 +77,36 @@ class MainCalendarVC: UIViewController {
             self.collectionView.reloadData()
         }
         
-        var Ctype = "all"
-        var id = ""
+//        type?type=all&id=&year=2019&month=1
+        let ctype = "mvp"
+        let cid = ""
+        let cyear = 2019
+        let cmonth = 1
        
         
-//        CalendarListService.shared.getCalendarMonthly(type: <#T##String#>, id: <#T##String#>, year: <#T##String#>, month: <#T##String#>) { [weak self](data) in
-//
+        CalendarListService.shared.getCalendarMonthly(type: ctype, id: cid, year: cyear, month: cmonth) { [weak self](data) in
+            guard let `self` = self else { return }
+            self.monthlyList = data
+
 //            guard let `self` = self else { return }
-//            print("data : \(data)")
-//            self.monthlyList = data
-//
-//
-//            print("self.monthlyList : \(self.monthlyList)")
-//        }
+//            let detailData = data as DetailConcert
+//            guard let members = detailData.dConcertMemberList else { return }
+//            self.memberList = members
+            print("monthlyList[0].calendarDate는 : \(self.monthlyList[0].calendarDate)")
+            
+            for date in self.monthlyList[0].calendarDate! {
+                self.monthlyDateList.append(date)
+            }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            dateFormatter.dateFormat = "yyyy-MM-d'T'HH:mm:ss.SSSZ"
+            let date = dateFormatter.date(from: self.monthlyDateList[0])
+            print("date: \(String(describing: date!))")
+            
+//            self.monthlyList
+            self.hihiday = 26
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -202,7 +221,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
             let month = dayView.date.month
             let day = dayView.date.day
             
-            if year == 2019 && month == 1 && day >= 11 && day <= 13 {
+            if year == 2019 && month == 1 && day >= 11  && day <= 13 {
                 return true
             }
         }
@@ -236,10 +255,6 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
     
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         selectedDay = dayView
-        print(selectedDay.date.day)
-
-        print("self.tableView.frame.origin.y 는 ? : \(self.tableView.frame.origin.y)")
-        
 //        if !tableIsVisible { //dissmiss애니매이션
 //
 //            tableView.isHidden = false

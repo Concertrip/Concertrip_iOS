@@ -17,12 +17,9 @@ struct CalendarListService: APIManager, Requestable{
         "Authorization" : "1"
     ]
 
-    func getCalendarMonthly(type: String, id: String, year: String, month: String, completion: @escaping ([CalendarList]) -> Void) {
-        let monthListURL = calendarURL + "/type"
-        
-        print("getCalendarMonthly입니다.")
+    func getCalendarMonthly(type: String, id: String, year: Int, month: Int, completion: @escaping ([CalendarList]) -> Void) {
+        let monthListURL = calendarURL + "/type?type=\(type)&id=\(id)&year=\(year)&month=\(month)"
         gettable(monthListURL, body: nil, header: header) { (res) in
-            print("gettable res :\(res)")
             switch res {
             case .success(let value):
                 guard let monthList = value.data else

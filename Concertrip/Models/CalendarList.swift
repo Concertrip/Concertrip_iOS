@@ -1,5 +1,5 @@
 //
-//  Calendar.swift
+//  CalendarList.swift
 //  Concertrip
 //
 //  Created by 양어진 on 06/01/2019.
@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct Calendar : Mappable {
+struct CalendarList : Mappable {
     var calendarId : String?
     var calendarTabId : String?
     var calendarName : String?

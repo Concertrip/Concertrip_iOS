@@ -27,9 +27,7 @@ class MainCalendarVC: UIViewController {
     var shouldShowDaysOut = true
 
     var tapList = [CalendarTap]()
-//    var menuBarLabels = ["모두", "내 공연", "지코", "크러쉬", "페노메코", "힙합", "알레시카 카라"]
-    var dayArrays = ["1","5","30"]
-    let hashtagList = ["#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!", "#3월4일 #TONIGHT #행주특별출연 #전석매진 #양양용용융융!"]
+    var monthlyList = [CalendarList]()
     
     
     //tableview 상태 값 변수입니다.
@@ -71,11 +69,25 @@ class MainCalendarVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        CalendarService.shared.getCalendarTap { [weak self](data) in
+        CalendarTapService.shared.getCalendarTap { [weak self](data) in
             guard let `self` = self else { return }
             self.tapList = data
             self.collectionView.reloadData()
         }
+        
+        var Ctype = "all"
+        var id = ""
+       
+        
+//        CalendarListService.shared.getCalendarMonthly(type: <#T##String#>, id: <#T##String#>, year: <#T##String#>, month: <#T##String#>) { [weak self](data) in
+//
+//            guard let `self` = self else { return }
+//            print("data : \(data)")
+//            self.monthlyList = data
+//
+//
+//            print("self.monthlyList : \(self.monthlyList)")
+//        }
     }
     
     override func viewDidLayoutSubviews() {

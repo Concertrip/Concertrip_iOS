@@ -9,9 +9,9 @@
 import Foundation
 import Alamofire
 
-struct CalendarService: APIManager, Requestable{
+struct CalendarTapService: APIManager, Requestable{
     typealias NetworkData = ResponseArray<CalendarTap>
-    static let shared = CalendarService()
+    static let shared = CalendarTapService()
     var calendarURL = url("/api/calendar")
     let header: HTTPHeaders = [
         "Authorization" : "1"
@@ -31,5 +31,4 @@ struct CalendarService: APIManager, Requestable{
             }
         }
     }
-    
 }

@@ -18,10 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관심 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHa-AU-FVz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="likeLight" translatesAutoresizingMaskIntoConstraints="NO" id="ADK-y2-aB3">
+                                <rect key="frame" x="0.0" y="132" width="375" height="530"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관심 목록" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHa-AU-FVz">
                                 <rect key="frame" x="16" y="51" width="88.5" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfz-J2-fbZ">
@@ -31,57 +35,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snj-rt-Uc9">
-                                <rect key="frame" x="0.0" y="132" width="375" height="486"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="관심 목록이 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgK-6X-ymL">
-                                        <rect key="frame" x="114" y="206" width="146" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="yBl-1b-jyZ">
-                                <rect key="frame" x="16" y="88" width="170" height="36"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXZ-lo-etX">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="아티스트">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="artistTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="m9g-ds-Rr4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5v-9L-nuh">
-                                        <rect key="frame" x="85" y="0.0" width="35" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="테마">
-                                            <color key="titleColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="themeTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="sJN-K2-V78"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hug-uH-PUw">
-                                        <rect key="frame" x="135" y="0.0" width="35" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="공연">
-                                            <color key="titleColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="concertTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="qlH-ls-WmH"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K7N-bV-QbL">
                                 <rect key="frame" x="0.0" y="132" width="375" height="486"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LikeTVCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LikeTVCell" rowHeight="64" id="rJl-Ab-RC9" customClass="LikeTVCell" customModule="Concertrip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="64"/>
@@ -109,7 +65,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIe-cU-iaM">
                                                             <rect key="frame" x="0.0" y="0.0" width="236" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#힙합 #ㄹㄹㄹ(미정)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7G-32-Gd8">
@@ -134,6 +90,7 @@
                                                 <constraint firstItem="da3-eu-3RT" firstAttribute="centerY" secondItem="JS0-Ql-EWE" secondAttribute="centerY" id="ukN-X1-0pu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="hashLabel" destination="g7G-32-Gd8" id="4za-mr-mPB"/>
                                             <outlet property="likeBtn" destination="UrO-W0-2GZ" id="mqs-Bn-mzX"/>
@@ -143,8 +100,56 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snj-rt-Uc9">
+                                <rect key="frame" x="0.0" y="132" width="375" height="486"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="관심 목록이 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgK-6X-ymL">
+                                        <rect key="frame" x="114" y="206" width="146" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="yBl-1b-jyZ">
+                                <rect key="frame" x="16" y="88" width="170" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXZ-lo-etX">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="아티스트">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="artistTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="m9g-ds-Rr4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5v-9L-nuh">
+                                        <rect key="frame" x="85" y="0.0" width="35" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="테마">
+                                            <color key="titleColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="themeTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="sJN-K2-V78"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hug-uH-PUw">
+                                        <rect key="frame" x="135" y="0.0" width="35" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="공연">
+                                            <color key="titleColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="concertTabBtn:" destination="9pl-kp-jST" eventType="touchUpInside" id="qlH-ls-WmH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xHa-AU-FVz" firstAttribute="leading" secondItem="n99-p4-xfL" secondAttribute="leading" constant="16" id="8dj-1N-AlG"/>
                             <constraint firstItem="Snj-rt-Uc9" firstAttribute="leading" secondItem="n99-p4-xfL" secondAttribute="leading" id="8hx-Pk-wAu"/>
@@ -179,5 +184,6 @@
     <resources>
         <image name="artistLikeButton" width="46" height="46"/>
         <image name="concertProfileImage" width="46" height="46"/>
+        <image name="likeLight" width="375" height="530"/>
     </resources>
 </document>

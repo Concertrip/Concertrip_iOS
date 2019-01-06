@@ -44,7 +44,7 @@ class LikeVC: UIViewController {
             self.subList = data
             self.tableView.reloadData()
         }
-        artistBtn.setTitleColor(.black, for: .normal)
+        artistBtn.setTitleColor(.white, for: .normal)
         themeBtn.setTitleColor( #colorLiteral(red: 0.4352941176, green: 0.4352941176, blue: 0.4352941176, alpha: 1), for: .normal)
         concertBtn.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4352941176, blue: 0.4352941176, alpha: 1), for: .normal)
     }
@@ -55,7 +55,7 @@ class LikeVC: UIViewController {
             self.subList = data
             self.tableView.reloadData()
         }
-        themeBtn.setTitleColor(.black, for: .normal)
+        themeBtn.setTitleColor(.white, for: .normal)
         artistBtn.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4352941176, blue: 0.4352941176, alpha: 1), for: .normal)
         concertBtn.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4352941176, blue: 0.4352941176, alpha: 1), for: .normal)
     }
@@ -66,7 +66,7 @@ class LikeVC: UIViewController {
             self.subList = data
             self.tableView.reloadData()
         }
-        concertBtn.setTitleColor(.black, for: .normal)
+        concertBtn.setTitleColor(.white, for: .normal)
         themeBtn.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4352941176, blue: 0.4352941176, alpha: 1),for: .normal)
         artistBtn.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4352941176, blue: 0.4352941176, alpha: 1), for: .normal)
     }
@@ -123,11 +123,11 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
             
                 SubscribeArtistService.shared.subscriptArtist(id: contentId) {
                     if list.isSubscribe == false {
-                        cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        cell.likeBtn.setImage(UIImage(named: "infoLikeButton"), for: .normal)
                         list.isSubscribe = true
                     }
                     else {
-                        cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        cell.likeBtn.setImage(UIImage(named: "infoLikeButtonActivated"), for: .normal)
                         list.isSubscribe = true
                     }
                     

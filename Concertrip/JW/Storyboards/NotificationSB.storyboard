@@ -18,16 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-Vt-AFk">
-                                <rect key="frame" x="16" y="92" width="82" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-Vt-AFk">
+                                <rect key="frame" x="16" y="92" width="35" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notificationLight" translatesAutoresizingMaskIntoConstraints="NO" id="Sry-lu-Lb4">
+                                <rect key="frame" x="0.0" y="137" width="375" height="530"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Sry-lu-Lb4" secondAttribute="height" multiplier="75:106" id="Y4g-AV-3AB"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9QI-Cb-G9C">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="137" width="375" height="530"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeCell" rowHeight="55" id="WhE-EQ-aP5" customClass="NotificationVCCell" customModule="Concertrip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
@@ -44,7 +49,7 @@
                                                     <rect key="frame" x="72" y="5" width="288" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HashTag" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs7-e5-4ig">
@@ -56,6 +61,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="hashtagTxt" destination="Cs7-e5-4ig" id="S9N-0m-Jgh"/>
                                             <outlet property="profileImg" destination="G1Z-Dk-EGv" id="QkV-XE-68U"/>
@@ -64,20 +70,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdM-2n-t4N">
-                                <rect key="frame" x="16" y="41" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdM-2n-t4N">
+                                <rect key="frame" x="16" y="41" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gdM-2n-t4N" secondAttribute="height" multiplier="1:1" id="VAB-tv-1ak"/>
+                                </constraints>
                                 <state key="normal" image="leftArrowIcon"/>
                                 <connections>
                                     <action selector="backBtn:" destination="4sV-Kv-Pbu" eventType="touchUpInside" id="CLr-Na-MgW"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="gdM-2n-t4N" firstAttribute="leading" secondItem="VmR-bc-HII" secondAttribute="leading" constant="16" id="1Tz-b2-iAh"/>
+                            <constraint firstItem="VmR-bc-HII" firstAttribute="trailing" secondItem="gdM-2n-t4N" secondAttribute="trailing" constant="327" id="46K-RG-bXV"/>
+                            <constraint firstItem="9QI-Cb-G9C" firstAttribute="top" secondItem="Sry-lu-Lb4" secondAttribute="top" id="5W2-ey-jlB"/>
                             <constraint firstItem="9QI-Cb-G9C" firstAttribute="leading" secondItem="VmR-bc-HII" secondAttribute="leading" id="CWJ-8c-df4"/>
-                            <constraint firstItem="9QI-Cb-G9C" firstAttribute="top" secondItem="VmR-bc-HII" secondAttribute="top" constant="100" id="MBA-cm-m3q"/>
+                            <constraint firstItem="Sry-lu-Lb4" firstAttribute="bottom" secondItem="VmR-bc-HII" secondAttribute="bottom" id="Dlt-n7-CZH"/>
+                            <constraint firstItem="CcB-Vt-AFk" firstAttribute="top" secondItem="gdM-2n-t4N" secondAttribute="bottom" constant="19" id="Ewl-RG-ha4"/>
+                            <constraint firstItem="9QI-Cb-G9C" firstAttribute="top" secondItem="CcB-Vt-AFk" secondAttribute="bottom" constant="21" id="Fh2-j4-Wtw"/>
+                            <constraint firstItem="CcB-Vt-AFk" firstAttribute="leading" secondItem="gdM-2n-t4N" secondAttribute="leading" id="PzY-fu-lG9"/>
                             <constraint firstItem="9QI-Cb-G9C" firstAttribute="trailing" secondItem="VmR-bc-HII" secondAttribute="trailing" id="S2A-IP-u4K"/>
+                            <constraint firstItem="Sry-lu-Lb4" firstAttribute="top" secondItem="CcB-Vt-AFk" secondAttribute="bottom" constant="21" id="Tub-qe-BDu"/>
+                            <constraint firstItem="Sry-lu-Lb4" firstAttribute="width" secondItem="dV7-dj-nXL" secondAttribute="width" id="bB9-Gk-D5D"/>
+                            <constraint firstItem="Sry-lu-Lb4" firstAttribute="trailing" secondItem="VmR-bc-HII" secondAttribute="trailing" id="lVs-Cf-am4"/>
+                            <constraint firstItem="Sry-lu-Lb4" firstAttribute="leading" secondItem="VmR-bc-HII" secondAttribute="leading" id="pfi-KF-bFg"/>
+                            <constraint firstItem="gdM-2n-t4N" firstAttribute="top" secondItem="VmR-bc-HII" secondAttribute="top" constant="21" id="rOF-tR-isq"/>
                             <constraint firstItem="9QI-Cb-G9C" firstAttribute="bottom" secondItem="VmR-bc-HII" secondAttribute="bottom" id="rb8-sB-cRR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VmR-bc-HII"/>
@@ -92,6 +111,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="leftArrowIcon" width="30" height="30"/>
+        <image name="leftArrowIcon" width="32" height="32"/>
+        <image name="notificationLight" width="375" height="530"/>
     </resources>
 </document>

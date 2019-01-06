@@ -22,7 +22,7 @@ class InfThemeVC: UIViewController {
     var isLikeBtnActivated = false
     var detailId : String?
     var eventList = [EventList]()
-    var eventComing = [Events]()
+//    var eventComing = [Events]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +54,17 @@ class InfThemeVC: UIViewController {
     }
     @IBAction func likeBtn(_ sender: Any) {
 
+        if isLikeBtnActivated == false {
+            simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
+                self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
+                self.isLikeBtnActivated = true
+            }
+        } else {
+            simpleOnlyOKAlertwithHandler(title: "캘린더에서 삭제되었습니다!", message: "") { (okAction) in
+                self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
+                self.isLikeBtnActivated = false
+            }
+        }
         
     }
     
@@ -64,8 +75,7 @@ class InfThemeVC: UIViewController {
 }
 extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Theme eventComing.count : \(eventComing.count)")
-        return eventComing.count
+        return eventList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,12 +88,12 @@ extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
                 print("구독이 됐나요? : ", albumId)
                 if self.isLikeBtnActivated == false {
                     self.simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
-                        self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButtonActivated")
+                        self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
                         self.isLikeBtnActivated = true
                     }
                 } else {
                     self.simpleOnlyOKAlertwithHandler(title: "캘린더에서 삭제되었습니다!", message: "") { (okAction) in
-                        self.likeBtn.imageView?.image =  UIImage(named: "artistLikeButton")
+                        self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
                         self.isLikeBtnActivated = false
                     }
                 }

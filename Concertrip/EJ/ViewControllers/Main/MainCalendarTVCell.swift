@@ -10,11 +10,15 @@ import UIKit
 
 class MainCalendarTVCell: UITableViewCell {
 
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var hashLabel: UILabel!
+    @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var profileImg: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        profileImg.circleImageView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

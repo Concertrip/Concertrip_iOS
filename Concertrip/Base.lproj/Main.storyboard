@@ -115,7 +115,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ODp-Lc-eOF">
-                                                            <rect key="frame" x="72.5" y="16" width="233" height="34.5"/>
+                                                            <rect key="frame" x="70.5" y="15" width="233" height="34.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해당 날짜 콘서트 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeY-a4-nKA">
                                                                     <rect key="frame" x="0.0" y="0.0" width="233" height="18"/>
@@ -134,35 +134,55 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mo-1B-qhW">
-                                                            <rect key="frame" x="16" y="10" width="46" height="46"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MF7-LY-Afh">
+                                                            <rect key="frame" x="15" y="9" width="46" height="46"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="0Mo-1B-qhW" secondAttribute="height" multiplier="1:1" id="MaM-hj-3kM"/>
+                                                                <constraint firstAttribute="width" secondItem="MF7-LY-Afh" secondAttribute="height" multiplier="1:1" id="HLh-WN-IhB"/>
                                                             </constraints>
-                                                            <state key="normal" image="concertProfileImage"/>
-                                                        </button>
+                                                        </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqG-Ol-ryh">
-                                                            <rect key="frame" x="313" y="10" width="46" height="46"/>
+                                                            <rect key="frame" x="313" y="9" width="46" height="46"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="MqG-Ol-ryh" secondAttribute="height" multiplier="1:1" id="1T5-x0-0gU"/>
+                                                            </constraints>
                                                             <state key="normal" image="concertLikeButton"/>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="ODp-Lc-eOF" firstAttribute="centerY" secondItem="0Mo-1B-qhW" secondAttribute="centerY" id="3GB-2c-uw6"/>
-                                                        <constraint firstItem="0Mo-1B-qhW" firstAttribute="top" secondItem="wTa-uW-SH1" secondAttribute="top" constant="10" id="A7G-XI-vSG"/>
-                                                        <constraint firstItem="MqG-Ol-ryh" firstAttribute="leading" secondItem="ODp-Lc-eOF" secondAttribute="trailing" constant="7.5" id="CwL-cg-iTf"/>
-                                                        <constraint firstItem="MqG-Ol-ryh" firstAttribute="centerY" secondItem="0Mo-1B-qhW" secondAttribute="centerY" id="S6K-17-BV1"/>
-                                                        <constraint firstItem="MqG-Ol-ryh" firstAttribute="width" secondItem="0Mo-1B-qhW" secondAttribute="width" id="flJ-6E-L7u"/>
-                                                        <constraint firstAttribute="trailing" secondItem="MqG-Ol-ryh" secondAttribute="trailing" constant="16" id="nJ5-nf-Tfp"/>
-                                                        <constraint firstItem="MqG-Ol-ryh" firstAttribute="height" secondItem="0Mo-1B-qhW" secondAttribute="height" id="nj4-rf-y9Y"/>
-                                                        <constraint firstItem="0Mo-1B-qhW" firstAttribute="leading" secondItem="wTa-uW-SH1" secondAttribute="leading" constant="16" id="oJT-6Z-6sM"/>
-                                                        <constraint firstAttribute="bottom" secondItem="0Mo-1B-qhW" secondAttribute="bottom" constant="9.5" id="oSL-nW-5v0"/>
-                                                        <constraint firstItem="ODp-Lc-eOF" firstAttribute="leading" secondItem="0Mo-1B-qhW" secondAttribute="trailing" constant="10.5" id="yr6-9M-w4s"/>
+                                                        <constraint firstItem="MF7-LY-Afh" firstAttribute="leading" secondItem="wTa-uW-SH1" secondAttribute="leading" constant="15" id="EtM-w6-ZjA"/>
+                                                        <constraint firstAttribute="trailing" secondItem="MqG-Ol-ryh" secondAttribute="trailing" constant="16" id="Gz9-9u-mON"/>
+                                                        <constraint firstItem="MqG-Ol-ryh" firstAttribute="width" secondItem="MF7-LY-Afh" secondAttribute="width" id="HZe-G2-eUU"/>
+                                                        <constraint firstItem="ODp-Lc-eOF" firstAttribute="leading" secondItem="MF7-LY-Afh" secondAttribute="trailing" constant="9.5" id="NHA-TJ-SMA"/>
+                                                        <constraint firstItem="MF7-LY-Afh" firstAttribute="top" secondItem="wTa-uW-SH1" secondAttribute="top" constant="9" id="Yi1-ie-zie"/>
+                                                        <constraint firstItem="MqG-Ol-ryh" firstAttribute="centerY" secondItem="MF7-LY-Afh" secondAttribute="centerY" id="ZAE-G8-YpH"/>
+                                                        <constraint firstItem="ODp-Lc-eOF" firstAttribute="centerY" secondItem="MF7-LY-Afh" secondAttribute="centerY" id="gp8-LL-Boh"/>
+                                                        <constraint firstAttribute="bottom" secondItem="MF7-LY-Afh" secondAttribute="bottom" constant="10.5" id="vd8-8v-VTe"/>
+                                                        <constraint firstItem="MqG-Ol-ryh" firstAttribute="leading" secondItem="ODp-Lc-eOF" secondAttribute="trailing" constant="9.5" id="wER-oc-rxp"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="hashLabel" destination="JoV-Vt-kat" id="xxQ-42-heV"/>
+                                                    <outlet property="likeBtn" destination="MqG-Ol-ryh" id="7aQ-Hk-XRU"/>
+                                                    <outlet property="nameLabel" destination="OeY-a4-nKA" id="F8V-tk-Prv"/>
+                                                    <outlet property="profileImg" destination="MF7-LY-Afh" id="EYo-3n-Ewm"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5V-0b-BQc">
+                                        <rect key="frame" x="0.0" y="434" width="375" height="185"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="공연 일정이 없습니다!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kh-CM-pIc">
+                                                <rect key="frame" x="114" y="82" width="147" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -176,6 +196,7 @@
                                     <constraint firstItem="soC-2K-FQZ" firstAttribute="leading" secondItem="8FT-V4-HcY" secondAttribute="leading" id="G99-xP-EER"/>
                                     <constraint firstItem="NAP-K2-9lx" firstAttribute="centerX" secondItem="8FT-V4-HcY" secondAttribute="centerX" constant="-145" id="HEP-jT-Skq"/>
                                     <constraint firstItem="Xct-KG-mMr" firstAttribute="leading" secondItem="8FT-V4-HcY" secondAttribute="leading" id="JCW-LR-HZf"/>
+                                    <constraint firstItem="s5V-0b-BQc" firstAttribute="trailing" secondItem="KPN-v3-peB" secondAttribute="trailing" id="K4g-7K-2Bq"/>
                                     <constraint firstItem="HjS-ki-FCj" firstAttribute="trailing" secondItem="78U-EW-FQ0" secondAttribute="trailing" id="Kx4-b8-MnF"/>
                                     <constraint firstAttribute="trailing" secondItem="78U-EW-FQ0" secondAttribute="trailing" id="RSd-ZG-4WX"/>
                                     <constraint firstItem="HjS-ki-FCj" firstAttribute="top" secondItem="78U-EW-FQ0" secondAttribute="top" id="SdY-kU-Q45"/>
@@ -186,15 +207,18 @@
                                     <constraint firstItem="NAP-K2-9lx" firstAttribute="top" secondItem="8FT-V4-HcY" secondAttribute="top" constant="48" id="YEF-E3-IRf"/>
                                     <constraint firstItem="78U-EW-FQ0" firstAttribute="leading" secondItem="8FT-V4-HcY" secondAttribute="leading" constant="16" id="aXO-uU-dyy"/>
                                     <constraint firstItem="soC-2K-FQZ" firstAttribute="top" secondItem="78U-EW-FQ0" secondAttribute="bottom" constant="-5" id="bI9-S8-YMG"/>
+                                    <constraint firstItem="s5V-0b-BQc" firstAttribute="top" secondItem="KPN-v3-peB" secondAttribute="top" id="bWO-SO-G0A"/>
                                     <constraint firstItem="78U-EW-FQ0" firstAttribute="top" secondItem="NAP-K2-9lx" secondAttribute="bottom" constant="18" id="dkX-lH-PKD"/>
                                     <constraint firstItem="Rng-6c-1eu" firstAttribute="leading" secondItem="8FT-V4-HcY" secondAttribute="leading" id="hUZ-ew-TRs"/>
                                     <constraint firstAttribute="trailing" secondItem="2GD-3l-Uwj" secondAttribute="trailing" constant="16" id="jsZ-Fo-Weg"/>
                                     <constraint firstItem="Xct-KG-mMr" firstAttribute="width" secondItem="8FT-V4-HcY" secondAttribute="width" id="nT6-m4-yvI"/>
                                     <constraint firstItem="Xct-KG-mMr" firstAttribute="top" secondItem="soC-2K-FQZ" secondAttribute="bottom" id="pA9-fd-ZsB"/>
                                     <constraint firstAttribute="trailing" secondItem="soC-2K-FQZ" secondAttribute="trailing" id="q6A-4n-0Ov"/>
+                                    <constraint firstItem="s5V-0b-BQc" firstAttribute="leading" secondItem="KPN-v3-peB" secondAttribute="leading" id="rOp-gj-LYI"/>
                                     <constraint firstItem="KPN-v3-peB" firstAttribute="width" secondItem="8FT-V4-HcY" secondAttribute="width" id="sFk-bb-eBP"/>
                                     <constraint firstItem="Rng-6c-1eu" firstAttribute="top" secondItem="Xct-KG-mMr" secondAttribute="bottom" id="sTA-EJ-3gx"/>
                                     <constraint firstItem="2GD-3l-Uwj" firstAttribute="centerY" secondItem="NAP-K2-9lx" secondAttribute="centerY" id="uB0-VI-Sga"/>
+                                    <constraint firstItem="s5V-0b-BQc" firstAttribute="bottom" secondItem="KPN-v3-peB" secondAttribute="bottom" id="vYL-R2-ADj"/>
                                     <constraint firstAttribute="bottom" secondItem="KPN-v3-peB" secondAttribute="bottom" constant="48" id="vaa-N6-hv5"/>
                                     <constraint firstAttribute="bottom" secondItem="Zw5-Ra-rRC" secondAttribute="bottom" priority="250" id="ygh-4e-GmW"/>
                                     <constraint firstItem="Zw5-Ra-rRC" firstAttribute="height" secondItem="8FT-V4-HcY" secondAttribute="height" multiplier="530:667" id="zYS-zy-FBs"/>
@@ -222,6 +246,7 @@
                         <outlet property="maskView" destination="DMM-A1-ZOt" id="RiS-i1-Reo"/>
                         <outlet property="menuView" destination="Xct-KG-mMr" id="SCD-eR-ov4"/>
                         <outlet property="monthLabel" destination="NAP-K2-9lx" id="Gdi-FO-Ni7"/>
+                        <outlet property="nilView" destination="s5V-0b-BQc" id="ydz-Ek-6Js"/>
                         <outlet property="tableView" destination="KPN-v3-peB" id="lhB-B7-NgZ"/>
                     </connections>
                 </viewController>
@@ -326,7 +351,6 @@
         <image name="bellIcon" width="42" height="42"/>
         <image name="calendarLight" width="374" height="529"/>
         <image name="concertLikeButton" width="48" height="48"/>
-        <image name="concertProfileImage" width="46" height="46"/>
         <image name="gradationWhite" width="32" height="26"/>
         <image name="shadowHalf" width="375" height="18"/>
     </resources>

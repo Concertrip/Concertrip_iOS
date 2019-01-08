@@ -32,6 +32,7 @@ class MainCalendarVC: UIViewController {
 
     var tapList = [CalendarTap]()
     var monthlyList = [CalendarList]()
+    var dailyList = [CalendarList]()
     
     //캘린더 탭
     var tapId = ""
@@ -72,7 +73,7 @@ class MainCalendarVC: UIViewController {
 
         //'모두' 받아오는 서비스
         getDotService(type: self.tapType, id: "")
-        print("1번째")
+        getTableService(type: self.tapType, id: "", day: 8)
         
         //collectionView
         collectionView.dataSource = self
@@ -94,13 +95,11 @@ class MainCalendarVC: UIViewController {
     }
     
     func getDotService(type : String, id: String){
-        let ctype = type
-        let cid = id
         let cyear = 2019
         let cmonth = 1
         print("들어갔나요? ")
         
-        CalendarListService.shared.getCalendarMonthly(type: ctype, id: cid, year: cyear, month: cmonth) { [weak self](data) in
+        CalendarListService.shared.getCalendarMonthly(type: type, id: id, year: cyear, month: cmonth) { [weak self](data) in
             print("들어갔네요")
             
             self?.dayArr.removeAll()
@@ -148,13 +147,26 @@ class MainCalendarVC: UIViewController {
         }
     }
     
+    func getTableService(type : String, id : String, day: Int){
+        let cyear = 2019
+        let cmonth = 1
+
+        CalendarListService.shared.getCalendarDaily(type: type, id: id, year: cyear, month: cmonth, day: day) { [weak self](data) in
+            guard let `self` = self else { return }
+            self.dailyList = data
+            self.tableView.reloadData()
+            
+            print("dailyList : \(self.dailyList)")
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         CalendarTapService.shared.getCalendarTap { [weak self](data) in
             guard let `self` = self else { return }
             self.tapList = data
             self.collectionView.reloadData()
         }
-//        getDotService(type: tapName)
+        getTableService(type: tapType, id: "", day: selectDay)
     }
     
     override func viewDidLayoutSubviews() {
@@ -278,6 +290,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         sDay = dayView
         selectDay = sDay.date.day
+        getTableService(type: tapType, id: "", day: selectDay)
         tableView.reloadData()
         
     }
@@ -300,32 +313,40 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
 
 extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("테이블뷰임당 : numberOfRowsInSection \(monthlyList.count)")
+
+//        if dailyList.count == 0{
+//            nilView.isHidden = false
+//        } else {
+//            nilView.isHidden = true
+//        }
         
-//        if selectDay ==
-        return monthlyList.count
+        return dailyList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCalendarTVCell") as! MainCalendarTVCell
-        let days = monthlyList[indexPath.row]
+        let days = dailyList[indexPath.row]
         
         
         cell.selectionStyle = .none
-    
         print("selectDay는 ? \(selectDay)")
         
+        cell.nameLabel.text = days.calendarName
+        cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
+        cell.hashLabel.text = days.calendarTag
         
-        for i in 0 ..< index {
-            
-            if dayArr[i] == selectDay{
-                cell.nameLabel.text = days.calendarName
-                cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
-                cell.hashLabel.text = days.calendarTag
-            } else {
-                
-            }
-        }
+        
+        
+//        for i in 0 ..< index {
+//
+//            if dayArr[i] == selectDay{
+//                cell.nameLabel.text = days.calendarName
+//                cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
+//                cell.hashLabel.text = days.calendarTag
+//            } else {
+//
+//            }
+//        }
         
      
         

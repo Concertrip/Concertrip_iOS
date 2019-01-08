@@ -15,7 +15,7 @@ struct SubscribeEventService: APIManager, Requestable{
     var subscribeURL = url("/api/subscribe/event")
     let header: HTTPHeaders = [
         "Content-Type" : "application/json",
-        "Authorization" : "1"
+        "Authorization" : "2"
     ]
     
     func subscriptEvent(id: String, completion: @escaping () -> Void) {

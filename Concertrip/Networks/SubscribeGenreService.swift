@@ -15,7 +15,7 @@ struct SubscribeGenreService: APIManager, Requestable{
     var subscribeURL = url("/api/subscribe/genre")
     let header: HTTPHeaders = [
         "Content-Type" : "application/json",
-        "Authorization" : "1"
+        "Authorization" : "2"
     ]
     
     func subscriptGenre(id: String, completion: @escaping () -> Void) {

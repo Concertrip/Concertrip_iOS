@@ -15,7 +15,7 @@ struct SubscribeService: APIManager, Requestable{
     var subscribeURL = url("/api/subscribe")
     let header: HTTPHeaders = [
         "Content-Type" : "application/json",
-        "Authorization" : "1"
+        "Authorization" : "2"
     ]
     
     

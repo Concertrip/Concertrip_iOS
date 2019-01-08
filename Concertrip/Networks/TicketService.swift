@@ -14,7 +14,7 @@ struct TicketService: APIManager, Requestable {
     let queryURL = url("/api/ticket")
     let header: HTTPHeaders = [
         "Content-Type": "application/json",
-        "Authorization": "1"
+        "Authorization": "2"
     ]
     
     func getTicketList(completion: @escaping ([Ticket]) -> Void) {

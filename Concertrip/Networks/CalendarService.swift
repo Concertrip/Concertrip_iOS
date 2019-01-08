@@ -14,7 +14,7 @@ struct CalendarTapService: APIManager, Requestable{
     static let shared = CalendarTapService()
     var calendarURL = url("/api/calendar")
     let header: HTTPHeaders = [
-        "Authorization" : "1"
+        "Authorization" : "2"
     ]
     
     

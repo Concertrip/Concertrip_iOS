@@ -15,7 +15,7 @@ struct DetailArtistService: APIManager, Requestable{
     var detailURL = url("/api/artist/detail")
     let header: HTTPHeaders = [
         "Content-Type" : "application/json",
-        "Authorization" : "1"
+        "Authorization" : "2"
     ]
     
     

@@ -15,7 +15,7 @@ struct SearchService: APIManager, Requestable{
     var searchURL = url("/api/search")
     let header: HTTPHeaders = [
         "Content-Type" : "application/json",
-        "Authorization" : "1"
+        "Authorization" : "2"
     ]
     
     

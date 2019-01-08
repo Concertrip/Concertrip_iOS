@@ -32,6 +32,7 @@ class ExploreClickedVCCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        profileImg.circleImageView()
         likeBtn.addTarget(self, action: #selector(subscribe), for: .touchUpInside)
     }
 

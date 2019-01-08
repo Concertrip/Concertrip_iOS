@@ -24,8 +24,7 @@ class ExploreTVCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        profileImg.layer.cornerRadius = 15
-        profileImg.layer.masksToBounds = true
+        profileImg.circleImageView()
         likeBtn.addTarget(self, action: #selector(subscribe), for: .touchUpInside)
 
     }

@@ -44,6 +44,7 @@ class ExploreClickedVC: UIViewController {
                 self?.noResultBtn.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 self?.noResultBtn.setTitleColor(#colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1), for: .normal)
                 
+                
 //                self?.noResultBtn.isEnabled = true
 
             }

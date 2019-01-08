@@ -48,14 +48,12 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="concertProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="JS0-Ql-EWE">
                                                     <rect key="frame" x="15" y="9.5" width="45" height="45"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="JS0-Ql-EWE" secondAttribute="height" multiplier="1:1" id="73Q-If-OpX"/>
+                                                        <constraint firstAttribute="width" constant="45" id="UaS-Tq-JKP"/>
+                                                        <constraint firstAttribute="height" constant="45" id="cN4-tq-mvJ"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrO-W0-2GZ">
                                                     <rect key="frame" x="315" y="9.5" width="45" height="45"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="UrO-W0-2GZ" secondAttribute="height" multiplier="1:1" id="lcO-NB-Thw"/>
-                                                    </constraints>
                                                     <state key="normal" image="artistLikeButton"/>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="da3-eu-3RT">
@@ -80,11 +78,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="UrO-W0-2GZ" secondAttribute="trailing" constant="15" id="3rB-Yn-jzC"/>
                                                 <constraint firstAttribute="bottom" secondItem="JS0-Ql-EWE" secondAttribute="bottom" constant="9" id="8fw-97-0A8"/>
                                                 <constraint firstItem="UrO-W0-2GZ" firstAttribute="centerY" secondItem="JS0-Ql-EWE" secondAttribute="centerY" id="Dbb-Ha-qrR"/>
-                                                <constraint firstItem="JS0-Ql-EWE" firstAttribute="width" secondItem="gSr-Fc-wNn" secondAttribute="width" multiplier="45:375" id="EAv-MI-Cqn"/>
                                                 <constraint firstItem="UrO-W0-2GZ" firstAttribute="leading" secondItem="da3-eu-3RT" secondAttribute="trailing" constant="8" id="Ghh-qd-fSl"/>
                                                 <constraint firstItem="UrO-W0-2GZ" firstAttribute="width" secondItem="JS0-Ql-EWE" secondAttribute="width" id="Svz-1B-esl"/>
                                                 <constraint firstItem="JS0-Ql-EWE" firstAttribute="leading" secondItem="gSr-Fc-wNn" secondAttribute="leading" constant="15" id="UpD-Po-8Dq"/>
                                                 <constraint firstItem="JS0-Ql-EWE" firstAttribute="top" secondItem="gSr-Fc-wNn" secondAttribute="top" constant="9.5" id="UyR-Tr-UOE"/>
+                                                <constraint firstItem="UrO-W0-2GZ" firstAttribute="height" secondItem="JS0-Ql-EWE" secondAttribute="height" id="Wnc-70-ipG"/>
                                                 <constraint firstItem="da3-eu-3RT" firstAttribute="leading" secondItem="JS0-Ql-EWE" secondAttribute="trailing" constant="11" id="j1X-gk-p4k"/>
                                                 <constraint firstItem="da3-eu-3RT" firstAttribute="centerY" secondItem="JS0-Ql-EWE" secondAttribute="centerY" id="ukN-X1-0pu"/>
                                             </constraints>

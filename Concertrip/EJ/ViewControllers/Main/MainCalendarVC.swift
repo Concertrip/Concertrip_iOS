@@ -385,7 +385,7 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
         let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
-        let dvc = storyboard.instantiateViewController(withIdentifier: "InfSolo_ThemeVC") as! InfSolo_ThemeVC
+        let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcertVC") as! InfConcertVC
         let days = monthlyList[indexPath.row]
         
         dvc.detailId = days.calendarId
@@ -416,6 +416,7 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("taplist.count : \(tapList.count)")
+       
         return tapList.count
     }
     

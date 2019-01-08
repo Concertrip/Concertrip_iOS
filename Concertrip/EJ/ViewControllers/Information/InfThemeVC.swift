@@ -86,6 +86,7 @@ extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
         cell.configure(data: event)
         
         cell.subscribeHandler = {(albumId) in
+            print("들어왔나요?")
             SubscribeEventService.shared.subscriptEvent(id: albumId){
                 print("구독이 됐나요? : ", albumId)
                 if self.isLikeBtnActivated == false {

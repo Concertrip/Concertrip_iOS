@@ -439,7 +439,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="artistLikeButton" width="46" height="46"/>
+        <image name="artistLikeButton" width="48" height="48"/>
         <image name="exploreLight" width="375" height="530"/>
         <image name="gradationWhite" width="32" height="26"/>
         <image name="leftArrowIcon" width="32" height="32"/>

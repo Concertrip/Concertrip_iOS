@@ -77,7 +77,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artistLikeButton" translatesAutoresizingMaskIntoConstraints="NO" id="qB3-D5-OX4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="csIcon" translatesAutoresizingMaskIntoConstraints="NO" id="qB3-D5-OX4">
                                                     <rect key="frame" x="13" y="12" width="64" height="64"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="qB3-D5-OX4" secondAttribute="height" multiplier="1:1" id="zBu-98-2aB"/>
@@ -383,7 +383,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="artistLikeButton" width="46" height="46"/>
+        <image name="csIcon" width="64" height="64"/>
         <image name="leftArrowIcon" width="32" height="32"/>
         <image name="settingArrow" width="8" height="13"/>
         <image name="settingIcon" width="38" height="38"/>

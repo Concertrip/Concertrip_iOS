@@ -35,7 +35,7 @@ class MainCalendarVC: UIViewController {
     
     //캘린더 탭
     var tapId = ""
-    var tapType = ""
+    var tapType = "all"
     
     
     //단일의 년월일 받기
@@ -45,7 +45,6 @@ class MainCalendarVC: UIViewController {
     
     var index : Int = 0
     
-    let dispathGroup = DispatchGroup()
     //tableview 상태 값 변수입니다.
     var tableIsVisible = false {
         didSet { //menuStatus의 값이 변경된 후에 호출됩니다.
@@ -71,56 +70,9 @@ class MainCalendarVC: UIViewController {
         tableView.delegate = self
         tableView.reloadData()
 
-        
-        ////////////
-        let ctype = "all"
-        let cid = ""
-        let cyear = 2019
-        let cmonth = 1
-        print("들어갔나요? ")
-        
-        CalendarListService.shared.getCalendarMonthly(type: ctype, id: cid, year: cyear, month: cmonth) { [weak self](data) in
-            print("들어갔네요")
-            guard let `self` = self else { return }
-            self.monthlyList = data
-            self.tableView.reloadData()
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-d'T'HH:mm:ss.SSSZ"
-            for date in data{
-                for date2 in date.calendarDate! {
-                    let dayFormat = DateFormatter()
-                    let monFormat = DateFormatter()
-                    let yearFormat = DateFormatter()
-                    
-                    dayFormat.dateFormat = "d"
-                    monFormat.dateFormat = "M"
-                    yearFormat.dateFormat = "yyyy"
-                    
-                    guard let date = dateFormatter.date(from: date2) else {
-                        fatalError()
-                    }
-                    
-                    let day : Int? = Int(dayFormat.string(from: date))
-                    let mon : Int? = Int(monFormat.string(from: date))
-                    let year : Int? = Int(yearFormat.string(from: date))
-                    
-                    self.dayArr.append(day!)
-                    self.monthArr.append(mon!)
-                    self.yearArr.append(year!)
-                    
-                }
-            }
-            print("어레이입니다 : ", self.dayArr)
-            self.index = self.dayArr.count
-            
-            print("self.index 입니당ㅋㅋ : \(self.index)")
-            self.calendarView.contentController.refreshPresentedMonth()
-            
-        }
-        
-        
-        ///////////
+        //'모두' 받아오는 서비스
+        getDotService(type: self.tapType, id: "")
+        print("1번째")
         
         //collectionView
         collectionView.dataSource = self
@@ -150,6 +102,12 @@ class MainCalendarVC: UIViewController {
         
         CalendarListService.shared.getCalendarMonthly(type: ctype, id: cid, year: cyear, month: cmonth) { [weak self](data) in
             print("들어갔네요")
+            
+            self?.dayArr.removeAll()
+            self?.monthArr.removeAll()
+            self?.yearArr.removeAll()
+            
+            
             guard let `self` = self else { return }
             self.monthlyList = data
             self.tableView.reloadData()
@@ -185,6 +143,7 @@ class MainCalendarVC: UIViewController {
             
             print("self.index 입니당ㅋㅋ : \(self.index)")
             self.calendarView.contentController.refreshPresentedMonth()
+            self.tableView.reloadData()
             
         }
     }
@@ -207,7 +166,9 @@ class MainCalendarVC: UIViewController {
 
 
 //MARK: Calendar Extension
-extension MainCalendarVC: CVCalendarViewAppearanceDelegate {
+
+
+extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CVCalendarViewAppearanceDelegate{
     func dayLabelWeekdayOutTextColor() -> UIColor {
         return UIColor.gray
     }
@@ -215,14 +176,10 @@ extension MainCalendarVC: CVCalendarViewAppearanceDelegate {
     func dayLabelWeekdayInTextColor() -> UIColor {
         return UIColor.white
     }
-}
-
-extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
-    
     func shouldShowWeekdaysOut() -> Bool { return shouldShowDaysOut }
     func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {
         return UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
-//        weekday == .sunday || weekday == .saturday  || weekday == .monday || weekday == .tuesday || weekday == .wednesday || weekday == .thursday || weekday == .friday ?
+//        weekday == .sunday || weekday == .saturday ?
     }
     func weekdaySymbolType() -> WeekdaySymbolType {
         return .short
@@ -274,12 +231,15 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
 
     func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool {
         
-        if !dayView.isHidden && dayView.date != nil {
-            print("안녕하세요")
+//        if !dayView.isHidden && dayView.date != nil {
+        
+        
             print("index : ", index)
             year_ = dayView.date.year
             month_ = dayView.date.month
             day_ = dayView.date.day
+            
+            
             
             for i in 0 ..< index {
                 print(yearArr[i], "년", monthArr[i], "월", dayArr[i], "일")
@@ -287,7 +247,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate{
                     return true
                 }
             }
-        }
+//        }
         
         return false
     }
@@ -355,29 +315,19 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
     
         print("selectDay는 ? \(selectDay)")
         
+        
         for i in 0 ..< index {
+            
             if dayArr[i] == selectDay{
                 cell.nameLabel.text = days.calendarName
                 cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
                 cell.hashLabel.text = days.calendarTag
-                
             } else {
                 
             }
         }
         
-        
-        
-        
-//        let day = selectDay
-//
-//        for i in 0 ..< index {
-//            print(yearArr[i], "년", monthArr[i], "월", dayArr[i], "일")
-//            if year_ == yearArr[i] && month_ == monthArr[i] && day == dayArr[i] {
-//                cell.nameLabel.text = days.calendarName
-//            }
-//        }
-        
+     
         
         return cell
     }
@@ -407,11 +357,11 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
     
     //오늘날짜에 하이라이트 되는것!
     func dayLabelPresentWeekdaySelectedBackgroundColor() -> UIColor {
-        return UIColor.black
+        return UIColor(cgColor: #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1))
     }
     
     func dayLabelWeekdaySelectedBackgroundColor() -> UIColor {
-        return UIColor(cgColor: #colorLiteral(red: 0.5843137255, green: 0.2431372549, blue: 1, alpha: 1))
+        return UIColor(cgColor: #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1))
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -445,8 +395,15 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         
         getDotService(type: tapType, id: tapId)
         
-        self.calendarView.contentController.refreshPresentedMonth()
+//        if dayArr.count == 0{
+//            nilView.isHidden = true
+//        } else {
+//            nilView.isHidden = false
+//        }
+        
+//        self.calendarView.contentController.refreshPresentedMonth()
         self.collectionView.reloadData()
+        self.tableView.reloadData()
     }
 }
 

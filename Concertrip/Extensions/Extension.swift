@@ -13,7 +13,7 @@ import CVCalendar
 
 extension CVDate {
     public var koreanDescription: String {
-        return "\(month)월"
+        return "\(month)"
     }
 //    public var commonDescription: String {
 //        let month = dateFormattedStringWithFormat("MMMM", fromDate: date)

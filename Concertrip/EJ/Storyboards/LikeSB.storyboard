@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--liked-->
+        <!--LikeVC-->
         <scene sceneID="1CL-1l-AHh">
             <objects>
                 <viewController storyboardIdentifier="LikeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pl-kp-jST" customClass="LikeVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
@@ -101,8 +101,8 @@
                                 <rect key="frame" x="0.0" y="137" width="375" height="481"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관심 목록이 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgK-6X-ymL">
-                                        <rect key="frame" x="114.5" y="230.5" width="146" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="127" y="232" width="121" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -171,7 +171,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n99-p4-xfL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="liked" id="8ea-wZ-QXh"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabLikedIconActivated" id="8ea-wZ-QXh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="artistBtn" destination="NXZ-lo-etX" id="3PA-hv-ULL"/>
@@ -190,5 +190,6 @@
         <image name="artistLikeButton" width="48" height="48"/>
         <image name="concertProfileImage" width="46" height="46"/>
         <image name="likeLight" width="375" height="530"/>
+        <image name="tabLikedIconActivated" width="27" height="25"/>
     </resources>
 </document>

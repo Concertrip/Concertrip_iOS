@@ -44,6 +44,9 @@ class MainCalendarVC: UIViewController {
     var yearArr = Array<Int>()
     var dayArr = Array<Int>()
     
+    var thisMonth : Int = 0
+    var thisYear : Int = 0
+    
     var index : Int = 0
     
     //tableview 상태 값 변수입니다.
@@ -72,8 +75,14 @@ class MainCalendarVC: UIViewController {
         tableView.reloadData()
 
         //'모두' 받아오는 서비스
-        getDotService(type: self.tapType, id: "")
-        getTableService(type: self.tapType, id: "", day: 8)
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        
+        let todayYear =  components.year
+        let todayMonth = components.month
+
+        getDotService(type: self.tapType, id: self.tapId, year: todayYear!, month: todayMonth!)
         
         //collectionView
         collectionView.dataSource = self
@@ -94,13 +103,9 @@ class MainCalendarVC: UIViewController {
         
     }
     
-    func getDotService(type : String, id: String){
-        let cyear = 2019
-        let cmonth = 1
-        print("들어갔나요? ")
+    func getDotService(type : String, id: String, year: Int, month: Int){
         
-        CalendarListService.shared.getCalendarMonthly(type: type, id: id, year: cyear, month: cmonth) { [weak self](data) in
-            print("들어갔네요")
+        CalendarListService.shared.getCalendarMonthly(type: type, id: id, year: year, month: month) { [weak self](data) in
             
             self?.dayArr.removeAll()
             self?.monthArr.removeAll()
@@ -148,25 +153,28 @@ class MainCalendarVC: UIViewController {
     }
     
     func getTableService(type : String, id : String, day: Int){
-        let cyear = 2019
-        let cmonth = 1
-
-        CalendarListService.shared.getCalendarDaily(type: type, id: id, year: cyear, month: cmonth, day: day) { [weak self](data) in
+//        let cyear = 2019
+//        let cmonth = 1
+        
+        CalendarListService.shared.getCalendarDaily(type: type, id: id, year: thisYear, month: thisMonth, day: day) { [weak self](data) in
             guard let `self` = self else { return }
             self.dailyList = data
             self.tableView.reloadData()
-            
+            self.calendarView.commitCalendarViewUpdate()
             print("dailyList : \(self.dailyList)")
+            
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         CalendarTapService.shared.getCalendarTap { [weak self](data) in
             guard let `self` = self else { return }
             self.tapList = data
             self.collectionView.reloadData()
         }
-        getTableService(type: tapType, id: "", day: selectDay)
+//        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
+//        getTableService(type: tapType, id: tapId, day: selectDay)
     }
     
     override func viewDidLayoutSubviews() {
@@ -206,12 +214,13 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
     }
     
     func presentedDateUpdated(_ date: CVDate) {
+        
         if monthLabel.text != date.koreanDescription && self.animationFinished {
             let updatedMonthLabel = UILabel()
             updatedMonthLabel.textColor = monthLabel.textColor
             updatedMonthLabel.font = monthLabel.font
             updatedMonthLabel.textAlignment = .center
-            updatedMonthLabel.text = date.koreanDescription
+            updatedMonthLabel.text = date.koreanDescription + "월"
             updatedMonthLabel.sizeToFit()
             updatedMonthLabel.alpha = 0
             updatedMonthLabel.center = self.monthLabel.center
@@ -238,7 +247,13 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
                 updatedMonthLabel.removeFromSuperview()
             }
             self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
+            
         }
+        tapType = "all"
+        tapId = ""
+        thisMonth = date.month
+        thisYear = date.year
+        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
     }
 
     func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool {
@@ -266,14 +281,23 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
     
     
     func dotMarker(colorOnDayView dayView: DayView) -> [UIColor]{
-        switch dayView.date.day {
-        case 11:
-            return [UIColor.orange]
-        case 12:
-            return [UIColor.orange, UIColor.green]
-        default:
-            return [UIColor.orange, UIColor.green, UIColor.blue]
-        }
+//        switch dayView.date.day {
+//        case 11:
+//            return [UIColor.orange]
+//        case 12:
+//            return [UIColor.orange, UIColor.green]
+//        default:
+//            return [UIColor.orange, UIColor.green, UIColor.blue]
+//        }
+        
+//        if tapId == "내 공연" {
+//            return [UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))]
+////            calendarView.commitCalendarViewUpdate()
+//        } else {
+////        calendarView.commitCalendarViewUpdate()
+//        return [UIColor(cgColor: #colorLiteral(red: 0.1058823529, green: 0.7333333333, blue: 1, alpha: 1))]
+//        }
+        return [UIColor(cgColor: #colorLiteral(red: 0.1058823529, green: 0.7333333333, blue: 1, alpha: 1))]
     }
     
     func dotMarker(moveOffsetOnDayView dayView: DayView) -> CGFloat {
@@ -290,7 +314,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         sDay = dayView
         selectDay = sDay.date.day
-        getTableService(type: tapType, id: "", day: selectDay)
+        getTableService(type: tapType, id: tapId, day: selectDay)
         tableView.reloadData()
         
     }
@@ -314,13 +338,15 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
 extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-//        if dailyList.count == 0{
-//            nilView.isHidden = false
-//        } else {
-//            nilView.isHidden = true
-//        }
+        if dailyList.count == 0{
+            nilView.isHidden = false
+            return dailyList.count
+        } else {
+            nilView.isHidden = true
+            return dailyList.count
+        }
         
-        return dailyList.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -330,25 +356,11 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
         
         cell.selectionStyle = .none
         print("selectDay는 ? \(selectDay)")
-        
-        cell.nameLabel.text = days.calendarName
-        cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
-        cell.hashLabel.text = days.calendarTag
-        
-        
-        
-//        for i in 0 ..< index {
-//
-//            if dayArr[i] == selectDay{
-//                cell.nameLabel.text = days.calendarName
-//                cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
-//                cell.hashLabel.text = days.calendarTag
-//            } else {
-//
-//            }
-//        }
-        
-     
+        if dailyList.count != 0 {
+            cell.nameLabel.text = days.calendarName
+            cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
+            cell.hashLabel.text = days.calendarTag
+        }
         
         return cell
     }
@@ -357,8 +369,8 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
         
         let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
         let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcertVC") as! InfConcertVC
-        let days = monthlyList[indexPath.row]
         
+        let days = dailyList[indexPath.row]
         dvc.detailId = days.calendarId
         
         
@@ -414,7 +426,7 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         tapType = menu.calTapType!
         tapId = menu.calTapId!
         
-        getDotService(type: tapType, id: tapId)
+        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
         
 //        if dayArr.count == 0{
 //            nilView.isHidden = true

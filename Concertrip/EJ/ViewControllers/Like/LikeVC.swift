@@ -138,7 +138,7 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
                     self.artistSubService()
                 }
             } else if self.currentSub == self.concertSub {
-            
+    
                 SubscribeEventService.shared.subscriptEvent(id: contentId) {
                     if list.isSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)

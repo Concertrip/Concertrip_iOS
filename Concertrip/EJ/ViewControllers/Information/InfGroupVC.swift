@@ -70,15 +70,12 @@ class InfGroupVC: UIViewController {
     @IBAction func likeBtnAction(_ sender: Any) {
         
         if isLikeBtnActivated == false {
-            simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
-                self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
-                self.isLikeBtnActivated = true
-            }
+            self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
+            self.isLikeBtnActivated = true
+            self.view.makeToast("내 공연에 추가되었습니다!")
         } else {
-            simpleOnlyOKAlertwithHandler(title: "캘린더에서 삭제되었습니다!", message: "") { (okAction) in
-                self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
-                self.isLikeBtnActivated = false
-            }
+            self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
+            self.isLikeBtnActivated = false
         }
         
     }

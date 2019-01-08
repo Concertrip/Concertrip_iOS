@@ -50,24 +50,34 @@ class InfThemeVC: UIViewController {
             self.likeCountLabel.text = likeCount
             self.youtubeView.loadVideoID(youtubeURL!)
             
+            
+            print(detailData.dThemeId,"구독 ? : ", detailData.dThemeIsSubscribe!)
+            if detailData.dThemeIsSubscribe! == true {
+                self.isLikeBtnActivated = true
+                self.likeBtn.imageView?.image = UIImage(named : "infoLikeButtonActivated")
+            }
+            else {
+                self.isLikeBtnActivated = false
+                self.likeBtn.imageView?.image = UIImage(named: "infoLikeButton")
+            }
+            //            self.likeBtn.imageFromUrl()
             self.tableView.reloadData()
         }
         
     }
     @IBAction func likeBtn(_ sender: Any) {
-
-        if isLikeBtnActivated == false {
-            simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
+        SubscribeGenreService.shared.subscriptGenre(id: detailId!) {
+            print("현재 좋아요 상황 : ", self.isLikeBtnActivated)
+            if self.isLikeBtnActivated == false {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
                 self.isLikeBtnActivated = true
-            }
-        } else {
-            simpleOnlyOKAlertwithHandler(title: "캘린더에서 삭제되었습니다!", message: "") { (okAction) in
+                self.view.makeToast("내 공연에 추가되었습니다!")
+
+            } else {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
                 self.isLikeBtnActivated = false
             }
         }
-        
     }
     
     @IBAction func backBtn(_ sender: Any) {
@@ -83,22 +93,25 @@ extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfThemeTVCell") as! InfThemeTVCell
         var event = eventList[indexPath.row]
-        cell.configure(data: event)
         
-        cell.subscribeHandler = {(albumId) in
-            print("들어왔나요?")
-            SubscribeEventService.shared.subscriptEvent(id: albumId){
-                print("구독이 됐나요? : ", albumId)
-                if self.isLikeBtnActivated == false {
-                    self.simpleOnlyOKAlertwithHandler(title: "캘린더에 추가되었습니다!", message: "") { (okAction) in
-                        self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
-                        self.isLikeBtnActivated = true
-                    }
+        if event.eventSubscribe! == false {
+            print(cell.addBtn.imageView?.image)
+            cell.addBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
+        }
+        else {
+            cell.addBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
+        }
+        
+        cell.configure(data: event)
+        cell.subscribeHandler = {(concertId) in
+            SubscribeEventService.shared.subscriptEvent(id: concertId){
+                if event.eventSubscribe == false {
+                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButtonActivated")
+                    event.eventSubscribe = true
+                    self.view.makeToast("내 공연에 추가되었습니다!")
                 } else {
-                    self.simpleOnlyOKAlertwithHandler(title: "캘린더에서 삭제되었습니다!", message: "") { (okAction) in
-                        self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
-                        self.isLikeBtnActivated = false
-                    }
+                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButton")
+                    event.eventSubscribe = false
                 }
             }
         }

@@ -29,7 +29,7 @@ struct DetailTheme : Mappable {
         dThemeProfileImg <- map["profileImg"]
         dThemeBackImg <- map["backImg"]
         dThemeName <- map["name"]
-        dThemeIsSubscribe <- map["isSubscribe"]
+        dThemeIsSubscribe <- map["subscribe"]
         dThemeSubscribeNum <- map["subscribeNum"]
         dThemeYoutubeUrl <- map["youtubeUrl"]
         dThemeEventList <- map["eventList"]

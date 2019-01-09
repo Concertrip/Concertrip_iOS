@@ -31,10 +31,11 @@ class LikeVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        artistSubService()
         tableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
-        //다른뷰갔다 돌아올 때 무조건 아티스트서브!
+//        //다른뷰갔다 돌아올 때 무조건 아티스트서브!
         currentSub = artistSub
         artistSubService()
         tableView.reloadData()

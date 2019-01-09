@@ -61,6 +61,7 @@ class InfConcertVC: UIViewController {
             let youtubeURL = detailData.dConcertYoutubeUrl
             self.youtubeView.loadVideoID(youtubeURL!)
             self.nameLabel.text = detailData.dConcertName
+            self.performImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
             
             for data in detailData.dConcertSeatName! {
                 print("seatname : \(data)")

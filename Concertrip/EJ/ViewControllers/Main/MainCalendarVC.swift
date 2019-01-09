@@ -54,10 +54,10 @@ class MainCalendarVC: UIViewController {
         didSet { //menuStatus의 값이 변경된 후에 호출됩니다.
             if !tableIsVisible {
                 tableView.isUserInteractionEnabled = false
-                print(tableView.isUserInteractionEnabled)
+//                print(tableView.isUserInteractionEnabled)
             } else {
                 tableView.isUserInteractionEnabled = true
-                print(tableView.isUserInteractionEnabled)
+//                print(tableView.isUserInteractionEnabled)
             }
         }
     }
@@ -83,6 +83,7 @@ class MainCalendarVC: UIViewController {
         let todayMonth = components.month
 
         getDotService(type: self.tapType, id: self.tapId, year: todayYear!, month: todayMonth!)
+        getTableService(type: self.tapType, id: self.tapId, day: selectDay)
         
         //collectionView
         collectionView.dataSource = self
@@ -161,7 +162,7 @@ class MainCalendarVC: UIViewController {
             self.dailyList = data
             self.tableView.reloadData()
             self.calendarView.commitCalendarViewUpdate()
-            print("dailyList : \(self.dailyList)")
+//            print("dailyList : \(self.dailyList)")
             
         }
     }
@@ -249,11 +250,12 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
             self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
             
         }
-        tapType = "all"
-        tapId = ""
+//        tapType = "all"
+//        print("tapTypeDateUpdate : \(tapType)")
+//        tapId = ""
         thisMonth = date.month
         thisYear = date.year
-        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
+//        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
     }
 
     func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool {
@@ -269,7 +271,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
             
             
             for i in 0 ..< index {
-                print(yearArr[i], "년", monthArr[i], "월", dayArr[i], "일")
+//                print(yearArr[i], "년", monthArr[i], "월", dayArr[i], "일")
                 if year_ == yearArr[i] && month_ == monthArr[i] && day_ == dayArr[i] {
                     return true
                 }
@@ -291,12 +293,14 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
 //        }
         
 //        if tapId == "내 공연" {
-//            return [UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))]
-////            calendarView.commitCalendarViewUpdate()
+//            return [UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)),UIColor(cgColor: #colorLiteral(red: 0.09645249695, green: 0.7349390388, blue: 1, alpha: 1))]
+//
 //        } else {
-////        calendarView.commitCalendarViewUpdate()
+//
 //        return [UIColor(cgColor: #colorLiteral(red: 0.1058823529, green: 0.7333333333, blue: 1, alpha: 1))]
 //        }
+        
+        
         return [UIColor(cgColor: #colorLiteral(red: 0.1058823529, green: 0.7333333333, blue: 1, alpha: 1))]
     }
     
@@ -315,6 +319,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
         sDay = dayView
         selectDay = sDay.date.day
         getTableService(type: tapType, id: tapId, day: selectDay)
+        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
         tableView.reloadData()
         
     }
@@ -384,10 +389,6 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
 
 extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
     
-//    func dayLabelPresentWeekdayHighlightedBackgroundColor() -> UIColor {
-//        return UIColor.white
-//    }
-    
     //오늘날짜에 하이라이트 되는것!
     func dayLabelPresentWeekdaySelectedBackgroundColor() -> UIColor {
         return UIColor(cgColor: #colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1))
@@ -398,7 +399,7 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("taplist.count : \(tapList.count)")
+//        print("taplist.count : \(tapList.count)")
        
         return tapList.count
     }
@@ -428,13 +429,6 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         
         getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
         
-//        if dayArr.count == 0{
-//            nilView.isHidden = true
-//        } else {
-//            nilView.isHidden = false
-//        }
-        
-//        self.calendarView.contentController.refreshPresentedMonth()
         self.collectionView.reloadData()
         self.tableView.reloadData()
     }

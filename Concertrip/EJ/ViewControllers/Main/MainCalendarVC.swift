@@ -262,22 +262,17 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
         
 //        if !dayView.isHidden && dayView.date != nil {
         
-        
-            print("index : ", index)
-            year_ = dayView.date.year
-            month_ = dayView.date.month
-            day_ = dayView.date.day
-            
-            
-            
-            for i in 0 ..< index {
+        print("index : ", index)
+        year_ = dayView.date.year
+        month_ = dayView.date.month
+        day_ = dayView.date.day
+
+        for i in 0 ..< index {
 //                print(yearArr[i], "년", monthArr[i], "월", dayArr[i], "일")
-                if year_ == yearArr[i] && month_ == monthArr[i] && day_ == dayArr[i] {
-                    return true
-                }
+            if year_ == yearArr[i] && month_ == monthArr[i] && day_ == dayArr[i] {
+                return true
             }
-//        }
-        
+        }
         return false
     }
     
@@ -291,15 +286,14 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
 //        default:
 //            return [UIColor.orange, UIColor.green, UIColor.blue]
 //        }
-        
-//        if tapId == "내 공연" {
+
+//        print("tapType \(tapType)")
+//        if tapType == "내 공연" {
 //            return [UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)),UIColor(cgColor: #colorLiteral(red: 0.09645249695, green: 0.7349390388, blue: 1, alpha: 1))]
-//
 //        } else {
-//
-//        return [UIColor(cgColor: #colorLiteral(red: 0.1058823529, green: 0.7333333333, blue: 1, alpha: 1))]
+//            print("엘스")
+//            return [UIColor(cgColor: #colorLiteral(red: 0.1058823529, green: 0.7333333333, blue: 1, alpha: 1))]
 //        }
-        
         
         return [UIColor(cgColor: #colorLiteral(red: 0.1058823529, green: 0.7333333333, blue: 1, alpha: 1))]
     }
@@ -320,6 +314,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
         selectDay = sDay.date.day
         getTableService(type: tapType, id: tapId, day: selectDay)
         getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
+        
         tableView.reloadData()
         
     }

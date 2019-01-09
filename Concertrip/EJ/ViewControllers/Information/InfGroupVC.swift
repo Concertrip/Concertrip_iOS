@@ -105,7 +105,8 @@ extension InfGroupVC: UITableViewDelegate, UITableViewDataSource {
         print("안에 들어온 event : ", event)
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfGroupTVCell") as! InfGroupTVCell
         print("안에 들어왔나요 ?? ", event)
-        
+        cell.selectionStyle = .none
+
         cell.concertNameLabel.text = event.eventName
         cell.concertProfileImg.imageFromUrl(gsno(event.eventProfileImg), defaultImgPath: "likeicon")
         
@@ -134,6 +135,15 @@ extension InfGroupVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
+        let event = eventList[indexPath.row]
+        let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcert_2VC") as! InfConcert_2VC
+        dvc.detailId = event.eventId
+        self.present(dvc, animated: true, completion: nil)
     }
 }
 

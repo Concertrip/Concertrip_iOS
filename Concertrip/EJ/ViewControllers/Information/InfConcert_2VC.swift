@@ -35,6 +35,17 @@ class InfConcert_2VC: UIViewController {
     var dateTxt  = ""
     var priceTxt = ""
     
+    @IBAction func backBtnAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func likeBtnAction(_ sender: Any) {
+    }
+    @IBAction func reservationBtnAction(_ sender: Any) {
+        self.view.makeToast("내 티켓에 추가됐습니다.")
+    }
+    @IBOutlet weak var reservationBtn: UIButton!
+    
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -51,9 +62,9 @@ class InfConcert_2VC: UIViewController {
             let detailData = data as DetailConcert
             guard let members = detailData.dConcertMemberList else { return }
             self.memberList = members
-
+            
             print("memberList : \(self.memberList)")
-
+            
             self.concertLocationLabel.text = detailData.dConcertLocation
             self.bigProfileImg.imageFromUrl(detailData.dConcertProfileImg, defaultImgPath: "")
             self.backgroundImg.imageFromUrl(detailData.dConcertBackImg, defaultImgPath: "")
@@ -62,7 +73,7 @@ class InfConcert_2VC: UIViewController {
             self.youtubeView.loadVideoID(youtubeURL!)
             self.nameLabel.text = detailData.dConcertName
             self.infoImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
-
+            
             for data in detailData.dConcertSeatName! {
                 print("seatname : \(data)")
                 self.seatNameList.append(data)
@@ -71,7 +82,7 @@ class InfConcert_2VC: UIViewController {
                 print("price : \(data)")
                 self.seatPriceList.append(data)
             }
-
+            
             self.infoImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
             
             for data in detailData.dConcertDate! {
@@ -86,26 +97,25 @@ class InfConcert_2VC: UIViewController {
             print("dateTxt : \(self.dateTxt)")
             self.concertDateLabel.text = self.dateTxt
             self.concertPriceLabel.text = self.priceTxt
-
+            
             self.performerCollectionView.reloadData()
         }
-
+        
         performerCollectionView.delegate = self
         performerCollectionView.dataSource = self
         //        cautionCollectionView.delegate = self
         //        cautionCollectionView.dataSource = self
+        
+        view.addSubview(reservationBtn)
+        let buttonBottomConstraint = NSLayoutConstraint(item: reservationBtn, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1.0, constant: -12.0)
 
+        let buttonLeftConstraint = NSLayoutConstraint(item: reservationBtn, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: -10.0)
+        
+//        buttonBottomConstraint += NSLayoutConstraint()
+        self.view.addConstraint(buttonBottomConstraint)
+        self.view.addConstraint(buttonLeftConstraint)
     }
     
-    @IBAction func backBtnAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    @IBAction func likeBtnAction(_ sender: Any) {
-    }
-    @IBAction func reservationBtnAction(_ sender: Any) {
-    }
-    
-
 }
 extension InfConcert_2VC : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

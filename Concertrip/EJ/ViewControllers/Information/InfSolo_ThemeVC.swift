@@ -73,12 +73,12 @@ class InfSolo_ThemeVC: UIViewController {
     @IBAction func likeBtnAction(_ sender: Any) {
         SubscribeArtistService.shared.subscriptArtist(id: detailId!) {
             if self.isLikeBtnActivated == false {
-                self.likeBtn.imageView?.image = UIImage(named : "infoLikeButton")
+                self.likeBtn.imageView?.image = UIImage(named : "infoLikeButtonActivated")
                 self.isLikeBtnActivated = true
                 self.view.makeToast("내 공연에 추가되었습니다!")
             }
             else {
-                self.likeBtn.imageView?.image = UIImage(named: "infoLikeButtonActivated")
+                self.likeBtn.imageView?.image = UIImage(named: "infoLikeButton")
                 self.isLikeBtnActivated = false
             }
         }
@@ -100,7 +100,8 @@ extension InfSolo_ThemeVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfSoloThemeTVCell") as! InfSoloThemeTVCell
-        
+        cell.selectionStyle = .none
+
         var event = eventList[indexPath.row]
         
         cell.concertNameLabel.text = event.eventName
@@ -134,5 +135,12 @@ extension InfSolo_ThemeVC: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
 
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
+        let event = eventList[indexPath.row]
+        let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcert_2VC") as! InfConcert_2VC
+        dvc.detailId = event.eventId
+        self.present(dvc, animated: true, completion: nil)
+    }
 }

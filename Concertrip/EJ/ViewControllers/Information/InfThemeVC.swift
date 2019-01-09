@@ -92,6 +92,7 @@ extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfThemeTVCell") as! InfThemeTVCell
+        cell.selectionStyle = .none
         var event = eventList[indexPath.row]
         
         if event.eventSubscribe! == false {
@@ -123,5 +124,13 @@ extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
+        let event = eventList[indexPath.row]
+        let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcert_2VC") as! InfConcert_2VC
+        dvc.detailId = event.eventId
+        self.present(dvc, animated: true, completion: nil)
+    }
     
 }

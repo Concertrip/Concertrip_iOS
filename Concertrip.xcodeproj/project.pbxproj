@@ -64,6 +64,7 @@
 		7CFB858B21DB49DD001473B7 /* InfPerformerCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858A21DB49DD001473B7 /* InfPerformerCVCell.swift */; };
 		7CFB858D21DB49F9001473B7 /* InfCautionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858C21DB49F9001473B7 /* InfCautionCVCell.swift */; };
 		AE2A6D7B7214AA4BA8EDD3EA /* Pods_Concertrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9891D97367D4A40762BF55 /* Pods_Concertrip.framework */; };
+		E041D29821E60E6B00103B08 /* ZeroTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E041D29721E60E6B00103B08 /* ZeroTab.storyboard */; };
 		E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */; };
 		E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */; };
 		E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */; };
@@ -145,6 +146,7 @@
 		7CFB858A21DB49DD001473B7 /* InfPerformerCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfPerformerCVCell.swift; sourceTree = "<group>"; };
 		7CFB858C21DB49F9001473B7 /* InfCautionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfCautionCVCell.swift; sourceTree = "<group>"; };
 		D125FDF54BCE47167F476328 /* Pods-Concertrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concertrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip.debug.xcconfig"; sourceTree = "<group>"; };
+		E041D29721E60E6B00103B08 /* ZeroTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ZeroTab.storyboard; sourceTree = "<group>"; };
 		E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationSB.storyboard; sourceTree = "<group>"; };
 		E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVCCell.swift; sourceTree = "<group>"; };
 		E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			children = (
 				E08FD1A521D217D2002AF9E7 /* ExploreSB.storyboard */,
 				E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */,
+				E041D29721E60E6B00103B08 /* ZeroTab.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */,
+				E041D29821E60E6B00103B08 /* ZeroTab.storyboard in Resources */,
 				E08FD1A621D217D2002AF9E7 /* ExploreSB.storyboard in Resources */,
 				7C76C32821D4782200D4A1CD /* MypageSB.storyboard in Resources */,
 				7CF1246721D2522E008F731B /* LikeSB.storyboard in Resources */,
@@ -518,7 +522,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -541,7 +545,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {

@@ -106,11 +106,13 @@ extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
         cell.subscribeHandler = {(concertId) in
             SubscribeEventService.shared.subscriptEvent(id: concertId){
                 if event.eventSubscribe == false {
-                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButtonActivated")
+                    cell.addBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
+//                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButtonActivated")
                     event.eventSubscribe = true
                     self.view.makeToast("내 공연에 추가되었습니다!")
                 } else {
-                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButton")
+                    cell.addBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
+//                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButton")
                     event.eventSubscribe = false
                 }
             }

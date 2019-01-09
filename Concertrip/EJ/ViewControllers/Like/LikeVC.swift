@@ -110,7 +110,12 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
         cell.configure(data: list)
         
         if list.isSubscribe == true {
-            cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+            if self.currentSub == self.concertSub {
+                cell.likeBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
+            }
+            else {
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+            }
         }
         
         if self.currentSub == self.artistSub {
@@ -139,7 +144,7 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
                     self.artistSubService()
                 }
             } else if self.currentSub == self.concertSub {
-    
+                
                 SubscribeEventService.shared.subscriptEvent(id: contentId) {
                     if list.isSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)

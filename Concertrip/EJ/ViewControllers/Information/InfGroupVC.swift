@@ -60,7 +60,15 @@ class InfGroupVC: UIViewController {
             self.likeCountLabel.text = likeCount
             self.youtubeView.loadVideoID(youtubeURL!)
             
-
+            if detailData.dSubscribe == true {
+                self.likeBtn.imageView?.image = UIImage(named: "infoLikeButtonActivated")
+                self.isLikeBtnActivated = true
+            }
+            else {
+                self.likeBtn.imageView?.image = UIImage(named: "infoLikeButton")
+                self.isLikeBtnActivated = false
+            }
+            
             self.tableView.reloadData()
             self.collectionView.reloadData()
         }
@@ -68,16 +76,16 @@ class InfGroupVC: UIViewController {
     }
     
     @IBAction func likeBtnAction(_ sender: Any) {
-        
-        if isLikeBtnActivated == false {
-            self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
-            self.isLikeBtnActivated = true
-            self.view.makeToast("내 공연에 추가되었습니다!")
-        } else {
-            self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
-            self.isLikeBtnActivated = false
+        SubscribeArtistService.shared.subscriptArtist(id: detailId!) {
+            if self.isLikeBtnActivated == false {
+                self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
+                self.isLikeBtnActivated = true
+                self.view.makeToast("내 공연에 추가되었습니다!")
+            } else {
+                self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
+                self.isLikeBtnActivated = false
+            }
         }
-        
     }
     @IBAction func backBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -93,13 +101,38 @@ extension InfGroupVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("안에 들어왔다!!")
-        let event = eventList[indexPath.row]
+        var event = eventList[indexPath.row]
         print("안에 들어온 event : ", event)
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfGroupTVCell") as! InfGroupTVCell
         print("안에 들어왔나요 ?? ", event)
         
         cell.concertNameLabel.text = event.eventName
         cell.concertProfileImg.imageFromUrl(gsno(event.eventProfileImg), defaultImgPath: "likeicon")
+        
+        if event.eventSubscribe! == false {
+            print(cell.addBtn.imageView?.image)
+            cell.addBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
+        }
+        else {
+            cell.addBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
+        }
+        
+        cell.configure(data: event)
+        cell.subscribeHandler = {(concertId) in
+            SubscribeEventService.shared.subscriptEvent(id: concertId){
+                if event.eventSubscribe == false {
+                    cell.addBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
+                    //                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButtonActivated")
+                    event.eventSubscribe = true
+                    self.view.makeToast("내 공연에 추가되었습니다!")
+                } else {
+                    cell.addBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
+                    //                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButton")
+                    event.eventSubscribe = false
+                }
+            }
+        }
+        
         return cell
     }
 }

@@ -55,11 +55,11 @@ class InfSolo_ThemeVC: UIViewController {
             
             //dSubscribe
             if detailData.dSubscribe! == true {
-                self.likeBtn.imageView?.image = UIImage(named : "infoArtistLikeButtonActivated")
+                self.likeBtn.imageView?.image = UIImage(named : "infoLikeButtonActivated")
                 self.isLikeBtnActivated = true
             }
             else {
-                self.likeBtn.imageView?.image = UIImage(named: "infoArtistLikeButton")
+                self.likeBtn.imageView?.image = UIImage(named: "infoLikeButton")
                 self.isLikeBtnActivated = false
             }
             self.tableView.reloadData()
@@ -73,12 +73,12 @@ class InfSolo_ThemeVC: UIViewController {
     @IBAction func likeBtnAction(_ sender: Any) {
         SubscribeArtistService.shared.subscriptArtist(id: detailId!) {
             if self.isLikeBtnActivated == false {
-                self.likeBtn.imageView?.image = UIImage(named : "infoArtistLikeButton")
+                self.likeBtn.imageView?.image = UIImage(named : "infoLikeButton")
                 self.isLikeBtnActivated = true
                 self.view.makeToast("내 공연에 추가되었습니다!")
             }
             else {
-                self.likeBtn.imageView?.image = UIImage(named: "infoArtistLikeButtonActivated")
+                self.likeBtn.imageView?.image = UIImage(named: "infoLikeButtonActivated")
                 self.isLikeBtnActivated = false
             }
         }
@@ -106,21 +106,30 @@ extension InfSolo_ThemeVC: UITableViewDelegate, UITableViewDataSource{
         cell.concertNameLabel.text = event.eventName
         cell.concertProfileImg.imageFromUrl(gsno(event.eventProfileImg), defaultImgPath: "")
         
-        print("아 왜 안돼? : ", event)
+        if event.eventSubscribe! == false {
+            print(cell.addBtn.imageView?.image)
+            cell.addBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
+        }
+        else {
+            cell.addBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
+        }
+        
         cell.configure(data: event)
         cell.subscribeHandler = {(concertId) in
-            print("콘서트 아이디 : ", concertId)
             SubscribeEventService.shared.subscriptEvent(id: concertId){
                 if event.eventSubscribe == false {
-                    cell.addBtn.imageView?.image = UIImage(named: "concertLikeButtonActivated")
+                    cell.addBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
+                    //                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButtonActivated")
                     event.eventSubscribe = true
                     self.view.makeToast("내 공연에 추가되었습니다!")
-                }
-                else {
-                    cell.addBtn.imageView?.image = UIImage(named: "concertLikeButton")
+                } else {
+                    cell.addBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
+                    //                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButton")
+                    event.eventSubscribe = false
                 }
             }
         }
+        
         
         return cell
     }

@@ -24,6 +24,7 @@ class InfSoloThemeTVCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        addBtn.addTarget(self, action: #selector(subscribe), for: .touchUpInside)
         concertProfileImg.circleImageView()
     }
     

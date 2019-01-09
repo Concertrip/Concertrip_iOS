@@ -72,6 +72,16 @@ class InfConcertVC: UIViewController {
                 self.seatPriceList.append(data)
             }
             
+            print("공연 디테일 데이터: ", detailData)
+            if detailData.dConcertSubscribe! == true {
+                self.likeBtn.imageView?.image = UIImage(named: "infoLikeButtonActivated")
+                self.isLikeBtnActivated = true
+            }
+            else {
+                self.likeBtn.imageView?.image = UIImage(named: "infoLikeButton")
+                self.isLikeBtnActivated = false
+            }
+
             self.performImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
             
             self.performerCollectionView.reloadData()
@@ -87,14 +97,17 @@ class InfConcertVC: UIViewController {
     }
     
     @IBAction func likeBtnAction(_ sender: Any) {
-        if isLikeBtnActivated == false {
-            self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
-            self.isLikeBtnActivated = true
-            self.view.makeToast("내 공연에 추가되었습니다!")
-        } else {
-            self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
-            self.isLikeBtnActivated = false
+        SubscribeEventService.shared.subscriptEvent(id: detailId!) {
+            if self.isLikeBtnActivated == false {
+                self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
+                self.isLikeBtnActivated = true
+                self.view.makeToast("내 공연에 추가되었습니다!")
+            } else {
+                self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
+                self.isLikeBtnActivated = false
+            }
         }
+        
     }
     
     @IBAction func backBtn(_ sender: Any) {

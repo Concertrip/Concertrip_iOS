@@ -37,6 +37,7 @@ class ExploreClickedVC: UIViewController {
 
             if value.artists?.count == 0 && value.events?.count == 0 && value.genres?.count == 0 {
                 self?.noResultView.isHidden = false
+                self?.searchTableView.isHidden = true
                 self?.noResultLabel.text = "'\(self?.searchTxt.text! ?? "")'에 대한 결과가 없습니다"
                 self?.noResultBtn.layer.cornerRadius = 15
                 self?.noResultBtn.setTitle("'\(self?.searchTxt.text! ?? "")' 아티스트/콘서트 추가 요청하기'", for: .normal)
@@ -49,6 +50,7 @@ class ExploreClickedVC: UIViewController {
 
             }
             else {
+                self?.noResultView.isHidden = true
                 self?.searchTableView.isHidden = false
                 
                 
@@ -60,6 +62,8 @@ class ExploreClickedVC: UIViewController {
                 self.eventList = event
                 guard let genre = searchData.genres else {return}
                 self.genresList = genre
+                
+                
                 
                 self.searchTableView.reloadData()
             }
@@ -168,6 +172,8 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreClickedVCCell") as! ExploreClickedVCCell
+        cell.selectionStyle = .none
+        
         print("indexPath.row : ", indexPath.section)
         //cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
@@ -235,21 +241,21 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
             cell.nameLabel.text = eventData.eventName
             cell.profileImg.imageFromUrl(gsno(eventData.eventProfileImg), defaultImgPath: "")
             if eventData.eventSubscribe == false {
-                cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
             }
             else {
-                cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                cell.likeBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
             }
             
             cell.subscribeHandler = {(genreId) in
                 SubscribeEventService.shared.subscriptEvent(id: genreId) {
                     if eventData.eventSubscribe == false {
-                        cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        cell.likeBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
                         self.view.makeToast("캘린더에 추가되었습니다!")
                         eventData.eventSubscribe = true
                     }
                     else {
-                        cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
                         eventData.eventSubscribe = false
                     }
                     print(eventData.eventName, ": ", eventData.eventSubscribe)
@@ -263,7 +269,8 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
         view.tintColor = UIColor.white
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        header.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        header.backgroundView?.backgroundColor = UIColor(white: 1, alpha: 0)
         header.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
     }
     

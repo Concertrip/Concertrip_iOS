@@ -105,11 +105,12 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
         
         cell.menuLabel.text = menu
         
+        print("선택된 인덱수 : ", selectedIdx, indexPath.row)
         if selectedIdx == indexPath.row{
             cell.menuLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         }
         else {
-            cell.menuLabel.textColor = UIColor(red: 111, green: 111, blue: 111, alpha: 1)
+            cell.menuLabel.textColor = #colorLiteral(red: 0.4352941176, green: 0.4352941176, blue: 0.4352941176, alpha: 1)
         }
         
         return cell
@@ -147,7 +148,7 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exploreTVCell") as! ExploreTVCell
         
-        
+        cell.selectionStyle = .none
 //        var artistData = artistList[indexPath.row]
         
 //        cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")

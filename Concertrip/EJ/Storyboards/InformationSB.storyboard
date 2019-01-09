@@ -1130,7 +1130,7 @@
                                                 <rect key="frame" x="12" y="1407" width="351" height="60"/>
                                                 <state key="normal" image="reservationButton"/>
                                                 <connections>
-                                                    <action selector="reservationBtnAction:" destination="NFU-LC-0Gw" eventType="touchUpInside" id="3d5-cN-cqd"/>
+                                                    <action selector="reservationBtnAction:" destination="NFU-LC-0Gw" eventType="touchUpInside" id="XFt-eg-arr"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1211,6 +1211,7 @@
                         <outlet property="likeCountLabel" destination="cvF-kP-w3j" id="sX7-9w-Fqr"/>
                         <outlet property="nameLabel" destination="uv3-c5-DZu" id="6RQ-Hc-69v"/>
                         <outlet property="performerCollectionView" destination="Pa4-Ux-ubf" id="PZQ-zx-udm"/>
+                        <outlet property="reservationBtn" destination="E6Z-FL-d3O" id="F1Y-tF-zsU"/>
                         <outlet property="scrollView" destination="63m-SW-pTj" id="cN0-Ha-Yks"/>
                         <outlet property="youtubeView" destination="ev5-i1-W3C" id="8aL-qU-tCL"/>
                     </connections>

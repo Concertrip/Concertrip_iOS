@@ -65,6 +65,7 @@
 		7CFB858D21DB49F9001473B7 /* InfCautionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858C21DB49F9001473B7 /* InfCautionCVCell.swift */; };
 		AE2A6D7B7214AA4BA8EDD3EA /* Pods_Concertrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9891D97367D4A40762BF55 /* Pods_Concertrip.framework */; };
 		E041D29821E60E6B00103B08 /* ZeroTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E041D29721E60E6B00103B08 /* ZeroTab.storyboard */; };
+		E041D29A21E611CA00103B08 /* ZeroTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041D29921E611CA00103B08 /* ZeroTabVC.swift */; };
 		E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */; };
 		E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */; };
 		E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */; };
@@ -147,6 +148,7 @@
 		7CFB858C21DB49F9001473B7 /* InfCautionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfCautionCVCell.swift; sourceTree = "<group>"; };
 		D125FDF54BCE47167F476328 /* Pods-Concertrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concertrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip.debug.xcconfig"; sourceTree = "<group>"; };
 		E041D29721E60E6B00103B08 /* ZeroTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ZeroTab.storyboard; sourceTree = "<group>"; };
+		E041D29921E611CA00103B08 /* ZeroTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroTabVC.swift; sourceTree = "<group>"; };
 		E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationSB.storyboard; sourceTree = "<group>"; };
 		E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVCCell.swift; sourceTree = "<group>"; };
 		E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				E08FD1A121D205AA002AF9E7 /* NotificationVC.swift */,
 				E08FD1A721D21B3A002AF9E7 /* ExploreVC.swift */,
 				E08FD1D321D345DC002AF9E7 /* ExploreClickedVC.swift */,
+				E041D29921E611CA00103B08 /* ZeroTabVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */,
 				E0F7280121DCDDED00D89BF6 /* SubscribeEventService.swift in Sources */,
 				E0F727FB21DB9DEC00D89BF6 /* SearchService.swift in Sources */,
+				E041D29A21E611CA00103B08 /* ZeroTabVC.swift in Sources */,
 				7C76C31821D3609400D4A1CD /* Extension.swift in Sources */,
 				7CFB858921DB49B8001473B7 /* InfTicketPriceTVCell.swift in Sources */,
 				7CF5E8D221E1D87A003751C2 /* CalendarListService.swift in Sources */,

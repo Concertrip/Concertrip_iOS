@@ -31,6 +31,9 @@
 		7CA17A1121E118CA00C0D80E /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA17A1021E118CA00C0D80E /* EventList.swift */; };
 		7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */; };
 		7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */; };
+		7CBCC6F521E5C03D0057A207 /* InfConcert_2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBCC6F421E5C03D0057A207 /* InfConcert_2VC.swift */; };
+		7CBCC6F721E5CBE00057A207 /* InfConcertPerformerCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBCC6F621E5CBE00057A207 /* InfConcertPerformerCVCell.swift */; };
+		7CBCC6F921E5CBF80057A207 /* InfConcertCautionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBCC6F821E5CBF80057A207 /* InfConcertCautionCVCell.swift */; };
 		7CCF4E3C21E0566000251580 /* CalendarTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCF4E3B21E0566000251580 /* CalendarTap.swift */; };
 		7CCF4E3E21E056B100251580 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCF4E3D21E056B100251580 /* CalendarService.swift */; };
 		7CE92C7721D68CBB00F560F8 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE92C7021D68CBA00F560F8 /* ResponseObject.swift */; };
@@ -109,6 +112,9 @@
 		7CA17A1021E118CA00C0D80E /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
 		7CA27CC921D0EB980041A146 /* YoutubeTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTestVC.swift; sourceTree = "<group>"; };
 		7CA27CCE21D1FD2C0041A146 /* MainCalendarCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarCVCell.swift; sourceTree = "<group>"; };
+		7CBCC6F421E5C03D0057A207 /* InfConcert_2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfConcert_2VC.swift; sourceTree = "<group>"; };
+		7CBCC6F621E5CBE00057A207 /* InfConcertPerformerCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfConcertPerformerCVCell.swift; sourceTree = "<group>"; };
+		7CBCC6F821E5CBF80057A207 /* InfConcertCautionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfConcertCautionCVCell.swift; sourceTree = "<group>"; };
 		7CCF4E3B21E0566000251580 /* CalendarTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTap.swift; sourceTree = "<group>"; };
 		7CCF4E3D21E056B100251580 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		7CE92C7021D68CBA00F560F8 /* ResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
@@ -350,11 +356,14 @@
 		7C76C32021D4772200D4A1CD /* Information */ = {
 			isa = PBXGroup;
 			children = (
+				7CBCC6FA21E5D8F00057A207 /* DeleteSource */,
 				7CE92CAF21D78EF500F560F8 /* Cell */,
 				7CE92CA721D7810900F560F8 /* InfSolo_ThemeVC.swift */,
 				7CF1693421E0F3AF0091D624 /* InfThemeVC.swift */,
 				7CE92CA921D7812200F560F8 /* InfGroupVC.swift */,
-				7CE92CAD21D7814700F560F8 /* InfConcertVC.swift */,
+				7CBCC6F421E5C03D0057A207 /* InfConcert_2VC.swift */,
+				7CBCC6F621E5CBE00057A207 /* InfConcertPerformerCVCell.swift */,
+				7CBCC6F821E5CBF80057A207 /* InfConcertCautionCVCell.swift */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -369,6 +378,16 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		7CBCC6FA21E5D8F00057A207 /* DeleteSource */ = {
+			isa = PBXGroup;
+			children = (
+				7CE92CAD21D7814700F560F8 /* InfConcertVC.swift */,
+				7CFB858A21DB49DD001473B7 /* InfPerformerCVCell.swift */,
+				7CFB858C21DB49F9001473B7 /* InfCautionCVCell.swift */,
+			);
+			path = DeleteSource;
+			sourceTree = "<group>";
+		};
 		7CE92CAF21D78EF500F560F8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,8 +395,6 @@
 				7CFB858421DB47F9001473B7 /* InfGroupCVCell.swift */,
 				7CFB858621DB4823001473B7 /* InfGroupTVCell.swift */,
 				7CFB858821DB49B8001473B7 /* InfTicketPriceTVCell.swift */,
-				7CFB858A21DB49DD001473B7 /* InfPerformerCVCell.swift */,
-				7CFB858C21DB49F9001473B7 /* InfCautionCVCell.swift */,
 				7CF1693621E0F9120091D624 /* InfThemeTVCell.swift */,
 			);
 			path = Cell;
@@ -501,7 +518,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -524,7 +541,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -582,6 +599,7 @@
 				7CF1692321E097EB0091D624 /* DetailArtist.swift in Sources */,
 				E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */,
 				7CA17A0F21E1098C00C0D80E /* MemberList.swift in Sources */,
+				7CBCC6F521E5C03D0057A207 /* InfConcert_2VC.swift in Sources */,
 				7CE92C7821D68CBB00F560F8 /* Token.swift in Sources */,
 				7C3F6F5421D9F8440092102E /* TicketTVCell.swift in Sources */,
 				7C79BC0D21DC741600096BB3 /* Subscribe.swift in Sources */,
@@ -603,6 +621,7 @@
 				7CE92CB821D797F300F560F8 /* LikeTVCell.swift in Sources */,
 				7CF5E8CE21E1D6E9003751C2 /* CalendarList.swift in Sources */,
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,
+				7CBCC6F721E5CBE00057A207 /* InfConcertPerformerCVCell.swift in Sources */,
 				E08FD1D821D3464E002AF9E7 /* ExploreClickedVCCell.swift in Sources */,
 				E08FD1AC21D220B3002AF9E7 /* ExploreTVCell.swift in Sources */,
 				7CF1692B21E0D0700091D624 /* DetailTheme.swift in Sources */,
@@ -615,6 +634,7 @@
 				7CF1692F21E0D1400091D624 /* DetailThemeService.swift in Sources */,
 				7C3F6F5221D9F3760092102E /* SettingTVCell.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,
+				7CBCC6F921E5CBF80057A207 /* InfConcertCautionCVCell.swift in Sources */,
 				E0F727F721DB9DDD00D89BF6 /* Genres.swift in Sources */,
 				E08FD1AA21D2209F002AF9E7 /* ExploreCVCell.swift in Sources */,
 				7CFB858B21DB49DD001473B7 /* InfPerformerCVCell.swift in Sources */,

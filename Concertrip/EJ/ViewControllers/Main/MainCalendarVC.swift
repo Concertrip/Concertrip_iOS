@@ -373,7 +373,7 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
         let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
-        let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcertVC") as! InfConcertVC
+        let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcert_2VC") as! InfConcert_2VC
         
         let days = dailyList[indexPath.row]
         dvc.detailId = days.calendarId

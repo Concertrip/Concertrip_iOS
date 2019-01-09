@@ -298,7 +298,7 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
         }
         else {
             let event = eventList[indexPath.row]
-            let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcertVC") as! InfConcertVC
+            let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcert_2VC") as! InfConcert_2VC
             dvc.detailId = event.eventId
             self.present(dvc, animated: true, completion: nil)
         }

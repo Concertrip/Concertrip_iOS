@@ -200,7 +200,7 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
             }
         }
         else if self.currentSub == self.concertSub {
-            let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcertVC") as! InfConcertVC
+            let dvc = storyboard.instantiateViewController(withIdentifier: "InfConcert_2VC") as! InfConcert_2VC
             
             dvc.detailId = list.id
             

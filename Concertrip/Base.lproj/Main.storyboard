@@ -329,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsV-1v-SbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="951"/>
+            <point key="canvasLocation" x="980" y="1047"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cBm-9G-Oh8">
@@ -355,13 +355,117 @@
             </objects>
             <point key="canvasLocation" x="980" y="290.10494752623691"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="54o-Va-u3b">
+            <objects>
+                <viewController id="XVs-dn-uRd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OLk-wE-vCK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artistLikeButton" translatesAutoresizingMaskIntoConstraints="NO" id="WAI-hO-cmR">
+                                <rect key="frame" x="165" y="62" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WAI-hO-cmR" secondAttribute="height" multiplier="1:1" id="rUg-RX-3bT"/>
+                                </constraints>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5vu-x2-niL">
+                                <rect key="frame" x="0.0" y="188" width="375" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5vu-x2-niL" secondAttribute="height" multiplier="1:1" id="dQH-nG-rI8"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gWs-3G-edi">
+                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CGu-Us-Fte">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradationCircle" translatesAutoresizingMaskIntoConstraints="NO" id="ev8-tE-RG9">
+                                                    <rect key="frame" x="20" y="9" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ev8-tE-RG9" secondAttribute="height" multiplier="1:1" id="Wfs-cz-CcT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicFestThemeProfileImageBig" translatesAutoresizingMaskIntoConstraints="NO" id="ICj-tA-sV8">
+                                                    <rect key="frame" x="24" y="13" width="72" height="72"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ICj-tA-sV8" secondAttribute="height" multiplier="1:1" id="Q7h-Ya-Qhr"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDM 페스티벌" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hF-tG-psJ">
+                                                    <rect key="frame" x="18" y="93" width="84" height="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="ev8-tE-RG9" firstAttribute="top" secondItem="CGu-Us-Fte" secondAttribute="top" constant="9" id="272-dM-hL9"/>
+                                            <constraint firstItem="4hF-tG-psJ" firstAttribute="centerX" secondItem="ev8-tE-RG9" secondAttribute="centerX" id="6yn-BX-NTO"/>
+                                            <constraint firstItem="4hF-tG-psJ" firstAttribute="top" secondItem="ev8-tE-RG9" secondAttribute="bottom" constant="4" id="GA1-Fo-nGE"/>
+                                            <constraint firstItem="ev8-tE-RG9" firstAttribute="centerX" secondItem="CGu-Us-Fte" secondAttribute="centerX" id="W4T-QC-Y4v"/>
+                                            <constraint firstItem="ICj-tA-sV8" firstAttribute="centerX" secondItem="ev8-tE-RG9" secondAttribute="centerX" id="g4N-mP-rOQ"/>
+                                            <constraint firstItem="ICj-tA-sV8" firstAttribute="centerY" secondItem="ev8-tE-RG9" secondAttribute="centerY" id="uqL-Mh-Fek"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTR-dE-cCH">
+                                <rect key="frame" x="139.5" y="598" width="96" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yTR-dE-cCH" secondAttribute="height" multiplier="32:11" id="4bu-s1-Edr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="건너뛰기" backgroundImage="skipButton"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="themeText" translatesAutoresizingMaskIntoConstraints="NO" id="MIl-Dn-AAF">
+                                <rect key="frame" x="76.5" y="128" width="222" height="19"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lio-xe-RTb" firstAttribute="bottom" secondItem="yTR-dE-cCH" secondAttribute="bottom" constant="36" id="6jJ-KD-TKH"/>
+                            <constraint firstItem="Lio-xe-RTb" firstAttribute="trailing" secondItem="WAI-hO-cmR" secondAttribute="trailing" constant="164" id="CZx-KH-ybC"/>
+                            <constraint firstItem="yTR-dE-cCH" firstAttribute="centerX" secondItem="5vu-x2-niL" secondAttribute="centerX" id="HP9-fJ-eby"/>
+                            <constraint firstItem="yTR-dE-cCH" firstAttribute="top" secondItem="5vu-x2-niL" secondAttribute="bottom" constant="35" id="Uom-8f-h7W"/>
+                            <constraint firstItem="WAI-hO-cmR" firstAttribute="leading" secondItem="Lio-xe-RTb" secondAttribute="leading" constant="165" id="Wcc-Js-a6o"/>
+                            <constraint firstItem="5vu-x2-niL" firstAttribute="centerX" secondItem="MIl-Dn-AAF" secondAttribute="centerX" id="Xm8-2x-ArO"/>
+                            <constraint firstItem="MIl-Dn-AAF" firstAttribute="top" secondItem="WAI-hO-cmR" secondAttribute="bottom" constant="20" id="YYq-OM-6V6"/>
+                            <constraint firstItem="MIl-Dn-AAF" firstAttribute="centerX" secondItem="Lio-xe-RTb" secondAttribute="centerX" id="fAY-3i-uM7"/>
+                            <constraint firstItem="WAI-hO-cmR" firstAttribute="top" secondItem="Lio-xe-RTb" secondAttribute="top" constant="42" id="fZv-yN-2ce"/>
+                            <constraint firstItem="5vu-x2-niL" firstAttribute="top" secondItem="MIl-Dn-AAF" secondAttribute="bottom" constant="41" id="jqE-eU-WEo"/>
+                            <constraint firstItem="5vu-x2-niL" firstAttribute="width" secondItem="OLk-wE-vCK" secondAttribute="width" id="lSi-v2-bhe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lio-xe-RTb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HBS-Nf-eMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45.600000000000001" y="312.59370314842579"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="artistLikeButton" width="48" height="48"/>
         <image name="bellIcon" width="42" height="42"/>
         <image name="calendarLight" width="374" height="529"/>
         <image name="concertLikeButton" width="48" height="48"/>
+        <image name="gradationCircle" width="80" height="80"/>
         <image name="gradationWhite" width="32" height="26"/>
+        <image name="musicFestThemeProfileImageBig" width="72" height="72"/>
         <image name="shadowHalf" width="375" height="18"/>
+        <image name="skipButton" width="96" height="33"/>
         <image name="tabCalendarIconActivated" width="30" height="25"/>
+        <image name="themeText" width="222" height="19"/>
     </resources>
 </document>

@@ -19,6 +19,8 @@
 		7C3F6F5221D9F3760092102E /* SettingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5121D9F3760092102E /* SettingTVCell.swift */; };
 		7C3F6F5421D9F8440092102E /* TicketTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5321D9F8440092102E /* TicketTVCell.swift */; };
 		7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5521D9F85E0092102E /* TicketVC.swift */; };
+		7C5F601921E61EF600B64EF8 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F601821E61EF600B64EF8 /* Alarm.swift */; };
+		7C5F601B21E61F2A00B64EF8 /* AlarmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F601A21E61F2A00B64EF8 /* AlarmService.swift */; };
 		7C76C31821D3609400D4A1CD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C31721D3609400D4A1CD /* Extension.swift */; };
 		7C76C32821D4782200D4A1CD /* MypageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C76C32721D4782200D4A1CD /* MypageSB.storyboard */; };
 		7C79BC0321DB611B00096BB3 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79BC0221DB611B00096BB3 /* Ticket.swift */; };
@@ -64,7 +66,6 @@
 		7CFB858B21DB49DD001473B7 /* InfPerformerCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858A21DB49DD001473B7 /* InfPerformerCVCell.swift */; };
 		7CFB858D21DB49F9001473B7 /* InfCautionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB858C21DB49F9001473B7 /* InfCautionCVCell.swift */; };
 		AE2A6D7B7214AA4BA8EDD3EA /* Pods_Concertrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9891D97367D4A40762BF55 /* Pods_Concertrip.framework */; };
-		E041D29821E60E6B00103B08 /* ZeroTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E041D29721E60E6B00103B08 /* ZeroTab.storyboard */; };
 		E041D29A21E611CA00103B08 /* ZeroTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041D29921E611CA00103B08 /* ZeroTabVC.swift */; };
 		E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */; };
 		E08FD19C21D113BC002AF9E7 /* NotificationVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */; };
@@ -102,6 +103,8 @@
 		7C3F6F5121D9F3760092102E /* SettingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTVCell.swift; sourceTree = "<group>"; };
 		7C3F6F5321D9F8440092102E /* TicketTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTVCell.swift; sourceTree = "<group>"; };
 		7C3F6F5521D9F85E0092102E /* TicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVC.swift; sourceTree = "<group>"; };
+		7C5F601821E61EF600B64EF8 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		7C5F601A21E61F2A00B64EF8 /* AlarmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmService.swift; sourceTree = "<group>"; };
 		7C76C31721D3609400D4A1CD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7C76C32721D4782200D4A1CD /* MypageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MypageSB.storyboard; sourceTree = "<group>"; };
 		7C79BC0221DB611B00096BB3 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
@@ -147,7 +150,6 @@
 		7CFB858A21DB49DD001473B7 /* InfPerformerCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfPerformerCVCell.swift; sourceTree = "<group>"; };
 		7CFB858C21DB49F9001473B7 /* InfCautionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfCautionCVCell.swift; sourceTree = "<group>"; };
 		D125FDF54BCE47167F476328 /* Pods-Concertrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concertrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip.debug.xcconfig"; sourceTree = "<group>"; };
-		E041D29721E60E6B00103B08 /* ZeroTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ZeroTab.storyboard; sourceTree = "<group>"; };
 		E041D29921E611CA00103B08 /* ZeroTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroTabVC.swift; sourceTree = "<group>"; };
 		E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationSB.storyboard; sourceTree = "<group>"; };
 		E08FD19B21D113BC002AF9E7 /* NotificationVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVCCell.swift; sourceTree = "<group>"; };
@@ -259,7 +261,6 @@
 			children = (
 				E08FD1A521D217D2002AF9E7 /* ExploreSB.storyboard */,
 				E08FD19721D11047002AF9E7 /* NotificationSB.storyboard */,
-				E041D29721E60E6B00103B08 /* ZeroTab.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -334,6 +335,7 @@
 				7CA17A0C21E1092200C0D80E /* DetailConcert.swift */,
 				7CA17A1021E118CA00C0D80E /* EventList.swift */,
 				7CF5E8CD21E1D6E9003751C2 /* CalendarList.swift */,
+				7C5F601821E61EF600B64EF8 /* Alarm.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,6 +357,7 @@
 				7CA17A0A21E108FB00C0D80E /* DetailEventService.swift */,
 				7CCF4E3D21E056B100251580 /* CalendarService.swift */,
 				7CF5E8D121E1D87A003751C2 /* CalendarListService.swift */,
+				7C5F601A21E61F2A00B64EF8 /* AlarmService.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -503,7 +506,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E08FD19821D11047002AF9E7 /* NotificationSB.storyboard in Resources */,
-				E041D29821E60E6B00103B08 /* ZeroTab.storyboard in Resources */,
 				E08FD1A621D217D2002AF9E7 /* ExploreSB.storyboard in Resources */,
 				7C76C32821D4782200D4A1CD /* MypageSB.storyboard in Resources */,
 				7CF1246721D2522E008F731B /* LikeSB.storyboard in Resources */,
@@ -599,6 +601,7 @@
 				E08FD1A821D21B3A002AF9E7 /* ExploreVC.swift in Sources */,
 				E0F727F621DB9DDD00D89BF6 /* SearchObject.swift in Sources */,
 				E08FD1D421D345DC002AF9E7 /* ExploreClickedVC.swift in Sources */,
+				7C5F601B21E61F2A00B64EF8 /* AlarmService.swift in Sources */,
 				7CE92CAA21D7812200F560F8 /* InfGroupVC.swift in Sources */,
 				7C3F6F4E21D9ECCA0092102E /* MypageCVCell.swift in Sources */,
 				7C3F6F4C21D9ECBA0092102E /* MypageVC.swift in Sources */,
@@ -639,6 +642,7 @@
 				7CF1692D21E0D11F0091D624 /* DetailArtistService.swift in Sources */,
 				7C79BC1521DC7D5900096BB3 /* SubscribeService.swift in Sources */,
 				E0F7280521DCDE2F00D89BF6 /* SubscribeGenreService.swift in Sources */,
+				7C5F601921E61EF600B64EF8 /* Alarm.swift in Sources */,
 				7CF1692F21E0D1400091D624 /* DetailThemeService.swift in Sources */,
 				7C3F6F5221D9F3760092102E /* SettingTVCell.swift in Sources */,
 				7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */,

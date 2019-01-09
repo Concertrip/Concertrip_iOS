@@ -26,6 +26,7 @@ class MainCalendarVC: UIViewController {
     var year_ = Int()
     var month_ = Int()
     var day_ = Int()
+    
 
     var animationFinished = true
     var shouldShowDaysOut = true
@@ -104,6 +105,7 @@ class MainCalendarVC: UIViewController {
 //        monthLabel.setTextColorToGradient(image: UIImage(named: "gradation")!)
         
         
+        
     }
     
     func getDotService(type : String, id: String, year: Int, month: Int){
@@ -165,8 +167,9 @@ class MainCalendarVC: UIViewController {
             self.tableView.reloadData()
             self.calendarView.commitCalendarViewUpdate()
 //            print("dailyList : \(self.dailyList)")
-            
+            print("데이터 출력 : ", data)
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -355,6 +358,17 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCalendarTVCell") as! MainCalendarTVCell
         let days = dailyList[indexPath.row]
         
+        print("이름 : ", days.calendarName, "구독 : ", days.calendarSubscribe!)
+        if days.calendarSubscribe! == false {
+            cell.likeBtn.imageView?.image = UIImage(named: "concertLikeButton")
+        }
+        else {
+            cell.likeBtn.imageView?.image = UIImage(named: "concertLikeButtonActivated")
+        }
+        
+        
+        
+        
         
         cell.selectionStyle = .none
         print("selectDay는 ? \(selectDay)")
@@ -363,6 +377,8 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
             cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
             cell.hashLabel.text = days.calendarTag
         }
+        
+        
         
         return cell
     }

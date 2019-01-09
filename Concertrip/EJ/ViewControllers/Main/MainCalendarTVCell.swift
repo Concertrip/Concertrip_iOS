@@ -9,16 +9,28 @@
 import UIKit
 
 class MainCalendarTVCell: UITableViewCell {
+    var subscribeHandler : ((_ eventId : String) -> Void)?
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var hashLabel: UILabel!
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var profileImg: UIImageView!
     
+    var eventId : String = ""
+    
+    func configureEvents(data : Events){
+//        eventId = data.calendarId!
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         profileImg.circleImageView()
+        likeBtn.addTarget(self, action: #selector(subscribe), for: .touchUpInside)
+    }
+    
+    @objc func subscribe(_ sender : UIButton){
+        subscribeHandler!(eventId)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

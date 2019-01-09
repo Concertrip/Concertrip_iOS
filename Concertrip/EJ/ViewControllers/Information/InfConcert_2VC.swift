@@ -25,6 +25,7 @@ class InfConcert_2VC: UIViewController {
     @IBOutlet weak var bigProfileImg: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var likeBtn: UIButton!
     
     var isLikeBtnActivated = false
     var detailId : String?
@@ -38,8 +39,20 @@ class InfConcert_2VC: UIViewController {
     @IBAction func backBtnAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func likeBtnAction(_ sender: Any) {
+        SubscribeArtistService.shared.subscriptArtist(id: detailId!) {
+            if self.isLikeBtnActivated == false {
+                self.likeBtn.imageView?.image =  UIImage(named: "infoConcertLikeButtonActivated")
+                self.isLikeBtnActivated = true
+                self.view.makeToast("ㅋㅋ내 공연에 추가되었습니다!")
+            } else {
+                self.likeBtn.imageView?.image =  UIImage(named: "infoConcertLikeButton")
+                self.isLikeBtnActivated = false
+            }
+        }
     }
+    
     @IBAction func reservationBtnAction(_ sender: Any) {
         self.view.makeToast("내 티켓에 추가됐습니다.")
     }
@@ -73,6 +86,15 @@ class InfConcert_2VC: UIViewController {
             self.youtubeView.loadVideoID(youtubeURL!)
             self.nameLabel.text = detailData.dConcertName
             self.infoImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
+            
+            if detailData.dConcertSubscribe == true {
+                self.likeBtn.setImage(UIImage(named: "infoConcertLikeButtonActivated"), for: .normal)
+                self.isLikeBtnActivated = true
+            } else {
+                self.likeBtn.setImage(UIImage(named: "infoConcertLikeButton"), for: .normal)
+                self.isLikeBtnActivated = false
+            }
+
             
             for data in detailData.dConcertSeatName! {
                 print("seatname : \(data)")

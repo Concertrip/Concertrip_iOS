@@ -391,7 +391,7 @@
                                         <rect key="frame" x="0.0" y="683" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qrf-w1-5xJ" id="Qt5-oa-bLD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FNJ-oF-k4W">
@@ -1209,6 +1209,7 @@
                         <outlet property="concertLocationLabel" destination="7e1-3I-Wln" id="c6Z-K7-5Mi"/>
                         <outlet property="concertPriceLabel" destination="3tY-7F-3xE" id="fuw-gg-Gxh"/>
                         <outlet property="infoImg" destination="9Uq-hi-PDc" id="PS3-yN-Fff"/>
+                        <outlet property="likeBtn" destination="qJo-4U-KQZ" id="k9J-Of-qDi"/>
                         <outlet property="likeCountLabel" destination="cvF-kP-w3j" id="sX7-9w-Fqr"/>
                         <outlet property="nameLabel" destination="uv3-c5-DZu" id="6RQ-Hc-69v"/>
                         <outlet property="performerCollectionView" destination="Pa4-Ux-ubf" id="PZQ-zx-udm"/>

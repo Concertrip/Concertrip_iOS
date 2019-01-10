@@ -381,6 +381,8 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
         
         cell.selectionStyle = .none
         print("selectDay는 ? \(selectDay)")
+
+        
         if dailyList.count != 0 {
             cell.nameLabel.text = days.calendarName
             cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
@@ -468,7 +470,7 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         tapId = menu.calTapId!
         
         getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
-        
+        getTableService(type: tapType, id: tapId, day: selectDay)
         self.collectionView.reloadData()
         self.tableView.reloadData()
     }

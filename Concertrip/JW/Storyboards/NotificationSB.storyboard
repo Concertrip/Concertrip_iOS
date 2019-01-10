@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ci7-eZ-Apx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-Vt-AFk">
                                 <rect key="frame" x="16" y="92" width="35" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -39,13 +43,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G1Z-Dk-EGv">
-                                                    <rect key="frame" x="16" y="11" width="46.5" height="46.5"/>
+                                                    <rect key="frame" x="16" y="11" width="47" height="47"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="G1Z-Dk-EGv" secondAttribute="height" multiplier="1:1" id="7Gg-rF-1Q2"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32V-mO-cef">
-                                                    <rect key="frame" x="72" y="11" width="288" height="17"/>
+                                                    <rect key="frame" x="72.5" y="11" width="288" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="288" id="JP4-X0-lS8"/>
                                                     </constraints>
@@ -54,7 +58,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HashTag" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs7-e5-4ig">
-                                                    <rect key="frame" x="72" y="42" width="277" height="14.5"/>
+                                                    <rect key="frame" x="72.5" y="42.5" width="277" height="14.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="277" id="LGh-jF-KO1"/>
                                                     </constraints>
@@ -102,10 +106,14 @@
                             <constraint firstItem="9QI-Cb-G9C" firstAttribute="leading" secondItem="VmR-bc-HII" secondAttribute="leading" id="CWJ-8c-df4"/>
                             <constraint firstItem="Sry-lu-Lb4" firstAttribute="bottom" secondItem="VmR-bc-HII" secondAttribute="bottom" priority="250" id="Dlt-n7-CZH"/>
                             <constraint firstItem="CcB-Vt-AFk" firstAttribute="top" secondItem="gdM-2n-t4N" secondAttribute="bottom" constant="19" id="Ewl-RG-ha4"/>
+                            <constraint firstItem="Ci7-eZ-Apx" firstAttribute="bottom" secondItem="VmR-bc-HII" secondAttribute="bottom" id="F66-bL-lIH"/>
                             <constraint firstItem="CcB-Vt-AFk" firstAttribute="leading" secondItem="gdM-2n-t4N" secondAttribute="leading" id="PzY-fu-lG9"/>
                             <constraint firstItem="9QI-Cb-G9C" firstAttribute="trailing" secondItem="VmR-bc-HII" secondAttribute="trailing" id="S2A-IP-u4K"/>
                             <constraint firstItem="Sry-lu-Lb4" firstAttribute="top" secondItem="CcB-Vt-AFk" secondAttribute="bottom" constant="21" id="Tub-qe-BDu"/>
+                            <constraint firstItem="Ci7-eZ-Apx" firstAttribute="leading" secondItem="VmR-bc-HII" secondAttribute="leading" id="XeN-qf-FUr"/>
+                            <constraint firstItem="Ci7-eZ-Apx" firstAttribute="top" secondItem="dV7-dj-nXL" secondAttribute="top" id="Z4y-T8-nKo"/>
                             <constraint firstItem="Sry-lu-Lb4" firstAttribute="trailing" secondItem="VmR-bc-HII" secondAttribute="trailing" id="lVs-Cf-am4"/>
+                            <constraint firstItem="Ci7-eZ-Apx" firstAttribute="trailing" secondItem="VmR-bc-HII" secondAttribute="trailing" id="ljl-3m-Inn"/>
                             <constraint firstItem="Sry-lu-Lb4" firstAttribute="height" secondItem="dV7-dj-nXL" secondAttribute="height" multiplier="530:667" id="msj-ln-v3H"/>
                             <constraint firstItem="Sry-lu-Lb4" firstAttribute="leading" secondItem="VmR-bc-HII" secondAttribute="leading" id="pfi-KF-bFg"/>
                             <constraint firstItem="gdM-2n-t4N" firstAttribute="top" secondItem="VmR-bc-HII" secondAttribute="top" constant="21" id="rOF-tR-isq"/>
@@ -114,6 +122,7 @@
                         <viewLayoutGuide key="safeArea" id="VmR-bc-HII"/>
                     </view>
                     <connections>
+                        <outlet property="gradientView" destination="Ci7-eZ-Apx" id="oNI-oA-o5o"/>
                         <outlet property="noticeTable" destination="9QI-Cb-G9C" id="LB2-yW-dPK"/>
                     </connections>
                 </viewController>

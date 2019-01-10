@@ -12,6 +12,7 @@ import Toast_Swift
 
 
 class InfConcert_2VC: UIViewController {
+    @IBOutlet weak var gredientView: UIView!
     @IBOutlet weak var backgroundImg: UIImageView!
     @IBOutlet weak var youtubeView: YouTubePlayerView!
     @IBOutlet weak var performerCollectionView: UICollectionView!
@@ -24,6 +25,7 @@ class InfConcert_2VC: UIViewController {
     @IBOutlet weak var infoImg: UIImageView!
     @IBOutlet weak var bigProfileImg: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var gradientView: UIView!
     
     @IBOutlet weak var likeBtn: UIButton!
     
@@ -41,11 +43,15 @@ class InfConcert_2VC: UIViewController {
     }
     
     @IBAction func likeBtnAction(_ sender: Any) {
+        print("디테일아이디 \(detailId)")
         SubscribeArtistService.shared.subscriptArtist(id: detailId!) {
             if self.isLikeBtnActivated == false {
+                print("self.isLikeBtnActivated : \(self.isLikeBtnActivated)")
                 self.likeBtn.imageView?.image =  UIImage(named: "infoConcertLikeButtonActivated")
                 self.isLikeBtnActivated = true
-                self.view.makeToast("ㅋㅋ내 공연에 추가되었습니다!")
+                
+                self.view.makeToast("내 공연에 추가되었습니다!")
+                print("self.isLikeBtnActivated : \(self.isLikeBtnActivated)")
             } else {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoConcertLikeButton")
                 self.isLikeBtnActivated = false
@@ -62,8 +68,23 @@ class InfConcert_2VC: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    
+    //그라데이션 배경
+    func getGradientBackground(){
+        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame.size = self.view.frame.size
+        gradientLayer.colors = [UIColor(cgColor: #colorLiteral(red: 0.05882352941, green: 0.06274509804, blue: 0.09019607843, alpha: 1)).cgColor,UIColor(cgColor: #colorLiteral(red: 0, green: 0.01176470588, blue: 0.1607843137, alpha: 1)).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        self.gredientView.layer.addSublayer(gradientLayer)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //배경 그라데이션
+        getGradientBackground()
         
         scrollView.addSubview(infoImg)
         scrollView.contentSize = infoImg.bounds.size

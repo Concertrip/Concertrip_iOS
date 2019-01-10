@@ -13,6 +13,7 @@
 		7C0238EC21CE107F0042E8DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0238EA21CE107F0042E8DC /* LaunchScreen.storyboard */; };
 		7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */; };
 		7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */; };
+		7C25F47221E70B8A00C57988 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C25F47121E70B8A00C57988 /* Payment.swift */; };
 		7C3F6F4C21D9ECBA0092102E /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F4B21D9ECBA0092102E /* MypageVC.swift */; };
 		7C3F6F4E21D9ECCA0092102E /* MypageCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F4D21D9ECCA0092102E /* MypageCVCell.swift */; };
 		7C3F6F5021D9F3080092102E /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F4F21D9F3080092102E /* SettingVC.swift */; };
@@ -97,6 +98,7 @@
 		7C0238ED21CE107F0042E8DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarTVCell.swift; sourceTree = "<group>"; };
+		7C25F47121E70B8A00C57988 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		7C3F6F4B21D9ECBA0092102E /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		7C3F6F4D21D9ECCA0092102E /* MypageCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageCVCell.swift; sourceTree = "<group>"; };
 		7C3F6F4F21D9F3080092102E /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				7CA17A1021E118CA00C0D80E /* EventList.swift */,
 				7CF5E8CD21E1D6E9003751C2 /* CalendarList.swift */,
 				7C5F601821E61EF600B64EF8 /* Alarm.swift */,
+				7C25F47121E70B8A00C57988 /* Payment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -527,7 +530,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -550,7 +553,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -589,6 +592,7 @@
 				E0F7280321DCDE0C00D89BF6 /* SubscribeArtistService.swift in Sources */,
 				7CCF4E3E21E056B100251580 /* CalendarService.swift in Sources */,
 				E0F727F821DB9DDD00D89BF6 /* Artists.swift in Sources */,
+				7C25F47221E70B8A00C57988 /* Payment.swift in Sources */,
 				7CE92C8321D68CD600F560F8 /* Requestable.swift in Sources */,
 				E0F727F921DB9DDD00D89BF6 /* Events.swift in Sources */,
 				7CE92C7721D68CBB00F560F8 /* ResponseObject.swift in Sources */,

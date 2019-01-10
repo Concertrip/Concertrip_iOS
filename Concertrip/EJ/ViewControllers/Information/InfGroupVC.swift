@@ -20,6 +20,7 @@ class InfGroupVC: UIViewController {
     @IBOutlet weak var bigProfileImg: UIImageView!
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var gradientView: UIView!
     
     var isLikeBtnActivated = false
     var detailId : String?
@@ -29,8 +30,19 @@ class InfGroupVC: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    //그라데이션 배경
+    func getGradientBackground(){
+        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame.size = self.view.frame.size
+        gradientLayer.colors = [UIColor(cgColor: #colorLiteral(red: 0.05882352941, green: 0.06274509804, blue: 0.09019607843, alpha: 1)).cgColor,UIColor(cgColor: #colorLiteral(red: 0, green: 0.01176470588, blue: 0.1607843137, alpha: 1)).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        self.gradientView.layer.addSublayer(gradientLayer)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getGradientBackground()
         bigProfileImg.circleImageView()
         tableView.delegate = self
         tableView.dataSource = self

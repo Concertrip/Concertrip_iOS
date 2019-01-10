@@ -15,6 +15,7 @@ class LikeVC: UIViewController {
     @IBOutlet weak var themeBtn: UIButton!
     @IBOutlet weak var concertBtn: UIButton!
     @IBOutlet weak var nilView: UIView!
+    @IBOutlet weak var gradientView: UIView!
     
     var currentSub = 0
     var artistSub = 0
@@ -28,7 +29,7 @@ class LikeVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getGradientBackground()
         tableView.delegate = self
         tableView.dataSource = self
         artistSubService()
@@ -87,6 +88,16 @@ class LikeVC: UIViewController {
     @IBAction func concertTabBtn(_ sender: Any) {
         currentSub = concertSub
         concertSubService()
+    }
+    
+    //그라데이션 배경
+    func getGradientBackground(){
+        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame.size = self.view.frame.size
+        gradientLayer.colors = [UIColor(cgColor: #colorLiteral(red: 0.05882352941, green: 0.06274509804, blue: 0.09019607843, alpha: 1)).cgColor,UIColor(cgColor: #colorLiteral(red: 0, green: 0.01176470588, blue: 0.1607843137, alpha: 1)).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        self.gradientView.layer.addSublayer(gradientLayer)
     }
 }
 extension LikeVC: UITableViewDelegate, UITableViewDataSource{

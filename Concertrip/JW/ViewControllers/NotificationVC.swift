@@ -9,13 +9,10 @@
 import UIKit
 
 class NotificationVC: UIViewController {
-
-  
-    
     @IBOutlet weak var noticeTable: UITableView!
+    @IBOutlet weak var gradientView: UIView!
     
     @IBAction func backBtn(_ sender: Any) {
-        
         dismiss(animated: true, completion: nil)
     }
     
@@ -31,7 +28,7 @@ class NotificationVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getGradientBackground()
         AlarmService.shared.getAlarmList {[weak self] (data) in
             guard let `self` = self else { return }
             self.alarmList = data
@@ -41,6 +38,17 @@ class NotificationVC: UIViewController {
         noticeTable.delegate = self
         noticeTable.dataSource = self
     }
+    
+    //그라데이션 배경
+    func getGradientBackground(){
+        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame.size = self.view.frame.size
+        gradientLayer.colors = [UIColor(cgColor: #colorLiteral(red: 0.05882352941, green: 0.06274509804, blue: 0.09019607843, alpha: 1)).cgColor,UIColor(cgColor: #colorLiteral(red: 0, green: 0.01176470588, blue: 0.1607843137, alpha: 1)).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        self.gradientView.layer.addSublayer(gradientLayer)
+    }
+    
 }
 
 extension NotificationVC : UITableViewDelegate {

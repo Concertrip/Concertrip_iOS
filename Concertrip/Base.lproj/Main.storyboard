@@ -21,6 +21,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8FT-V4-HcY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i99-fu-cKk">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rng-6c-1eu" customClass="CVCalendarView" customModule="CVCalendar">
                                         <rect key="frame" x="0.0" y="184" width="375" height="250"/>
                                         <constraints>
@@ -250,6 +255,7 @@
                     <connections>
                         <outlet property="calendarView" destination="Rng-6c-1eu" id="foR-K8-bSu"/>
                         <outlet property="collectionView" destination="78U-EW-FQ0" id="x1j-cL-UAm"/>
+                        <outlet property="gradientView" destination="i99-fu-cKk" id="gvv-1o-rGB"/>
                         <outlet property="maskView" destination="DMM-A1-ZOt" id="RiS-i1-Reo"/>
                         <outlet property="menuView" destination="Xct-KG-mMr" id="SCD-eR-ov4"/>
                         <outlet property="monthLabel" destination="NAP-K2-9lx" id="Gdi-FO-Ni7"/>
@@ -355,14 +361,18 @@
             </objects>
             <point key="canvasLocation" x="980" y="290.10494752623691"/>
         </scene>
-        <!--View Controller-->
+        <!--Zero TabVC-->
         <scene sceneID="54o-Va-u3b">
             <objects>
-                <viewController id="XVs-dn-uRd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ZeroTabVC" id="XVs-dn-uRd" customClass="ZeroTabVC" customModule="Concertrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OLk-wE-vCK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9EV-eb-D3y">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artistLikeButton" translatesAutoresizingMaskIntoConstraints="NO" id="WAI-hO-cmR">
                                 <rect key="frame" x="165" y="62" width="46" height="46"/>
                                 <constraints>
@@ -433,10 +443,12 @@
                                 <rect key="frame" x="76.5" y="128" width="222" height="19"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.01176470588" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Lio-xe-RTb" firstAttribute="bottom" secondItem="yTR-dE-cCH" secondAttribute="bottom" constant="36" id="6jJ-KD-TKH"/>
+                            <constraint firstItem="9EV-eb-D3y" firstAttribute="leading" secondItem="Lio-xe-RTb" secondAttribute="leading" id="7S8-1x-MTs"/>
                             <constraint firstItem="Lio-xe-RTb" firstAttribute="trailing" secondItem="WAI-hO-cmR" secondAttribute="trailing" constant="164" id="CZx-KH-ybC"/>
+                            <constraint firstItem="9EV-eb-D3y" firstAttribute="trailing" secondItem="Lio-xe-RTb" secondAttribute="trailing" id="FhM-h4-jtP"/>
                             <constraint firstItem="yTR-dE-cCH" firstAttribute="centerX" secondItem="5vu-x2-niL" secondAttribute="centerX" id="HP9-fJ-eby"/>
                             <constraint firstItem="yTR-dE-cCH" firstAttribute="top" secondItem="5vu-x2-niL" secondAttribute="bottom" constant="35" id="Uom-8f-h7W"/>
                             <constraint firstItem="WAI-hO-cmR" firstAttribute="leading" secondItem="Lio-xe-RTb" secondAttribute="leading" constant="165" id="Wcc-Js-a6o"/>
@@ -444,11 +456,16 @@
                             <constraint firstItem="MIl-Dn-AAF" firstAttribute="top" secondItem="WAI-hO-cmR" secondAttribute="bottom" constant="20" id="YYq-OM-6V6"/>
                             <constraint firstItem="MIl-Dn-AAF" firstAttribute="centerX" secondItem="Lio-xe-RTb" secondAttribute="centerX" id="fAY-3i-uM7"/>
                             <constraint firstItem="WAI-hO-cmR" firstAttribute="top" secondItem="Lio-xe-RTb" secondAttribute="top" constant="42" id="fZv-yN-2ce"/>
+                            <constraint firstItem="9EV-eb-D3y" firstAttribute="top" secondItem="OLk-wE-vCK" secondAttribute="top" id="ip8-uI-on4"/>
                             <constraint firstItem="5vu-x2-niL" firstAttribute="top" secondItem="MIl-Dn-AAF" secondAttribute="bottom" constant="41" id="jqE-eU-WEo"/>
                             <constraint firstItem="5vu-x2-niL" firstAttribute="width" secondItem="OLk-wE-vCK" secondAttribute="width" id="lSi-v2-bhe"/>
+                            <constraint firstItem="9EV-eb-D3y" firstAttribute="bottom" secondItem="Lio-xe-RTb" secondAttribute="bottom" id="yhX-16-el0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lio-xe-RTb"/>
                     </view>
+                    <connections>
+                        <outlet property="gradientView" destination="9EV-eb-D3y" id="rbr-ZE-HZ8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBS-Nf-eMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

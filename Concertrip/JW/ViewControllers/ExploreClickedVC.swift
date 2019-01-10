@@ -13,6 +13,7 @@ class ExploreClickedVC: UIViewController {
     @IBOutlet weak var searchTxt: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
 
+    @IBOutlet weak var gradientView: UIView!
     var additionalRequest = false
     @IBOutlet weak var noResultView: UIView!
     @IBOutlet weak var noResultBtn: UIButton!
@@ -105,7 +106,7 @@ class ExploreClickedVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getGradientBackground()
         searchTableView.delegate = self
         searchTableView.dataSource = self
         //자동으로 키보드 올라오기
@@ -127,6 +128,15 @@ class ExploreClickedVC: UIViewController {
     }
     func dismissKeyboard() {
 
+    }
+    //그라데이션 배경
+    func getGradientBackground(){
+        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame.size = self.view.frame.size
+        gradientLayer.colors = [UIColor(cgColor: #colorLiteral(red: 0.05882352941, green: 0.06274509804, blue: 0.09019607843, alpha: 1)).cgColor,UIColor(cgColor: #colorLiteral(red: 0, green: 0.01176470588, blue: 0.1607843137, alpha: 1)).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        self.gradientView.layer.addSublayer(gradientLayer)
     }
 }
 

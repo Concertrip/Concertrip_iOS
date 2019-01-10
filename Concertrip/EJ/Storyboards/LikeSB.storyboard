@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7O-x0-QM2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeLight" translatesAutoresizingMaskIntoConstraints="NO" id="ADK-y2-aB3">
                                 <rect key="frame" x="0.0" y="137" width="375" height="530"/>
                             </imageView>
@@ -160,11 +164,15 @@
                             <constraint firstItem="ADK-y2-aB3" firstAttribute="top" secondItem="K7N-bV-QbL" secondAttribute="top" id="OG6-5x-Gcv"/>
                             <constraint firstItem="K7N-bV-QbL" firstAttribute="leading" secondItem="n99-p4-xfL" secondAttribute="leading" id="UUo-zQ-QrJ"/>
                             <constraint firstItem="yBl-1b-jyZ" firstAttribute="leading" secondItem="n99-p4-xfL" secondAttribute="leading" constant="16" id="bpr-Xi-WF4"/>
+                            <constraint firstItem="d7O-x0-QM2" firstAttribute="trailing" secondItem="n99-p4-xfL" secondAttribute="trailing" id="chA-oe-gp0"/>
                             <constraint firstItem="yBl-1b-jyZ" firstAttribute="top" secondItem="xHa-AU-FVz" secondAttribute="bottom" constant="8" id="erd-ip-pbv"/>
                             <constraint firstItem="xHa-AU-FVz" firstAttribute="top" secondItem="n99-p4-xfL" secondAttribute="top" constant="31" id="iNg-pF-xZx"/>
                             <constraint firstItem="Snj-rt-Uc9" firstAttribute="top" secondItem="K7N-bV-QbL" secondAttribute="top" id="kk4-S1-ZwC"/>
+                            <constraint firstItem="d7O-x0-QM2" firstAttribute="leading" secondItem="n99-p4-xfL" secondAttribute="leading" id="lrC-oD-pIM"/>
                             <constraint firstItem="ADK-y2-aB3" firstAttribute="leading" secondItem="n99-p4-xfL" secondAttribute="leading" id="n81-Ip-KXC"/>
+                            <constraint firstAttribute="bottom" secondItem="d7O-x0-QM2" secondAttribute="bottom" id="r9T-04-c1w"/>
                             <constraint firstItem="Snj-rt-Uc9" firstAttribute="bottom" secondItem="K7N-bV-QbL" secondAttribute="bottom" id="vQy-fC-IqT"/>
+                            <constraint firstItem="d7O-x0-QM2" firstAttribute="top" secondItem="WQu-9J-hC4" secondAttribute="top" id="wfu-ht-Cfp"/>
                             <constraint firstItem="K7N-bV-QbL" firstAttribute="top" secondItem="yBl-1b-jyZ" secondAttribute="bottom" constant="13" id="x8K-IC-cHm"/>
                             <constraint firstItem="ADK-y2-aB3" firstAttribute="trailing" secondItem="n99-p4-xfL" secondAttribute="trailing" id="yG7-BV-9YV"/>
                             <constraint firstAttribute="bottom" secondItem="ADK-y2-aB3" secondAttribute="bottom" priority="250" id="z3A-U3-02j"/>
@@ -176,6 +184,7 @@
                     <connections>
                         <outlet property="artistBtn" destination="NXZ-lo-etX" id="3PA-hv-ULL"/>
                         <outlet property="concertBtn" destination="Hug-uH-PUw" id="XbL-OY-pf7"/>
+                        <outlet property="gradientView" destination="d7O-x0-QM2" id="YrI-lB-HTH"/>
                         <outlet property="nilView" destination="Snj-rt-Uc9" id="wea-oI-dPJ"/>
                         <outlet property="tableView" destination="K7N-bV-QbL" id="0Z3-Es-EAq"/>
                         <outlet property="themeBtn" destination="r5v-9L-nuh" id="763-yC-O6O"/>

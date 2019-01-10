@@ -18,8 +18,8 @@ class MainCalendarTVCell: UITableViewCell {
     
     var eventId : String = ""
     
-    func configureEvents(data : Events){
-//        eventId = data.calendarId!
+    func configure(data : CalendarList){
+        eventId = data.calendarId!
     }
     
     override func awakeFromNib() {

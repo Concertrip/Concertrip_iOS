@@ -359,16 +359,12 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
         let days = dailyList[indexPath.row]
         
         print("이름 : ", days.calendarName, "구독 : ", days.calendarSubscribe!)
-        if days.calendarSubscribe! == false {
+        if days.calendarSubscribe == false {
             cell.likeBtn.imageView?.image = UIImage(named: "concertLikeButton")
         }
         else {
             cell.likeBtn.imageView?.image = UIImage(named: "concertLikeButtonActivated")
         }
-        
-        
-        
-        
         
         cell.selectionStyle = .none
         print("selectDay는 ? \(selectDay)")
@@ -378,6 +374,24 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
             cell.hashLabel.text = days.calendarTag
         }
         
+        var event = monthlyList[indexPath.row]
+
+        cell.configure(data: event)
+        cell.subscribeHandler = {(concertId) in
+            SubscribeEventService.shared.subscriptEvent(id: concertId){
+                print("콘서트 아이디 : ", concertId)
+                if event.calendarSubscribe == false {
+                    cell.likeBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
+                    //                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButtonActivated")
+                    event.calendarSubscribe = true
+                    self.view.makeToast("내 공연에 추가되었습니다!")
+                } else {
+                    cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
+                    //                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButton")
+                    event.calendarSubscribe = false
+                }
+            }
+        }
         
         
         return cell

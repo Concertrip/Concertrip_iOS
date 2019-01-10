@@ -27,6 +27,7 @@ class ExploreVC: UIViewController {
     }
 
     var artistList = [Artists]()
+    var themeList = [TabTheme]()
     var menuTheme : String = ""
     
     var isLikeBtnActivated = false
@@ -65,7 +66,7 @@ class ExploreVC: UIViewController {
         tableView.dataSource = self
         
         menuTheme = menuList[0]
-//        print("메뉴 ?? : ", menu)
+        print("메뉴 ?? : ", menuTheme)
         
         
         /*
@@ -87,12 +88,6 @@ class ExploreVC: UIViewController {
         }
     }
     
-    func getSearchTab(){
-        ThemeService.shared.getThemeList(name: "테마") { [weak self] (data) in
-//            guard let `self` = self else { return }
-//            self.artistList = data
-        }
-    }
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultPush" {
@@ -131,8 +126,9 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
         
         print("selectedIdx : ",selectedIdx)
         if selectedIdx == 0 {
-            print("야호1")
-            getSearchTab()
+            ThemeService.shared.getThemeList(name: "테마") { (value) in
+                self.themeList = value
+            }
         }
         else {
             print("야호2")
@@ -164,6 +160,9 @@ extension ExploreVC : UICollectionViewDelegateFlowLayout {
 
 extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if selectedIdx == 1 {
+            return themeList.count
+        }
         return artistList.count
     }
     
@@ -189,35 +188,44 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
 //        cell.selectionStyle = .none
         
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "exploreTVCell", for: indexPath) as! ExploreTVCell
-        
-        var artistData = artistList[indexPath.row]
-        cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
-        cell.nameLabel.text = artistData.artistName
-        if artistData.artistSubscribe == false {
-            cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+        if selectedIdx == 1 {
+            //테마 선택시......... 아래 else문 참고
+//            var themeData = themeList[indexPath.row]
+//            cell.nameLabel.text = themeData.themeName
+//            cell.profileImg.imageFromUrl(gsno(themeData.themeProfileImg), defaultImgPath: "")
+//            if themeData.themeSubscribe == false {
+//                cell.likeBtn.setImage(UIImage(named: "artistLikeButton", for: .normal)
+//            }
         }
         else {
-            cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
-        }
-        cell.configureArtist(data : artistData)
+            var artistData = artistList[indexPath.row]
+            cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
+            cell.nameLabel.text = artistData.artistName
+            if artistData.artistSubscribe == false {
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+            }
+            else {
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+            }
+            cell.configureArtist(data : artistData)
 
-        cell.subscribeHandler = {(artistId) in
-            print("앨범아듸 : ", artistId)
-            SubscribeArtistService.shared.subscriptArtist(id: artistId) {
-                print("network working!")
-                if artistData.artistSubscribe == false {
-                    
-                    cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
-                    self.view.makeToast("내 공연에 추가되었습니다!")
-                    artistData.artistSubscribe = true
-                }
-                else {
-                    cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
-                    artistData.artistSubscribe = false
+            cell.subscribeHandler = {(artistId) in
+                print("앨범아듸 : ", artistId)
+                SubscribeArtistService.shared.subscriptArtist(id: artistId) {
+                    print("network working!")
+                    if artistData.artistSubscribe == false {
+                        
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        self.view.makeToast("내 공연에 추가되었습니다!")
+                        artistData.artistSubscribe = true
+                    }
+                    else {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        artistData.artistSubscribe = false
+                    }
                 }
             }
         }
-        
         return cell
     }
     

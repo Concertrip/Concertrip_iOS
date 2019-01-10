@@ -14,7 +14,7 @@ struct CalendarListService: APIManager, Requestable{
     static let shared = CalendarListService()
     var calendarURL = url("/api/calendar")
     let header: HTTPHeaders = [
-        "Authorization" : "2"
+        "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb25jZXJ0cmlwIiwidXNlcklkeCI6Mn0.Hc9kqk1lE4H1gMXxsTLt50GTP2wpPPv_x4TzuTMM2o8"
     ]
 
     func getCalendarMonthly(type: String, id: String, year: Int, month: Int, completion: @escaping ([CalendarList]) -> Void) {

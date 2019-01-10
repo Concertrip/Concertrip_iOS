@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class SettingVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gradientView: UIView!
+    @IBAction func settingBtn(_ sender: Any) {
+        self.view.makeToast("준비 중입니다.")
+    }
     
     var settingArr = ["공지사항", "푸시알림 설정", "문의하기","캘린더 추가 요청하기", "서비스 이용약관", "공연 기획사 제휴 문의" ]
     

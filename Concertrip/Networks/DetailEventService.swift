@@ -15,7 +15,7 @@ struct DetailEventService: APIManager, Requestable{
     var detailURL = url("/api/event/detail")
     let header: HTTPHeaders = [
         "Content-Type" : "application/json",
-        "Authorization" : "2"
+        "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb25jZXJ0cmlwIiwidXNlcklkeCI6Mn0.Hc9kqk1lE4H1gMXxsTLt50GTP2wpPPv_x4TzuTMM2o8"
     ]
     
     

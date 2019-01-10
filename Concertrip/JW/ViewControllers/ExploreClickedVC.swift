@@ -111,7 +111,10 @@ class ExploreClickedVC: UIViewController {
         searchTableView.dataSource = self
         //자동으로 키보드 올라오기
         showKeyboard()
-        
+//        searchTxt.appearance().keyboardAppearance = .Dark
+        //검은색 키보드
+        searchTxt.keyboardAppearance = .dark
+
         //placeholder 색
         searchTxt.attributedPlaceholder = NSAttributedString(string: "아티스트 / 콘서트 명",
                                                                attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
@@ -125,9 +128,6 @@ class ExploreClickedVC: UIViewController {
     }
     func hideKeyboard() {
         searchTxt.resignFirstResponder()
-    }
-    func dismissKeyboard() {
-
     }
     //그라데이션 배경
     func getGradientBackground(){

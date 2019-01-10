@@ -13,7 +13,7 @@ struct AlarmService: APIManager, Requestable{
     static let shared = AlarmService()
     var alarmURL = url("/api/fcm/list")
     let header: HTTPHeaders = [
-        "Authorization" : "2"
+        "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb25jZXJ0cmlwIiwidXNlcklkeCI6Mn0.Hc9kqk1lE4H1gMXxsTLt50GTP2wpPPv_x4TzuTMM2o8"
     ]
     
     func getAlarmList(completion: @escaping ([Alarm]) -> Void) {

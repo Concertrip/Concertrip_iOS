@@ -27,6 +27,7 @@ class ExploreVC: UIViewController {
     }
 
     var artistList = [Artists]()
+    var menuTheme : String = ""
     
     var isLikeBtnActivated = false
     
@@ -47,7 +48,7 @@ class ExploreVC: UIViewController {
     var selectedIdx = Int ()
     //[모두] [테마] [보이그룹] [걸그룹] [힙합] [발라드/R&B] [댄스] [POP] [EDM] [인디] [재즈] [록]
     
-    let menuList = ["테마", "보이그룹", "걸그룹", "힙합", "발라드/R&B", "댄스", "POP", "EDM", "인디", "재즈", "록"]
+    let menuList = ["테마", "보이그룹", "걸그룹", "힙합", "발라드", "R&B", "댄스", "POP", "EDM", "인디", "재즈", "록"]
     let nameList = ["자라섬 재즈페스티벌", "SAMM HANSHAW", "PHUM VIPHURIT", "ALESSICA CARA"]
     let hashtagList = ["#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ"]
     
@@ -63,8 +64,8 @@ class ExploreVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let menu = menuList[0]
-        print(menu)
+        menuTheme = menuList[0]
+//        print("메뉴 ?? : ", menu)
         
         
         /*
@@ -83,6 +84,13 @@ class ExploreVC: UIViewController {
             self.artistList = artists
             self.tableView.reloadData()
             self.collectionView.reloadData()
+        }
+    }
+    
+    func getSearchTab(){
+        ThemeService.shared.getThemeList(name: "테마") { [weak self] (data) in
+//            guard let `self` = self else { return }
+//            self.artistList = data
         }
     }
     /*
@@ -107,7 +115,6 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
         
         cell.menuLabel.text = menu
         
-        print("선택된 인덱수 : ", selectedIdx, indexPath.row)
         if selectedIdx == indexPath.row{
             cell.menuLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         }
@@ -121,7 +128,16 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
     //선택 시
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIdx = indexPath.row
-        getSearchResult()
+        
+        print("selectedIdx : ",selectedIdx)
+        if selectedIdx == 0 {
+            print("야호1")
+            getSearchTab()
+        }
+        else {
+            print("야호2")
+            getSearchResult()
+        }
     }
     
     //그라데이션 배경
@@ -173,6 +189,7 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
 //        cell.selectionStyle = .none
         
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "exploreTVCell", for: indexPath) as! ExploreTVCell
+        
         var artistData = artistList[indexPath.row]
         cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
         cell.nameLabel.text = artistData.artistName

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class MypageVC: UIViewController {
     @IBOutlet weak var gradientVeiw: UIView!
@@ -14,6 +15,9 @@ class MypageVC: UIViewController {
     @IBOutlet weak var concertNameLabel: UILabel!
     @IBOutlet weak var concertLocationLabel: UILabel!
     @IBOutlet weak var concertDateLabel: UILabel!
+    @IBAction func payBtn(_ sender: Any) {
+        self.view.makeToast("준비 중입니다.")
+    }
     
     var manageList: [Payment] = []
     

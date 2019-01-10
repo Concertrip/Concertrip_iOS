@@ -77,6 +77,8 @@
 		E08FD1AC21D220B3002AF9E7 /* ExploreTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1AB21D220B3002AF9E7 /* ExploreTVCell.swift */; };
 		E08FD1D421D345DC002AF9E7 /* ExploreClickedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1D321D345DC002AF9E7 /* ExploreClickedVC.swift */; };
 		E08FD1D821D3464E002AF9E7 /* ExploreClickedVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1D721D3464E002AF9E7 /* ExploreClickedVCCell.swift */; };
+		E0C68C7621E7865200200BB8 /* TabTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C68C7521E7865200200BB8 /* TabTheme.swift */; };
+		E0C68C7821E786F600200BB8 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C68C7721E786F600200BB8 /* ThemeService.swift */; };
 		E0F727F621DB9DDD00D89BF6 /* SearchObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F727F221DB9DDC00D89BF6 /* SearchObject.swift */; };
 		E0F727F721DB9DDD00D89BF6 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F727F321DB9DDD00D89BF6 /* Genres.swift */; };
 		E0F727F821DB9DDD00D89BF6 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F727F421DB9DDD00D89BF6 /* Artists.swift */; };
@@ -162,6 +164,8 @@
 		E08FD1AB21D220B3002AF9E7 /* ExploreTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTVCell.swift; sourceTree = "<group>"; };
 		E08FD1D321D345DC002AF9E7 /* ExploreClickedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExploreClickedVC.swift; path = Concertrip/JW/ViewControllers/ExploreClickedVC.swift; sourceTree = SOURCE_ROOT; };
 		E08FD1D721D3464E002AF9E7 /* ExploreClickedVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreClickedVCCell.swift; sourceTree = "<group>"; };
+		E0C68C7521E7865200200BB8 /* TabTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTheme.swift; sourceTree = "<group>"; };
+		E0C68C7721E786F600200BB8 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
 		E0F727F221DB9DDC00D89BF6 /* SearchObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchObject.swift; sourceTree = "<group>"; };
 		E0F727F321DB9DDD00D89BF6 /* Genres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		E0F727F421DB9DDD00D89BF6 /* Artists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
@@ -339,6 +343,7 @@
 				7CF5E8CD21E1D6E9003751C2 /* CalendarList.swift */,
 				7C5F601821E61EF600B64EF8 /* Alarm.swift */,
 				7C25F47121E70B8A00C57988 /* Payment.swift */,
+				E0C68C7521E7865200200BB8 /* TabTheme.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				7CCF4E3D21E056B100251580 /* CalendarService.swift */,
 				7CF5E8D121E1D87A003751C2 /* CalendarListService.swift */,
 				7C5F601A21E61F2A00B64EF8 /* AlarmService.swift */,
+				E0C68C7721E786F600200BB8 /* ThemeService.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -530,7 +536,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -553,7 +559,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -590,6 +596,7 @@
 				7C3F6F5021D9F3080092102E /* SettingVC.swift in Sources */,
 				7CA17A0D21E1092200C0D80E /* DetailConcert.swift in Sources */,
 				E0F7280321DCDE0C00D89BF6 /* SubscribeArtistService.swift in Sources */,
+				E0C68C7621E7865200200BB8 /* TabTheme.swift in Sources */,
 				7CCF4E3E21E056B100251580 /* CalendarService.swift in Sources */,
 				E0F727F821DB9DDD00D89BF6 /* Artists.swift in Sources */,
 				7C25F47221E70B8A00C57988 /* Payment.swift in Sources */,
@@ -642,6 +649,7 @@
 				7CF1692B21E0D0700091D624 /* DetailTheme.swift in Sources */,
 				7CA17A1121E118CA00C0D80E /* EventList.swift in Sources */,
 				7CFB858721DB4823001473B7 /* InfGroupTVCell.swift in Sources */,
+				E0C68C7821E786F600200BB8 /* ThemeService.swift in Sources */,
 				7CFB858521DB47F9001473B7 /* InfGroupCVCell.swift in Sources */,
 				7CF1692D21E0D11F0091D624 /* DetailArtistService.swift in Sources */,
 				7C79BC1521DC7D5900096BB3 /* SubscribeService.swift in Sources */,
@@ -801,13 +809,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NF7D3MF6YF;
+				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
 				INFOPLIST_FILE = Concertrip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eojin.Concertrip.myphone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.choyi.Concertrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -820,13 +828,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NF7D3MF6YF;
+				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
 				INFOPLIST_FILE = Concertrip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eojin.Concertrip.myphone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.choyi.Concertrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

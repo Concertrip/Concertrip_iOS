@@ -387,7 +387,7 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
             cell.hashLabel.text = days.calendarTag
         }
         
-        var event = monthlyList[indexPath.row]
+        var event = dailyList[indexPath.row]
 
         cell.configure(data: event)
         cell.subscribeHandler = {(concertId) in

@@ -22,6 +22,7 @@
 		7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5521D9F85E0092102E /* TicketVC.swift */; };
 		7C5F601921E61EF600B64EF8 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F601821E61EF600B64EF8 /* Alarm.swift */; };
 		7C5F601B21E61F2A00B64EF8 /* AlarmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F601A21E61F2A00B64EF8 /* AlarmService.swift */; };
+		7C74CF7321E7AA0200361D6B /* ZeroTabCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C74CF7221E7AA0200361D6B /* ZeroTabCVCell.swift */; };
 		7C76C31821D3609400D4A1CD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76C31721D3609400D4A1CD /* Extension.swift */; };
 		7C76C32821D4782200D4A1CD /* MypageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C76C32721D4782200D4A1CD /* MypageSB.storyboard */; };
 		7C79BC0321DB611B00096BB3 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79BC0221DB611B00096BB3 /* Ticket.swift */; };
@@ -109,6 +110,7 @@
 		7C3F6F5521D9F85E0092102E /* TicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVC.swift; sourceTree = "<group>"; };
 		7C5F601821E61EF600B64EF8 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		7C5F601A21E61F2A00B64EF8 /* AlarmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmService.swift; sourceTree = "<group>"; };
+		7C74CF7221E7AA0200361D6B /* ZeroTabCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroTabCVCell.swift; sourceTree = "<group>"; };
 		7C76C31721D3609400D4A1CD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7C76C32721D4782200D4A1CD /* MypageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MypageSB.storyboard; sourceTree = "<group>"; };
 		7C79BC0221DB611B00096BB3 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				E08FD1A921D2209F002AF9E7 /* ExploreCVCell.swift */,
 				E08FD1AB21D220B3002AF9E7 /* ExploreTVCell.swift */,
 				E08FD1D721D3464E002AF9E7 /* ExploreClickedVCCell.swift */,
+				7C74CF7221E7AA0200361D6B /* ZeroTabCVCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -536,7 +539,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -559,7 +562,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -597,6 +600,7 @@
 				7CA17A0D21E1092200C0D80E /* DetailConcert.swift in Sources */,
 				E0F7280321DCDE0C00D89BF6 /* SubscribeArtistService.swift in Sources */,
 				E0C68C7621E7865200200BB8 /* TabTheme.swift in Sources */,
+				7C74CF7321E7AA0200361D6B /* ZeroTabCVCell.swift in Sources */,
 				7CCF4E3E21E056B100251580 /* CalendarService.swift in Sources */,
 				E0F727F821DB9DDD00D89BF6 /* Artists.swift in Sources */,
 				7C25F47221E70B8A00C57988 /* Payment.swift in Sources */,

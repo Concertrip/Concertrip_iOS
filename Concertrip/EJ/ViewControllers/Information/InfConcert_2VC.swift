@@ -13,6 +13,7 @@ import Toast_Swift
 
 class InfConcert_2VC: UIViewController {
     @IBOutlet weak var gredientView: UIView!
+    @IBOutlet weak var subView: UIView!
     @IBOutlet weak var backgroundImg: UIImageView!
     @IBOutlet weak var youtubeView: YouTubePlayerView!
     @IBOutlet weak var performerCollectionView: UICollectionView!
@@ -33,6 +34,7 @@ class InfConcert_2VC: UIViewController {
     var detailId : String?
     var memberList = [MemberList]()
     var cautionList = [PrecautionList]()
+    var dateList:[String] = []
     var seatNameList:[String] = []
     var seatPriceList:[String] = []
     var namePriceList:[String] = []
@@ -88,8 +90,8 @@ class InfConcert_2VC: UIViewController {
         //배경 그라데이션
         getGradientBackground()
         
-//        scrollView.addSubview(infoImg)
-        scrollView.contentSize = infoImg.bounds.size
+//        self.dateList.removeAll()
+
         
         print("detailId : \(gsno(detailId))")
         bigProfileImg.circleImageView()
@@ -101,9 +103,6 @@ class InfConcert_2VC: UIViewController {
             self.memberList = members
             self.cautionList = cautions
             
-            print("memberList : \(self.memberList)")
-            print("cautionList : \(self.cautionList)")
-            
             self.concertLocationLabel.text = detailData.dConcertLocation
             self.bigProfileImg.imageFromUrl(detailData.dConcertProfileImg, defaultImgPath: "")
             self.backgroundImg.imageFromUrl(detailData.dConcertBackImg, defaultImgPath: "")
@@ -111,7 +110,10 @@ class InfConcert_2VC: UIViewController {
             let youtubeURL = detailData.dConcertYoutubeUrl
             self.youtubeView.loadVideoID(youtubeURL!)
             self.nameLabel.text = detailData.dConcertName
-//            self.infoImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
+            self.infoImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
+            
+    
+            
             
             if detailData.dConcertSubscribe == true {
                 self.likeBtn.setImage(UIImage(named: "infoConcertLikeButtonActivated"), for: .normal)
@@ -130,9 +132,10 @@ class InfConcert_2VC: UIViewController {
                 print("price : \(data)")
                 self.seatPriceList.append(data)
             }
+        
             
-            self.infoImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
             
+//
 //            let dateFormatterGet = DateFormatter()
 //            dateFormatterGet.dateFormat = "dd/MM/yyyy"
 //            var result = Date()
@@ -147,9 +150,54 @@ class InfConcert_2VC: UIViewController {
 //                }
 //            }
             
-            for data in detailData.dConcertDate! {
+            
+//            let dateFormatterGet = DateFormatter()
+//            dateFormatterGet.dateFormat = "yyyy년 M월 d일 HH:mm"
+////            dateFormatterGet.dateFormat = "dd/MM/yyyy"
+//            var tmp = Date()
+//            print("tmp \(tmp)")
+//            for datedata in detailData.dConcertDate! {
+//                tmp = dateFormatterGet.date(from: datedata) ?? Date.init()
+//                print("tmp2 \(tmp)")
+//                print("datedata \(datedata)")
+//                let dateString = dateFormatterGet.string(from: tmp)
+//                self.dateList.append(dateString)
+//            }
+            
+            /////제네털
+            
+            print("detailData.dConcertDate! \(detailData.dConcertDate!)")
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.sssZ"
+        
+            for datedata in detailData.dConcertDate! {
+                
+                print("datedata : \(datedata)")
+                var dateString: String?
+                
+                if let date = dateFormatter.date(from: datedata) {
+                    dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH:mm"
+                    dateString = dateFormatter.string(from: date)
+                    print("dateString \(dateString)")
+                    
+                    
+                }
+                else {
+                    let date = Date.init()
+                    dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH:mm"
+                    dateString = dateFormatter.string(from: date)
+                }
+                self.dateList.append(dateString!)
+                print("dateList \(self.dateList)")
+            }
+            ///////
+            
+        
+            print("dateList2 \(self.dateList)")
+            for data in self.dateList {
                 self.dateTxt += data + "\n"
             }
+            
             
             for i in 0 ..< self.seatNameList.count {
                 self.priceTxt += "■ " +  self.seatNameList[i] + " : " + self.seatPriceList[i] + "\n"
@@ -175,6 +223,8 @@ class InfConcert_2VC: UIViewController {
             
             self.performerCollectionView.reloadData()
             self.cautionCollectionView.reloadData()
+            
+            
         }
         
         
@@ -195,7 +245,26 @@ class InfConcert_2VC: UIViewController {
 //        buttonBottomConstraint += NSLayoutConstraint()
         self.view.addConstraint(buttonBottomConstraint)
         self.view.addConstraint(buttonLeftConstraint)
+        
+        
+        ////이미지ㅜㅜ
+        
+
+//        infoImg.layoutIfNeeded() //set a frame based on constraints
+//        scrollView.contentSize = CGSize(width: infoImg.frame.width, height: infoImg.frame.height)
+//        self.scrollView.addSubview(subView)
+//        self.view.addSubview(scrollView)
+//        self.subView.bounds.size = self.infoImg.bounds.size
+//        self.scrollView.sizeToFit()
+        
+        
+//        scrollView.layoutIfNeeded()
+//        scrollView.contentSize = CGSize(width: self.view.frame.width, height: infoImg.frame.size.height)
+        
+        
     }
+    
+    
     
 }
 extension InfConcert_2VC : UICollectionViewDelegate, UICollectionViewDataSource{

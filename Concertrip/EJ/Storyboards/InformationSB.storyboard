@@ -1159,6 +1159,7 @@
                                                 <rect key="frame" x="16" y="1165" width="343" height="229"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="343" id="1RS-eJ-LQM"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="229" id="eAa-tD-LSl"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6Z-FL-d3O">

@@ -13,9 +13,7 @@ class TicketVC: UIViewController {
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    var ticketList = [Ticket]()
-    var ticketComming = [TicketComming]()
-    var ticketComplete = [TicketComplete]()
+    var ticketList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +26,6 @@ class TicketVC: UIViewController {
             guard let `self` = self else { return }
             self.ticketList = data
             self.tableView.reloadData()
-            
-            
-            print("self.ticketList \(self.ticketList)")
         }
     }
     
@@ -59,8 +54,6 @@ class TicketVC: UIViewController {
 
 extension TicketVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        print("numberOfRowsInSection \(ticketList.count)")
         return ticketList.count
     }
     
@@ -69,17 +62,15 @@ extension TicketVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TicketTVCell") as! TicketTVCell
         let ticket = ticketList[indexPath.row]
         
-    
+        if indexPath.row == 0 {
+            cell.timeBarImg.image = UIImage(named: "timeBar1")
+        } else if indexPath.row == ticketList.count - 1 {
+            cell.timeBarImg.image = UIImage(named: "timeBar3")
+        } else {
+            cell.timeBarImg.image = UIImage(named: "timeBar2")
+        }
         
-        cell.ticketImg.imageFromUrl(gsno(ticket.data![0]), defaultImgPath: "")
-        
-        
-        
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MM/dd HH:mm"
-//        cell.concertDateLabel.text = formatter.string(from: ticket.ticketDate ?? Date())
-        
-        
+        cell.ticketImg.imageFromUrl(ticket, defaultImgPath: "")
         
         return cell
     }

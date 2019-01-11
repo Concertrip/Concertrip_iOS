@@ -15,10 +15,15 @@ class MypageVC: UIViewController {
     @IBOutlet weak var concertNameLabel: UILabel!
     @IBOutlet weak var concertLocationLabel: UILabel!
     @IBOutlet weak var concertDateLabel: UILabel!
+    @IBOutlet weak var ticketImg: UIImageView!
+    
     @IBAction func payBtn(_ sender: Any) {
         self.view.makeToast("준비 중입니다.")
     }
     
+    @IBOutlet weak var ticketBtn: UIButton!
+    
+    var ticketList = [String]()
     var manageList: [Payment] = []
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -31,6 +36,20 @@ class MypageVC: UIViewController {
         getGradientBackground()
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        TicketService.shared.getTicketList { [weak self] (data) in
+            guard let `self` = self else { return }
+            self.ticketList = data
+
+            if self.ticketList.count == 0 {
+                self.ticketBtn.setImage(UIImage(named: "ticketBigNothing"), for: .normal)
+                self.ticketImg.isHidden = true
+            } else {
+                self.ticketBtn.setImage(UIImage(named: ""), for: .normal)
+                self.ticketImg.isHidden = false
+                self.ticketImg.imageFromUrl(self.gsno(self.ticketList[0]), defaultImgPath: "")
+            }
+        }
     }
 
     @IBAction func ticketAction(_ sender: Any) {

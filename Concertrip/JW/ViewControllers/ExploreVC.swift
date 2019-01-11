@@ -108,16 +108,16 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCVCell", for: indexPath) as! ExploreCVCell
         let menu = menuList[indexPath.row]
-        
+        print("이게 뭐지? ", menu)
         cell.menuLabel.text = menu
-        
-        if selectedIdx == indexPath.row{
+        print("뭐가 눌리지? :", selectedIdx)
+        if selectedIdx == indexPath.row {
+            print("뭐지정렬 : ",cell.menuLabel.text)
             cell.menuLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         }
         else {
             cell.menuLabel.textColor = #colorLiteral(red: 0.4352941176, green: 0.4352941176, blue: 0.4352941176, alpha: 1)
         }
-        
         return cell
     }
     
@@ -128,6 +128,7 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
             ThemeService.shared.getThemeList(name: "테마") { (value) in
                 self.themeList = value
                 self.tableView.reloadData()
+                self.collectionView.reloadData()
             }
         }
         else {
@@ -208,7 +209,6 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
             cell.subscribeHandler = {(themeId) in
                 SubscribeGenreService.shared.subscriptGenre(id: themeId) {
                     print("SubscribeTheme network working!")
-                    print(themeData.themeSubscribe)
                     if themeSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
                         self.view.makeToast("내 공연에 추가되었습니다!")
@@ -218,7 +218,6 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
                         themeData.themeSubscribe = false
                     }
-                    print(themeData.themeSubscribe)
                 }
             }
         }

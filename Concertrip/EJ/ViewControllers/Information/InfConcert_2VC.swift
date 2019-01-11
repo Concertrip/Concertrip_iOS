@@ -111,7 +111,7 @@ class InfConcert_2VC: UIViewController {
             let youtubeURL = detailData.dConcertYoutubeUrl
             self.youtubeView.loadVideoID(youtubeURL!)
             self.nameLabel.text = detailData.dConcertName
-            self.infoImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
+//            self.infoImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
             
             if detailData.dConcertSubscribe == true {
                 self.likeBtn.setImage(UIImage(named: "infoConcertLikeButtonActivated"), for: .normal)
@@ -133,9 +133,22 @@ class InfConcert_2VC: UIViewController {
             
             self.infoImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
             
+//            let dateFormatterGet = DateFormatter()
+//            dateFormatterGet.dateFormat = "dd/MM/yyyy"
+//            var result = Date()
+//            var dateResult = String()
+//            for data? in detailData.dConcertDate {
+//                if data == nil {
+//                    self.dateTxt += ""
+//                }
+//                else {
+//                    result = dateFormatterGet.date(from: data)!
+//                    self.dateTxt += "\(result)"
+//                }
+//            }
+            
             for data in detailData.dConcertDate! {
                 self.dateTxt += data + "\n"
-                
             }
             
             for i in 0 ..< self.seatNameList.count {

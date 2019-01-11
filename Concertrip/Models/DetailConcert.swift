@@ -22,7 +22,7 @@ struct DetailConcert : Mappable {
     var dConcertDate : [String]?
     var dConcertSeatName : [String]?
     var dConcertSeatPrice : [String]?
-    var dConcertPrecautionList : [String]?
+    var dConcertPrecautionList : [PrecautionList]?
     var dConcertEventInfoImg : String?
     
     init?(map: Map) {

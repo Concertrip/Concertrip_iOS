@@ -1131,9 +1131,8 @@
                                                                         <constraint firstAttribute="width" constant="80" id="Odz-qZ-AOo"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="음식물 반입금지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKI-ZL-s23">
-                                                                    <rect key="frame" x="18" y="95" width="77" height="15"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="음식물 반입금지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKI-ZL-s23">
+                                                                    <rect key="frame" x="7" y="95" width="101" height="15"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -1141,8 +1140,12 @@
                                                             </subviews>
                                                         </view>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="TKI-ZL-s23" secondAttribute="trailing" constant="7" id="Mfy-Ph-AtO"/>
+                                                            <constraint firstItem="TKI-ZL-s23" firstAttribute="centerX" secondItem="VuT-Z8-wzx" secondAttribute="centerX" id="Rw5-Gd-NhE"/>
                                                             <constraint firstItem="VuT-Z8-wzx" firstAttribute="top" secondItem="0fP-5x-gP0" secondAttribute="top" constant="10" id="pQs-d0-eHY"/>
+                                                            <constraint firstItem="TKI-ZL-s23" firstAttribute="leading" secondItem="0fP-5x-gP0" secondAttribute="leading" constant="7" id="tXM-9u-Ere"/>
                                                             <constraint firstItem="VuT-Z8-wzx" firstAttribute="centerX" secondItem="0fP-5x-gP0" secondAttribute="centerX" id="tff-FH-jfg"/>
+                                                            <constraint firstItem="TKI-ZL-s23" firstAttribute="top" secondItem="VuT-Z8-wzx" secondAttribute="bottom" constant="5" id="xeB-9Q-SlN"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="cautionImg" destination="VuT-Z8-wzx" id="cOF-2B-9ri"/>

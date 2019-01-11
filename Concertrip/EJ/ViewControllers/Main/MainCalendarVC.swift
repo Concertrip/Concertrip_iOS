@@ -371,7 +371,7 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCalendarTVCell") as! MainCalendarTVCell
         let days = dailyList[indexPath.row]
         
-        print("이름 : ", days.calendarName, "구독 : ", days.calendarSubscribe!)
+        print("이름 : ", days.calendarName, "구독 : ", days.calendarSubscribe!, "해시태그 : ", days.calendarTag)
         if days.calendarSubscribe == false {
             cell.likeBtn.imageView?.image = UIImage(named: "concertLikeButton")
         }
@@ -397,12 +397,10 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
                 print("콘서트 아이디 : ", concertId)
                 if event.calendarSubscribe == false {
                     cell.likeBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
-                    //                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButtonActivated")
                     event.calendarSubscribe = true
                     self.view.makeToast("내 공연에 추가되었습니다!")
                 } else {
                     cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
-                    //                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButton")
                     event.calendarSubscribe = false
                 }
             }

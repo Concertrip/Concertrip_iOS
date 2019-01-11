@@ -32,6 +32,7 @@ class InfConcert_2VC: UIViewController {
     var isLikeBtnActivated = false
     var detailId : String?
     var memberList = [MemberList]()
+    var cautionList = [PrecautionList]()
     var seatNameList:[String] = []
     var seatPriceList:[String] = []
     var namePriceList:[String] = []
@@ -95,9 +96,12 @@ class InfConcert_2VC: UIViewController {
             guard let `self` = self else { return }
             let detailData = data as DetailConcert
             guard let members = detailData.dConcertMemberList else { return }
+            guard let cautions = detailData.dConcertPrecautionList else { return }
             self.memberList = members
+            self.cautionList = cautions
             
             print("memberList : \(self.memberList)")
+            print("cautionList : \(self.cautionList)")
             
             self.concertLocationLabel.text = detailData.dConcertLocation
             self.bigProfileImg.imageFromUrl(detailData.dConcertProfileImg, defaultImgPath: "")
@@ -142,12 +146,16 @@ class InfConcert_2VC: UIViewController {
             self.concertPriceLabel.text = self.priceTxt
             
             self.performerCollectionView.reloadData()
+            self.cautionCollectionView.reloadData()
         }
         
         performerCollectionView.delegate = self
         performerCollectionView.dataSource = self
-        //        cautionCollectionView.delegate = self
-        //        cautionCollectionView.dataSource = self
+        cautionCollectionView.delegate = self
+        cautionCollectionView.dataSource = self
+        
+        performerCollectionView.tag = 1
+        cautionCollectionView.tag = 2
         
         view.addSubview(reservationBtn)
         let buttonBottomConstraint = NSLayoutConstraint(item: reservationBtn, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1.0, constant: -12.0)
@@ -162,18 +170,64 @@ class InfConcert_2VC: UIViewController {
 }
 extension InfConcert_2VC : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("memberList.count : \(memberList.count)")
-        return memberList.count
+        
+//        if collectionView == self.performerCollectionView{
+//            print("memberList.count : \(memberList.count)")
+//            return memberList.count
+//
+//        } else if collectionView == self.cautionCollectionView {
+//            print("cautionList.count \(cautionList.count)")
+//            return cautionList.count
+//        }
+        
+        if collectionView.tag == 1 {
+            return memberList.count
+        } else if collectionView.tag == 2 {
+            return cautionList.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InfConcertPerformerCVCell", for: indexPath) as! InfConcertPerformerCVCell
-        let member = memberList[indexPath.row]
         
-        cell.profileImg.imageFromUrl(gsno(member.memProfileImg), defaultImgPath: "likebtn")
-        cell.nameLabel.text = member.memName
+        if collectionView.tag == 1 {
+            let cell = performerCollectionView.dequeueReusableCell(withReuseIdentifier: "InfConcertPerformerCVCell", for: indexPath) as! InfConcertPerformerCVCell
+            let member = memberList[indexPath.item]
+            
+            cell.profileImg.imageFromUrl(gsno(member.memProfileImg), defaultImgPath: "")
+            cell.nameLabel.text = member.memName
+            
+            return cell
+        } else if collectionView.tag == 2 {
+            let cell = cautionCollectionView.dequeueReusableCell(withReuseIdentifier: "InfConcertCautionCVCell", for: indexPath) as! InfConcertCautionCVCell
+            let cautions = cautionList[indexPath.item]
+            
+            cell.cautionImg.imageFromUrl(gsno(cautions.cautionImg), defaultImgPath: "")
+            cell.cautionLabel.text = cautions.cautionName
+            
+            return cell
+        } else {
+            let cell = cautionCollectionView.dequeueReusableCell(withReuseIdentifier: "InfConcertCautionCVCell", for: indexPath) as! InfConcertCautionCVCell
+            
+            return cell
+        }
         
+
+//        if collectionView == self.performerCollectionView{
+//            let cell = performerCollectionView.dequeueReusableCell(withReuseIdentifier: "InfConcertPerformerCVCell", for: indexPath) as! InfConcertPerformerCVCell
+//            let member = memberList[indexPath.row]
+//            cell.profileImg.imageFromUrl(gsno(member.memProfileImg), defaultImgPath: "likebtn")
+//            cell.nameLabel.text = member.memName
+//            return cell
+//
+//        } else if collectionView == self.cautionCollectionView {
+//            let cell = cautionCollectionView.dequeueReusableCell(withReuseIdentifier: "InfCautionCVCell", for: indexPath) as! InfCautionCVCell
+//            return cell
+//
+//        } else {
+//            let cell = cautionCollectionView.dequeueReusableCell(withReuseIdentifier: "InfCautionCVCell", for: indexPath)
+//            return cell
+//        }
         
-        return cell
     }
 }

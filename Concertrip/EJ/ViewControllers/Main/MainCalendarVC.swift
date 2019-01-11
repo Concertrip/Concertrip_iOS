@@ -181,6 +181,7 @@ class MainCalendarVC: UIViewController {
         print("뷰윌어피어 getDotService")
         getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
         getTableService(type: tapType, id: tapId, day: selectDay)
+        
     }
     
     override func viewDidLayoutSubviews() {

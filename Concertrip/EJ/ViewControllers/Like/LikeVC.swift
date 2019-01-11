@@ -119,6 +119,7 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
         cell.nameLabel.text = list.name
         cell.profileImg.imageFromUrl(gsno(list.profileImg), defaultImgPath: "likeicon")
         cell.configure(data: list)
+        cell.hashLabel.text = list.hashTag
         
         if list.isSubscribe == true {
             if self.currentSub == self.concertSub {
@@ -171,7 +172,7 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
                 
             } else if self.currentSub == self.themeSub{
                 
-                SubscribeEventService.shared.subscriptEvent(id: contentId) {
+                SubscribeGenreService.shared.subscriptGenre(id: contentId) {
                     
                     if list.isSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)

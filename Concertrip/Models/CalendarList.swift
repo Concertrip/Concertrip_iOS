@@ -29,7 +29,7 @@ struct CalendarList : Mappable {
         calendarName <- map["name"]
         calendarProfileImg <- map["profileImg"]
         calendarDate <- map["date"]
-        calendarTag <- map["tag"]
+        calendarTag <- map["hashTag"]
         calendarSubscribe <- map["subscribe"]
     }
     

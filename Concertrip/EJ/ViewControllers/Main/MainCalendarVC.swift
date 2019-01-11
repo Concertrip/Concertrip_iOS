@@ -182,8 +182,8 @@ class MainCalendarVC: UIViewController {
             self.tapList = data
             self.collectionView.reloadData()
         }
-//        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
-//        getTableService(type: tapType, id: tapId, day: selectDay)
+        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
+        getTableService(type: tapType, id: tapId, day: selectDay)
     }
     
     override func viewDidLayoutSubviews() {

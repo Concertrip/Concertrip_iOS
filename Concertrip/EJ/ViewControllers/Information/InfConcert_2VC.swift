@@ -44,7 +44,7 @@ class InfConcert_2VC: UIViewController {
     
     @IBAction func likeBtnAction(_ sender: Any) {
         print("디테일아이디 \(detailId)")
-        SubscribeArtistService.shared.subscriptArtist(id: detailId!) {
+        SubscribeEventService.shared.subscriptEvent(id: detailId!) {
             if self.isLikeBtnActivated == false {
                 print("self.isLikeBtnActivated : \(self.isLikeBtnActivated)")
                 self.likeBtn.imageView?.image =  UIImage(named: "infoConcertLikeButtonActivated")

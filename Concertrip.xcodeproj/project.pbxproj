@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C010CE021E877070008DBAB /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C010CDF21E877070008DBAB /* SplashVC.swift */; };
 		7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0238E121CE107E0042E8DC /* AppDelegate.swift */; };
 		7C0238E721CE107E0042E8DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0238E521CE107E0042E8DC /* Main.storyboard */; };
 		7C0238E921CE107F0042E8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0238E821CE107F0042E8DC /* Assets.xcassets */; };
 		7C0238EC21CE107F0042E8DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0238EA21CE107F0042E8DC /* LaunchScreen.storyboard */; };
 		7C0238FC21CE17070042E8DC /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */; };
 		7C02394921CFB18F0042E8DC /* MainCalendarTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */; };
+		7C023CD021E878740003CC25 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C023CCF21E878740003CC25 /* data.json */; };
+		7C023CD221E883DE0003CC25 /* tabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C023CD121E883DE0003CC25 /* tabBarController.swift */; };
 		7C25F47221E70B8A00C57988 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C25F47121E70B8A00C57988 /* Payment.swift */; };
 		7C3F6F4C21D9ECBA0092102E /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F4B21D9ECBA0092102E /* MypageVC.swift */; };
 		7C3F6F4E21D9ECCA0092102E /* MypageCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F4D21D9ECCA0092102E /* MypageCVCell.swift */; };
@@ -93,6 +96,7 @@
 /* Begin PBXFileReference section */
 		2F9891D97367D4A40762BF55 /* Pods_Concertrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Concertrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		604D55D24A1D55AB1BB0B062 /* Pods-Concertrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concertrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip.release.xcconfig"; sourceTree = "<group>"; };
+		7C010CDF21E877070008DBAB /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		7C0238DE21CE107E0042E8DC /* Concertrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concertrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0238E121CE107E0042E8DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C0238E621CE107E0042E8DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 		7C0238ED21CE107F0042E8DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C0238FB21CE17070042E8DC /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		7C02394821CFB18F0042E8DC /* MainCalendarTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarTVCell.swift; sourceTree = "<group>"; };
+		7C023CCF21E878740003CC25 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		7C023CD121E883DE0003CC25 /* tabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarController.swift; sourceTree = "<group>"; };
 		7C25F47121E70B8A00C57988 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		7C3F6F4B21D9ECBA0092102E /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		7C3F6F4D21D9ECCA0092102E /* MypageCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageCVCell.swift; sourceTree = "<group>"; };
@@ -237,6 +243,9 @@
 		7C0238F721CE16750042E8DC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7C023CCF21E878740003CC25 /* data.json */,
+				7C010CDF21E877070008DBAB /* SplashVC.swift */,
+				7C023CD121E883DE0003CC25 /* tabBarController.swift */,
 				7C3F6F4921D9EC9E0092102E /* Mypage */,
 				7CE92CB321D797C000F560F8 /* Like */,
 				7C76C32021D4772200D4A1CD /* Information */,
@@ -524,6 +533,7 @@
 				7C0238EC21CE107F0042E8DC /* LaunchScreen.storyboard in Resources */,
 				7C0238E921CE107F0042E8DC /* Assets.xcassets in Resources */,
 				7CF1246921D252BA008F731B /* InformationSB.storyboard in Resources */,
+				7C023CD021E878740003CC25 /* data.json in Resources */,
 				7C0238E721CE107E0042E8DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +557,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/YouTubePlayer-Swift/YouTubePlayer_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -559,6 +570,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -645,7 +657,9 @@
 				7CCF4E3C21E0566000251580 /* CalendarTap.swift in Sources */,
 				7CA27CCF21D1FD2C0041A146 /* MainCalendarCVCell.swift in Sources */,
 				7CE92CB821D797F300F560F8 /* LikeTVCell.swift in Sources */,
+				7C010CE021E877070008DBAB /* SplashVC.swift in Sources */,
 				7CF5E8CE21E1D6E9003751C2 /* CalendarList.swift in Sources */,
+				7C023CD221E883DE0003CC25 /* tabBarController.swift in Sources */,
 				7C0238E221CE107E0042E8DC /* AppDelegate.swift in Sources */,
 				7CBCC6F721E5CBE00057A207 /* InfConcertPerformerCVCell.swift in Sources */,
 				E08FD1D821D3464E002AF9E7 /* ExploreClickedVCCell.swift in Sources */,

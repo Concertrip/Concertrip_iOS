@@ -13,5 +13,6 @@ pod 'Kingfisher'
 pod 'CVCalendar'
 pod 'YouTubePlayer-Swift', '~> 1.0'
 pod 'Toast-Swift'
+pod 'lottie-ios'
 
 end

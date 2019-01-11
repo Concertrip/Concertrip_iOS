@@ -5,6 +5,7 @@ PODS:
     - ObjectMapper (~> 3.4)
   - CVCalendar (1.6.1)
   - Kingfisher (4.10.1)
+  - lottie-ios (2.5.2)
   - ObjectMapper (3.4.1)
   - Toast-Swift (4.0.0)
   - YouTubePlayer-Swift (1.0)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper
   - CVCalendar
   - Kingfisher
+  - lottie-ios
   - ObjectMapper
   - Toast-Swift
   - YouTubePlayer-Swift (~> 1.0)
@@ -24,6 +26,7 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - CVCalendar
     - Kingfisher
+    - lottie-ios
     - ObjectMapper
     - Toast-Swift
     - YouTubePlayer-Swift
@@ -33,10 +36,11 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   CVCalendar: 505c11b11a088b43f159806e791eba1c2540853b
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
   YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: f973c281fe58fdcd3af96d4060074315871ee7e6
+PODFILE CHECKSUM: 8914cb6ed53f7b07818bd99cab19fd7093d23fd2
 
 COCOAPODS: 1.5.3

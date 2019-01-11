@@ -141,9 +141,12 @@ class InfConcert_2VC: UIViewController {
                 self.priceTxt += "■ " +  self.seatNameList[i] + " : " + self.seatPriceList[i] + "\n"
             }
             
-            print("dateTxt : \(self.dateTxt)")
             self.concertDateLabel.text = self.dateTxt
             self.concertPriceLabel.text = self.priceTxt
+            
+            print("self.concertPriceLabel.text : \(self.concertPriceLabel.text!)")
+            
+            
             
             self.performerCollectionView.reloadData()
             self.cautionCollectionView.reloadData()
@@ -204,7 +207,7 @@ extension InfConcert_2VC : UICollectionViewDelegate, UICollectionViewDataSource{
             
             cell.cautionLabel.text = cautions.cautionName
             
-//            서버에서 뭔가 url이상한듯..?
+//            뭔가 url이상한듯..?
 //            cell.cautionImg.imageFromUrl(gsno(cautions.cautionImg), defaultImgPath: "")
             switch cautions.cautionCode {
             case 108: cell.cautionImg.image = UIImage(named: "15AgeLimitIcon")

@@ -202,8 +202,19 @@ extension InfConcert_2VC : UICollectionViewDelegate, UICollectionViewDataSource{
             let cell = cautionCollectionView.dequeueReusableCell(withReuseIdentifier: "InfConcertCautionCVCell", for: indexPath) as! InfConcertCautionCVCell
             let cautions = cautionList[indexPath.item]
             
-            cell.cautionImg.imageFromUrl(gsno(cautions.cautionImg), defaultImgPath: "")
             cell.cautionLabel.text = cautions.cautionName
+            
+//            서버에서 뭔가 url이상한듯..?
+//            cell.cautionImg.imageFromUrl(gsno(cautions.cautionImg), defaultImgPath: "")
+            switch cautions.cautionCode {
+            case 108: cell.cautionImg.image = UIImage(named: "15AgeLimitIcon")
+            case 202: cell.cautionImg.image = UIImage(named: "foodLimitIcon")
+            case 204: cell.cautionImg.image = UIImage(named: "waterLimitIcon")
+            case 301: cell.cautionImg.image = UIImage(named: "photoAllowIcon")
+            case 402: cell.cautionImg.image = UIImage(named: "reEntryLimitIcon")
+            case 502: cell.cautionImg.image = UIImage(named: "ticketLimit2Icon")
+            default: cell.cautionImg.image = UIImage(named: "artistProfileImage")
+            }
             
             return cell
         } else {
@@ -211,23 +222,6 @@ extension InfConcert_2VC : UICollectionViewDelegate, UICollectionViewDataSource{
             
             return cell
         }
-        
-
-//        if collectionView == self.performerCollectionView{
-//            let cell = performerCollectionView.dequeueReusableCell(withReuseIdentifier: "InfConcertPerformerCVCell", for: indexPath) as! InfConcertPerformerCVCell
-//            let member = memberList[indexPath.row]
-//            cell.profileImg.imageFromUrl(gsno(member.memProfileImg), defaultImgPath: "likebtn")
-//            cell.nameLabel.text = member.memName
-//            return cell
-//
-//        } else if collectionView == self.cautionCollectionView {
-//            let cell = cautionCollectionView.dequeueReusableCell(withReuseIdentifier: "InfCautionCVCell", for: indexPath) as! InfCautionCVCell
-//            return cell
-//
-//        } else {
-//            let cell = cautionCollectionView.dequeueReusableCell(withReuseIdentifier: "InfCautionCVCell", for: indexPath)
-//            return cell
-//        }
         
     }
 }

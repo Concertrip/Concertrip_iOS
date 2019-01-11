@@ -1124,9 +1124,10 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="120"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artistLikeButton" translatesAutoresizingMaskIntoConstraints="NO" id="VuT-Z8-wzx">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artistLikeButton" translatesAutoresizingMaskIntoConstraints="NO" id="VuT-Z8-wzx">
                                                                     <rect key="frame" x="17.5" y="10" width="80" height="80"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="VuT-Z8-wzx" secondAttribute="height" multiplier="1:1" id="45h-lV-J23"/>
                                                                         <constraint firstAttribute="height" constant="80" id="Fd7-82-f8e"/>
                                                                         <constraint firstAttribute="width" constant="80" id="Odz-qZ-AOo"/>
                                                                     </constraints>

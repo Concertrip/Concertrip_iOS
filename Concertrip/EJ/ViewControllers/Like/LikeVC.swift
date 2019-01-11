@@ -143,11 +143,11 @@ extension LikeVC: UITableViewDelegate, UITableViewDataSource{
             
                 SubscribeArtistService.shared.subscriptArtist(id: contentId) {
                     if list.isSubscribe == false {
-                        cell.likeBtn.setImage(UIImage(named: "infoLikeButton"), for: .normal)
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
                         list.isSubscribe = true
                     }
                     else {
-                        cell.likeBtn.setImage(UIImage(named: "infoLikeButtonActivated"), for: .normal)
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
                         list.isSubscribe = true
                     }
                     

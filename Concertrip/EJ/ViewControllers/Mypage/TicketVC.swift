@@ -14,12 +14,24 @@ class TicketVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var ticketList = [Ticket]()
+    var ticketComming = [TicketComming]()
+    var ticketComplete = [TicketComplete]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getGradientBackground()
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        TicketService.shared.getTicketList { [weak self] (data) in
+            guard let `self` = self else { return }
+            self.ticketList = data
+            self.tableView.reloadData()
+            
+            
+            print("self.ticketList \(self.ticketList)")
+        }
     }
     
     @IBAction func backBtn(_ sender: Any) {
@@ -30,11 +42,7 @@ class TicketVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        TicketService.shared.getTicketList { [weak self] (data) in
-            guard let `self` = self else { return }
-            self.ticketList = data
-            self.tableView.reloadData()
-        }
+        
     }
     
     //그라데이션 배경
@@ -61,14 +69,17 @@ extension TicketVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TicketTVCell") as! TicketTVCell
         let ticket = ticketList[indexPath.row]
         
-        cell.concertNameLabel.text = ticket.ticketName
+    
+        
+        cell.ticketImg.imageFromUrl(gsno(ticket.data![0]), defaultImgPath: "")
+        
+        
         
 //        let formatter = DateFormatter()
 //        formatter.dateFormat = "MM/dd HH:mm"
 //        cell.concertDateLabel.text = formatter.string(from: ticket.ticketDate ?? Date())
         
-        cell.concertDateLabel.text = "날짜 : \(ticket.ticketDate!)"
-        cell.concertLocationLabel.text = "장소 : \(ticket.ticketLocation!)"
+        
         
         return cell
     }

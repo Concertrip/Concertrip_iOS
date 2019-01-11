@@ -378,68 +378,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="themonster" translatesAutoresizingMaskIntoConstraints="NO" id="geI-0Z-Vsc">
-                                                    <rect key="frame" x="254" y="10" width="106" height="140"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="geI-0Z-Vsc" secondAttribute="height" multiplier="53:70" id="72T-NW-FVM"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgt-wk-ryT">
-                                                    <rect key="frame" x="40" y="10" width="320" height="140"/>
-                                                    <state key="normal" image="ticketBig"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더 몬스터 페스티벌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7J-RO-sot">
-                                                    <rect key="frame" x="73" y="33" width="179" height="17"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="179" id="3Yv-Cd-XoW"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 : 2018.12.23 (월)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjb-gw-5DE">
-                                                    <rect key="frame" x="73" y="83.5" width="179" height="13.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소 : 성남아트센터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6S-2i-jqy">
-                                                    <rect key="frame" x="73" y="65" width="86" height="13.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeBar1" translatesAutoresizingMaskIntoConstraints="NO" id="Dch-iA-RnO">
                                                     <rect key="frame" x="10" y="0.0" width="15" height="160"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Dch-iA-RnO" secondAttribute="height" multiplier="3:32" id="kxS-81-zsA"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aha-hl-J01">
+                                                    <rect key="frame" x="40" y="10" width="320" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Aha-hl-J01" secondAttribute="height" multiplier="16:7" id="voD-R4-H1h"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="geI-0Z-Vsc" firstAttribute="bottom" secondItem="Kgt-wk-ryT" secondAttribute="bottom" id="0tD-Ql-zjC"/>
-                                                <constraint firstItem="vjb-gw-5DE" firstAttribute="top" secondItem="F6S-2i-jqy" secondAttribute="bottom" constant="5" id="3C1-YX-49Q"/>
-                                                <constraint firstItem="F6S-2i-jqy" firstAttribute="top" secondItem="B7J-RO-sot" secondAttribute="bottom" constant="15" id="5f5-k3-8tT"/>
-                                                <constraint firstItem="Kgt-wk-ryT" firstAttribute="leading" secondItem="Dch-iA-RnO" secondAttribute="trailing" constant="15" id="63e-rd-WOV"/>
-                                                <constraint firstItem="geI-0Z-Vsc" firstAttribute="trailing" secondItem="Kgt-wk-ryT" secondAttribute="trailing" id="6VP-M4-fIc"/>
+                                                <constraint firstItem="Aha-hl-J01" firstAttribute="top" secondItem="s9U-0C-QkW" secondAttribute="top" constant="10" id="0yw-Lt-gIl"/>
                                                 <constraint firstItem="Dch-iA-RnO" firstAttribute="height" secondItem="s9U-0C-QkW" secondAttribute="height" id="CH4-3x-Qth"/>
-                                                <constraint firstItem="vjb-gw-5DE" firstAttribute="leading" secondItem="F6S-2i-jqy" secondAttribute="leading" id="EUA-tW-n4L"/>
+                                                <constraint firstAttribute="bottom" secondItem="Aha-hl-J01" secondAttribute="bottom" constant="10" id="EYq-v1-DJf"/>
                                                 <constraint firstItem="Dch-iA-RnO" firstAttribute="top" secondItem="s9U-0C-QkW" secondAttribute="top" id="Jn1-Dq-qkj"/>
-                                                <constraint firstItem="vjb-gw-5DE" firstAttribute="width" secondItem="B7J-RO-sot" secondAttribute="width" id="M2w-Qa-noC"/>
                                                 <constraint firstAttribute="bottom" secondItem="Dch-iA-RnO" secondAttribute="bottom" id="P5y-y3-CIC"/>
-                                                <constraint firstItem="geI-0Z-Vsc" firstAttribute="height" secondItem="Kgt-wk-ryT" secondAttribute="height" id="XNi-p3-c05"/>
-                                                <constraint firstItem="Kgt-wk-ryT" firstAttribute="top" secondItem="s9U-0C-QkW" secondAttribute="top" constant="10" id="hSn-rY-08z"/>
-                                                <constraint firstAttribute="bottom" secondItem="Kgt-wk-ryT" secondAttribute="bottom" constant="10" id="iBt-6q-vsV"/>
-                                                <constraint firstItem="B7J-RO-sot" firstAttribute="leading" secondItem="Kgt-wk-ryT" secondAttribute="leading" constant="33" id="jA6-PM-EIU"/>
-                                                <constraint firstItem="B7J-RO-sot" firstAttribute="top" secondItem="Kgt-wk-ryT" secondAttribute="top" constant="23" id="kHt-Ho-NI1"/>
+                                                <constraint firstItem="Aha-hl-J01" firstAttribute="leading" secondItem="Dch-iA-RnO" secondAttribute="trailing" constant="15" id="WzM-k9-Dcl"/>
                                                 <constraint firstItem="Dch-iA-RnO" firstAttribute="leading" secondItem="s9U-0C-QkW" secondAttribute="leading" constant="10" id="qZf-Pn-gQW"/>
-                                                <constraint firstAttribute="trailing" secondItem="Kgt-wk-ryT" secondAttribute="trailing" constant="15" id="rvA-16-ShN"/>
-                                                <constraint firstItem="geI-0Z-Vsc" firstAttribute="top" secondItem="Kgt-wk-ryT" secondAttribute="top" id="uez-9c-gaw"/>
-                                                <constraint firstItem="F6S-2i-jqy" firstAttribute="leading" secondItem="B7J-RO-sot" secondAttribute="leading" id="vc2-PX-AfX"/>
+                                                <constraint firstAttribute="trailing" secondItem="Aha-hl-J01" secondAttribute="trailing" constant="15" id="sCz-QZ-rKn"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.01176470588" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="concertDateLabel" destination="vjb-gw-5DE" id="gFr-SG-0b1"/>
-                                            <outlet property="concertLocationLabel" destination="F6S-2i-jqy" id="13x-Zg-Nu7"/>
-                                            <outlet property="concertNameLabel" destination="B7J-RO-sot" id="Exv-8X-PV3"/>
+                                            <outlet property="ticketImg" destination="Aha-hl-J01" id="O1S-1K-BWw"/>
+                                            <outlet property="timeBarImg" destination="Dch-iA-RnO" id="sqm-kM-cau"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -490,7 +456,6 @@
         <image name="settingIcon" width="38" height="38"/>
         <image name="tabMypageIconActivated" width="27" height="23"/>
         <image name="themonster" width="106" height="140"/>
-        <image name="ticketBig" width="343" height="150"/>
         <image name="ticketBigNothing" width="343" height="150"/>
         <image name="timeBar1" width="15" height="160"/>
     </resources>

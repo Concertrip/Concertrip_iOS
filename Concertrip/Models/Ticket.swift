@@ -9,36 +9,17 @@
 import Foundation
 import ObjectMapper
 
-struct Ticket : Mappable {
-    var ticketId : Int?
-    var ticketName : String?
-    var ticketLocation : String?
-    var ticketDate : String?
-    var ticketSeat : String?
-    var ticketUserIdx : Int?
-    var ticketEventId : String?
+struct Ticket: Mappable {
+
+    var status: Int?
+    var message: String?
+    var data: [String]?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) {}
     
     mutating func mapping(map: Map) {
-        
-        ticketId <- map["_id"]
-        ticketName <- map["name"]
-        ticketLocation <- map["location"]
-        ticketDate <- map["date"]
-        ticketSeat <- map["seat"]
-        ticketUserIdx <- map["userIdx"]
-        ticketEventId <- map["eventId"]
-        
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
-//
-//        if let dateString = map["date"].currentValue as? String,
-//            let _date = dateFormatter.date(from: dateString) {
-//            ticketDate = _date
-//        }
+        status <- map["status"]
+        message <- map["message"]
+        data <- map["data"]
     }
-    
 }

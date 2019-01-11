@@ -10,10 +10,9 @@ import UIKit
 
 class TicketTVCell: UITableViewCell {
 
-    @IBOutlet weak var concertNameLabel: UILabel!
-    @IBOutlet weak var concertDateLabel: UILabel!
-    @IBOutlet weak var concertLocationLabel: UILabel!
+    @IBOutlet weak var ticketImg: UIImageView!
     
+    @IBOutlet weak var timeBarImg: UIImageView!
     
     
     

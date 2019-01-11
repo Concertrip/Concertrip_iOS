@@ -19,8 +19,10 @@ struct TicketService: APIManager, Requestable {
     
     func getTicketList(completion: @escaping ([Ticket]) -> Void) {
         gettable(queryURL, body: nil, header: header) { (res) in
+            print("ticket Res : \(res)")
             switch res {
             case .success(let value):
+                print("ticket value.data \(value.data)")
                 guard let ticketList = value.data else
                 {return}
                 completion(ticketList)
@@ -29,22 +31,4 @@ struct TicketService: APIManager, Requestable {
             }
         }
     }
-    
-//    //게시글 상세 조회 api
-//    func getBoardDetail(id: Int, completion: @escaping ([Board]) -> Void) {
-//        //코드 작성
-//        let queryURL = boardURL + "/\(id)"
-//        gettable(queryURL, body: nil, header: header) { (res) in
-//            switch res {
-//            case .success(let value):
-//                guard let boardList = value.data else
-//                {return}
-//                completion(boardList)
-//            case .error(let error):
-//                print(error)
-//            }
-//        }
-//    }
-    
-   
 }

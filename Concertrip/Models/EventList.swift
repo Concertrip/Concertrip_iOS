@@ -27,7 +27,7 @@ struct EventList : Mappable {
         eventName <- map["name"]
         eventProfileImg <- map["profileImg"]
         eventSubscribe <- map["subscribe"]
-        eventTag <- map["tag"]
+        eventTag <- map["hashTag"]
         isGroup <- map["group"]
     }
     

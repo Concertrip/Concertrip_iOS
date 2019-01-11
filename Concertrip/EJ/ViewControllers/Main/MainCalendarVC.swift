@@ -86,6 +86,7 @@ class MainCalendarVC: UIViewController {
         let todayYear =  components.year
         let todayMonth = components.month
 
+        print("뷰디드로드 getDotService")
         getDotService(type: self.tapType, id: self.tapId, year: todayYear!, month: todayMonth!)
         getTableService(type: self.tapType, id: self.tapId, day: selectDay)
         
@@ -95,10 +96,10 @@ class MainCalendarVC: UIViewController {
         collectionView.reloadData()
         
         //calendarView
-        self.calendarView.calendarAppearanceDelegate = self //Appearance delegate
-//        self.calendarView.animatorDelegate = self // Animator delegate
-        self.menuView.menuViewDelegate = self // Menu delegate
-        self.calendarView.calendarDelegate = self // Calendar delegate
+        self.calendarView.calendarAppearanceDelegate = self
+        self.calendarView.animatorDelegate = self
+        self.menuView.menuViewDelegate = self
+        self.calendarView.calendarDelegate = self
         
         if let currentCalendar = currentCalendar {
             monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).koreanDescription
@@ -161,16 +162,11 @@ class MainCalendarVC: UIViewController {
     }
     
     func getTableService(type : String, id : String, day: Int){
-//        let cyear = 2019
-//        let cmonth = 1
-        
         CalendarListService.shared.getCalendarDaily(type: type, id: id, year: thisYear, month: thisMonth, day: day) { [weak self](data) in
             guard let `self` = self else { return }
             self.dailyList = data
             self.tableView.reloadData()
             self.calendarView.commitCalendarViewUpdate()
-//            print("dailyList : \(self.dailyList)")
-            print("데이터 출력 : ", data)
         }
         
     }
@@ -182,7 +178,8 @@ class MainCalendarVC: UIViewController {
             self.tapList = data
             self.collectionView.reloadData()
         }
-        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
+//        print("뷰윌어피어 getDotService")
+//        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
         getTableService(type: tapType, id: tapId, day: selectDay)
     }
     
@@ -277,10 +274,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
     }
 
     func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool {
-        
-//        if !dayView.isHidden && dayView.date != nil {
-        
-        print("index : ", index)
+//        print("index : ", index)
         year_ = dayView.date.year
         month_ = dayView.date.month
         day_ = dayView.date.day
@@ -331,6 +325,7 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
         sDay = dayView
         selectDay = sDay.date.day
         getTableService(type: tapType, id: tapId, day: selectDay)
+        print("디드셀렉트데이뷰 getDotService")
         getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
         
         tableView.reloadData()
@@ -386,7 +381,7 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
         if dailyList.count != 0 {
             cell.nameLabel.text = days.calendarName
             cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
-            cell.hashLabel.text = days.calendarTag
+//            cell.hashLabel.text = days.calendarTag
         }
         
         var event = dailyList[indexPath.row]
@@ -467,6 +462,7 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         tapType = menu.calTapType!
         tapId = menu.calTapId!
         
+        print("디드셀렉트아이템엣 getDotService")
         getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
         getTableService(type: tapType, id: tapId, day: selectDay)
         self.collectionView.reloadData()

@@ -115,6 +115,7 @@ extension InfSolo_ThemeVC: UITableViewDelegate, UITableViewDataSource{
 
         var event = eventList[indexPath.row]
         
+        cell.concertHashLabel.text = event.eventTag
         cell.concertNameLabel.text = event.eventName
         cell.concertProfileImg.imageFromUrl(gsno(event.eventProfileImg), defaultImgPath: "")
         

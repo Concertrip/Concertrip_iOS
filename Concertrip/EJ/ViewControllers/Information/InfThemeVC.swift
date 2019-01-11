@@ -131,7 +131,8 @@ extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
         }
         cell.themeProfileImg.imageFromUrl(event.eventProfileImg, defaultImgPath: "")
         cell.themeNameLabel.text = event.eventName
-        
+        cell.themeHashLabel.text = event.eventTag
+
         return cell
     }
     

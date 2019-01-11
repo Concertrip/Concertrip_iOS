@@ -14,6 +14,7 @@ class InfThemeTVCell: UITableViewCell {
     @IBOutlet weak var themeProfileImg: UIImageView!
     @IBOutlet weak var themeNameLabel: UILabel!
     @IBOutlet weak var addBtn: UIButton!
+    @IBOutlet weak var themeHashLabel: UILabel!
     var concertId : String = ""
     
     func configure(data : EventList) {

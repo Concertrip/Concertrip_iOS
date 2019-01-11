@@ -50,8 +50,6 @@ class ExploreVC: UIViewController {
     //[모두] [테마] [보이그룹] [걸그룹] [힙합] [발라드/R&B] [댄스] [POP] [EDM] [인디] [재즈] [록]
     
     let menuList = ["테마", "보이그룹", "걸그룹", "힙합", "발라드", "R&B", "댄스", "POP", "EDM", "인디", "재즈", "록"]
-    let nameList = ["자라섬 재즈페스티벌", "SAMM HANSHAW", "PHUM VIPHURIT", "ALESSICA CARA"]
-    let hashtagList = ["#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ", "#오늘밤 #12월25일 #MERRYCHRISTMAS #JAZZ"]
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -60,13 +58,16 @@ class ExploreVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getGradientBackground()
+        ThemeService.shared.getThemeList(name: "테마") { (value) in
+            self.themeList = value
+            self.tableView.reloadData()
+        }
         collectionView.delegate = self
         collectionView.dataSource = self
         tableView.delegate = self
         tableView.dataSource = self
         
         menuTheme = menuList[0]
-        print("메뉴 ?? : ", menuTheme)
         
         
         /*
@@ -123,15 +124,13 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
     //선택 시
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIdx = indexPath.row
-        
-        print("selectedIdx : ",selectedIdx)
         if selectedIdx == 0 {
             ThemeService.shared.getThemeList(name: "테마") { (value) in
                 self.themeList = value
+                self.tableView.reloadData()
             }
         }
         else {
-            print("야호2")
             getSearchResult()
         }
     }
@@ -160,7 +159,7 @@ extension ExploreVC : UICollectionViewDelegateFlowLayout {
 
 extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if selectedIdx == 1 {
+        if selectedIdx == 0 {
             return themeList.count
         }
         return artistList.count
@@ -188,33 +187,62 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
 //        cell.selectionStyle = .none
         
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "exploreTVCell", for: indexPath) as! ExploreTVCell
-        if selectedIdx == 1 {
+        if selectedIdx == 0 {
             //테마 선택시......... 아래 else문 참고
-//            var themeData = themeList[indexPath.row]
-//            cell.nameLabel.text = themeData.themeName
-//            cell.profileImg.imageFromUrl(gsno(themeData.themeProfileImg), defaultImgPath: "")
-//            if themeData.themeSubscribe == false {
-//                cell.likeBtn.setImage(UIImage(named: "artistLikeButton", for: .normal)
-//            }
+            var themeData = themeList[indexPath.row]
+            cell.nameLabel.text = themeData.themeName
+            cell.profileImg.imageFromUrl(gsno(themeData.themeProfileImg), defaultImgPath: "")
+            print("테마 데이터! ", themeData)
+            var themeSubscribe : Bool = false
+            
+            if themeData.themeSubscribe! == false {
+                themeSubscribe = false
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+            }
+            else {
+                themeSubscribe = true
+                cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+            }
+            
+            cell.configureTheme(data: themeData)
+            cell.subscribeHandler = {(themeId) in
+                SubscribeGenreService.shared.subscriptGenre(id: themeId) {
+                    print("SubscribeTheme network working!")
+                    print(themeData.themeSubscribe)
+                    if themeSubscribe == false {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
+                        self.view.makeToast("내 공연에 추가되었습니다!")
+                        themeData.themeSubscribe = true
+                    }
+                    else {
+                        cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        themeData.themeSubscribe = false
+                    }
+                    print(themeData.themeSubscribe)
+                }
+            }
         }
         else {
             var artistData = artistList[indexPath.row]
             cell.profileImg.imageFromUrl(gsno(artistData.artistProfileImg), defaultImgPath: "")
             cell.nameLabel.text = artistData.artistName
+            
+            var artistSubscribe : Bool = false
+            
             if artistData.artistSubscribe == false {
+                artistSubscribe = false
                 cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
             }
             else {
+                artistSubscribe = true
                 cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
             }
             cell.configureArtist(data : artistData)
 
             cell.subscribeHandler = {(artistId) in
-                print("앨범아듸 : ", artistId)
                 SubscribeArtistService.shared.subscriptArtist(id: artistId) {
                     print("network working!")
-                    if artistData.artistSubscribe == false {
-                        
+                    if artistSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
                         self.view.makeToast("내 공연에 추가되었습니다!")
                         artistData.artistSubscribe = true
@@ -232,18 +260,26 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         let storyboard = UIStoryboard(name: "InformationSB", bundle: nil)
-        let list = artistList[indexPath.row]
-        
-        if list.artistIsGroup == true {
-            let dvc = storyboard.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
-            dvc.detailId = list.artistId
+        if selectedIdx == 0 {
+            let list = themeList[indexPath.row]
+            let dvc = storyboard.instantiateViewController(withIdentifier: "InfThemeVC") as! InfThemeVC
+            dvc.detailId = list.themeId
             self.present(dvc, animated: true, completion: nil)
         }
         else {
-            //InfSolo_ThemeVC
-            let dvc = storyboard.instantiateViewController(withIdentifier: "InfSolo_ThemeVC") as! InfSolo_ThemeVC
-            dvc.detailId = list.artistId
-            self.present(dvc, animated: true, completion: nil)
+            let list = artistList[indexPath.row]
+            
+            if list.artistIsGroup == true {
+                let dvc = storyboard.instantiateViewController(withIdentifier: "InfGroupVC") as! InfGroupVC
+                dvc.detailId = list.artistId
+                self.present(dvc, animated: true, completion: nil)
+            }
+            else {
+                //InfSolo_ThemeVC
+                let dvc = storyboard.instantiateViewController(withIdentifier: "InfSolo_ThemeVC") as! InfSolo_ThemeVC
+                dvc.detailId = list.artistId
+                self.present(dvc, animated: true, completion: nil)
+            }
         }
     }
 }

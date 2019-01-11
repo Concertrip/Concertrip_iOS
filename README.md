@@ -7,13 +7,7 @@
 ## 프로젝트에 대하여
 ### What is Concertrip?
 * 가장 먼저 받아보는 콘서트 일정 구독 서비스
-### 사용한 라이브러리
-* [Alamofire](https://github.com/Alamofire/Alamofire)
-* [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper)
-* [Kingfisher](https://github.com/onevcat/Kingfisher)
-* [CVCalendar](https://github.com/CVCalendar/CVCalendar)
-* [Toast-Swift](https://github.com/scalessec/Toast-Swift)
-* [Lottie-ios](https://github.com/airbnb/lottie-ios)
+
 
 
 ## 주요 뷰
@@ -26,3 +20,26 @@
 
 ## [ About ]
 가장 먼저 받아보는 콘서트 일정 구독 서비스 
+
+## [ View ]
+
+> ![AppViews](https://github.com/cchloe2311/Concertrip__Android/blob/master/views.png?raw=true)
+
+
+## [ Develop Environment ]
+
+- Language :  **Swift 4.0**
+- iOS Depolyment Target : **12.0**
+
+
+## [ Library ]
+
+1. Server
+* [Alamofire](https://github.com/Alamofire/Alamofire)
+* [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper)
+* [Kingfisher](https://github.com/onevcat/Kingfisher)
+
+2. Layout
+* [CVCalendar](https://github.com/CVCalendar/CVCalendar)
+* [Toast-Swift](https://github.com/scalessec/Toast-Swift)
+* [Lottie-ios](https://github.com/airbnb/lottie-ios)

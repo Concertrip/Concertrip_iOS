@@ -13,13 +13,13 @@ struct Ticket: Mappable {
 
     var status: Int?
     var message: String?
-    var data: [String]?
+    var ticketData: [String]?
     
     init?(map: Map) {}
     
     mutating func mapping(map: Map) {
         status <- map["status"]
         message <- map["message"]
-        data <- map["data"]
+        ticketData <- map["data"]
     }
 }

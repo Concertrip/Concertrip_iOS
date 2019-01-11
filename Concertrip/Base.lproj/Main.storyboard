@@ -134,7 +134,7 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MF7-LY-Afh">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MF7-LY-Afh">
                                                             <rect key="frame" x="15" y="9" width="46.5" height="46.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="MF7-LY-Afh" secondAttribute="height" multiplier="1:1" id="HLh-WN-IhB"/>

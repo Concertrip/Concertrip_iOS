@@ -38,6 +38,7 @@ class InfConcert_2VC: UIViewController {
     var namePriceList:[String] = []
     var dateTxt  = ""
     var priceTxt = ""
+    var attributeList: [NSMutableAttributedString] = []
     
     @IBAction func backBtnAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -61,11 +62,11 @@ class InfConcert_2VC: UIViewController {
     }
     
     @IBAction func reservationBtnAction(_ sender: Any) {
-        self.view.makeToast("내 티켓에 추가됐습니다.")
+        ReservationService.shared.reservationTicket(id: detailId!) {
+            self.view.makeToast("내 티켓에 추가됐습니다.")
+        }
     }
     @IBOutlet weak var reservationBtn: UIButton!
-    
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -141,8 +142,19 @@ class InfConcert_2VC: UIViewController {
                 self.priceTxt += "■ " +  self.seatNameList[i] + " : " + self.seatPriceList[i] + "\n"
             }
             
+            
+            
             self.concertDateLabel.text = self.dateTxt
             self.concertPriceLabel.text = self.priceTxt
+            
+            
+            let strNumber: NSString = self.priceTxt as NSString
+            let range = (strNumber).range(of: "■")
+            let attribute = NSMutableAttributedString.init(string: strNumber as String)
+            attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(cgColor: #colorLiteral(red: 0.2431372549, green: 0.737254902, blue: 1, alpha: 1)) , range: range)
+//            self.attributeList.append(attribute)
+            self.concertPriceLabel.attributedText = attribute
+            
             
             print("self.concertPriceLabel.text : \(self.concertPriceLabel.text!)")
             
@@ -151,6 +163,8 @@ class InfConcert_2VC: UIViewController {
             self.performerCollectionView.reloadData()
             self.cautionCollectionView.reloadData()
         }
+        
+        
         
         performerCollectionView.delegate = self
         performerCollectionView.dataSource = self
@@ -210,12 +224,35 @@ extension InfConcert_2VC : UICollectionViewDelegate, UICollectionViewDataSource{
 //            뭔가 url이상한듯..?
 //            cell.cautionImg.imageFromUrl(gsno(cautions.cautionImg), defaultImgPath: "")
             switch cautions.cautionCode {
+            case 101: cell.cautionImg.image = UIImage(named: "allAgeLimitIcon")
+            case 102: cell.cautionImg.image = UIImage(named: "7AgeLimitIcon")
+            case 103: cell.cautionImg.image = UIImage(named: "8AgeLimitIcon")
+            case 104: cell.cautionImg.image = UIImage(named: "10AgeLimitIcon")
+            case 105: cell.cautionImg.image = UIImage(named: "12AgeLimitIcon")
+            case 106: cell.cautionImg.image = UIImage(named: "13AgeLimitIcon")
+            case 107: cell.cautionImg.image = UIImage(named: "14AgeLimitIcon")
             case 108: cell.cautionImg.image = UIImage(named: "15AgeLimitIcon")
+            case 109: cell.cautionImg.image = UIImage(named: "19AgeLimitIcon")
+                
+            case 201: cell.cautionImg.image = UIImage(named: "foodAllowIcon")
             case 202: cell.cautionImg.image = UIImage(named: "foodLimitIcon")
+                
+                //203 이름겹쳐서 아이콘 안받음
+            case 203: cell.cautionImg.image = UIImage(named: "waterAllowIcon")
             case 204: cell.cautionImg.image = UIImage(named: "waterLimitIcon")
+            
             case 301: cell.cautionImg.image = UIImage(named: "photoAllowIcon")
+            case 302: cell.cautionImg.image = UIImage(named: "photoLimitIcon")
+                
+            case 401: cell.cautionImg.image = UIImage(named: "reEntryAllowIcon")
             case 402: cell.cautionImg.image = UIImage(named: "reEntryLimitIcon")
+                
+            case 501: cell.cautionImg.image = UIImage(named: "ticketLimit1Icon")
             case 502: cell.cautionImg.image = UIImage(named: "ticketLimit2Icon")
+                
+                //503 504 아이콘 없음
+            case 503: cell.cautionImg.image = UIImage(named: "ticketLimit2Icon")
+            case 504: cell.cautionImg.image = UIImage(named: "ticketLimit2Icon")
             default: cell.cautionImg.image = UIImage(named: "artistProfileImage")
             }
             
@@ -228,3 +265,4 @@ extension InfConcert_2VC : UICollectionViewDelegate, UICollectionViewDataSource{
         
     }
 }
+

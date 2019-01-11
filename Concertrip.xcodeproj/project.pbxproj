@@ -24,6 +24,9 @@
 		7C3F6F5221D9F3760092102E /* SettingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5121D9F3760092102E /* SettingTVCell.swift */; };
 		7C3F6F5421D9F8440092102E /* TicketTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5321D9F8440092102E /* TicketTVCell.swift */; };
 		7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F6F5521D9F85E0092102E /* TicketVC.swift */; };
+		7C5CA59F21E8C7530033E063 /* TicketComming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5CA59E21E8C7530033E063 /* TicketComming.swift */; };
+		7C5CA5A121E8C7600033E063 /* TicketComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5CA5A021E8C7600033E063 /* TicketComplete.swift */; };
+		7C5CA5A321E8E0F30033E063 /* ReservationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5CA5A221E8E0F30033E063 /* ReservationService.swift */; };
 		7C5F601921E61EF600B64EF8 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F601821E61EF600B64EF8 /* Alarm.swift */; };
 		7C5F601B21E61F2A00B64EF8 /* AlarmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5F601A21E61F2A00B64EF8 /* AlarmService.swift */; };
 		7C74CF7321E7AA0200361D6B /* ZeroTabCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C74CF7221E7AA0200361D6B /* ZeroTabCVCell.swift */; };
@@ -116,6 +119,9 @@
 		7C3F6F5121D9F3760092102E /* SettingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTVCell.swift; sourceTree = "<group>"; };
 		7C3F6F5321D9F8440092102E /* TicketTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTVCell.swift; sourceTree = "<group>"; };
 		7C3F6F5521D9F85E0092102E /* TicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVC.swift; sourceTree = "<group>"; };
+		7C5CA59E21E8C7530033E063 /* TicketComming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketComming.swift; sourceTree = "<group>"; };
+		7C5CA5A021E8C7600033E063 /* TicketComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketComplete.swift; sourceTree = "<group>"; };
+		7C5CA5A221E8E0F30033E063 /* ReservationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationService.swift; sourceTree = "<group>"; };
 		7C5F601821E61EF600B64EF8 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		7C5F601A21E61F2A00B64EF8 /* AlarmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmService.swift; sourceTree = "<group>"; };
 		7C74CF7221E7AA0200361D6B /* ZeroTabCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroTabCVCell.swift; sourceTree = "<group>"; };
@@ -342,7 +348,6 @@
 				7CE92C7421D68CBB00F560F8 /* ResponseArray.swift */,
 				7CE92C7021D68CBA00F560F8 /* ResponseObject.swift */,
 				7CE92C7121D68CBA00F560F8 /* Token.swift */,
-				7C79BC0221DB611B00096BB3 /* Ticket.swift */,
 				E0F727F421DB9DDD00D89BF6 /* Artists.swift */,
 				E0F727F521DB9DDD00D89BF6 /* Events.swift */,
 				E0F727F321DB9DDD00D89BF6 /* Genres.swift */,
@@ -359,6 +364,9 @@
 				7C25F47121E70B8A00C57988 /* Payment.swift */,
 				E0C68C7521E7865200200BB8 /* TabTheme.swift */,
 				7C116E9321E894D4003AACFA /* PrecautionList.swift */,
+				7C79BC0221DB611B00096BB3 /* Ticket.swift */,
+				7C5CA59E21E8C7530033E063 /* TicketComming.swift */,
+				7C5CA5A021E8C7600033E063 /* TicketComplete.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -382,6 +390,7 @@
 				7CF5E8D121E1D87A003751C2 /* CalendarListService.swift */,
 				7C5F601A21E61F2A00B64EF8 /* AlarmService.swift */,
 				E0C68C7721E786F600200BB8 /* ThemeService.swift */,
+				7C5CA5A221E8E0F30033E063 /* ReservationService.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -552,7 +561,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -577,7 +586,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -615,6 +624,7 @@
 				7CA17A0D21E1092200C0D80E /* DetailConcert.swift in Sources */,
 				E0F7280321DCDE0C00D89BF6 /* SubscribeArtistService.swift in Sources */,
 				E0C68C7621E7865200200BB8 /* TabTheme.swift in Sources */,
+				7C5CA5A321E8E0F30033E063 /* ReservationService.swift in Sources */,
 				7C74CF7321E7AA0200361D6B /* ZeroTabCVCell.swift in Sources */,
 				7CCF4E3E21E056B100251580 /* CalendarService.swift in Sources */,
 				E0F727F821DB9DDD00D89BF6 /* Artists.swift in Sources */,
@@ -625,6 +635,7 @@
 				7CE92C8221D68CD600F560F8 /* APIManager.swift in Sources */,
 				7CE92CBA21D7981E00F560F8 /* LikeVC.swift in Sources */,
 				7CE92CA821D7810900F560F8 /* InfSolo_ThemeVC.swift in Sources */,
+				7C5CA59F21E8C7530033E063 /* TicketComming.swift in Sources */,
 				7C79BC0321DB611B00096BB3 /* Ticket.swift in Sources */,
 				7CA17A0B21E108FB00C0D80E /* DetailEventService.swift in Sources */,
 				E08FD1A221D205AA002AF9E7 /* NotificationVC.swift in Sources */,
@@ -683,6 +694,7 @@
 				7CBCC6F921E5CBF80057A207 /* InfConcertCautionCVCell.swift in Sources */,
 				E0F727F721DB9DDD00D89BF6 /* Genres.swift in Sources */,
 				E08FD1AA21D2209F002AF9E7 /* ExploreCVCell.swift in Sources */,
+				7C5CA5A121E8C7600033E063 /* TicketComplete.swift in Sources */,
 				7CFB858B21DB49DD001473B7 /* InfPerformerCVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -29,7 +29,7 @@ class NotificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getGradientBackground()
-        AlarmService.shared.getAlarmList {[weak self] (data) in
+        AlarmService.shared.getAlarmData {[weak self] (data) in
             guard let `self` = self else { return }
             self.alarmList = data
             self.noticeTable.reloadData()

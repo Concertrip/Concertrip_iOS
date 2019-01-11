@@ -87,6 +87,8 @@
 		E08FD1D821D3464E002AF9E7 /* ExploreClickedVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FD1D721D3464E002AF9E7 /* ExploreClickedVCCell.swift */; };
 		E0C68C7621E7865200200BB8 /* TabTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C68C7521E7865200200BB8 /* TabTheme.swift */; };
 		E0C68C7821E786F600200BB8 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C68C7721E786F600200BB8 /* ThemeService.swift */; };
+		E0C68C7A21E9269D00200BB8 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C68C7921E9269D00200BB8 /* NotificationService.swift */; };
+		E0C68C7C21E926AE00200BB8 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C68C7B21E926AE00200BB8 /* Notifications.swift */; };
 		E0F727F621DB9DDD00D89BF6 /* SearchObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F727F221DB9DDC00D89BF6 /* SearchObject.swift */; };
 		E0F727F721DB9DDD00D89BF6 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F727F321DB9DDD00D89BF6 /* Genres.swift */; };
 		E0F727F821DB9DDD00D89BF6 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F727F421DB9DDD00D89BF6 /* Artists.swift */; };
@@ -182,6 +184,8 @@
 		E08FD1D721D3464E002AF9E7 /* ExploreClickedVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreClickedVCCell.swift; sourceTree = "<group>"; };
 		E0C68C7521E7865200200BB8 /* TabTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTheme.swift; sourceTree = "<group>"; };
 		E0C68C7721E786F600200BB8 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
+		E0C68C7921E9269D00200BB8 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		E0C68C7B21E926AE00200BB8 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		E0F727F221DB9DDC00D89BF6 /* SearchObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchObject.swift; sourceTree = "<group>"; };
 		E0F727F321DB9DDD00D89BF6 /* Genres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		E0F727F421DB9DDD00D89BF6 /* Artists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
@@ -367,6 +371,7 @@
 				7C79BC0221DB611B00096BB3 /* Ticket.swift */,
 				7C5CA59E21E8C7530033E063 /* TicketComming.swift */,
 				7C5CA5A021E8C7600033E063 /* TicketComplete.swift */,
+				E0C68C7B21E926AE00200BB8 /* Notifications.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				7C5F601A21E61F2A00B64EF8 /* AlarmService.swift */,
 				E0C68C7721E786F600200BB8 /* ThemeService.swift */,
 				7C5CA5A221E8E0F30033E063 /* ReservationService.swift */,
+				E0C68C7921E9269D00200BB8 /* NotificationService.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -561,7 +567,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
@@ -586,7 +592,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concertrip/Pods-Concertrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D33B16001EF90A3C43398DC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -619,6 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CA27CCA21D0EB980041A146 /* YoutubeTestVC.swift in Sources */,
+				E0C68C7A21E9269D00200BB8 /* NotificationService.swift in Sources */,
 				7CF1693721E0F9120091D624 /* InfThemeTVCell.swift in Sources */,
 				7C3F6F5021D9F3080092102E /* SettingVC.swift in Sources */,
 				7CA17A0D21E1092200C0D80E /* DetailConcert.swift in Sources */,
@@ -657,6 +664,7 @@
 				7C79BC0D21DC741600096BB3 /* Subscribe.swift in Sources */,
 				7CE92CAE21D7814700F560F8 /* InfConcertVC.swift in Sources */,
 				7CE92C7B21D68CBB00F560F8 /* ResponseArray.swift in Sources */,
+				E0C68C7C21E926AE00200BB8 /* Notifications.swift in Sources */,
 				7CE92CB221D78F2D00F560F8 /* InfSoloThemeTVCell.swift in Sources */,
 				7C3F6F5621D9F85E0092102E /* TicketVC.swift in Sources */,
 				E0F7280121DCDDED00D89BF6 /* SubscribeEventService.swift in Sources */,
@@ -850,7 +858,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sim.Concertrip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simjaeha.Concertrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -870,7 +878,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sim.Concertrip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simjaeha.Concertrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

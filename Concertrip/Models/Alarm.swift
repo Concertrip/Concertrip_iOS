@@ -15,6 +15,7 @@ struct Alarm : Mappable {
     var alarmTitle : String?
     var alarmBody : String?
     var alarmCreatedAt : String?
+    var alarmImg : String?
     
     init?(map: Map) {
         
@@ -27,6 +28,7 @@ struct Alarm : Mappable {
         alarmTitle <- map["title"]
         alarmBody <- map["body"]
         alarmCreatedAt <- map["createdAt"]
+        alarmImg <- map["noticeImg"]
     }
     
 }

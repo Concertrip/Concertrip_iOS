@@ -58,10 +58,8 @@ class ExploreVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getGradientBackground()
-        ThemeService.shared.getThemeList(name: "테마") { (value) in
-            self.themeList = value
-            self.tableView.reloadData()
-        }
+        getSearchThemeResult()
+        getSearchResult()
         collectionView.delegate = self
         collectionView.dataSource = self
         tableView.delegate = self
@@ -77,6 +75,12 @@ class ExploreVC: UIViewController {
          */
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getSearchThemeResult()
+        getSearchResult()
+    }
+
+    
     func getSearchResult() {
         SearchService.shared.getSearchResult(tag: menuList[selectedIdx]) { [weak self] (value) in
             print("network success")
@@ -84,6 +88,8 @@ class ExploreVC: UIViewController {
             let searchData = value as SearchObject
             guard let artists = searchData.artists else { return }
             self.artistList = artists
+            self.tableView.reloadData()
+            self.collectionView.reloadData()
             self.tableView.reloadData()
             self.collectionView.reloadData()
         }
@@ -98,6 +104,16 @@ class ExploreVC: UIViewController {
         }
     }
  */
+    
+    func getSearchThemeResult() {
+        ThemeService.shared.getThemeList(name: "테마") { (value) in
+            self.themeList = value
+            self.tableView.reloadData()
+            self.collectionView.reloadData()
+            self.tableView.reloadData()
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
@@ -108,11 +124,8 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCVCell", for: indexPath) as! ExploreCVCell
         let menu = menuList[indexPath.row]
-        print("이게 뭐지? ", menu)
         cell.menuLabel.text = menu
-        print("뭐가 눌리지? :", selectedIdx)
         if selectedIdx == indexPath.row {
-            print("뭐지정렬 : ",cell.menuLabel.text)
             cell.menuLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         }
         else {
@@ -125,11 +138,7 @@ extension ExploreVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIdx = indexPath.row
         if selectedIdx == 0 {
-            ThemeService.shared.getThemeList(name: "테마") { (value) in
-                self.themeList = value
-                self.tableView.reloadData()
-                self.collectionView.reloadData()
-            }
+            getSearchThemeResult()
         }
         else {
             getSearchResult()

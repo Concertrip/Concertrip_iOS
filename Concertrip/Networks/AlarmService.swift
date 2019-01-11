@@ -8,24 +8,29 @@
 import Foundation
 import Alamofire
 
-struct AlarmService: APIManager, Requestable{
-    typealias NetworkData = ResponseArray<Alarm>
+struct AlarmService: APIManager, Requestable {
+    typealias NetworkData = Alarm
     static let shared = AlarmService()
-    var alarmURL = url("/api/fcm/list")
+    let queryURL = url("/api/fcm/list")
     let header: HTTPHeaders = [
-        "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb25jZXJ0cmlwIiwidXNlcklkeCI6Mn0.Hc9kqk1lE4H1gMXxsTLt50GTP2wpPPv_x4TzuTMM2o8"
+        "Content-Type": "application/json",
+        "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb25jZXJ0cmlwIiwidXNlcklkeCI6MX0.qDnh3VXMVAoKzWqeXzDwH9heZoRbL1AO6dy2FgieviI"
     ]
     
-    func getAlarmList(completion: @escaping ([Alarm]) -> Void) {
-        gettable(alarmURL, body: nil, header: header) { (res) in
+    func getAlarmData(completion: @escaping ([Alarm]) -> Void) {
+        gettable(queryURL, body: nil, header: header) { (res) in
+            print("alarm Res : \(res)")
             switch res {
             case .success(let value):
-                guard let alarmList = value.data else
-                {return}
-                completion(alarmList)
+//                guard let ticketList = value. else
+//                {return}
+//                print("ticketList : \(ticketList.count)")
+                
+                completion([value])
             case .error(let error):
-                print(error)
+                print("에러엘어ㅔ러 : \(error)")
             }
         }
     }
 }
+

@@ -88,7 +88,7 @@ class InfConcert_2VC: UIViewController {
         //배경 그라데이션
         getGradientBackground()
         
-        scrollView.addSubview(infoImg)
+//        scrollView.addSubview(infoImg)
         scrollView.contentSize = infoImg.bounds.size
         
         print("detailId : \(gsno(detailId))")

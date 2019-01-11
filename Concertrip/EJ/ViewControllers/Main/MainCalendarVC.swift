@@ -87,7 +87,7 @@ class MainCalendarVC: UIViewController {
         let todayMonth = components.month
 
         print("뷰디드로드 getDotService")
-        getDotService(type: self.tapType, id: self.tapId, year: todayYear!, month: todayMonth!)
+        getDotService(type: "all", id: self.tapId, year: todayYear!, month: todayMonth!)
         getTableService(type: self.tapType, id: self.tapId, day: selectDay)
         
         //collectionView
@@ -178,8 +178,8 @@ class MainCalendarVC: UIViewController {
             self.tapList = data
             self.collectionView.reloadData()
         }
-//        print("뷰윌어피어 getDotService")
-//        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
+        print("뷰윌어피어 getDotService")
+        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
         getTableService(type: tapType, id: tapId, day: selectDay)
     }
     

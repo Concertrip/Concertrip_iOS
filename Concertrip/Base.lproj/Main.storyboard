@@ -260,6 +260,7 @@
                         <outlet property="menuView" destination="Xct-KG-mMr" id="SCD-eR-ov4"/>
                         <outlet property="monthLabel" destination="NAP-K2-9lx" id="Gdi-FO-Ni7"/>
                         <outlet property="nilView" destination="s5V-0b-BQc" id="ydz-Ek-6Js"/>
+                        <outlet property="tabBar" destination="E3n-fu-iTK" id="Qyr-Zp-z2H"/>
                         <outlet property="tableView" destination="KPN-v3-peB" id="lhB-B7-NgZ"/>
                     </connections>
                 </viewController>

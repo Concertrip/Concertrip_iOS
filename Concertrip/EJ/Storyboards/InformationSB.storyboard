@@ -1155,7 +1155,7 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Uq-hi-PDc">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Uq-hi-PDc">
                                                 <rect key="frame" x="16" y="1165" width="343" height="229"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="343" id="1RS-eJ-LQM"/>

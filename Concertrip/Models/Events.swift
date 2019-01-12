@@ -13,7 +13,7 @@ struct Events : Mappable {
     var eventId : String?
     var eventName : String?
     var eventProfileImg : String?
-    var eventFilter : [String]?
+    var eventTag : String?
     var eventSubscribe : Bool?
     
     init?(map: Map) {
@@ -25,7 +25,7 @@ struct Events : Mappable {
         eventId <- map["_id"]
         eventName <- map["name"]
         eventProfileImg <- map["profileImg"]
-        eventFilter <- map["filter"]
+        eventTag <- map["hashTag"]
         eventSubscribe <- map["subscribe"]
     }
     

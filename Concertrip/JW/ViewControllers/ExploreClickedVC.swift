@@ -250,6 +250,7 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
             cell.configureTwo(data: eventData)
             cell.nameLabel.text = eventData.eventName
             cell.profileImg.imageFromUrl(gsno(eventData.eventProfileImg), defaultImgPath: "")
+            cell.hashtagLabel.text = eventData.eventTag
             if eventData.eventSubscribe == false {
                 cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
             }

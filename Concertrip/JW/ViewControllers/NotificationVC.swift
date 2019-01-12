@@ -37,7 +37,7 @@ class NotificationVC: UIViewController {
 //        }
         NotificationService.shared.getNotification(){[weak self] (data) in
             guard let `self` = self else { return }
-            self.noticeList = data
+            self.noticeList = [data]
             self.noticeTable.reloadData()
         }
 

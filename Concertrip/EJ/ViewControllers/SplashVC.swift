@@ -25,19 +25,23 @@ class SplashVC: UIViewController {
         animationView.loopAnimation = false
         
         view.addSubview(animationView)
-            
-        animationView.play(completion: { (true) in
-            print("done playing")
-            
-            //메인뷰 뜨게하기
-//            if let tabViewController = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController") as? tabBarController {
-//                self.present(tabViewController, animated: true, completion: nil)
-//            }
-            
+        animationView.play(fromProgress: 0.0, toProgress: 0.35) { (true) in
             //튜토리얼뷰 뜨게하기
             let dvc = self.storyboard?.instantiateViewController(withIdentifier: "ZeroTabVC") as! ZeroTabVC
             self.present(dvc, animated: true, completion: nil)
-        })
+        }
+//        animationView.play(completion: { (true) in
+//            print("done playing")
+//
+//            //메인뷰 뜨게하기
+////            if let tabViewController = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController") as? tabBarController {
+////                self.present(tabViewController, animated: true, completion: nil)
+////            }
+//
+//            //튜토리얼뷰 뜨게하기
+//            let dvc = self.storyboard?.instantiateViewController(withIdentifier: "ZeroTabVC") as! ZeroTabVC
+//            self.present(dvc, animated: true, completion: nil)
+//        })
         
         getGradientBackground()
     }

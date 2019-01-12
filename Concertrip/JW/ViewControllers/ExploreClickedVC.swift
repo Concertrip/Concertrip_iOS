@@ -33,42 +33,7 @@ class ExploreClickedVC: UIViewController {
     var subscriptId : Int = 0
 
     @IBAction func okBtn(_ sender: Any) {
-        SearchService.shared.getSearchResult(tag: searchTxt.text!) { [weak self] (value) in
-            let searchData = value as SearchObject
-
-            if value.artists?.count == 0 && value.events?.count == 0 && value.genres?.count == 0 {
-                self?.noResultView.isHidden = false
-                self?.searchTableView.isHidden = true
-                self?.noResultLabel.text = "'\(self?.searchTxt.text! ?? "")'에 대한 결과가 없습니다"
-                self?.noResultBtn.layer.cornerRadius = 15
-                self?.noResultBtn.setTitle("'\(self?.searchTxt.text! ?? "")' 아티스트/콘서트 추가 요청하기'", for: .normal)
-                
-                self?.noResultBtn.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-                self?.noResultBtn.setTitleColor(#colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1), for: .normal)
-                
-                
-//                self?.noResultBtn.isEnabled = true
-
-            }
-            else {
-                self?.noResultView.isHidden = true
-                self?.searchTableView.isHidden = false
-                
-                
-                guard let `self` = self else { return }
-                
-                guard let artist = searchData.artists else {return}
-                self.artistList = artist
-                guard let event = searchData.events else {return}
-                self.eventList = event
-                guard let genre = searchData.genres else {return}
-                self.genresList = genre
-                
-                
-                
-                self.searchTableView.reloadData()
-            }
-        }
+        getDataAll()
     }
     @IBAction func backBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -106,6 +71,8 @@ class ExploreClickedVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         getGradientBackground()
         searchTableView.delegate = self
         searchTableView.dataSource = self
@@ -122,6 +89,16 @@ class ExploreClickedVC: UIViewController {
         searchTableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag;
         //table 클릭 시 키보드 Dismiss
         searchTableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.interactive;
+//        searchTxt.delegate = self as! UITextFieldDelegate
+
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTxt.resignFirstResponder()
+        return true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getDataAll()
     }
     func showKeyboard() {
         searchTxt.becomeFirstResponder()
@@ -137,6 +114,48 @@ class ExploreClickedVC: UIViewController {
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
         self.gradientView.layer.addSublayer(gradientLayer)
+    }
+    
+    func getDataAll() {
+        SearchService.shared.getSearchResult(tag: searchTxt.text!) { [weak self] (value) in
+            let searchData = value as SearchObject
+            
+            if value.artists?.count == 0 && value.events?.count == 0 && value.genres?.count == 0 {
+                self?.noResultView.isHidden = false
+                self?.searchTableView.isHidden = true
+                self?.noResultLabel.text = "'\(self?.searchTxt.text! ?? "")'에 대한 결과가 없습니다"
+                self?.noResultBtn.layer.cornerRadius = 15
+                self?.noResultBtn.setTitle("'\(self?.searchTxt.text! ?? "")' 아티스트/콘서트 추가 요청하기'", for: .normal)
+                
+                self?.noResultBtn.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                self?.noResultBtn.setTitleColor(#colorLiteral(red: 0.3490196078, green: 0.2431372549, blue: 1, alpha: 1), for: .normal)
+                
+                
+                //                self?.noResultBtn.isEnabled = true
+                
+            }
+            else {
+                self?.noResultView.isHidden = true
+                self?.searchTableView.isHidden = false
+                
+                
+                guard let `self` = self else { return }
+                
+                guard let artist = searchData.artists else {return}
+                self.artistList = artist
+                guard let event = searchData.events else {return}
+                self.eventList = event
+                guard let genre = searchData.genres else {return}
+                self.genresList = genre
+                
+                
+                
+                self.searchTableView.reloadData()
+            }
+            
+            self!.hideKeyboard()
+            
+        }
     }
 }
 

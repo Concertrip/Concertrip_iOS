@@ -42,39 +42,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G1Z-Dk-EGv">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G1Z-Dk-EGv">
                                                     <rect key="frame" x="16" y="11" width="47" height="47"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="G1Z-Dk-EGv" secondAttribute="height" multiplier="1:1" id="7Gg-rF-1Q2"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32V-mO-cef">
-                                                    <rect key="frame" x="72.5" y="11" width="288" height="17"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="288" id="JP4-X0-lS8"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HashTag" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs7-e5-4ig">
-                                                    <rect key="frame" x="72.5" y="42.5" width="277" height="14.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="277" id="LGh-jF-KO1"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4Ke-DW-iGR">
+                                                    <rect key="frame" x="71" y="18" width="288" height="33.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32V-mO-cef">
+                                                            <rect key="frame" x="0.0" y="0.0" width="288" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HashTag" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs7-e5-4ig">
+                                                            <rect key="frame" x="0.0" y="19" width="288" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="32V-mO-cef" firstAttribute="top" secondItem="G1Z-Dk-EGv" secondAttribute="top" id="AVm-GD-Sb3"/>
-                                                <constraint firstAttribute="bottom" secondItem="Cs7-e5-4ig" secondAttribute="bottom" constant="12" id="Gow-qd-e5a"/>
                                                 <constraint firstItem="G1Z-Dk-EGv" firstAttribute="centerY" secondItem="KlQ-Jx-IBF" secondAttribute="centerY" id="QdI-Vp-Vi6"/>
-                                                <constraint firstItem="32V-mO-cef" firstAttribute="leading" secondItem="G1Z-Dk-EGv" secondAttribute="trailing" constant="9.5" id="QhN-TJ-sCM"/>
-                                                <constraint firstItem="Cs7-e5-4ig" firstAttribute="leading" secondItem="32V-mO-cef" secondAttribute="leading" id="SB3-Sh-Dqk"/>
+                                                <constraint firstAttribute="trailing" secondItem="4Ke-DW-iGR" secondAttribute="trailing" constant="16" id="XHf-Tt-AP0"/>
                                                 <constraint firstItem="G1Z-Dk-EGv" firstAttribute="leading" secondItem="KlQ-Jx-IBF" secondAttribute="leading" constant="16" id="e5m-Us-SBH"/>
                                                 <constraint firstItem="G1Z-Dk-EGv" firstAttribute="top" secondItem="KlQ-Jx-IBF" secondAttribute="top" constant="11" id="kub-GW-Lld"/>
+                                                <constraint firstItem="4Ke-DW-iGR" firstAttribute="centerY" secondItem="G1Z-Dk-EGv" secondAttribute="centerY" id="pST-q4-Nmh"/>
+                                                <constraint firstItem="4Ke-DW-iGR" firstAttribute="leading" secondItem="G1Z-Dk-EGv" secondAttribute="trailing" constant="8" id="vXb-Sb-J33"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

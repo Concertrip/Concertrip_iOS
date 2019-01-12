@@ -38,6 +38,7 @@ class NotificationVC: UIViewController {
         NotificationService.shared.getNotification(){[weak self] (data) in
             guard let `self` = self else { return }
             self.noticeList = [data]
+            print("노티스 결과 : ", self.noticeList)
             self.noticeTable.reloadData()
         }
 
@@ -74,18 +75,18 @@ extension NotificationVC : UITableViewDelegate {
 
 extension NotificationVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("alarmList.count \(alarmList.count)")
-        return alarmList.count
+        return noticeList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = noticeTable.dequeueReusableCell(withIdentifier: "NoticeCell") as! NotificationVCCell
-        let alarm = alarmList[indexPath.row]
+        let notice = noticeList[indexPath.row]
         
-        cell.titleTxt.text = alarm.alarmTitle
-        cell.hashtagTxt.text = alarm.alarmBody
-        
+        cell.titleTxt.text = notice.noticeTitle
+        cell.hashtagTxt.text = notice.noticeBody
+        cell.profileImg.imageFromUrl(gsno(notice.noticeImg), defaultImgPath: "")
+
 
         cell.selectionStyle = .none
         

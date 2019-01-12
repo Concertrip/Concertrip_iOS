@@ -76,6 +76,42 @@ class InfThemeVC: UIViewController {
         }
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getThemeList()
+    }
+    
+    func getThemeList() {
+        DetailThemeService.shared.getThemeDetailList(id: detailId!) { [weak self](data) in
+            guard let `self` = self else { return }
+            let detailData = data as DetailTheme
+            guard let events = detailData.dThemeEventList else { return }
+            self.eventList = events
+            
+            let backImg = detailData.dThemeBackImg
+            let profileImg = detailData.dThemeProfileImg
+            let likeCount = String(detailData.dThemeSubscribeNum!)
+            let youtubeURL = detailData.dThemeYoutubeUrl
+            self.backgroundImg.imageFromUrl(backImg, defaultImgPath: "likeicon")
+            self.bigProfileImg.imageFromUrl(profileImg, defaultImgPath: "likeicon")
+            self.nameLabel.text = detailData.dThemeName
+            self.likeCountLabel.text = likeCount
+            self.youtubeView.loadVideoID(youtubeURL!)
+            
+            
+            print(detailData.dThemeId,"구독 ? : ", detailData.dThemeIsSubscribe!)
+            if detailData.dThemeIsSubscribe! == true {
+                self.isLikeBtnActivated = true
+                self.likeBtn.imageView?.image = UIImage(named : "infoLikeButtonActivated")
+            }
+            else {
+                self.isLikeBtnActivated = false
+                self.likeBtn.imageView?.image = UIImage(named: "infoLikeButton")
+            }
+            //            self.likeBtn.imageFromUrl()
+            self.tableView.reloadData()
+        }
+    }
     @IBAction func likeBtn(_ sender: Any) {
         SubscribeGenreService.shared.subscriptGenre(id: detailId!) {
             print("현재 좋아요 상황 : ", self.isLikeBtnActivated)

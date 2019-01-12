@@ -170,7 +170,9 @@ class ZeroTabVC: UIViewController {
     
     
     @IBAction func nextBtnAction(_ sender: Any) {
-        
+        if let tabViewController = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController") as? tabBarController {
+            self.present(tabViewController, animated: true, completion: nil)
+        }
     }
     
     func subscribeGenre(id : String){

@@ -235,6 +235,7 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
                     }
                     else {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        self.view.makeToast("캘린더에서 삭제되었습니다!")
                         artistData.artistSubscribe = false
                     }
                 }
@@ -265,6 +266,7 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
                     }
                     else {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        self.view.makeToast("캘린더에서 삭제되었습니다!")
                         genreData.genreSubscribe = false
                     }
                 }
@@ -287,12 +289,13 @@ extension ExploreClickedVC : UITableViewDelegate, UITableViewDataSource {
                 SubscribeEventService.shared.subscriptEvent(id: genreId) {
                     if eventData.eventSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
-                        self.view.makeToast("캘린더에 추가되었습니다!")
+                        self.view.makeToast("내 공연에 추가되었습니다!")
                         eventData.eventSubscribe = true
                     }
                     else {
                         cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
                         eventData.eventSubscribe = false
+                        self.view.makeToast("내 공연에서 삭제되었습니다!")
                     }
                     print(eventData.eventName, ": ", eventData.eventSubscribe)
                 }

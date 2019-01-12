@@ -220,11 +220,12 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
                     print("SubscribeTheme network working!")
                     if themeSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
-                        self.view.makeToast("내 공연에 추가되었습니다!")
+                        self.view.makeToast("캘린더에 추가되었습니다!")
                         themeData.themeSubscribe = true
                     }
                     else {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        self.view.makeToast("캘린더에서 삭제되었습니다!")
                         themeData.themeSubscribe = false
                     }
                 }
@@ -252,11 +253,12 @@ extension ExploreVC : UITableViewDataSource, UITableViewDelegate {
                     print("network working!")
                     if artistSubscribe == false {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
-                        self.view.makeToast("내 공연에 추가되었습니다!")
+                        self.view.makeToast("캘린더에 추가되었습니다!")
                         artistData.artistSubscribe = true
                     }
                     else {
                         cell.likeBtn.setImage(UIImage(named: "artistLikeButton"), for: .normal)
+                        self.view.makeToast("캘린더에서 삭제되었습니다!")
                         artistData.artistSubscribe = false
                     }
                 }

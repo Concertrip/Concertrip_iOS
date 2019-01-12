@@ -96,6 +96,7 @@ class InfSolo_ThemeVC: UIViewController {
             else {
                 self.likeBtn.imageView?.image = UIImage(named: "infoLikeButton")
                 self.getArtistService()
+                self.view.makeToast("내 공연에서 삭제되었습니다!")
                 self.isLikeBtnActivated = false
             }
         }

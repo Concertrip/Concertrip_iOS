@@ -124,6 +124,7 @@ class InfThemeVC: UIViewController {
             } else {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
                 self.isLikeBtnActivated = false
+                self.view.makeToast("내 공연에서 삭제되었습니다!")
                 self.getThemeList()
             }
         }

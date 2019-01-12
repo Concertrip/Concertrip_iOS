@@ -101,6 +101,7 @@ class InfGroupVC: UIViewController {
             } else {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
                 self.getGroupList()
+                self.view.makeToast("내 공연에서 삭제되었습니다!")
                 self.isLikeBtnActivated = false
             }
         }

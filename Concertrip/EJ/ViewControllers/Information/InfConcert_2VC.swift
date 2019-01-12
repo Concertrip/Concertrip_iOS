@@ -60,6 +60,7 @@ class InfConcert_2VC: UIViewController {
             } else {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoConcertLikeButton")
                 self.isLikeBtnActivated = false
+                self.view.makeToast("내 공연에서 삭제되었습니다!")
                 self.getEventList()
             }
         }
@@ -67,7 +68,7 @@ class InfConcert_2VC: UIViewController {
     
     @IBAction func reservationBtnAction(_ sender: Any) {
         ReservationService.shared.reservationTicket(id: detailId!) {
-            self.view.makeToast("내 티켓에 추가됐습니다.")
+            self.view.makeToast("내 티켓에 추가되었습니다.")
         }
     }
     @IBOutlet weak var reservationBtn: UIButton!

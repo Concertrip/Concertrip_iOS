@@ -61,7 +61,7 @@ extension TicketVC: UITableViewDelegate, UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TicketTVCell") as! TicketTVCell
         let ticket = ticketList[indexPath.row]
-        
+        cell.selectionStyle = .none
         if indexPath.row == 0 {
             cell.timeBarImg.image = UIImage(named: "timeBar1")
         } else if indexPath.row == ticketList.count - 1 {

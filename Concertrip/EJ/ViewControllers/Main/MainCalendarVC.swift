@@ -397,6 +397,7 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
                     self.view.makeToast("내 공연에 추가되었습니다!")
                 } else {
                     cell.likeBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
+                    self.view.makeToast("내 공연에서 삭제되었습니다!")
                     event.calendarSubscribe = false
                 }
             }

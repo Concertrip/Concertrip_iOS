@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExploreClickedVC: UIViewController {
+class ExploreClickedVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var searchTxt: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
@@ -72,7 +72,10 @@ class ExploreClickedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchTxt.delegate = self
+//        let doneBtn : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: Selector("okBtn"))
         
+//        textFieldShouldReturn(searchTxt)
         getGradientBackground()
         searchTableView.delegate = self
         searchTableView.dataSource = self
@@ -90,10 +93,13 @@ class ExploreClickedVC: UIViewController {
         //table 클릭 시 키보드 Dismiss
         searchTableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.interactive;
 //        searchTxt.delegate = self as! UITextFieldDelegate
-
+        
     }
+    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchTxt.resignFirstResponder()
+        textField.resignFirstResponder()
+        getDataAll()
         return true
     }
     

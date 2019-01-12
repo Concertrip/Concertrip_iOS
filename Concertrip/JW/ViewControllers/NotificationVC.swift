@@ -37,7 +37,7 @@ class NotificationVC: UIViewController {
 //        }
         NotificationService.shared.getNotification(){[weak self] (data) in
             guard let `self` = self else { return }
-            self.noticeList = [data]
+            self.noticeList = data
             print("노티스 결과 : ", self.noticeList)
             self.noticeTable.reloadData()
         }
@@ -74,7 +74,9 @@ extension NotificationVC : UITableViewDelegate {
 }
 
 extension NotificationVC : UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("개수 : ", noticeList.count)
         return noticeList.count
     }
     

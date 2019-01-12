@@ -18,14 +18,14 @@ struct NotificationService: APIManager, Requestable{
         "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb25jZXJ0cmlwIiwidXNlcklkeCI6MX0.qDnh3VXMVAoKzWqeXzDwH9heZoRbL1AO6dy2FgieviI"
     ]
     
-    func getNotification(completion: @escaping (Notifications) -> Void) {
+    func getNotification(completion: @escaping ([Notifications]) -> Void) {
         gettable(searchURL, body: nil, header: header) {
             (res) in
             switch res{
             case .success(let value):
                 guard let noticeList = value.data else
                 {return}
-                completion(noticeList[0])
+                completion(noticeList)
             case .error(let error):
                 print("에러에러 : \(error)")
             }

@@ -45,7 +45,13 @@ class InfSolo_ThemeVC: UIViewController {
         
         print("detailId : \(gsno(detailId))")
         
+        getArtistService()
         
+        
+        
+    }
+    
+    func getArtistService(){
         DetailArtistService.shared.getArtistDetailList(id: detailId!) { [weak self] (data) in
             guard let `self` = self else { return }
             
@@ -75,10 +81,8 @@ class InfSolo_ThemeVC: UIViewController {
             }
             self.tableView.reloadData()
             
-
+            
         }
-        
-        
     }
     
     @IBAction func likeBtnAction(_ sender: Any) {
@@ -87,9 +91,11 @@ class InfSolo_ThemeVC: UIViewController {
                 self.likeBtn.imageView?.image = UIImage(named : "infoLikeButtonActivated")
                 self.isLikeBtnActivated = true
                 self.view.makeToast("내 공연에 추가되었습니다!")
+                self.getArtistService()
             }
             else {
                 self.likeBtn.imageView?.image = UIImage(named: "infoLikeButton")
+                self.getArtistService()
                 self.isLikeBtnActivated = false
             }
         }

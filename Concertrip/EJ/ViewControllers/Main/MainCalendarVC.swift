@@ -382,7 +382,7 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
         if dailyList.count != 0 {
             cell.nameLabel.text = days.calendarName
             cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
-//            cell.hashLabel.text = days.calendarTag
+            cell.hashLabel.text = days.calendarTag
         }
         
         var event = dailyList[indexPath.row]

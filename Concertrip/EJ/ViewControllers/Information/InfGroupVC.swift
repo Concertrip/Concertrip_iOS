@@ -50,6 +50,11 @@ class InfGroupVC: UIViewController {
         collectionView.dataSource = self
         
         
+        getGroupList()
+        
+    }
+    
+    func getGroupList(){
         DetailArtistService.shared.getArtistDetailList(id: detailId!){
             [weak self] (data) in
             guard let `self` = self else { return }
@@ -84,7 +89,6 @@ class InfGroupVC: UIViewController {
             self.tableView.reloadData()
             self.collectionView.reloadData()
         }
-        
     }
     
     @IBAction func likeBtnAction(_ sender: Any) {
@@ -93,8 +97,10 @@ class InfGroupVC: UIViewController {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
                 self.isLikeBtnActivated = true
                 self.view.makeToast("내 공연에 추가되었습니다!")
+                self.getGroupList()
             } else {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
+                self.getGroupList()
                 self.isLikeBtnActivated = false
             }
         }

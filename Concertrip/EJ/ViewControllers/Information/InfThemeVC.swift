@@ -119,10 +119,12 @@ class InfThemeVC: UIViewController {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
                 self.isLikeBtnActivated = true
                 self.view.makeToast("내 공연에 추가되었습니다!")
+                self.getThemeList()
 
             } else {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButton")
                 self.isLikeBtnActivated = false
+                self.getThemeList()
             }
         }
     }

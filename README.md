@@ -2,6 +2,12 @@
 
 **개발 기간 : 2018년 12월 22일  ~ 2019년 1월 12일**
 
+## Contributors
+* [양어진](https://github.com/eojine)
+
+* [심지원](https://github.com/jiwonsim)
+
+
 > ![AppIcon](https://github.com/cchloe2311/Concertrip__Android/blob/master/Concertrip.png?raw=true)
 
 ## 프로젝트에 대하여
@@ -14,12 +20,6 @@
 ## Wireframe
 > ![kakaotalk_photo_2019-01-14-14-51-31](https://user-images.githubusercontent.com/28748103/51098260-b3feb880-180c-11e9-8e8e-fe3511cd0c54.png)
 
-
-
-## Contributors
-* [양어진](https://github.com/eojine)
-
-* [심지원](https://github.com/jiwonsim)
 
 ## [ Develop Environment ]
 

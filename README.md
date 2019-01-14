@@ -8,23 +8,18 @@
 ### What is Concertrip?
 * 가장 먼저 받아보는 콘서트 일정 구독 서비스
 
+## Views
+> ![kakaotalk_photo_2019-01-14-14-50-55](https://user-images.githubusercontent.com/28748103/51098148-4fdbf480-180c-11e9-93bb-ea3dc519cb98.png)
+
+## Wireframe
+> ![kakaotalk_photo_2019-01-14-14-51-31](https://user-images.githubusercontent.com/28748103/51098260-b3feb880-180c-11e9-8e8e-fe3511cd0c54.png)
 
 
-## 주요 뷰
-> ![AppViews](https://github.com/cchloe2311/Concertrip__Android/blob/master/views.png?raw=true)
 
 ## Contributors
 * [양어진](https://github.com/eojine)
 
 * [심지원](https://github.com/jiwonsim)
-
-## [ About ]
-가장 먼저 받아보는 콘서트 일정 구독 서비스 
-
-## [ View ]
-
-> ![AppViews](https://github.com/cchloe2311/Concertrip__Android/blob/master/views.png?raw=true)
-
 
 ## [ Develop Environment ]
 

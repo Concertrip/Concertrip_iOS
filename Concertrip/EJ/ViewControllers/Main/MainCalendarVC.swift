@@ -383,6 +383,8 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
             cell.nameLabel.text = days.calendarName
             cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
             cell.hashLabel.text = days.calendarTag
+            
+            print("days.calendarTag \(days.calendarTag)")
         }
         
         var event = dailyList[indexPath.row]

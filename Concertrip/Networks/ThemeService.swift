@@ -18,15 +18,12 @@ struct ThemeService : APIManager, Requestable{
     ]
     
     func getThemeList(name: String, completion: @escaping ([TabTheme]) -> Void) {
-        
         let themeURL = detailURL + "?name=\(name)"
         guard let searchURL = themeURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         gettable(searchURL, body: nil, header: header) { (res) in
-            print("결과는? : ", res)
             switch res {
             case .success(let value):
-                guard let tabTheme = value.data else
-                {return}
+                guard let tabTheme = value.data else { return }
                 completion(tabTheme)
             case .error(let error):
                 print(error)

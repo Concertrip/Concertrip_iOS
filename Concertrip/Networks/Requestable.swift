@@ -32,11 +32,12 @@ extension Requestable {
     }
     
     //서버에 post 요청을 보내는 함수
-    func postable(_ url: String, body: [String:Any]?, header: HTTPHeaders?, completion: @escaping (NetworkResult<NetworkData>) -> Void) {
+    func postable(_ url: String,
+                  body: [String:Any]?,
+                  header: HTTPHeaders?,
+                  completion: @escaping (NetworkResult<NetworkData>) -> Void) {
+        
         Alamofire.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseObject { (res: DataResponse<NetworkData>) in
-//            switch res.response?.statusCode {
-//            
-//            }
             switch res.result {
             case .success:
                 guard let value = res.result.value else { return }

@@ -22,10 +22,6 @@ struct AlarmService: APIManager, Requestable {
             print("alarm Res : \(res)")
             switch res {
             case .success(let value):
-//                guard let ticketList = value. else
-//                {return}
-//                print("ticketList : \(ticketList.count)")
-                
                 completion([value])
             case .error(let error):
                 print("에러엘어ㅔ러 : \(error)")

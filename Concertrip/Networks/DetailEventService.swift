@@ -18,18 +18,13 @@ struct DetailEventService: APIManager, Requestable{
         "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb25jZXJ0cmlwIiwidXNlcklkeCI6Mn0.Hc9kqk1lE4H1gMXxsTLt50GTP2wpPPv_x4TzuTMM2o8"
     ]
     
-    
     func getConcertDetailList(id: String, completion: @escaping (DetailConcert) -> Void) {
         let concertURL = detailURL + "?id=\(id)"
         print("id : \(id)")
         gettable(concertURL, body: nil, header: header) { (res) in
-            print("gettable안쪽입니다.")
             switch res {
             case .success(let value):
-                guard let detailList = value.data else
-                {   print("res : \(res)")
-                    return}
-                print("hello~?")
+                guard let detailList = value.data else { return }
                 completion(detailList)
             case .error(let error):
                 print("에러러러 : \(error)")

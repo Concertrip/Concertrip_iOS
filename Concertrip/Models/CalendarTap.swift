@@ -9,20 +9,16 @@
 import Foundation
 import ObjectMapper
 
-struct CalendarTap : Mappable {
-    var calTapId : String?
-    var calTapType : String?
-    var calTapName : String?
+struct CalendarTap: Mappable {
+    var calTapId: String?
+    var calTapType: String?
+    var calTapName: String?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        
         calTapId <- map["_id"]
         calTapType <- map["type"]
         calTapName <- map["name"]
     }
-    
 }

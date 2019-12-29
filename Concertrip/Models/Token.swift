@@ -12,8 +12,7 @@ import ObjectMapper
 struct Token: Mappable {
     
     var token: String?
-    
-    init?(map: Map) {}
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
         token <- map["token"]

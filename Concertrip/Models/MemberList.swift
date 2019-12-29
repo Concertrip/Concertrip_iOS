@@ -9,20 +9,17 @@
 import Foundation
 import ObjectMapper
 
-struct MemberList : Mappable {
-    var memId : String?
-    var memName : String?
-    var memProfileImg : String?
-    var memSubscribe : Bool?
-    var memTag : String?
-    var memGroup : Bool?
+struct MemberList: Mappable {
+    var memId: String?
+    var memName: String?
+    var memProfileImg: String?
+    var memSubscribe: Bool?
+    var memTag: String?
+    var memGroup: Bool?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        
         memId <- map["_id"]
         memName <- map["name"]
         memProfileImg <- map["profileImg"]
@@ -30,5 +27,4 @@ struct MemberList : Mappable {
         memTag <- map["tag"]
         memGroup <- map["group"]
     }
-    
 }

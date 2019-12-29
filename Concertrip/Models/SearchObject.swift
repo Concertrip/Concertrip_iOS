@@ -10,17 +10,14 @@
 import Foundation
 import ObjectMapper
 
-struct SearchObject : Mappable {
-    var artists : [Artists]?
-    var events : [Events]?
-    var genres : [Genres]?
+struct SearchObject: Mappable {
+    var artists: [Artists]?
+    var events: [Events]?
+    var genres: [Genres]?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        
         artists <- map["artists"]
         events <- map["events"]
         genres <- map["genres"]

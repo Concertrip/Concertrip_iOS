@@ -9,24 +9,19 @@
 import Foundation
 import ObjectMapper
 
-struct Artists : Mappable {
-    var artistId : String?
-    var artistName : String?
-    var artistProfileImg : String?
-//    var artistFilter : [String]?
-    var artistSubscribe : Bool?
-    var artistIsGroup : Bool?
+struct Artists: Mappable {
+    var artistId: String?
+    var artistName: String?
+    var artistProfileImg: String?
+    var artistSubscribe: Bool?
+    var artistIsGroup: Bool?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        
         artistId <- map["_id"]
         artistName <- map["name"]
         artistProfileImg <- map["profileImg"]
-//        artistFilter <- map["filter"]
         artistSubscribe <- map["subscribe"]
         artistIsGroup <- map["group"]
     }

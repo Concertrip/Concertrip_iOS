@@ -9,21 +9,18 @@
 import Foundation
 import ObjectMapper
 
-struct CalendarList : Mappable {
-    var calendarId : String?
-    var calendarTabId : String?
-    var calendarName : String?
-    var calendarProfileImg : String?
-    var calendarDate : [String]?
-    var calendarTag : String?
-    var calendarSubscribe : Bool?
+struct CalendarList: Mappable {
+    var calendarId: String?
+    var calendarTabId: String?
+    var calendarName: String?
+    var calendarProfileImg: String?
+    var calendarDate: [String]?
+    var calendarTag: String?
+    var calendarSubscribe: Bool?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        
         calendarId <- map["_id"]
         calendarTabId <- map["tabId"]
         calendarName <- map["name"]
@@ -32,5 +29,4 @@ struct CalendarList : Mappable {
         calendarTag <- map["hashTag"]
         calendarSubscribe <- map["subscribe"]
     }
-    
 }

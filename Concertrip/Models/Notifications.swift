@@ -9,20 +9,17 @@
 import Foundation
 import ObjectMapper
 
-struct Notifications : Mappable {
-    var noticeId : Int?
-    var userIdx : Int?
-    var noticeTitle : String?
-    var noticeBody : String?
-    var noticeCreatedAt : String?
-    var noticeImg : String?
+struct Notifications: Mappable {
+    var noticeId: Int?
+    var userIdx: Int?
+    var noticeTitle: String?
+    var noticeBody: String?
+    var noticeCreatedAt: String?
+    var noticeImg: String?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        
         noticeId <- map["id"]
         userIdx <- map["userIdx"]
         noticeTitle <- map["title"]
@@ -30,5 +27,4 @@ struct Notifications : Mappable {
         noticeCreatedAt <- map["createdAt"]
         noticeImg <- map["noticeImg"]
     }
-    
 }

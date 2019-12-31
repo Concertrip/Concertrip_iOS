@@ -15,7 +15,7 @@ struct ResponseObject<T: Mappable>: Mappable {
     var message: String?
     var data: T?
     
-    init?(map: Map) {}
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
         status <- map["status"]

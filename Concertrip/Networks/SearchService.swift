@@ -18,9 +18,8 @@ struct SearchService: APIManager, Requestable{
         "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb25jZXJ0cmlwIiwidXNlcklkeCI6Mn0.Hc9kqk1lE4H1gMXxsTLt50GTP2wpPPv_x4TzuTMM2o8"
     ]
     
-    
-
-    func getSearchResult(tag: String, completion: @escaping (SearchObject) -> Void) {
+    func getSearchResult(tag: String,
+                         completion: @escaping (SearchObject) -> Void) {
         let queryURL = searchURL + "?tag=\(tag)"
         guard let searchURL = queryURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         gettable(searchURL, body: nil, header: header) {
@@ -30,7 +29,7 @@ struct SearchService: APIManager, Requestable{
                 guard let searchData = value.data else{return}
                 completion(searchData)
             case .error(let error):
-                print("에러에러 : \(error)")
+                print("\(error)")
             }
         }
     }

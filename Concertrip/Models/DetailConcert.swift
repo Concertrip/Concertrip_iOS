@@ -9,28 +9,25 @@
 import Foundation
 import ObjectMapper
 
-struct DetailConcert : Mappable {
-    var dConcertId : String?
-    var dConcertSubscribe : Bool?
-    var dConcertProfileImg : String?
-    var dConcertBackImg : String?
-    var dConcertName : String?
-    var dConcertSubscribeNum : Int?
-    var dConcertYoutubeUrl : String?
-    var dConcertLocation : String?
-    var dConcertMemberList : [MemberList]?
-    var dConcertDate : [String]?
-    var dConcertSeatName : [String]?
-    var dConcertSeatPrice : [String]?
-    var dConcertPrecautionList : [PrecautionList]?
-    var dConcertEventInfoImg : String?
+struct DetailConcert: Mappable {
+    var dConcertId: String?
+    var dConcertSubscribe: Bool?
+    var dConcertProfileImg: String?
+    var dConcertBackImg: String?
+    var dConcertName: String?
+    var dConcertSubscribeNum: Int?
+    var dConcertYoutubeUrl: String?
+    var dConcertLocation: String?
+    var dConcertMemberList: [MemberList]?
+    var dConcertDate: [String]?
+    var dConcertSeatName: [String]?
+    var dConcertSeatPrice: [String]?
+    var dConcertPrecautionList: [PrecautionList]?
+    var dConcertEventInfoImg: String?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        
         dConcertId <- map["_id"]
         dConcertSubscribe <- map["subscribe"]
         dConcertProfileImg <- map["profileImg"]
@@ -46,5 +43,4 @@ struct DetailConcert : Mappable {
         dConcertPrecautionList <- map["precautionList"]
         dConcertEventInfoImg <- map["eventInfoImg"]
     }
-    
 }

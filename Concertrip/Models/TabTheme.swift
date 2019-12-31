@@ -9,21 +9,18 @@
 import Foundation
 import ObjectMapper
 
-struct TabTheme : Mappable {
-    var themeId : String?
-    var themeName : String?
-    var themeProfileImg : String?
-    var themeSubscribe : Bool?
-    var themeTag : String?
-    var themeGroup : Bool?
-    var themeHashtag : String?
+struct TabTheme: Mappable {
+    var themeId: String?
+    var themeName: String?
+    var themeProfileImg: String?
+    var themeSubscribe: Bool?
+    var themeTag: String?
+    var themeGroup: Bool?
+    var themeHashtag: String?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        
         themeId <- map["_id"]
         themeName <- map["name"]
         themeProfileImg <- map["profileImg"]
@@ -32,5 +29,4 @@ struct TabTheme : Mappable {
         themeGroup <- map["group"]
         themeHashtag <- map["hashtag"]
     }
-    
 }

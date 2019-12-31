@@ -30,7 +30,5 @@ struct SubscribeArtistService: APIManager, Requestable{
                 print(error)
             }
         }
-        
     }
-    
 }

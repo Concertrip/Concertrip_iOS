@@ -15,7 +15,7 @@ struct Ticket: Mappable {
     var message: String?
     var ticketData: [String]?
     
-    init?(map: Map) {}
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
         status <- map["status"]

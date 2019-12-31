@@ -9,23 +9,18 @@
 import Foundation
 import ObjectMapper
 
-struct Genres : Mappable {
-    var genreId : String?
-    var genreName : String?
-    var genreProfileImg : String?
-//    var genreFilter : [String]?
+struct Genres: Mappable {
+    var genreId: String?
+    var genreName: String?
+    var genreProfileImg: String?
     var genreSubscribe : Bool?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        
         genreId <- map["_id"]
         genreName <- map["name"]
         genreProfileImg <- map["profileImg"]
-//        genreFilter <- map["filter"]
         genreSubscribe <- map["subscribe"]
     }
     

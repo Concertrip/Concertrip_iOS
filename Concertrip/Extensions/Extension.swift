@@ -15,13 +15,7 @@ extension CVDate {
     public var koreanDescription: String {
         return "\(month)"
     }
-//    public var commonDescription: String {
-//        let month = dateFormattedStringWithFormat("MMMM", fromDate: date)
-//        return "\(day) \(month), \(year)"
-//    }
 }
-
-
 
 extension NSObject {
     

@@ -9,22 +9,19 @@
 import Foundation
 import ObjectMapper
 
-struct DetailTheme : Mappable {
-    var dThemeId : String?
-    var dThemeProfileImg : String?
-    var dThemeBackImg : String?
-    var dThemeName : String?
-    var dThemeIsSubscribe : Bool?
-    var dThemeSubscribeNum : Int?
-    var dThemeYoutubeUrl : String?
-    var dThemeEventList : [EventList]?
+struct DetailTheme: Mappable {
+    var dThemeId: String?
+    var dThemeProfileImg: String?
+    var dThemeBackImg: String?
+    var dThemeName: String?
+    var dThemeIsSubscribe: Bool?
+    var dThemeSubscribeNum: Int?
+    var dThemeYoutubeUrl: String?
+    var dThemeEventList: [EventList]?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        
         dThemeId <- map["_id"]
         dThemeProfileImg <- map["profileImg"]
         dThemeBackImg <- map["backImg"]

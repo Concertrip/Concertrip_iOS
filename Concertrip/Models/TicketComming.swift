@@ -9,23 +9,20 @@
 import Foundation
 import ObjectMapper
 
-struct TicketComming : Mappable {
-    var ticketId : Int?
-    var ticketName : String?
-    var ticketLocation : String?
-    var ticketDate : String?
-    var ticketSeat : String?
-    var ticketUserIdx : Int?
-    var ticketEventId : String?
-    var ticketNow : String?
-    var ticketPurchaseUrl : String?
+struct TicketComming: Mappable {
+    var ticketId: Int?
+    var ticketName: String?
+    var ticketLocation: String?
+    var ticketDate: String?
+    var ticketSeat: String?
+    var ticketUserIdx: Int?
+    var ticketEventId: String?
+    var ticketNow: String?
+    var ticketPurchaseUrl: String?
     
-    init?(map: Map) {
-        
-    }
+    init?(map: Map) { }
     
     mutating func mapping(map: Map) {
-        
         ticketId <- map["_id"]
         ticketName <- map["name"]
         ticketLocation <- map["location"]
@@ -36,5 +33,4 @@ struct TicketComming : Mappable {
         ticketNow <- map["now"]
         ticketPurchaseUrl <- map["purchaseUrl"]
     }
-    
 }

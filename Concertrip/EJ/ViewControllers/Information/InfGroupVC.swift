@@ -142,12 +142,10 @@ extension InfGroupVC: UITableViewDelegate, UITableViewDataSource {
             SubscribeEventService.shared.subscriptEvent(id: concertId){
                 if event.eventSubscribe == false {
                     cell.addBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
-                    //                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButtonActivated")
                     event.eventSubscribe = true
                     self.view.makeToast("내 공연에 추가되었습니다!")
                 } else {
                     cell.addBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
-                    //                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButton")
                     event.eventSubscribe = false
                 }
             }
@@ -168,7 +166,6 @@ extension InfGroupVC: UITableViewDelegate, UITableViewDataSource {
 
 extension InfGroupVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("멤버수 : ", memberList.count)
         return memberList.count
     }
 

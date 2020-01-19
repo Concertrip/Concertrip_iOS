@@ -38,7 +38,7 @@ class InfConcertVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("detailId : \(gsno(detailId))")
+        
         bigProfileImg.circleImageView()
         DetailEventService.shared.getConcertDetailList(id: detailId!) { [weak self] (data) in
             guard let `self` = self else { return }
@@ -46,13 +46,10 @@ class InfConcertVC: UIViewController {
             guard let members = detailData.dConcertMemberList else { return }
             self.memberList = members
             
-            print("memberList : \(self.memberList)")
-            
             for data in detailData.dConcertDate! {
                 self.dateTxt += data + "\n"
             }
             
-            print("dateTxt : \(self.dateTxt)")
             self.concertDateLabel.text = self.dateTxt
             self.concertLocationLabel.text = detailData.dConcertLocation
             self.bigProfileImg.imageFromUrl(detailData.dConcertProfileImg, defaultImgPath: "")
@@ -64,15 +61,12 @@ class InfConcertVC: UIViewController {
             self.performImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
             
             for data in detailData.dConcertSeatName! {
-                print("seatname : \(data)")
                 self.seatNameList.append(data)
             }
             for data in detailData.dConcertSeatPrice! {
-                print("price : \(data)")
                 self.seatPriceList.append(data)
             }
             
-            print("공연 디테일 데이터: ", detailData)
             if detailData.dConcertSubscribe! == true {
                 self.likeBtn.imageView?.image = UIImage(named: "infoLikeButtonActivated")
                 self.isLikeBtnActivated = true
@@ -81,7 +75,6 @@ class InfConcertVC: UIViewController {
                 self.likeBtn.imageView?.image = UIImage(named: "infoLikeButton")
                 self.isLikeBtnActivated = false
             }
-
             self.performImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
             
             self.performerCollectionView.reloadData()
@@ -90,8 +83,6 @@ class InfConcertVC: UIViewController {
         
         performerCollectionView.delegate = self
         performerCollectionView.dataSource = self
-        //        cautionCollectionView.delegate = self
-        //        cautionCollectionView.dataSource = self
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -118,7 +109,6 @@ class InfConcertVC: UIViewController {
 
 extension InfConcertVC : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("memberList.count : \(memberList.count)")
         return memberList.count
     }
 
@@ -129,7 +119,6 @@ extension InfConcertVC : UICollectionViewDelegate, UICollectionViewDataSource{
         cell.performerImg.imageFromUrl(gsno(member.memProfileImg), defaultImgPath: "likebtn")
         cell.performerNameLabel.text = member.memName
         
-        
         return cell
     }
 }
@@ -137,12 +126,13 @@ extension InfConcertVC : UICollectionViewDelegate, UICollectionViewDataSource{
 
 extension InfConcertVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("seatPriceList.count : \(seatPriceList.count)")
         return seatPriceList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfTicketPriceTVCell") as! InfTicketPriceTVCell
+        
         let price = seatPriceList[indexPath.row]
         let name = seatNameList[indexPath.row]
         

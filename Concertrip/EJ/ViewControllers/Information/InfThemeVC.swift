@@ -23,10 +23,10 @@ class InfThemeVC: UIViewController {
     var isLikeBtnActivated = false
     var detailId : String?
     var eventList = [EventList]()
-//    var eventComing = [Events]()
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
     //그라데이션 배경
     func getGradientBackground(){
         let gradientLayer:CAGradientLayer = CAGradientLayer()
@@ -42,8 +42,6 @@ class InfThemeVC: UIViewController {
         bigProfileImg.circleImageView()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        print("theme detailId : \(gsno(detailId))")
         
         DetailThemeService.shared.getThemeDetailList(id: detailId!) { [weak self](data) in
             guard let `self` = self else { return }
@@ -61,8 +59,6 @@ class InfThemeVC: UIViewController {
             self.likeCountLabel.text = likeCount
             self.youtubeView.loadVideoID(youtubeURL!)
             
-            
-            print(detailData.dThemeId,"구독 ? : ", detailData.dThemeIsSubscribe!)
             if detailData.dThemeIsSubscribe! == true {
                 self.isLikeBtnActivated = true
                 self.likeBtn.imageView?.image = UIImage(named : "infoLikeButtonActivated")
@@ -71,7 +67,6 @@ class InfThemeVC: UIViewController {
                 self.isLikeBtnActivated = false
                 self.likeBtn.imageView?.image = UIImage(named: "infoLikeButton")
             }
-            //            self.likeBtn.imageFromUrl()
             self.tableView.reloadData()
         }
         
@@ -98,8 +93,6 @@ class InfThemeVC: UIViewController {
             self.likeCountLabel.text = likeCount
             self.youtubeView.loadVideoID(youtubeURL!)
             
-            
-            print(detailData.dThemeId,"구독 ? : ", detailData.dThemeIsSubscribe!)
             if detailData.dThemeIsSubscribe! == true {
                 self.isLikeBtnActivated = true
                 self.likeBtn.imageView?.image = UIImage(named : "infoLikeButtonActivated")
@@ -108,13 +101,12 @@ class InfThemeVC: UIViewController {
                 self.isLikeBtnActivated = false
                 self.likeBtn.imageView?.image = UIImage(named: "infoLikeButton")
             }
-            //            self.likeBtn.imageFromUrl()
             self.tableView.reloadData()
         }
     }
     @IBAction func likeBtn(_ sender: Any) {
         SubscribeGenreService.shared.subscriptGenre(id: detailId!) {
-            print("현재 좋아요 상황 : ", self.isLikeBtnActivated)
+            
             if self.isLikeBtnActivated == false {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoLikeButtonActivated")
                 self.isLikeBtnActivated = true
@@ -158,12 +150,10 @@ extension InfThemeVC: UITableViewDataSource, UITableViewDelegate {
             SubscribeEventService.shared.subscriptEvent(id: concertId){
                 if event.eventSubscribe == false {
                     cell.addBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
-//                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButtonActivated")
                     event.eventSubscribe = true
                     self.view.makeToast("내 공연에 추가되었습니다!")
                 } else {
                     cell.addBtn.setImage(UIImage(named: "concertLikeButton"), for: .normal)
-//                    cell.addBtn.imageView?.image =  UIImage(named: "concertLikeButton")
                     event.eventSubscribe = false
                 }
             }

@@ -33,35 +33,6 @@ class ZeroTabVC: UIViewController {
     var jazzIsSelect = false
     var rockIsSelect = false
     
-    /*
-     5c373797edc59445b3dbca4a
-     "힙합 공연 모음"
-     
-     5c373797edc59445b3dbca4b
-     "아이돌 공연 모음"
-     
-     5c373797edc59445b3dbca4c
-     "뮤직 페스티벌 공연 모음"
-     
-     5c373797edc59445b3dbca4d
-     "EDM 페스티벌 모음"
-     
-     5c373797edc59445b3dbca4e
-     "내한 공연 모음"
-     
-     5c373797edc59445b3dbca4f
-     "발라드/R&B 공연 모음"
-     
-     5c373797edc59445b3dbca50
-     "재즈 공연 모음"
-     
-     5c373797edc59445b3dbca51
-     "인디 공연 모음"
-     
-     5c373797edc59445b3dbca52
-     "락 공연 모음"
-*/
-    
     @IBAction func musicFestBtn(_ sender: Any) {
         if musicIsSelect == false {
             musicGradation.isHidden = false

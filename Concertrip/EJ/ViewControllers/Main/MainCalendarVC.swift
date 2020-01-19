@@ -56,10 +56,8 @@ class MainCalendarVC: UIViewController {
         didSet { //menuStatus의 값이 변경된 후에 호출됩니다.
             if !tableIsVisible {
                 tableView.isUserInteractionEnabled = false
-//                print(tableView.isUserInteractionEnabled)
             } else {
                 tableView.isUserInteractionEnabled = true
-//                print(tableView.isUserInteractionEnabled)
             }
         }
     }
@@ -86,7 +84,6 @@ class MainCalendarVC: UIViewController {
         let todayYear =  components.year
         let todayMonth = components.month
 
-        print("뷰디드로드 getDotService")
         getDotService(type: "all", id: self.tapId, year: todayYear!, month: todayMonth!)
         getTableService(type: self.tapType, id: self.tapId, day: selectDay)
         
@@ -104,12 +101,6 @@ class MainCalendarVC: UIViewController {
         if let currentCalendar = currentCalendar {
             monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).koreanDescription
         }
-        
-        //그라데이션
-//        monthLabel.setTextColorToGradient(image: UIImage(named: "gradation")!)
-        
-        
-        
     }
     
     func getDotService(type : String, id: String, year: Int, month: Int){
@@ -151,10 +142,7 @@ class MainCalendarVC: UIViewController {
                     
                 }
             }
-            print("어레이입니다 : ", self.dayArr)
             self.index = self.dayArr.count
-            
-            print("self.index 입니당ㅋㅋ : \(self.index)")
             self.calendarView.contentController.refreshPresentedMonth()
             self.tableView.reloadData()
             
@@ -168,7 +156,6 @@ class MainCalendarVC: UIViewController {
             self.tableView.reloadData()
             self.calendarView.commitCalendarViewUpdate()
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -178,7 +165,6 @@ class MainCalendarVC: UIViewController {
             self.tapList = data
             self.collectionView.reloadData()
         }
-        print("뷰윌어피어 getDotService")
         getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
         getTableService(type: tapType, id: tapId, day: selectDay)
         
@@ -200,7 +186,6 @@ class MainCalendarVC: UIViewController {
         self.gradientView.layer.addSublayer(gradientLayer)
     }
 }
-//#colorLiteral(red: 0.05882352941, green: 0.06274509804, blue: 0.09019607843, alpha: 1)
 
 //MARK: Calendar Extension
 
@@ -216,7 +201,6 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
     func shouldShowWeekdaysOut() -> Bool { return shouldShowDaysOut }
     func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {
         return UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
-//        weekday == .sunday || weekday == .saturday ?
     }
     func weekdaySymbolType() -> WeekdaySymbolType {
         return .short
@@ -266,22 +250,16 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
             self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
             
         }
-//        tapType = "all"
-//        print("tapTypeDateUpdate : \(tapType)")
-//        tapId = ""
         thisMonth = date.month
         thisYear = date.year
-//        getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
     }
 
     func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool {
-//        print("index : ", index)
         year_ = dayView.date.year
         month_ = dayView.date.month
         day_ = dayView.date.day
 
         for i in 0 ..< index {
-//                print(yearArr[i], "년", monthArr[i], "월", dayArr[i], "일")
             if year_ == yearArr[i] && month_ == monthArr[i] && day_ == dayArr[i] {
                 return true
             }
@@ -291,23 +269,6 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
     
     
     func dotMarker(colorOnDayView dayView: DayView) -> [UIColor]{
-//        switch dayView.date.day {
-//        case 11:
-//            return [UIColor.orange]
-//        case 12:
-//            return [UIColor.orange, UIColor.green]
-//        default:
-//            return [UIColor.orange, UIColor.green, UIColor.blue]
-//        }
-
-//        print("tapType \(tapType)")
-//        if tapType == "내 공연" {
-//            return [UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)),UIColor(cgColor: #colorLiteral(red: 0.09645249695, green: 0.7349390388, blue: 1, alpha: 1))]
-//        } else {
-//            print("엘스")
-//            return [UIColor(cgColor: #colorLiteral(red: 0.1058823529, green: 0.7333333333, blue: 1, alpha: 1))]
-//        }
-        
         return [UIColor(cgColor: #colorLiteral(red: 0.1058823529, green: 0.7333333333, blue: 1, alpha: 1))]
     }
     
@@ -326,7 +287,6 @@ extension MainCalendarVC: CVCalendarMenuViewDelegate, CVCalendarViewDelegate, CV
         sDay = dayView
         selectDay = sDay.date.day
         getTableService(type: tapType, id: tapId, day: selectDay)
-        print("디드셀렉트데이뷰 getDotService")
         getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
         
         tableView.reloadData()
@@ -359,15 +319,12 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
             nilView.isHidden = true
             return dailyList.count
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCalendarTVCell") as! MainCalendarTVCell
         let days = dailyList[indexPath.row]
         
-        print("이름 : ", days.calendarName, "구독 : ", days.calendarSubscribe!, "해시태그 : ", days.calendarTag)
         if days.calendarSubscribe == false {
             cell.likeBtn.imageView?.image = UIImage(named: "concertLikeButton")
         }
@@ -376,15 +333,11 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
         }
         
         cell.selectionStyle = .none
-        print("selectDay는 ? \(selectDay)")
-
         
         if dailyList.count != 0 {
             cell.nameLabel.text = days.calendarName
             cell.profileImg.imageFromUrl(gsno(days.calendarProfileImg), defaultImgPath: "")
             cell.hashLabel.text = days.calendarTag
-            
-            print("days.calendarTag \(days.calendarTag)")
         }
         
         var event = dailyList[indexPath.row]
@@ -392,7 +345,6 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
         cell.configure(data: event)
         cell.subscribeHandler = {(concertId) in
             SubscribeEventService.shared.subscriptEvent(id: concertId){
-                print("콘서트 아이디 : ", concertId)
                 if event.calendarSubscribe == false {
                     cell.likeBtn.setImage(UIImage(named: "concertLikeButtonActivated"), for: .normal)
                     event.calendarSubscribe = true
@@ -404,8 +356,6 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
                 }
             }
         }
-        
-        
         return cell
     }
     
@@ -417,11 +367,8 @@ extension MainCalendarVC: UITableViewDelegate, UITableViewDataSource{
         let days = dailyList[indexPath.row]
         dvc.detailId = days.calendarId
         
-        
         self.present(dvc, animated: true, completion: nil)
     }
-    
-    
 }
 
 //MARK: collectionView Extension
@@ -438,8 +385,6 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        print("taplist.count : \(tapList.count)")
-       
         return tapList.count
     }
     
@@ -466,14 +411,12 @@ extension MainCalendarVC: UICollectionViewDataSource, UICollectionViewDelegate{
         tapType = menu.calTapType!
         tapId = menu.calTapId!
         
-        print("디드셀렉트아이템엣 getDotService")
         getDotService(type: tapType, id: tapId, year: thisYear, month: thisMonth)
         getTableService(type: tapType, id: tapId, day: selectDay)
         self.collectionView.reloadData()
         self.tableView.reloadData()
     }
 }
-
 
 extension MainCalendarVC: UICollectionViewDelegateFlowLayout{
     func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
@@ -483,15 +426,3 @@ extension MainCalendarVC: UICollectionViewDelegateFlowLayout{
         return CGSize(width: width+25, height: 26)
     }
 }
-
-//그라데이션
-//extension UILabel {
-//    func setTextColorToGradient(image: UIImage) {
-//        UIGraphicsBeginImageContext(frame.size)
-//        image.draw(in: bounds)
-//        let myGradient = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//
-//        self.textColor = UIColor(patternImage: myGradient!)
-//    }
-//}

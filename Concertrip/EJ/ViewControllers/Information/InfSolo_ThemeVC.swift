@@ -20,6 +20,7 @@ class InfSolo_ThemeVC: UIViewController {
     @IBOutlet weak var bigProfileImg: UIImageView!
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var gradientView: UIView!
+    
     var isLikeBtnActivated = false
     var detailId : String?
     var eventList = [EventList]()
@@ -27,6 +28,7 @@ class InfSolo_ThemeVC: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
     //그라데이션 배경
     func getGradientBackground(){
         let gradientLayer:CAGradientLayer = CAGradientLayer()
@@ -42,13 +44,8 @@ class InfSolo_ThemeVC: UIViewController {
         bigProfileImg.circleImageView()
         tableView.dataSource = self
         tableView.delegate = self
-        
-        print("detailId : \(gsno(detailId))")
-        
+
         getArtistService()
-        
-        
-        
     }
     
     func getArtistService(){

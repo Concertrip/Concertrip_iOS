@@ -15,9 +15,6 @@ class SplashVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        user 3번 토큰!
-//        eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb25jZXJ0cmlwIiwidXNlcklkeCI6M30.bhZBALpki1bnn-WISKrI-CVFU-9NhrYNIZgIKAHN-YA
-        
         let animationView = LOTAnimationView(name: "data")
         animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
         animationView.center = self.view.center
@@ -30,19 +27,7 @@ class SplashVC: UIViewController {
             let dvc = self.storyboard?.instantiateViewController(withIdentifier: "ZeroTabVC") as! ZeroTabVC
             self.present(dvc, animated: true, completion: nil)
         }
-//        animationView.play(completion: { (true) in
-//            print("done playing")
-//
-//            //메인뷰 뜨게하기
-////            if let tabViewController = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController") as? tabBarController {
-////                self.present(tabViewController, animated: true, completion: nil)
-////            }
-//
-//            //튜토리얼뷰 뜨게하기
-//            let dvc = self.storyboard?.instantiateViewController(withIdentifier: "ZeroTabVC") as! ZeroTabVC
-//            self.present(dvc, animated: true, completion: nil)
-//        })
-        
+
         getGradientBackground()
     }
     

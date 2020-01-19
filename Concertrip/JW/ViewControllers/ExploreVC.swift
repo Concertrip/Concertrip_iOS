@@ -14,12 +14,7 @@ class ExploreVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gradientView: UIView!
     @IBAction func searchBtn(_ sender: Any) {
-        //performSegue(withIdentifier: "searchPush", sender: self)
-        /*
-         //present
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ExploreClickedVC") as! ExploreClickedVC
-        self.(nextVC, animated: true)
-        */
+
         //push
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ExploreClickedVC") as! ExploreClickedVC
         navigationController?.pushViewController(vc,
@@ -33,22 +28,12 @@ class ExploreVC: UIViewController {
     var isLikeBtnActivated = false
     
     @IBAction func likeBtnAction(_ sender: UIButton) {
-        
-//        if isLikeBtnActivated == false {
-//            sender.setImage(UIImage(named: "artistLikeButtonActivated"), for: .normal)
-//            self.view.makeToast("내 공연에 추가되었습니다!")
-//            self.isLikeBtnActivated = true
-//
-//        } else {
-//            sender.setImage(UIImage(named: "artistLikeButton"), for: .normal)
-//            self.isLikeBtnActivated = false
-//        }
+
     }
     
     
     var selectedIdx = Int ()
-    //[모두] [테마] [보이그룹] [걸그룹] [힙합] [발라드/R&B] [댄스] [POP] [EDM] [인디] [재즈] [록]
-    
+
     let menuList = ["테마", "보이그룹", "걸그룹", "힙합", "발라드", "R&B", "댄스", "POP", "EDM", "인디", "재즈", "록"]
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -67,12 +52,6 @@ class ExploreVC: UIViewController {
         
         menuTheme = menuList[0]
         
-        
-        /*
-        //TextField 속성 설정
-        searchTxt.attributedPlaceholder = NSAttributedString(string: "아티스트 / 콘서트명",
-                                                               attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-         */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -94,16 +73,6 @@ class ExploreVC: UIViewController {
             self.collectionView.reloadData()
         }
     }
-    
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "resultPush" {
-            let txt = searchTxt.text
-            let dvc = segue.destination as! ExploreClickedVC
-            dvc.resStr = txt
-        }
-    }
- */
     
     func getSearchThemeResult() {
         ThemeService.shared.getThemeList(name: "테마") { (value) in

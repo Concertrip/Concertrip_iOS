@@ -47,15 +47,12 @@ class InfConcert_2VC: UIViewController {
     }
     
     @IBAction func likeBtnAction(_ sender: Any) {
-        print("디테일아이디 \(detailId)")
         SubscribeEventService.shared.subscriptEvent(id: detailId!) {
             if self.isLikeBtnActivated == false {
-                print("self.isLikeBtnActivated : \(self.isLikeBtnActivated)")
                 self.likeBtn.imageView?.image =  UIImage(named: "infoConcertLikeButtonActivated")
                 self.isLikeBtnActivated = true
                 
                 self.view.makeToast("내 공연에 추가되었습니다!")
-                print("self.isLikeBtnActivated : \(self.isLikeBtnActivated)")
                 self.getEventList()
             } else {
                 self.likeBtn.imageView?.image =  UIImage(named: "infoConcertLikeButton")
@@ -93,15 +90,9 @@ class InfConcert_2VC: UIViewController {
         //배경 그라데이션
         getGradientBackground()
         
-//        self.dateList.removeAll()
-
-        
-        print("detailId : \(gsno(detailId))")
         bigProfileImg.circleImageView()
         
         getEventList()
-        
-        
         
         performerCollectionView.delegate = self
         performerCollectionView.dataSource = self
@@ -116,26 +107,8 @@ class InfConcert_2VC: UIViewController {
 
         let buttonLeftConstraint = NSLayoutConstraint(item: reservationBtn, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: -10.0)
         
-//        buttonBottomConstraint += NSLayoutConstraint()
         self.view.addConstraint(buttonBottomConstraint)
         self.view.addConstraint(buttonLeftConstraint)
-        
-        
-        ////이미지ㅜㅜ
-        
-
-//        infoImg.layoutIfNeeded() //set a frame based on constraints
-//        scrollView.contentSize = CGSize(width: infoImg.frame.width, height: infoImg.frame.height)
-//        self.scrollView.addSubview(subView)
-//        self.view.addSubview(scrollView)
-//        self.subView.bounds.size = self.infoImg.bounds.size
-//        self.scrollView.sizeToFit()
-        
-        
-//        scrollView.layoutIfNeeded()
-//        scrollView.contentSize = CGSize(width: self.view.frame.width, height: infoImg.frame.size.height)
-        
-        
     }
     
     func getEventList(){
@@ -156,9 +129,6 @@ class InfConcert_2VC: UIViewController {
             self.nameLabel.text = detailData.dConcertName
             self.infoImg.imageFromUrl(detailData.dConcertEventInfoImg, defaultImgPath: "")
             
-            
-            
-            
             if detailData.dConcertSubscribe == true {
                 self.likeBtn.setImage(UIImage(named: "infoConcertLikeButtonActivated"), for: .normal)
                 self.isLikeBtnActivated = true
@@ -177,54 +147,16 @@ class InfConcert_2VC: UIViewController {
                 self.seatPriceList.append(data)
             }
             
-            
-            
-            //
-            //            let dateFormatterGet = DateFormatter()
-            //            dateFormatterGet.dateFormat = "dd/MM/yyyy"
-            //            var result = Date()
-            //            var dateResult = String()
-            //            for data? in detailData.dConcertDate {
-            //                if data == nil {
-            //                    self.dateTxt += ""
-            //                }
-            //                else {
-            //                    result = dateFormatterGet.date(from: data)!
-            //                    self.dateTxt += "\(result)"
-            //                }
-            //            }
-            
-            
-            //            let dateFormatterGet = DateFormatter()
-            //            dateFormatterGet.dateFormat = "yyyy년 M월 d일 HH:mm"
-            ////            dateFormatterGet.dateFormat = "dd/MM/yyyy"
-            //            var tmp = Date()
-            //            print("tmp \(tmp)")
-            //            for datedata in detailData.dConcertDate! {
-            //                tmp = dateFormatterGet.date(from: datedata) ?? Date.init()
-            //                print("tmp2 \(tmp)")
-            //                print("datedata \(datedata)")
-            //                let dateString = dateFormatterGet.string(from: tmp)
-            //                self.dateList.append(dateString)
-            //            }
-            
-            /////제네털
-            
-            print("detailData.dConcertDate! \(detailData.dConcertDate!)")
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.sssZ"
             
             for datedata in detailData.dConcertDate! {
                 
-                print("datedata : \(datedata)")
                 var dateString: String?
                 
                 if let date = dateFormatter.date(from: datedata) {
                     dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH:mm"
                     dateString = dateFormatter.string(from: date)
-                    print("dateString \(dateString)")
-                    
-                    
                 }
                 else {
                     let date = Date.init()
@@ -232,22 +164,15 @@ class InfConcert_2VC: UIViewController {
                     dateString = dateFormatter.string(from: date)
                 }
                 self.dateList.append(dateString!)
-                print("dateList \(self.dateList)")
             }
-            ///////
             
-            
-            print("dateList2 \(self.dateList)")
             for data in self.dateList {
                 self.dateTxt += data + "\n"
             }
             
-            
             for i in 0 ..< self.seatNameList.count {
                 self.priceTxt += "■ " +  self.seatNameList[i] + " : " + self.seatPriceList[i] + "\n"
             }
-            
-            
             
             self.concertDateLabel.text = self.dateTxt
             self.concertPriceLabel.text = self.priceTxt
@@ -257,35 +182,16 @@ class InfConcert_2VC: UIViewController {
             let range = (strNumber).range(of: "■")
             let attribute = NSMutableAttributedString.init(string: strNumber as String)
             attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(cgColor: #colorLiteral(red: 0.2431372549, green: 0.737254902, blue: 1, alpha: 1)) , range: range)
-            //            self.attributeList.append(attribute)
             self.concertPriceLabel.attributedText = attribute
-            
-            
-            print("self.concertPriceLabel.text : \(self.concertPriceLabel.text!)")
-            
-            
-            
             self.performerCollectionView.reloadData()
             self.cautionCollectionView.reloadData()
-            
-            
         }
     }
-    
     
 }
 extension InfConcert_2VC : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-//        if collectionView == self.performerCollectionView{
-//            print("memberList.count : \(memberList.count)")
-//            return memberList.count
-//
-//        } else if collectionView == self.cautionCollectionView {
-//            print("cautionList.count \(cautionList.count)")
-//            return cautionList.count
-//        }
-        
+
         if collectionView.tag == 1 {
             return memberList.count
         } else if collectionView.tag == 2 {
@@ -309,9 +215,7 @@ extension InfConcert_2VC : UICollectionViewDelegate, UICollectionViewDataSource{
             let cautions = cautionList[indexPath.item]
             
             cell.cautionLabel.text = cautions.cautionName
-            
-//            뭔가 url이상한듯..?
-//            cell.cautionImg.imageFromUrl(gsno(cautions.cautionImg), defaultImgPath: "")
+
             switch cautions.cautionCode {
             case 101: cell.cautionImg.image = UIImage(named: "allAgeLimitIcon")
             case 102: cell.cautionImg.image = UIImage(named: "7AgeLimitIcon")
@@ -344,7 +248,6 @@ extension InfConcert_2VC : UICollectionViewDelegate, UICollectionViewDataSource{
             case 504: cell.cautionImg.image = UIImage(named: "ticketLimit2Icon")
             default: cell.cautionImg.image = UIImage(named: "artistProfileImage")
             }
-            
             return cell
         } else {
             let cell = cautionCollectionView.dequeueReusableCell(withReuseIdentifier: "InfConcertCautionCVCell", for: indexPath) as! InfConcertCautionCVCell
